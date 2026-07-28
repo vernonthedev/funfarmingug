@@ -1,414 +1,734 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
-const slides = [
-  {
-    bgImage: '/assets/images/backgrounds/hero-1-1.jpg',
-    shapeImage: '/assets/images/shapes/hero-shape-1-3.png',
-    subTitle: 'Garden & Landscaping service!',
-    title: 'We Providing <span><img src="/assets/images/shapes/hero-shape-1-2.png" alt="icon" /></span> Garden Lawncare and Involve.',
-    text: 'We provide the most responsive and functional design for <br /> companies and businesses worldwide.',
-    btnText: 'Contact Now',
-    btnHref: '/contact',
-    leftShape: '/assets/images/shapes/hero-left.png',
-    iconClass: 'icon-shovel',
-  },
-  {
-    bgImage: '/assets/images/backgrounds/hero-1-2.jpg',
-    shapeImage: '/assets/images/shapes/hero-shape-1-3.png',
-    subTitle: 'Garden & Landscaping service!',
-    title: 'We Providing <span><img src="/assets/images/shapes/hero-shape-1-2.png" alt="icon" /></span> Garden Lawncare and Involve.',
-    text: 'We provide the most responsive and functional design for <br /> companies and businesses worldwide.',
-    btnText: 'Contact Now',
-    btnHref: '/contact',
-    leftShape: '/assets/images/shapes/hero-left.png',
-    iconClass: 'icon-shovel',
-  },
-  {
-    bgImage: '/assets/images/backgrounds/hero-1-3.jpg',
-    shapeImage: '/assets/images/shapes/hero-shape-1-3.png',
-    subTitle: 'Garden & Landscaping service!',
-    title: 'We Providing <span><img src="/assets/images/shapes/hero-shape-1-2.png" alt="icon" /></span> Garden Lawncare and Involve.',
-    text: 'We provide the most responsive and functional design for <br /> companies and businesses worldwide.',
-    btnText: 'Contact Now',
-    btnHref: '/contact',
-    leftShape: '/assets/images/shapes/hero-left.png',
-    iconClass: 'icon-shovel',
-  },
-];
-
-const features = [
-  {
-    iconTop: 'icon-gardener',
-    iconBottom: 'icon-gardener',
-    title: 'Spring of cleaning',
-    text: 'There are many garden passages market to available majority',
-    href: '/services/spring-cleaning',
-    delay: '100ms',
-  },
-  {
-    iconTop: 'icon-park',
-    iconBottom: 'icon-park',
-    title: 'Pest and Disease',
-    text: 'There are many garden passages market to available majority',
-    href: '/services/pest-disease',
-    delay: '300ms',
-    active: true,
-  },
-  {
-    iconTop: 'icon-gardening',
-    iconBottom: 'icon-gardening',
-    title: 'Shrub Trimming',
-    text: 'There are many garden passages market to available majority',
-    href: '/services/shrub-trimming',
-    delay: '500ms',
-  },
-  {
-    iconTop: 'icon-gardener-1',
-    iconBottom: 'icon-gardener-1',
-    title: 'Lawn Mowing',
-    text: 'There are many garden passages market to available majority',
-    href: '/services/lawn-mowing',
-    delay: '700ms',
-  },
-];
-
-const services = [
-  { icon: 'icon-gardener', title: 'Spring of cleaning', desc: 'Professional spring cleaning for your garden', href: '/services/spring-cleaning' },
-  { icon: 'icon-park', title: 'Pest and Disease', desc: 'Effective pest and disease management', href: '/services/pest-disease' },
-  { icon: 'icon-gardening', title: 'Shrub Trimming', desc: 'Expert shrub trimming and shaping', href: '/services/shrub-trimming' },
-  { icon: 'icon-gardener-1', title: 'Lawn Mowing', desc: 'Regular lawn mowing and maintenance', href: '/services/lawn-mowing' },
-  { icon: 'icon-seedling', title: 'Tree Planting', desc: 'Professional tree planting services', href: '/services/tree-planting' },
-  { icon: 'icon-watering', title: 'Irrigation Systems', desc: 'Custom irrigation system installation', href: '/services/irrigation' },
-];
-
-const projects = [
-  { image: '/assets/images/projects/project-1-1.jpg', title: 'Garden Landscape Design', category: 'Landscaping', href: '/projects/details' },
-  { image: '/assets/images/projects/project-1-2.jpg', title: 'Residential Lawn Care', category: 'Lawn Care', href: '/projects/details' },
-  { image: '/assets/images/projects/project-1-3.jpg', title: 'Commercial Garden Maintenance', category: 'Maintenance', href: '/projects/details' },
-];
-
-const testimonials = [
-  { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', author: 'John Smith', role: 'Homeowner', image: '/assets/images/testimonials/testimonial-1-1.jpg' },
-  { text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.', author: 'Sarah Johnson', role: 'Property Manager', image: '/assets/images/testimonials/testimonial-1-2.jpg' },
-  { text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.', author: 'Michael Brown', role: 'Business Owner', image: '/assets/images/testimonials/testimonial-1-3.jpg' },
-];
-
-const team = [
-  { image: '/assets/images/team/team-1-1.jpg', name: 'John Smith', role: 'Founder & CEO', social: ['#', '#', '#'] },
-  { image: '/assets/images/team/team-1-2.jpg', name: 'Sarah Johnson', role: 'Lead Designer', social: ['#', '#', '#'] },
-  { image: '/assets/images/team/team-1-3.jpg', name: 'Michael Brown', role: 'Project Manager', social: ['#', '#', '#'] },
-  { image: '/assets/images/team/team-1-4.jpg', name: 'Emily Davis', role: 'Senior Gardener', social: ['#', '#', '#'] },
-];
-
-export default function Home() {
-  useEffect(() => {
-    // Initialize any client-side scripts here if needed
-    // For owl carousel and other JS plugins
-  }, []);
-
-  return (
-    <>
-      {/* Hero Slider */}
-      <section className="main-slider-one">
-        <div 
-          className="main-slider-one__carousel garlon-owl__carousel owl-carousel" 
-          data-owl-options='{"loop":true,"animateOut":"fadeOut","animateIn":"fadeIn","items":1,"autoplay":true,"autoplayTimeout":7000,"smartSpeed":1000,"nav":true,"navText":["<span class=\\"icon-angle-small-left\\"></span>","<span class=\\"icon-angle-small-right\\"></span>"],"dots":false,"margin":0}'
-        >
-          {slides.map((slide, index) => (
-            <div key={index} className="item">
-              <div className="main-slider-one__item">
-                <div className="main-slider-one__bg" style={{ backgroundImage: `url(${slide.bgImage})` }}></div>
-                <div className="container">
-                  <div className="row">
-                    <div className="col-xl-8">
-                      <div className="main-slider-one__content">
-                        <div className="main-slider-one__box">
-                          <div className="main-slider-one__box__item">
-                            <div className="main-slider-one__box__icon">
-                              <i className={slide.iconClass}></i>
+export default function HomePage() {
+    return (
+        <>
+            {/* Hero Slider */}
+            <section className="o-hero o-hero--main" data-kal="slide-up">
+                <div className="o-hero__main">
+                    <div className="o-hero__video">
+                        <div className="c-video">
+                            <div className="c-video__placeholder">
+                                <div
+                                    className="c-video__iframe js-youtube-player"
+                                    data-youtube-link="https://www.youtube.com/embed/VIDEO_ID"
+                                    data-auto-play="1"
+                                    data-disable-kb="1"
+                                    data-controls="0"
+                                    data-loop="1"
+                                    id="home-hero-video"
+                                ></div>
                             </div>
-                            <img src={slide.leftShape} alt="shape" />
-                          </div>
-                          <h5 className="main-slider-one__sub-title">{slide.subTitle}</h5>
                         </div>
-                        <h2 className="main-slider-one__title" dangerouslySetInnerHTML={{ __html: slide.title }}></h2>
-                        <p className="main-slider-one__text" dangerouslySetInnerHTML={{ __html: slide.text }}></p>
-                        <div className="main-slider-one__btn">
-                          <Link href={slide.btnHref} className="garlon-btn"><span>{slide.btnText}</span> <i className="icon-angle-small-right"></i></Link>
+                    </div>
+
+                    <div className="o-hero__title-area">
+                        <h1 className="o-hero__title">
+                            Welcome to Fun Farming Uganda
+                            <br />
+                            Where Agriculture Meets Adventure!
+                            <br />
+                        </h1>
+                        <Link className="c-button" href="/activities">
+                            <span className="c-button__text">
+                                View Activities
+                            </span>
+                        </Link>
+                        <div className="o-hero__rating">
+                            <a
+                                className="c-rating c-rating--boxed"
+                                target="_blank"
+                                href="#"
+                                rel="noopener noreferrer"
+                            >
+                                <div className="c-rating__stars">
+                                    <span className="c-star c-star--full">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <g fill="none" fillRule="evenodd">
+                                                <path
+                                                    fill="#e9ebf5"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97l3.669-3.178a1 1 0 0 0-.57-1.752l-4.829-.41-1.89-4.458a1 1 0 0 0-1.84 0L9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                                <path
+                                                    className="full-star"
+                                                    fill="currentColor"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97l3.669-3.178a1 1 0 0 0-.57-1.752l-4.829-.41-1.89-4.458a1 1 0 0 0-1.84 0L9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                                <path
+                                                    className="half-star"
+                                                    fill="none"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97 9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span className="c-star c-star--full">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <g fill="none" fillRule="evenodd">
+                                                <path
+                                                    fill="#e9ebf5"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97l3.669-3.178a1 1 0 0 0-.57-1.752l-4.829-.41-1.89-4.458a1 1 0 0 0-1.84 0L9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                                <path
+                                                    className="full-star"
+                                                    fill="currentColor"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97l3.669-3.178a1 1 0 0 0-.57-1.752l-4.829-.41-1.89-4.458a1 1 0 0 0-1.84 0L9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                                <path
+                                                    className="half-star"
+                                                    fill="none"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97 9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span className="c-star c-star--full">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <g fill="none" fillRule="evenodd">
+                                                <path
+                                                    fill="#e9ebf5"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97l3.669-3.178a1 1 0 0 0-.57-1.752l-4.829-.41-1.89-4.458a1 1 0 0 0-1.84 0L9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                                <path
+                                                    className="full-star"
+                                                    fill="currentColor"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97l3.669-3.178a1 1 0 0 0-.57-1.752l-4.829-.41-1.89-4.458a1 1 0 0 0-1.84 0L9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                                <path
+                                                    className="half-star"
+                                                    fill="none"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97 9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span className="c-star c-star--full">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <g fill="none" fillRule="evenodd">
+                                                <path
+                                                    fill="#e9ebf5"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97l3.669-3.178a1 1 0 0 0-.57-1.752l-4.829-.41-1.89-4.458a1 1 0 0 0-1.84 0L9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                                <path
+                                                    className="full-star"
+                                                    fill="currentColor"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97l3.669-3.178a1 1 0 0 0-.57-1.752l-4.829-.41-1.89-4.458a1 1 0 0 0-1.84 0L9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                                <path
+                                                    className="half-star"
+                                                    fill="none"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97 9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span className="c-star c-star--half">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <g fill="none" fillRule="evenodd">
+                                                <path
+                                                    fill="#e9ebf5"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97l3.669-3.178a1 1 0 0 0-.57-1.752l-4.829-.41-1.89-4.458a1 1 0 0 0-1.84 0L9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                                <path
+                                                    className="full-star"
+                                                    fill="currentColor"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97l3.669-3.178a1 1 0 0 0-.57-1.752l-4.829-.41-1.89-4.458a1 1 0 0 0-1.84 0L9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                                <path
+                                                    className="half-star"
+                                                    fill="none"
+                                                    d="M12 18.27l4.151 2.505a1 1 0 0 0 1.49-1.083L16.54 14.97 9.19 9.63l-4.828.41a1 1 0 0 0-.57 1.752L7.46 14.97l-1.102 4.722a1 1 0 0 0 1.491 1.083L12 18.27z"
+                                                />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <span className="c-rating__score">
+                                    <span className="c-rating__points">
+                                        9.4
+                                    </span>
+                                    <span className="c-rating__max">/ 10</span>
+                                </span>
+                                <span className="c-rating__reviews">
+                                    195 reviews
+                                </span>
+                                <span className="c-rating__platform">
+                                    via Google
+                                </span>
+                            </a>
                         </div>
-                        <div className="main-slider-one__content__shape">
-                          <img src="/assets/images/shapes/arrow-variant-1.png" alt="shape" />
+                    </div>
+                </div>
+            </section>
+
+            <style jsx>{`
+                @media only screen and (max-width: 600px) {
+                    .o-certainties__badge img {
+                        max-width: 100%;
+                        height: auto;
+                    }
+                }
+            `}</style>
+
+            {/* Certainties Section */}
+            <div className="u-slant-top u-mb-neg-slant-height u-bg-primary--500">
+                <div className="l-contain o-component-area__component">
+                    <div className="o-certainties" data-kal="slide-up">
+                        <figure className="o-certainties__badge">
+                            <img
+                                src="/img/logo.png"
+                                alt="Fun Farming Uganda"
+                                style={{ width: '100%' }}
+                                width="400"
+                                height="400"
+                            />
+                        </figure>
+                        <div>
+                            <h2 className="o-certainties__heading">
+                                "Discover the joy of team events at our farm
+                                oasis!
+                            </h2>
+                            <ul className="u-list--clean">
+                                <li className="o-certainties__list-item">
+                                    Everyone&apos;s invited to a day of laughter and
+                                    connection.
+                                </li>
+                                <li className="o-certainties__list-item">
+                                    Unleash the fun with well-organized
+                                    activities that guarantee maximum enjoyment.
+                                </li>
+                                <li className="o-certainties__list-item">
+                                    Connect, learn, and share unforgettable
+                                    moments with a community of enthusiasts.
+                                </li>
+                                <li className="o-certainties__list-item">
+                                    Our exciting activities are led by
+                                    passionate staff, making every moment a
+                                    memorable experience.
+                                </li>
+                                <li className="o-certainties__list-item">
+                                    Expect the unexpected - we always go the
+                                    extra mile to make your day extraordinary.
+                                </li>
+                                <li className="o-certainties__list-item">
+                                    Any hiccups along the way? We&apos;ve got you
+                                    covered – we&apos;re here to fix them!
+                                </li>
+                                <li className="o-certainties__list-item">
+                                    Delight in the flavors of local Ugandan farm
+                                    cuisine, a culinary adventure for your taste
+                                    buds.
+                                </li>
+                            </ul>
                         </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
-                <div className="main-slider-one__shape">
-                  <img src={slide.shapeImage} alt="image" />
-                </div>
-              </div>
             </div>
-          ))}
-        </div>
-      </section>
+            <div className="u-slant-top-reversed u-mt-neg-slant-height u-bg-neutral--0"></div>
 
-      {/* Features Section */}
-      <section className="feature-one">
-        <div className="container">
-          <div className="feature-one__box">
-            <div className="row gutter-y-30">
-              {features.map((feature, index) => (
-                <div key={index} className="col-lg-3 col-md-6 col-sm-6">
-                  <div className="feature-one__item__inner wow fadeInUp" data-wow-duration='1500ms' data-wow-delay={feature.delay}>
-                    <div className={`feature-one__item ${feature.active ? 'active' : ''}`}>
-                      <div className="feature-one__item__icon-top">
-                        <i className={feature.iconTop}></i>
-                      </div>
-                      <div className="feature-one__item__content">
-                        <h4 className="feature-one__item__title"><Link href={feature.href}>{feature.title}</Link></h4>
-                        <p className="feature-one__item__text">{feature.text}</p>
-                      </div>
-                      <div className="feature-one__item__icon-bottom">
-                        <i className={feature.iconBottom}></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="about-one">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-xl-6">
-              <div className="about-one__image">
-                <div className="about-one__image__bg" style={{ backgroundImage: 'url(/assets/images/backgrounds/about-1-1.jpg)' }}></div>
-                <div className="about-one__image__shape">
-                  <img src="/assets/images/shapes/about-1-1.png" alt="shape" />
-                </div>
-                <div className="about-one__image__experience">
-                  <span>15+</span>
-                  <p>Years of Experience</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-6">
-              <div className="about-one__content">
-                <div className="section-title section-title__left">
-                  <span className="section-title__tagline">About Us</span>
-                  <h2 className="section-title__title">We Provide Best Gardening & Landscaping Services</h2>
-                </div>
-                <div className="about-one__content__text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                <div className="about-one__list">
-                  <ul>
-                    <li><i className="icon-check"></i> Professional Garden Design & Maintenance</li>
-                    <li><i className="icon-check"></i> Sustainable Landscaping Solutions</li>
-                    <li><i className="icon-check"></i> 24/7 Customer Support Available</li>
-                    <li><i className="icon-check"></i> Certified & Experienced Team Members</li>
-                  </ul>
-                </div>
-                <div className="about-one__btn">
-                  <Link href="/about" className="garlon-btn"><span>Read More</span> <i className="icon-angle-small-right"></i></Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="service-one">
-        <div className="container">
-          <div className="section-title section-title__center">
-            <span className="section-title__tagline">Our Services</span>
-            <h2 className="section-title__title">We Offer Professional Gardening Services</h2>
-          </div>
-          <div 
-            className="service-one__carousel garlon-owl__carousel owl-carousel" 
-            data-owl-options='{"loop":true,"items":3,"autoplay":true,"autoplayTimeout":5000,"smartSpeed":1000,"margin":30,"nav":true,"navText":["<span class=\\"icon-angle-small-left\\"></span>","<span class=\\"icon-angle-small-right\\"></span>"],"dots":false,"responsive":{"0":{"items":1},"768":{"items":2},"992":{"items":3}}}'
-          >
-            {services.map((service, index) => (
-              <div key={index} className="item">
-                <div className="service-one__item">
-                  <div className="service-one__icon">
-                    <i className={service.icon}></i>
-                  </div>
-                  <div className="service-one__content">
-                    <h4 className="service-one__title"><Link href={service.href}>{service.title}</Link></h4>
-                    <p className="service-one__text">{service.desc}</p>
-                  </div>
-                  <div className="service-one__btn">
-                    <Link href={service.href} className="garlon-btn"><span>Read More</span> <i className="icon-angle-small-right"></i></Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="service-one__btn text-center" style={{ marginTop: '40px' }}>
-            <Link href="/services" className="garlon-btn"><span>All Services</span> <i className="icon-angle-small-right"></i></Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section className="project-one">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-6">
-              <div className="section-title section-title__left">
-                <span className="section-title__tagline">Our Projects</span>
-                <h2 className="section-title__title">Recently Completed Gardening Projects</h2>
-              </div>
-              <div className="project-one__content__text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-              <div className="project-one__btn">
-                <Link href="/projects" className="garlon-btn"><span>View All Projects</span> <i className="icon-angle-small-right"></i></Link>
-              </div>
-            </div>
-            <div className="col-xl-6">
-              <div 
-                className="project-one__carousel garlon-owl__carousel owl-carousel" 
-                data-owl-options='{"loop":true,"items":1,"autoplay":true,"autoplayTimeout":5000,"smartSpeed":1000,"margin":0,"nav":true,"navText":["<span class=\\"icon-angle-small-left\\"></span>","<span class=\\"icon-angle-small-right\\"></span>"],"dots":false}'
-              >
-                {projects.map((project, index) => (
-                  <div key={index} className="item">
-                    <div className="project-one__item">
-                      <div className="project-one__image">
-                        <img src={project.image} alt={project.title} />
-                        <div className="project-one__overlay">
-                          <Link href={project.href} className="garlon-btn"><span>View Details</span> <i className="icon-angle-small-right"></i></Link>
+            {/* Video Text Section */}
+            <div
+                id="component-item-2"
+                data-type="videoText"
+                className="u-mb-neg-slant-height u-slant-top"
+            >
+                <div
+                    className="o-component-area__component l-contain l-contain--wide"
+                    style={{ marginBottom: '30px' }}
+                >
+                    <div className="o-vt__main">
+                        <div className="o-vt__video">
+                            <div className="c-video">
+                                <div className="c-video__placeholder">
+                                    <div>
+                                        <img
+                                            src="/img/home/team-building2.jpg"
+                                            alt="Fun farm games being played at Fun Farming Uganda"
+                                            style={{ borderRadius: '20px' }}
+                                            className="u-clip-path"
+                                            loading="lazy"
+                                            data-id="clip-path-image-3"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      <div className="project-one__content">
-                        <span className="project-one__category">{project.category}</span>
-                        <h4 className="project-one__title"><Link href={project.href}>{project.title}</Link></h4>
-                      </div>
+                        <div className="o-vt__content s-text">
+                            <h2>Thrilling Activities Await!</h2>
+                            <p>
+                                Embark on a journey of excitement with our
+                                diverse range of activities.
+                                <br />
+                                <br />
+                                Whether it's picking fresh produce, joining
+                                workshops, or participating in seasonal events,
+                                there's always something for everyone at Fun
+                                Farming Uganda.
+                            </p>
+                            <Link
+                                className="c-button c-button--big"
+                                href="/activities"
+                            >
+                                <span className="c-button__text">
+                                    View More!
+                                </span>
+                                <i className="c-button__icon">
+                                    <svg width="7" height="10">
+                                        <use href="/img/icon-arrowRight.svg#arrowRight"></use>
+                                    </svg>
+                                </i>
+                            </Link>
+                        </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Testimonials Section */}
-      <section className="testimonial-one">
-        <div className="container">
-          <div className="section-title section-title__center">
-            <span className="section-title__tagline">Testimonials</span>
-            <h2 className="section-title__title">What Our Clients Say About Us</h2>
-          </div>
-          <div 
-            className="testimonial-one__carousel garlon-owl__carousel owl-carousel" 
-            data-owl-options='{"loop":true,"items":1,"autoplay":true,"autoplayTimeout":5000,"smartSpeed":1000,"margin":0,"nav":true,"navText":["<span class=\\"icon-angle-small-left\\"></span>","<span class=\\"icon-angle-small-right\\"></span>"],"dots":true}'
-          >
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="item">
-                <div className="testimonial-one__item">
-                  <div className="testimonial-one__icon">
-                    <i className="icon-quote"></i>
-                  </div>
-                  <p className="testimonial-one__text">{testimonial.text}</p>
-                  <div className="testimonial-one__author">
-                    <div className="testimonial-one__author-image">
-                      <img src={testimonial.image} alt={testimonial.author} />
+            {/* Text Image Section - David */}
+            <div
+                id="component-item-5"
+                data-type="textImage"
+                className="u-mb-neg-slant-height u-slant-top"
+            >
+                <div className="o-component-area__component l-contain l-contain--wide">
+                    <div className="l-double l-double--wide l-double--reversed u-spacing-pt6">
+                        <div className="l-double__left">
+                            <img
+                                className="u-clip-path"
+                                loading="lazy"
+                                data-id="clip-path-image-1"
+                                width="50%"
+                                data-kal="slide-left"
+                                src="/img/webimgs/david-holding-goat.jpg"
+                                alt="Farmer David holding a farm goat"
+                                style={{ borderRadius: '20px' }}
+                            />
+                        </div>
+                        <div
+                            className="l-double__right s-text"
+                            data-kal="slide-up"
+                        >
+                            <h2>Moo towards us for customized advice</h2>
+                            <p>
+                                Gathering the horns? Our cow-league David is
+                                ready to advise you so that you'll reap applause
+                                for this team-building.
+                            </p>
+                            <p>
+                                <strong>Easily schedule a conversation</strong>{' '}
+                                and feel the Cowzy Farm Vibes roaring through
+                                your herd.
+                            </p>
+                            <a
+                                className="c-button c-button--big"
+                                href="https://www.calendly.com/farmfun/kennismakingsgesprek-teambuilding-farmfun?back=1&month=2023-02"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <span className="c-button__text">
+                                    Schedule Conversation
+                                </span>
+                            </a>
+                        </div>
                     </div>
-                    <div className="testimonial-one__author-content">
-                      <h5 className="testimonial-one__author-name">{testimonial.author}</h5>
-                      <span className="testimonial-one__author-role">{testimonial.role}</span>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="team-one">
-        <div className="container">
-          <div className="section-title section-title__center">
-            <span className="section-title__tagline">Our Team</span>
-            <h2 className="section-title__title">Meet Our Expert Gardeners</h2>
-          </div>
-          <div 
-            className="team-one__carousel garlon-owl__carousel owl-carousel" 
-            data-owl-options='{"loop":true,"items":4,"autoplay":true,"autoplayTimeout":5000,"smartSpeed":1000,"margin":30,"nav":true,"navText":["<span class=\\"icon-angle-small-left\\"></span>","<span class=\\"icon-angle-small-right\\"></span>"],"dots":false,"responsive":{"0":{"items":1},"576":{"items":2},"768":{"items":3},"992":{"items":4}}}'
-          >
-            {team.map((member, index) => (
-              <div key={index} className="item">
-                <div className="team-one__item">
-                  <div className="team-one__image">
-                    <img src={member.image} alt={member.name} />
-                    <div className="team-one__social">
-                      {member.social.map((link, i) => (
-                        <a key={i} href={link}><i className="fab fa-facebook-f"></i></a>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="team-one__content">
-                    <h4 className="team-one__name"><Link href="/team/details">{member.name}</Link></h4>
-                    <span className="team-one__designation">{member.role}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="team-one__btn text-center" style={{ marginTop: '40px' }}>
-            <Link href="/team" className="garlon-btn"><span>View All Team</span> <i className="icon-angle-small-right"></i></Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="cta-one" style={{ backgroundImage: 'url(/assets/images/backgrounds/cta-1-1.jpg)' }}>
-        <div className="container">
-          <div className="cta-one__content">
-            <h2 className="cta-one__title">Ready to Transform Your Garden?</h2>
-            <p className="cta-one__text">Contact us today for a free consultation and let our experts create the garden of your dreams.</p>
-            <div className="cta-one__btn">
-              <Link href="/contact" className="garlon-btn"><span>Get Free Quote</span> <i className="icon-angle-small-right"></i></Link>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Brands/Partners Section */}
-      <section className="brand-one">
-        <div className="container">
-          <div 
-            className="brand-one__carousel garlon-owl__carousel owl-carousel" 
-            data-owl-options='{"loop":true,"items":5,"autoplay":true,"autoplayTimeout":3000,"smartSpeed":1000,"margin":0,"nav":false,"dots":false,"responsive":{"0":{"items":2},"576":{"items":3},"768":{"items":4},"992":{"items":5}}}'
-          >
-            {[
-              '/assets/images/brands/brand-1-1.png',
-              '/assets/images/brands/brand-1-2.png',
-              '/assets/images/brands/brand-1-3.png',
-              '/assets/images/brands/brand-1-4.png',
-              '/assets/images/brands/brand-1-5.png',
-            ].map((brand, index) => (
-              <div key={index} className="item">
-                <div className="brand-one__item">
-                  <img src={brand} alt="brand" />
+            {/* Testimonial Logos */}
+            <div
+                id="component-item-6"
+                data-type="testimonialLogos"
+                className="u-mb-neg-slant-height u-slant-top"
+            >
+                <div
+                    className="o-component-area__component l-contain"
+                    style={{ height: '200px' }}
+                >
+                    <div className="o-testimonial">
+                        <div
+                            className="c-customer-logo-slider c-logos js-customer-logo-slider"
+                            data-has-swipe-events="true"
+                        >
+                            <div className="c-customer-logo-slider__container js-customer-logo-slide-container">
+                                <div
+                                    className="c-customer-logo-slider__item c-customer-logo-slider__item--position-1 js-customer-logo-slide"
+                                    data-slide-id="0"
+                                    data-logo-id="1033"
+                                >
+                                    <div
+                                        className="c-customer-logo-slider__logo"
+                                        style={{
+                                            backgroundImage:
+                                                "url('/img/partners/fao-logo.svg')",
+                                        }}
+                                    ></div>
+                                </div>
+                                <div
+                                    className="c-customer-logo-slider__item c-customer-logo-slider__item--position-2 js-customer-logo-slide"
+                                    data-slide-id="1"
+                                    data-logo-id="1034"
+                                >
+                                    <div
+                                        className="c-customer-logo-slider__logo"
+                                        style={{
+                                            backgroundImage:
+                                                "url('/img/partners/unfe.png')",
+                                        }}
+                                    ></div>
+                                </div>
+                                <div
+                                    className="c-customer-logo-slider__item c-customer-logo-slider__item--position-3 js-customer-logo-slide"
+                                    data-slide-id="2"
+                                    data-logo-id="1035"
+                                >
+                                    <div
+                                        className="c-customer-logo-slider__logo"
+                                        style={{
+                                            backgroundImage:
+                                                "url('/img/partners/unyfa.png')",
+                                        }}
+                                    ></div>
+                                </div>
+                                <div
+                                    className="c-customer-logo-slider__item c-customer-logo-slider__item--position-4 js-customer-logo-slide"
+                                    data-slide-id="3"
+                                    data-logo-id="1036"
+                                >
+                                    <div
+                                        className="c-customer-logo-slider__logo"
+                                        style={{
+                                            backgroundImage:
+                                                "url('/img/partners/fao-logo.svg')",
+                                        }}
+                                    ></div>
+                                </div>
+                                <div
+                                    className="c-customer-logo-slider__item c-customer-logo-slider__item--position-5 js-customer-logo-slide"
+                                    data-slide-id="4"
+                                    data-logo-id="1037"
+                                >
+                                    <div
+                                        className="c-customer-logo-slider__logo"
+                                        style={{
+                                            backgroundImage:
+                                                "url('/img/partners/unfe.png')",
+                                        }}
+                                    ></div>
+                                </div>
+                                <div
+                                    className="c-customer-logo-slider__item is-hidden js-customer-logo-slide"
+                                    data-slide-id="5"
+                                    data-logo-id="1038"
+                                >
+                                    <div
+                                        className="c-customer-logo-slider__logo"
+                                        style={{
+                                            backgroundImage:
+                                                "url('/img/partners/fao-logo.svg')",
+                                        }}
+                                    ></div>
+                                </div>
+                                <div
+                                    className="c-customer-logo-slider__item is-hidden js-customer-logo-slide"
+                                    data-slide-id="6"
+                                    data-logo-id="1039"
+                                >
+                                    <div
+                                        className="c-customer-logo-slider__logo"
+                                        style={{
+                                            backgroundImage:
+                                                "url('/img/partners/fao-logo.svg')",
+                                        }}
+                                    ></div>
+                                </div>
+                                <div
+                                    className="c-customer-logo-slider__item is-hidden js-customer-logo-slide"
+                                    data-slide-id="7"
+                                    data-logo-id="1040"
+                                >
+                                    <div
+                                        className="c-customer-logo-slider__logo"
+                                        style={{
+                                            backgroundImage:
+                                                "url('/img/partners/unfe.png')",
+                                        }}
+                                    ></div>
+                                </div>
+                                <div className="c-customer-logo-slider__placeholder"></div>
+                            </div>
+                            <button
+                                className="c-customer-logo-slider__button previous js-slider-button"
+                                title="Previous"
+                            >
+                                <svg width="7" height="10">
+                                    <use href="/img/icon-arrowLeft.svg#arrowLeft"></use>
+                                </svg>
+                            </button>
+                            <button
+                                className="c-customer-logo-slider__button next js-slider-button"
+                                title="Next"
+                            >
+                                <svg width="7" height="10">
+                                    <use href="/img/icon-arrowRight.svg#arrowRight"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
-  );
+            </div>
+
+            {/* Button Component */}
+            <div
+                id="component-item-8"
+                data-type="button"
+                className="u-mb-neg-slant-height u-slant-top"
+            >
+                <div className="o-component-area__component l-contain">
+                    <div className="o-button-component o-button-component--align-center">
+                        <h2 className="u-spacing-mb2">
+                            Create your ideal team-building event
+                        </h2>
+                        <div className="u-spacing-mb2">
+                            <p>
+                                Choose your ideal activity, add catering, check
+                                availability, instantly generate your quote, or
+                                book online. We'll get the exact number of
+                                participants later.
+                            </p>
+                        </div>
+                        <Link
+                            className="c-button u-spacing-mb8"
+                            href="/activities"
+                        >
+                            <span className="c-button__text">
+                                View Our Activities
+                            </span>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
+            {/* Locations Section */}
+            <div
+                id="component-item-9"
+                data-type="locations"
+                className="u-mb-neg-slant-height u-slant-top"
+            >
+                <div className="o-component-area__component">
+                    <div className="o-locations js-locations o-locations--slant">
+                        <div className="o-locations__intro">
+                            <div
+                                className="s-text u-spacing-pt8"
+                                data-kal="slide-up"
+                            >
+                                <h2 className="">
+                                    There's always a FarmFun near you
+                                </h2>
+                                <p>
+                                    Fun Farm is located in Uganda and deeply
+                                    rooted in the Butalangu province, Nakaseke
+                                    District, who rules the roost at each of the
+                                    farms? Our dairy cows! While they watch the
+                                    hilarious antics of you and your cow-leagues
+                                    or friends, our Chief Executive Farmers and
+                                    game leaders provide you with a farmtastic
+                                    day.
+                                </p>
+                                <h3>our location</h3>
+                                <ul className="o-locations__list">
+                                    <li className="o-locations__list-item">
+                                        <button
+                                            data-location-id="1"
+                                            className="o-locations__list-item-button js-locations-list-item"
+                                        >
+                                            FunFarm Nakaseke (UG)
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="u-spacing-mt8" data-kal="slide-up">
+                                <div className="c-map">
+                                    <img
+                                        className="c-map__background"
+                                        loading="lazy"
+                                        src="/img/locations/Nakaseke_District_in_Uganda.svg.png"
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            className="o-locations__cards js-locations-cards"
+                            data-kal="slide-up"
+                        >
+                            <div
+                                hidden
+                                className="o-locations__card hidden js-locations-card"
+                                data-location-id="1"
+                            >
+                                <img
+                                    className="o-locations__card-image u-clip-path"
+                                    loading="lazy"
+                                    data-id="clip-path-image-3"
+                                    src="/img/webimgs/fun-farm-image.jpg"
+                                    alt=""
+                                />
+                                <div className="o-locations__card-content">
+                                    <div className="o-locations__card-left">
+                                        <h3 className="o-locations__card-title">
+                                            Fun Farming Buffet
+                                        </h3>
+                                        <p className="s-text s-text--on-dark">
+                                            For fantastic team-building events,
+                                            bachelor/bachelorette parties, and
+                                            Ugandan hospitality, you're at the
+                                            right place on the farm of Fun Farm
+                                            Uganda
+                                        </p>
+                                        <Link
+                                            className="c-button u-spacing-mt3"
+                                            href="/contact"
+                                        >
+                                            <span className="c-button__text">
+                                                Discover this location
+                                            </span>
+                                        </Link>
+                                    </div>
+                                    <div className="o-locations__card-right s-text s-text--on-dark">
+                                        <strong className="">
+                                            Activities offered:
+                                        </strong>
+                                        <ul>
+                                            <li>Team Building</li>
+                                            <li>Farm Activities</li>
+                                            <li>Farm Visits</li>
+                                            <li>Farm Kitchen</li>
+                                            <li>Kids' Parties</li>
+                                            <li>Farm Camps</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Button Component 2 */}
+            <div
+                id="component-item-10"
+                data-type="button"
+                className="u-mb-neg-slant-height u-slant-top"
+            >
+                <div className="o-component-area__component l-contain">
+                    <div className="o-button-component o-button-component--align-center">
+                        <h2 className="u-spacing-mb2">
+                            Take the bull by the horns!
+                        </h2>
+                        <Link
+                            className="c-button u-spacing-mb8"
+                            href="/activities"
+                        >
+                            <span className="c-button__text">
+                                To all activities
+                            </span>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
+            {/* USPs Section */}
+            <div
+                id="component-item-11"
+                data-type="usps"
+                className="u-mb-neg-slant-height u-slant-top u-bg-primary--500"
+            >
+                <div className="o-component-area__component l-contain">
+                    <div className="o-usp-row" data-kal="slide-up">
+                        <ul className="o-usp-row__list">
+                            <li className="o-usp-row__item">
+                                <i className="o-usp-row__icon">
+                                    <svg width="56" height="56">
+                                        <use href="/img/usp/marker.svg#marker"></use>
+                                    </svg>
+                                </i>
+                                <p className="o-usp-row__label">
+                                    Have Fun
+                                    <br />
+                                    <strong>always close by</strong>
+                                </p>
+                            </li>
+                            <li className="o-usp-row__item">
+                                <i className="o-usp-row__icon">
+                                    <svg width="56" height="56">
+                                        <use href="/img/usp/calendar.svg#calendar"></use>
+                                    </svg>
+                                </i>
+                                <p className="o-usp-row__label">
+                                    Imagine Yourself
+                                    <strong>
+                                        ideal
+                                        <br />
+                                        event
+                                    </strong>
+                                    together
+                                </p>
+                            </li>
+                            <li className="o-usp-row__item">
+                                <i className="o-usp-row__icon">
+                                    <svg width="56" height="56">
+                                        <use href="/img/usp/trees.svg#trees"></use>
+                                    </svg>
+                                </i>
+                                <p className="o-usp-row__label">
+                                    Minimum
+                                    <br />
+                                    <strong>mid</strong>
+                                    impact
+                                </p>
+                            </li>
+                            <li className="o-usp-row__item">
+                                <i className="o-usp-row__icon">
+                                    <svg width="56" height="56">
+                                        <use href="/img/usp/people.svg#people"></use>
+                                    </svg>
+                                </i>
+                                <p className="o-usp-row__label">
+                                    For thinkers and doers,
+                                    <br />
+                                    <strong>young and less young</strong>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
 }

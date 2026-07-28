@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "infisical run -- next dev",
+        "dev": "infisical run -- npx portless funfarmingug next dev",
         "build": "infisical run -- next build",
         "start": "infisical run -- next start",
         "lint": "eslint",
@@ -27,6 +27,7 @@
         "eslint-config-next": "16.2.12",
         "eslint-config-prettier": "^10.1.8",
         "lefthook": "^2.1.10",
+        "portless": "^0.15.4",
         "prettier": "^3.9.6",
         "tailwindcss": "^4",
         "typescript": "^5"
