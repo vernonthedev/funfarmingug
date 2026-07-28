@@ -1,273 +1,108 @@
 import Link from 'next/link';
 
 export default function Footer() {
-    const currentYear = new Date().getFullYear();
+  return (
+    <footer className="main-footer">
+      <div className="main-footer__bg" style={{ backgroundImage: 'url(/assets/images/backgrounds/footer-1-1.jpg)' }}></div>
+      <div className="main-footer__shape-one">
+        <img src="/assets/images/shapes/shape-footer2.png" alt="" />
+      </div>
+      <div className="main-footer__shape-two" style={{ backgroundImage: 'url(/assets/images/shapes/shape-footer.png)' }}></div>
 
-    return (
-        <footer className="o-footer">
-            <div className="o-footer__main">
-                <div className="o-footer__body">
-                    <Link className="o-footer__logo" href="/">
-                        <img
-                            width="70%"
-                            height="100%"
-                            alt="Fun Farming Uganda Logo"
-                            src="/img/logo.png"
-                        />
-                    </Link>
-                    <div className="o-footer__locations">
-                        <h4
-                            className="o-footer__label"
-                            style={{ display: 'block' }}
-                        >
-                            Our location
-                        </h4>
-                        <ul className="o-footer__list">
-                            <li className="o-footer__item">
-                                <a
-                                    className="o-footer__link"
-                                    href="https://maps.app.goo.gl/jLuhVcs7ArMqH7Lv5"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Nakaseke (Uganda, Kampala)
-                                </a>
-                            </li>
-                            <li
-                                className="o-footer__item"
-                                style={{ padding: '4px 0' }}
-                            >
-                                &nbsp;
-                            </li>
-                            <h4
-                                className="o-footer__label"
-                                style={{ display: 'block' }}
-                            >
-                                Website Routes
-                            </h4>
-                            <li className="o-footer__item">
-                                <Link className="o-footer__link" href="/">
-                                    Home
-                                </Link>
-                            </li>
-                            <li className="o-footer__item">
-                                <Link
-                                    className="o-footer__link"
-                                    href="/activities"
-                                >
-                                    Activities
-                                </Link>
-                            </li>
-                            <li className="o-footer__item">
-                                <Link className="o-footer__link" href="/about">
-                                    About Us
-                                </Link>
-                            </li>
-                            <li className="o-footer__item">
-                                <Link className="o-footer__link" href="/lounge">
-                                    Farm Lounge
-                                </Link>
-                            </li>
-                            <li className="o-footer__item">
-                                <Link className="o-footer__link" href="/blog">
-                                    Blog
-                                </Link>
-                            </li>
-                            <li className="o-footer__item">
-                                <Link
-                                    className="o-footer__link"
-                                    href="/gallery"
-                                >
-                                    Gallery
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="o-footer__info">
-                        <div className="o-footer__contact">
-                            <ul className="o-footer__list">
-                                <li className="o-footer__item">
-                                    <a
-                                        className="o-footer__link"
-                                        href="tel:+256772826680"
-                                    >
-                                        <i>
-                                            <svg width="15" height="15">
-                                                <use href="/img/icon-phone.svg#phone"></use>
-                                            </svg>
-                                        </i>
-                                        <span>+256 772 826 680</span>
-                                    </a>
-                                </li>
-                                <li className="o-footer__item">
-                                    <a
-                                        className="o-footer__link"
-                                        href="mailto:meddy@funfarminguganda.com"
-                                    >
-                                        <i>
-                                            <svg width="18" height="17">
-                                                <use href="/img/icon-message.svg#message"></use>
-                                            </svg>
-                                        </i>
-                                        <span>meddy@funfarminguganda.com</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <ul className="o-footer__social">
-                            <li className="o-footer__channel linkedin">
-                                <a
-                                    className="o-footer__icon"
-                                    target="_blank"
-                                    title="Linkedin"
-                                    href="https://www.linkedin.com/company/funfarming/"
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg width="22" height="22">
-                                        <use href="/img/social/linkedin.svg#linkedin"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li className="o-footer__channel facebook">
-                                <a
-                                    className="o-footer__icon"
-                                    target="_blank"
-                                    title="Facebook"
-                                    href="https://www.facebook.com/funfarming"
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg width="22" height="22">
-                                        <use href="/img/social/facebook.svg#facebook"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li className="o-footer__channel instagram">
-                                <a
-                                    className="o-footer__icon"
-                                    target="_blank"
-                                    title="Instagram"
-                                    href="https://www.instagram.com/funfarming/"
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg width="22" height="22">
-                                        <use href="/img/social/instagram.svg#instagram"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li className="o-footer__channel youtube">
-                                <a
-                                    className="o-footer__icon"
-                                    target="_blank"
-                                    title="Youtube"
-                                    href="https://www.youtube.com/channel/#"
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg width="22" height="22">
-                                        <use href="/img/social/youtube.svg#youtube"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li className="o-footer__channel tiktok">
-                                <a
-                                    className="o-footer__icon"
-                                    target="_blank"
-                                    title="Tiktok"
-                                    href="https://www.tiktok.com/funfarming"
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg width="22" height="22">
-                                        <use href="/img/social/tiktok.svg#tiktok"></use>
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="o-footer__menu">
-                        <h4 className="o-footer__label">Fun Farming Uganda</h4>
-                        <ul className="o-footer__list">
-                            <li className="o-footer__item">
-                                <Link
-                                    className="o-footer__link"
-                                    href="/references"
-                                >
-                                    Customer Reviews
-                                </Link>
-                            </li>
-                            <li className="o-footer__item">
-                                <Link className="o-footer__link" href="/shop">
-                                    Shop From Our Farm
-                                </Link>
-                            </li>
-                            <li className="o-footer__item">
-                                <Link
-                                    className="o-footer__link"
-                                    href="/contact"
-                                >
-                                    Contact Us
-                                </Link>
-                            </li>
-                            <li
-                                className="o-footer__item"
-                                style={{ padding: '4px 0' }}
-                            >
-                                &nbsp;
-                            </li>
-                            <h3 className="o-footer__label">Support</h3>
-                            <li className="o-footer__item">
-                                <Link className="o-footer__link" href="/faqs">
-                                    Frequently Asked Questions
-                                </Link>
-                            </li>
-                            <li className="o-footer__item">
-                                <Link
-                                    className="o-footer__link"
-                                    href="/support"
-                                >
-                                    Need Support?
-                                </Link>
-                            </li>
-                            <li className="o-footer__item">
-                                <Link
-                                    className="o-footer__link"
-                                    href="/privacy"
-                                >
-                                    Privacy Policy
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
+      <div className="main-footer__top">
+        <div className="container">
+          <div className="row gutter-y-50">
+            <div className="col-md-6 col-lg-4 col-xl-3">
+              <div className="footer-widget footer-widget--about">
+                <Link href="/" className="footer-widget__logo">
+                  <img src="/assets/images/logo-light.png" width="222" alt="Fun Farming Uganda" />
+                </Link>
+                <p className="footer-widget__text">
+                  Fun Farming Uganda is an organic farm engaging in diverse agricultural activities like goat breeding, poultry farming, banana plantation. We serve as a youth agro project educating and involving young individuals in sustainable farming practices.
+                </p>
+                <div className="footer-widget__social-links">
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f" aria-hidden="true"></i><span className="sr-only">Facebook</span></a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter" aria-hidden="true"></i><span className="sr-only">Twitter</span></a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in" aria-hidden="true"></i><span className="sr-only">Linkedin</span></a>
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram" aria-hidden="true"></i><span className="sr-only">Instagram</span></a>
                 </div>
+              </div>
             </div>
-            <div className="o-footer__art">
-                <div className="o-footer__image" />
+
+            <div className="col-md-6 col-lg-4 col-xl-3">
+              <div className="footer-widget footer-widget--links">
+                <h2 className="footer-widget__title">Our Service</h2>
+                <ul className="list-unstyled footer-widget__links">
+                  <li><i className="fas fa-circle"></i><Link href="/services/fertilization">Fertilization Service</Link></li>
+                  <li><i className="fas fa-circle"></i><Link href="/services/pruning-tree-trimming">Pruning Tree Trimming</Link></li>
+                  <li><i className="fas fa-circle"></i><Link href="/services/spring-cleaning">Spring Cleaning Service</Link></li>
+                  <li><i className="fas fa-circle"></i><Link href="/services/leader-landscaping">Leader In Landscaping</Link></li>
+                  <li><i className="fas fa-circle"></i><Link href="/services/market-analysis">Market Analysis Garden</Link></li>
+                  <li><i className="fas fa-circle"></i><Link href="/contact">Contact</Link></li>
+                  <li><i className="fas fa-circle"></i><Link href="/about">About</Link></li>
+                  <li><i className="fas fa-circle"></i><Link href="/faqs">FAQ</Link></li>
+                  <li><i className="fas fa-circle"></i><Link href="/gallery">Gallery</Link></li>
+                  <li><i className="fas fa-circle"></i><Link href="/contact">Maps</Link></li>
+                  <li><i className="fas fa-circle"></i><Link href="/blog">Blog</Link></li>
+                  <li><i className="fas fa-circle"></i><Link href="/services">Services</Link></li>
+                </ul>
+              </div>
             </div>
-            <div className="o-footer__bottom">
-                <div className="o-subfooter">
-                    <div className="o-subfooter__main">
-                        <p className="o-subfooter__copyright" id="currentYear">
-                            &copy; Fun Farming{' '}
-                            <span id="year">{currentYear}</span>
-                        </p>
-                        <div className="o-subfooter__trademark">
-                            <a
-                                className="c-trademark"
-                                href="https://funfarminguganda.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Looking Forward To Your Visit"
-                            >
-                                <span className="c-trademark__text">
-                                    <span>Fun Farming Uganda</span>
-                                    <span
-                                        className="c-trademark__love"
-                                        title="Thanks For Visiting Fun Farming Uganda"
-                                    />
-                                </span>
-                            </a>
-                        </div>
+
+            <div className="col-md-6 col-lg-4 col-xl-2">
+              <div className="footer-widget footer-widget--links-two">
+                <h2 className="footer-widget__title">Quick Link</h2>
+                <ul className="list-unstyled footer-widget__links-two">
+                  <li><Link href="/faqs">What We Do</Link></li>
+                  <li><Link href="/about">About Company</Link></li>
+                  <li><Link href="/team">Team Member</Link></li>
+                  <li><Link href="/gallery">Our Gallery</Link></li>
+                  <li><Link href="/about">Watch Video</Link></li>
+                  <li><Link href="/blog">Latest News</Link></li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="col-md-6 col-lg-4 col-xl-4">
+              <div className="footer-widget footer-widget--post">
+                <h2 className="footer-widget__title">Recent Posts</h2>
+                <ul className="list-unstyled">
+                  <li className="footer-widget--post__item">
+                    <div className="footer-widget--post__img">
+                      <img src="/assets/images/resources/footer-post-1.jpg" alt="post" />
+                      <span>01</span>
                     </div>
-                </div>
+                    <div className="footer-widget--post__content">
+                      <span className="footer-widget--post__date">23 Jun 2024</span>
+                      <h3 className="footer-widget--post__title"><Link href="/blog/details">Sustainable Farming Practices</Link></h3>
+                    </div>
+                  </li>
+                  <li className="footer-widget--post__item">
+                    <div className="footer-widget--post__img">
+                      <img src="/assets/images/resources/footer-post-2.jpg" alt="post" />
+                      <span>02</span>
+                    </div>
+                    <div className="footer-widget--post__content">
+                      <span className="footer-widget--post__date">23 Jun 2024</span>
+                      <h3 className="footer-widget--post__title"><Link href="/blog/details">Sustainable Farming Practices</Link></h3>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </footer>
-    );
+          </div>
+        </div>
+      </div>
+
+      <div className="main-footer__bottom wow fadeInUp" data-wow-delay="00ms">
+        <div className="container">
+          <div className="main-footer__bottom__inner">
+            <p className="main-footer__copyright">
+              &copy; Copyright <span className="dynamic-year">{new Date().getFullYear()}</span> by Fun Farming Uganda.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }
