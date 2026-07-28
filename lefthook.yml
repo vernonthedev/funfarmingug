@@ -8,7 +8,7 @@ pre-commit:
     commands:
         lint:
             glob: '*.{ts,tsx}'
-            run: npx cross-env NODE_OPTIONS="--max-old-space-size=8192" npx eslint {staged_files}
+            run: npx eslint {staged_files}
         format:
             glob: '*.{ts,tsx,json,yaml,yml,md}'
             run: npx prettier --write {staged_files}
@@ -20,4 +20,4 @@ pre-push:
             run: npx commitlint --from HEAD~1 --to HEAD
         lint:
             glob: '*.{ts,tsx}'
-            run: npx cross-env NODE_OPTIONS="--max-old-space-size=8192" npx eslint {staged_files}
+            run: npx eslint {staged_files}
