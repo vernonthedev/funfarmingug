@@ -1,88 +1,273 @@
 import Link from 'next/link';
 
 export default function Footer() {
-  return (
-    <footer className="site-footer">
-      <div className="site-footer__top">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-4 col-lg-4 col-md-6">
-              <div className="footer-widget footer-widget__about">
-                <div className="footer-widget__logo">
-                  <Link href="/">
-                    <img src="/assets/images/logo-light.png" alt="Fun Farming Uganda" width="223" />
-                  </Link>
+    const currentYear = new Date().getFullYear();
+
+    return (
+        <footer className="o-footer">
+            <div className="o-footer__main">
+                <div className="o-footer__body">
+                    <Link className="o-footer__logo" href="/">
+                        <img
+                            width="70%"
+                            height="100%"
+                            alt="Fun Farming Uganda Logo"
+                            src="/img/logo.png"
+                        />
+                    </Link>
+                    <div className="o-footer__locations">
+                        <h4
+                            className="o-footer__label"
+                            style={{ display: 'block' }}
+                        >
+                            Our location
+                        </h4>
+                        <ul className="o-footer__list">
+                            <li className="o-footer__item">
+                                <a
+                                    className="o-footer__link"
+                                    href="https://maps.app.goo.gl/jLuhVcs7ArMqH7Lv5"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Nakaseke (Uganda, Kampala)
+                                </a>
+                            </li>
+                            <li
+                                className="o-footer__item"
+                                style={{ padding: '4px 0' }}
+                            >
+                                &nbsp;
+                            </li>
+                            <h4
+                                className="o-footer__label"
+                                style={{ display: 'block' }}
+                            >
+                                Website Routes
+                            </h4>
+                            <li className="o-footer__item">
+                                <Link className="o-footer__link" href="/">
+                                    Home
+                                </Link>
+                            </li>
+                            <li className="o-footer__item">
+                                <Link
+                                    className="o-footer__link"
+                                    href="/activities"
+                                >
+                                    Activities
+                                </Link>
+                            </li>
+                            <li className="o-footer__item">
+                                <Link className="o-footer__link" href="/about">
+                                    About Us
+                                </Link>
+                            </li>
+                            <li className="o-footer__item">
+                                <Link className="o-footer__link" href="/lounge">
+                                    Farm Lounge
+                                </Link>
+                            </li>
+                            <li className="o-footer__item">
+                                <Link className="o-footer__link" href="/blog">
+                                    Blog
+                                </Link>
+                            </li>
+                            <li className="o-footer__item">
+                                <Link
+                                    className="o-footer__link"
+                                    href="/gallery"
+                                >
+                                    Gallery
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="o-footer__info">
+                        <div className="o-footer__contact">
+                            <ul className="o-footer__list">
+                                <li className="o-footer__item">
+                                    <a
+                                        className="o-footer__link"
+                                        href="tel:+256772826680"
+                                    >
+                                        <i>
+                                            <svg width="15" height="15">
+                                                <use href="/img/icon-phone.svg#phone"></use>
+                                            </svg>
+                                        </i>
+                                        <span>+256 772 826 680</span>
+                                    </a>
+                                </li>
+                                <li className="o-footer__item">
+                                    <a
+                                        className="o-footer__link"
+                                        href="mailto:meddy@funfarminguganda.com"
+                                    >
+                                        <i>
+                                            <svg width="18" height="17">
+                                                <use href="/img/icon-message.svg#message"></use>
+                                            </svg>
+                                        </i>
+                                        <span>meddy@funfarminguganda.com</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul className="o-footer__social">
+                            <li className="o-footer__channel linkedin">
+                                <a
+                                    className="o-footer__icon"
+                                    target="_blank"
+                                    title="Linkedin"
+                                    href="https://www.linkedin.com/company/funfarming/"
+                                    rel="noopener noreferrer"
+                                >
+                                    <svg width="22" height="22">
+                                        <use href="/img/social/linkedin.svg#linkedin"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li className="o-footer__channel facebook">
+                                <a
+                                    className="o-footer__icon"
+                                    target="_blank"
+                                    title="Facebook"
+                                    href="https://www.facebook.com/funfarming"
+                                    rel="noopener noreferrer"
+                                >
+                                    <svg width="22" height="22">
+                                        <use href="/img/social/facebook.svg#facebook"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li className="o-footer__channel instagram">
+                                <a
+                                    className="o-footer__icon"
+                                    target="_blank"
+                                    title="Instagram"
+                                    href="https://www.instagram.com/funfarming/"
+                                    rel="noopener noreferrer"
+                                >
+                                    <svg width="22" height="22">
+                                        <use href="/img/social/instagram.svg#instagram"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li className="o-footer__channel youtube">
+                                <a
+                                    className="o-footer__icon"
+                                    target="_blank"
+                                    title="Youtube"
+                                    href="https://www.youtube.com/channel/#"
+                                    rel="noopener noreferrer"
+                                >
+                                    <svg width="22" height="22">
+                                        <use href="/img/social/youtube.svg#youtube"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li className="o-footer__channel tiktok">
+                                <a
+                                    className="o-footer__icon"
+                                    target="_blank"
+                                    title="Tiktok"
+                                    href="https://www.tiktok.com/funfarming"
+                                    rel="noopener noreferrer"
+                                >
+                                    <svg width="22" height="22">
+                                        <use href="/img/social/tiktok.svg#tiktok"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="o-footer__menu">
+                        <h4 className="o-footer__label">Fun Farming Uganda</h4>
+                        <ul className="o-footer__list">
+                            <li className="o-footer__item">
+                                <Link
+                                    className="o-footer__link"
+                                    href="/references"
+                                >
+                                    Customer Reviews
+                                </Link>
+                            </li>
+                            <li className="o-footer__item">
+                                <Link className="o-footer__link" href="/shop">
+                                    Shop From Our Farm
+                                </Link>
+                            </li>
+                            <li className="o-footer__item">
+                                <Link
+                                    className="o-footer__link"
+                                    href="/contact"
+                                >
+                                    Contact Us
+                                </Link>
+                            </li>
+                            <li
+                                className="o-footer__item"
+                                style={{ padding: '4px 0' }}
+                            >
+                                &nbsp;
+                            </li>
+                            <h3 className="o-footer__label">Support</h3>
+                            <li className="o-footer__item">
+                                <Link className="o-footer__link" href="/faqs">
+                                    Frequently Asked Questions
+                                </Link>
+                            </li>
+                            <li className="o-footer__item">
+                                <Link
+                                    className="o-footer__link"
+                                    href="/support"
+                                >
+                                    Need Support?
+                                </Link>
+                            </li>
+                            <li className="o-footer__item">
+                                <Link
+                                    className="o-footer__link"
+                                    href="/privacy"
+                                >
+                                    Privacy Policy
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <p className="footer-widget__text">We are a professional gardening and landscaping company dedicated to transforming outdoor spaces into beautiful, functional environments.</p>
-                <div className="footer-widget__social">
-                  <a href="https://facebook.com"><i className="fab fa-facebook-f"></i></a>
-                  <a href="https://twitter.com"><i className="fab fa-twitter"></i></a>
-                  <a href="https://linkedin.com"><i className="fab fa-linkedin-in"></i></a>
-                  <a href="https://instagram.com"><i className="fab fa-instagram"></i></a>
+            </div>
+            <div className="o-footer__art">
+                <div className="o-footer__image" />
+            </div>
+            <div className="o-footer__bottom">
+                <div className="o-subfooter">
+                    <div className="o-subfooter__main">
+                        <p className="o-subfooter__copyright" id="currentYear">
+                            &copy; Fun Farming{' '}
+                            <span id="year">{currentYear}</span>
+                        </p>
+                        <div className="o-subfooter__trademark">
+                            <a
+                                className="c-trademark"
+                                href="https://funfarminguganda.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Looking Forward To Your Visit"
+                            >
+                                <span className="c-trademark__text">
+                                    <span>Fun Farming Uganda</span>
+                                    <span
+                                        className="c-trademark__love"
+                                        title="Thanks For Visiting Fun Farming Uganda"
+                                    />
+                                </span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div className="col-xl-2 col-lg-2 col-md-6">
-              <div className="footer-widget footer-widget__links">
-                <h4 className="footer-widget__title">Quick Links</h4>
-                <ul className="footer-widget__list">
-                  <li><Link href="/">Home</Link></li>
-                  <li><Link href="/about">About Us</Link></li>
-                  <li><Link href="/services">Services</Link></li>
-                  <li><Link href="/projects">Projects</Link></li>
-                  <li><Link href="/contact">Contact</Link></li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-3 col-md-6">
-              <div className="footer-widget footer-widget__links">
-                <h4 className="footer-widget__title">Our Services</h4>
-                <ul className="footer-widget__list">
-                  <li><Link href="/services/fertilization">Fertilization Service</Link></li>
-                  <li><Link href="/services/pruning-tree-trimming">Pruning & Tree Trimming</Link></li>
-                  <li><Link href="/services/spring-cleaning">Spring Cleaning</Link></li>
-                  <li><Link href="/services/leader-landscaping">Leader In Landscaping</Link></li>
-                  <li><Link href="/services/market-analysis">Market Analysis Garden</Link></li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-3 col-md-6">
-              <div className="footer-widget footer-widget__contact">
-                <h4 className="footer-widget__title">Contact Us</h4>
-                <ul className="footer-widget__contact-list">
-                  <li>
-                    <i className="icon-pin"></i>
-                    <p>Kampala, Uganda</p>
-                  </li>
-                  <li>
-                    <i className="icon-phone"></i>
-                    <p><a href="tel:+256700000000">+256 700 000 000</a></p>
-                  </li>
-                  <li>
-                    <i className="icon-email"></i>
-                    <p><a href="mailto:info@funfarminguganda.com">info@funfarminguganda.com</a></p>
-                  </li>
-                  <li>
-                    <i className="icon-clock"></i>
-                    <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="site-footer__bottom">
-        <div className="container">
-          <div className="site-footer__bottom-inner">
-            <p className="site-footer__copyright">&copy; 2024 Fun Farming Uganda. All Rights Reserved.</p>
-            <div className="site-footer__bottom-links">
-              <Link href="/privacy">Privacy Policy</Link>
-              <Link href="/terms">Terms of Service</Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
+        </footer>
+    );
 }
