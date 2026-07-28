@@ -11,7 +11,7 @@ export default function ContactPage() {
         message: '',
         subscribe: false,
     });
-    const [errors, setErrors] = useState({});
+    const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitSuccess, setSubmitSuccess] = useState(false);
 
@@ -19,8 +19,11 @@ export default function ContactPage() {
         return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value, type, checked } = e.target;
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
+        const target = e.target as HTMLInputElement;
+        const { name, value, type, checked } = target;
         setFormData((prev) => ({
             ...prev,
             [name]: type === 'checkbox' ? checked : value,
@@ -32,7 +35,7 @@ export default function ContactPage() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const newErrors = {};
+        const newErrors: Record<string, string> = {};
 
         if (!formData.name.trim()) newErrors.name = 'Name is required';
         if (!formData.email.trim()) newErrors.email = 'Email is required';
@@ -606,13 +609,13 @@ export default function ContactPage() {
                                         >
                                             <div className="email c-form-element js-form-element">
                                                 <label
-                                                    required
                                                     className="c-form-element__label"
                                                     htmlFor="email"
                                                 >
                                                     E-mail
                                                 </label>
                                                 <input
+                                                    required
                                                     className="c-input c-input--clean"
                                                     type="email"
                                                     id="email"
@@ -688,7 +691,6 @@ export default function ContactPage() {
                                         >
                                             <div className="form_message c-form-element js-form-element">
                                                 <label
-                                                    required
                                                     className="c-form-element__label"
                                                     htmlFor="form_message"
                                                 >
@@ -786,7 +788,7 @@ export default function ContactPage() {
                                         width="800"
                                         height="450"
                                         style={{ border: 0 }}
-                                        allowFullScreen=""
+                                        allowFullScreen
                                         loading="lazy"
                                         referrerPolicy="no-referrer-when-downgrade"
                                     ></iframe>

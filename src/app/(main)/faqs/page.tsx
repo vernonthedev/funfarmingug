@@ -188,11 +188,11 @@ const faqs = [
 
 export default function FAQsPage() {
     const [activeCategory, setActiveCategory] = useState(2);
-    const [openFaq, setOpenFaq] = useState(null);
+    const [openFaq, setOpenFaq] = useState<number | null>(null);
 
     const filteredFaqs = faqs.filter((faq) => faq.category === activeCategory);
 
-    const toggleFaq = (index) => {
+    const toggleFaq = (index: number) => {
         setOpenFaq(openFaq === index ? null : index);
     };
 

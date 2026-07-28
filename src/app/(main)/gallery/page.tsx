@@ -39,9 +39,9 @@ const galleryImages = [
 
 export default function GalleryPage() {
     const [modalOpen, setModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
 
-    const openModal = (image) => {
+    const openModal = (image: { src: string; alt: string }) => {
         setSelectedImage(image);
         setModalOpen(true);
     };
