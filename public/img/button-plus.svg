@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+  <defs>
+    <mask id="a" x="0" y="0" width="21" height="21" maskUnits="userSpaceOnUse">
+      <path d="M9.5 0A9.5 9.5 0 110 9.5 9.5 9.5 0 019.5 0zm0 2A7.5 7.5 0 1017 9.5 7.5 7.5 0 009.5 2zm-.8 8.3H5.3V8.7h3.4V4.9h1.6v3.8h3.4v1.6h-3.4v3.8H8.7z" fill="#fff" fill-rule="evenodd" transform="translate(1 1)"/>
+    </mask>
+  </defs>
+  <g mask="url(#a)">
+    <path fill="#bccf27" d="M0 0h21v21H0z"/>
+  </g>
+</svg>
