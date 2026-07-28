@@ -289,8 +289,8 @@ export default function HomePage() {
                                 <br />
                                 Whether it&apos;s picking fresh produce, joining
                                 workshops, or participating in seasonal events,
-                                there&apos;s always something for everyone at Fun
-                                Farming Uganda.
+                                there&apos;s always something for everyone at
+                                Fun Farming Uganda.
                             </p>
                             <Link
                                 className="c-button c-button--big"
