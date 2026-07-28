@@ -217,8 +217,8 @@ export default function HomePage() {
                             </h2>
                             <ul className="u-list--clean">
                                 <li className="o-certainties__list-item">
-                                    Everyone&apos;s invited to a day of laughter and
-                                    connection.
+                                    Everyone&apos;s invited to a day of laughter
+                                    and connection.
                                 </li>
                                 <li className="o-certainties__list-item">
                                     Unleash the fun with well-organized
@@ -238,8 +238,8 @@ export default function HomePage() {
                                     extra mile to make your day extraordinary.
                                 </li>
                                 <li className="o-certainties__list-item">
-                                    Any hiccups along the way? We&apos;ve got you
-                                    covered – we&apos;re here to fix them!
+                                    Any hiccups along the way? We&apos;ve got
+                                    you covered – we&apos;re here to fix them!
                                 </li>
                                 <li className="o-certainties__list-item">
                                     Delight in the flavors of local Ugandan farm
@@ -287,9 +287,9 @@ export default function HomePage() {
                                 diverse range of activities.
                                 <br />
                                 <br />
-                                Whether it's picking fresh produce, joining
+                                Whether it&apos;s picking fresh produce, joining
                                 workshops, or participating in seasonal events,
-                                there's always something for everyone at Fun
+                                there&apos;s always something for everyone at Fun
                                 Farming Uganda.
                             </p>
                             <Link
@@ -518,7 +518,7 @@ export default function HomePage() {
                             <p>
                                 Choose your ideal activity, add catering, check
                                 availability, instantly generate your quote, or
-                                book online. We'll get the exact number of
+                                book online. We&apos;ll get the exact number of
                                 participants later.
                             </p>
                         </div>
@@ -548,7 +548,7 @@ export default function HomePage() {
                                 data-kal="slide-up"
                             >
                                 <h2 className="">
-                                    There's always a FarmFun near you
+                                    There&apos;s always a FarmFun near you
                                 </h2>
                                 <p>
                                     Fun Farm is located in Uganda and deeply
@@ -629,7 +629,7 @@ export default function HomePage() {
                                             <li>Farm Activities</li>
                                             <li>Farm Visits</li>
                                             <li>Farm Kitchen</li>
-                                            <li>Kids' Parties</li>
+                                            <li>Kids&apos; Parties</li>
                                             <li>Farm Camps</li>
                                         </ul>
                                     </div>
