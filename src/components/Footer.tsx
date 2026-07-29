@@ -28,7 +28,7 @@ export default function Footer() {
                             <div className="footer-widget footer-widget--about">
                                 <Link href="/" className="footer-widget__logo">
                                     <img
-                                        src="/assets/images/logo-light.png"
+                                        src="logo.png"
                                         width="222"
                                         alt="Fun Farming Uganda"
                                     />
