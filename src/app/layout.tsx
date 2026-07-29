@@ -37,7 +37,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="custom-cursor">
+        <html lang="en" className="custom-cursor" suppressHydrationWarning>
             <head>
                 <link
                     rel="apple-touch-icon"
@@ -72,7 +72,7 @@ export default function RootLayout({
                     crossOrigin="anonymous"
                 />
                 <link
-                    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700&family=Open+Sans:wght@400;600;700;800&display=swap"
+                    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Lateef:wght@400;600;700;800&display=swap"
                     rel="stylesheet"
                 />
 

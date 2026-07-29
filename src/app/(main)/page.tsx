@@ -5,39 +5,51 @@ import { useEffect } from 'react';
 
 export default function HomePage() {
     useEffect(() => {
-        if (
-            typeof window !== 'undefined' &&
-            (window as any).jQuery &&
-            (window as any).jQuery.fn?.owlCarousel
-        ) {
-            const $ = (window as any).jQuery;
-            try {
-                $('.main-slider-one__carousel').owlCarousel({
-                    items: 1,
-                    loop: true,
-                    autoplay: true,
-                    autoplayTimeout: 7000,
-                    smartSpeed: 1000,
-                    dots: false,
-                    nav: true,
-                    navText: [
-                        '<span class="icon-arrow-left"></span>',
-                        '<span class="icon-arrow-right"></span>',
-                    ],
-                });
-                $('.client-carousel .owl-carousel').owlCarousel({
-                    loop: true,
-                    autoplay: true,
-                    autoplayTimeout: 4000,
-                    smartSpeed: 700,
-                    dots: false,
-                    nav: false,
-                    margin: 80,
-                    items: 4,
-                });
-            } catch (e) {
-                // owl not ready yet
+        function initCarousels() {
+            if (
+                typeof window !== 'undefined' &&
+                (window as any).jQuery &&
+                (window as any).jQuery.fn?.owlCarousel
+            ) {
+                const $ = (window as any).jQuery;
+                try {
+                    $('.main-slider-one__carousel').owlCarousel({
+                        items: 1,
+                        loop: true,
+                        autoplay: true,
+                        autoplayTimeout: 7000,
+                        smartSpeed: 1000,
+                        dots: false,
+                        nav: true,
+                        navText: [
+                            '<span class="icon-arrow-left"></span>',
+                            '<span class="icon-arrow-right"></span>',
+                        ],
+                    });
+                    $('.client-carousel .owl-carousel').owlCarousel({
+                        loop: true,
+                        autoplay: true,
+                        autoplayTimeout: 4000,
+                        smartSpeed: 700,
+                        dots: false,
+                        nav: false,
+                        margin: 80,
+                        items: 4,
+                    });
+                } catch (e) {
+                    // owl not ready yet
+                }
+                return true;
             }
+            return false;
+        }
+
+        if (!initCarousels()) {
+            const timer = setInterval(() => {
+                if (initCarousels()) clearInterval(timer);
+            }, 200);
+            setTimeout(() => clearInterval(timer), 10000);
+            return () => clearInterval(timer);
         }
     }, []);
 
@@ -51,7 +63,7 @@ export default function HomePage() {
                             className="main-slider-one__bg"
                             style={{
                                 backgroundImage:
-                                    "url(/webimgs/fun-farm-bg.jpg)",
+                                    'url(/webimgs/fun-farm-image.jpg)',
                             }}
                         ></div>
                         <div className="main-slider-one__shape">
@@ -178,8 +190,8 @@ export default function HomePage() {
                                     <li>
                                         <i className="fa fa-check-circle"></i>
                                         <span>
-                                            Any hiccups along the way? We&apos;ve
-                                            got you covered
+                                            Any hiccups along the way?
+                                            We&apos;ve got you covered
                                         </span>
                                     </li>
                                     <li>
@@ -239,10 +251,7 @@ export default function HomePage() {
                                     events, there&apos;s always something for
                                     everyone at Fun Farming Uganda.
                                 </p>
-                                <Link
-                                    href="/activities"
-                                    className="garlon-btn"
-                                >
+                                <Link href="/activities" className="garlon-btn">
                                     View Activities
                                 </Link>
                             </div>
@@ -317,40 +326,22 @@ export default function HomePage() {
                     </div>
                     <div className="owl-carousel owl-theme">
                         <div className="client-carousel__one__item">
-                            <img
-                                src="/img/partners/fao-logo.svg"
-                                alt="FAO"
-                            />
+                            <img src="/img/partners/fao-logo.svg" alt="FAO" />
                         </div>
                         <div className="client-carousel__one__item">
-                            <img
-                                src="/img/partners/unfe.png"
-                                alt="UNFE"
-                            />
+                            <img src="/img/partners/unfe.png" alt="UNFE" />
                         </div>
                         <div className="client-carousel__one__item">
-                            <img
-                                src="/img/partners/unyfa.png"
-                                alt="UNYFA"
-                            />
+                            <img src="/img/partners/unyfa.png" alt="UNYFA" />
                         </div>
                         <div className="client-carousel__one__item">
-                            <img
-                                src="/img/partners/fao-logo.svg"
-                                alt="FAO"
-                            />
+                            <img src="/img/partners/fao-logo.svg" alt="FAO" />
                         </div>
                         <div className="client-carousel__one__item">
-                            <img
-                                src="/img/partners/unfe.png"
-                                alt="UNFE"
-                            />
+                            <img src="/img/partners/unfe.png" alt="UNFE" />
                         </div>
                         <div className="client-carousel__one__item">
-                            <img
-                                src="/img/partners/unyfa.png"
-                                alt="UNYFA"
-                            />
+                            <img src="/img/partners/unyfa.png" alt="UNYFA" />
                         </div>
                     </div>
                 </div>

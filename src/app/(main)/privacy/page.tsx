@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 
 export default function PrivacyPage() {
@@ -123,9 +121,8 @@ export default function PrivacyPage() {
                                         service
                                     </li>
                                     <li>
-                                        To manage your bookings and
-                                        reservations for farm activities and
-                                        events
+                                        To manage your bookings and reservations
+                                        for farm activities and events
                                     </li>
                                     <li>
                                         To contact you with administrative
@@ -154,9 +151,9 @@ export default function PrivacyPage() {
                                 <h2>Data Retention</h2>
                                 <p>
                                     Fun Farming Uganda will retain your Personal
-                                    Data only for as long as is necessary for the
-                                    purposes set out in this Privacy Policy. We
-                                    will retain and use your Personal Data to
+                                    Data only for as long as is necessary for
+                                    the purposes set out in this Privacy Policy.
+                                    We will retain and use your Personal Data to
                                     the extent necessary to comply with our
                                     legal obligations (for example, if we are
                                     required to retain your data to comply with
@@ -298,9 +295,7 @@ export default function PrivacyPage() {
                                     us:
                                 </p>
                                 <ul>
-                                    <li>
-                                        Email: info@funfarminguganda.com
-                                    </li>
+                                    <li>Email: info@funfarminguganda.com</li>
                                     <li>
                                         Phone: +256 772 826 680 / +256 700 462
                                         477
