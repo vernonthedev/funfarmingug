@@ -135,8 +135,7 @@ export default function RootLayout({
             <body className="custom-cursor">
                 <div className="custom-cursor__cursor"></div>
                 <div className="custom-cursor__cursor-two"></div>
-
-                <div className="preloader">
+<div className="preloader">
                     <div
                         className="preloader__image"
                         style={{
@@ -145,6 +144,25 @@ export default function RootLayout({
                         }}
                     ></div>
                 </div>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+    function hidePreloader() {
+        var preloader = document.querySelector('.preloader');
+        if (preloader) {
+            preloader.style.opacity = '0';
+            preloader.style.transition = 'opacity 0.5s ease';
+            setTimeout(function() { preloader.style.display = 'none'; }, 500);
+        }
+    }
+    if (document.readyState === 'complete') {
+        hidePreloader();
+    } else {
+        window.addEventListener('load', hidePreloader);
+    }
+`,
+                    }}
+                />
                 <a
                     href="#html"
                     data-target="html"
