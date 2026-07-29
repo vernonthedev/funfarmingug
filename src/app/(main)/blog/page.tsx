@@ -60,10 +60,7 @@ export default function BlogPage() {
             <PageHeader
                 title="Blog"
                 bgImage="/assets/images/backgrounds/page-header-bg-1-1.jpg"
-                breadcrumbs={[
-                    { label: 'Home', href: '/' },
-                    { label: 'Blog' },
-                ]}
+                breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Blog' }]}
             />
 
             <section className="blog-one section-space">
@@ -82,10 +79,7 @@ export default function BlogPage() {
                     </div>
                     <div className="row gutter-y-30">
                         {posts.map((post, index) => (
-                            <div
-                                key={index}
-                                className="col-lg-4 col-md-6"
-                            >
+                            <div key={index} className="col-lg-4 col-md-6">
                                 <div className="blog-card">
                                     <div className="blog-card__image">
                                         <img

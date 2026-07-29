@@ -1,31 +1,19 @@
 'use client';
 
 import Link from 'next/link';
+import PageHeader from '@/components/sections/PageHeader';
 
 export default function AboutPage() {
     return (
         <>
-            {/* Page Header */}
-            <section className="page-header">
-                <div
-                    className="page-header__bg"
-                    style={{
-                        backgroundImage:
-                            "url(/assets/images/backgrounds/page-header-bg-1-1.jpg)",
-                    }}
-                ></div>
-                <div className="container">
-                    <h2 className="page-header__title">About Us</h2>
-                    <ul className="garlon-breadcrumb list-unstyled">
-                        <li>
-                            <Link href="/">Home</Link>
-                        </li>
-                        <li>
-                            <span>About</span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            <PageHeader
+                title="About Us"
+                bgImage="/assets/images/backgrounds/page-header-bg-1-1.jpg"
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'About' },
+                ]}
+            />
 
             {/* About Section */}
             <section className="about-one">
