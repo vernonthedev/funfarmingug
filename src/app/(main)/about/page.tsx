@@ -9,10 +9,7 @@ export default function AboutPage() {
             <PageHeader
                 title="About Us"
                 bgImage="/assets/images/backgrounds/page-header-bg-1-1.jpg"
-                breadcrumbs={[
-                    { label: 'Home', href: '/' },
-                    { label: 'About' },
-                ]}
+                breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About' }]}
             />
 
             {/* About Section */}
@@ -191,12 +188,12 @@ export default function AboutPage() {
                                     They are farm ambassadors who are
                                     particularly keen to provide people with a
                                     positive experience of their milk. In the
-                                    open fields, between the cows or deep in
-                                    the straw. Together with their farmtastic
-                                    herd of game supervisors, they have only one
-                                    goal in mind: strengthening the herd and
-                                    organic spirit as well as embracing the agro
-                                    tourism concept in Uganda.
+                                    open fields, between the cows or deep in the
+                                    straw. Together with their farmtastic herd
+                                    of game supervisors, they have only one goal
+                                    in mind: strengthening the herd and organic
+                                    spirit as well as embracing the agro tourism
+                                    concept in Uganda.
                                 </p>
                             </div>
                         </div>
@@ -235,10 +232,7 @@ export default function AboutPage() {
                                     will remember this team event for a long
                                     time.
                                 </p>
-                                <Link
-                                    href="/farmfood"
-                                    className="garlon-btn"
-                                >
+                                <Link href="/farmfood" className="garlon-btn">
                                     See Animal Breeds
                                 </Link>
                             </div>
