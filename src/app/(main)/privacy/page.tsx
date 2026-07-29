@@ -5,229 +5,306 @@ import Link from 'next/link';
 export default function PrivacyPage() {
     return (
         <>
-            <div
-                className="page-header"
-                style={{
-                    backgroundImage:
-                        'url(/assets/images/backgrounds/page-header.jpg)',
-                }}
-            >
+            <section className="page-header">
+                <div
+                    className="page-header__bg"
+                    style={{
+                        backgroundImage:
+                            'url(/assets/images/backgrounds/page-header-bg-1-1.jpg)',
+                    }}
+                ></div>
                 <div className="container">
-                    <div className="page-header__inner">
-                        <h2 className="page-header__title">Privacy Policy</h2>
-                        <ul className="thm-breadcrumb list-unstyled">
-                            <li>
-                                <Link href="/">Home</Link>
-                            </li>
-                            <li>
-                                <span aria-hidden="true">/</span>
-                            </li>
-                            <li>Privacy Policy</li>
-                        </ul>
-                    </div>
+                    <h2 className="page-header__title">Privacy Policy</h2>
+                    <ul className="garlon-breadcrumb list-unstyled">
+                        <li>
+                            <Link href="/">Home</Link>
+                        </li>
+                        <li>
+                            <span>Privacy</span>
+                        </li>
+                    </ul>
                 </div>
-                <div className="page-header__shape-1">
-                    <img
-                        src="/assets/images/shapes/page-header-1-1.png"
-                        alt="shape"
-                    />
-                </div>
-                <div className="page-header__shape-2">
-                    <img
-                        src="/assets/images/shapes/page-header-1-2.png"
-                        alt="shape"
-                    />
-                </div>
-            </div>
+            </section>
 
-            <section className="policy-section section-space">
+            <section className="blog-details section-space">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-lg-10">
-                            <div className="policy-content">
-                                <h2>Privacy Policy</h2>
-                                <p className="policy-last-updated">
-                                    Last updated: January 1, 2024
+                            <div className="blog-details__text">
+                                <p>
+                                    <strong>
+                                        Fun Farming Uganda (&ldquo;we&rdquo;,
+                                        &ldquo;us&rdquo;, or &ldquo;our&rdquo;)
+                                        operates the website
+                                        funfarminguganda.com and provides
+                                        agro-tourism, team-building, and farm
+                                        experience services. This page informs
+                                        you of our policies regarding the
+                                        collection, use, and disclosure of
+                                        personal data when you use our services.
+                                    </strong>
                                 </p>
 
-                                <h3>1. Introduction</h3>
+                                <h2>Definitions</h2>
                                 <p>
-                                    Welcome to Fun Farming Uganda. We are
-                                    committed to protecting your personal
-                                    information and your right to privacy. This
-                                    Privacy Policy explains how we collect, use,
-                                    disclose, and safeguard your information
-                                    when you visit our website, use our
-                                    services, or interact with us in any way.
+                                    <strong>Personal Data</strong> means data
+                                    about a living individual who can be
+                                    identified from those data (or from those
+                                    and other information either in our
+                                    possession or likely to come into our
+                                    possession).
+                                </p>
+                                <p>
+                                    <strong>Usage Data</strong> is data
+                                    collected automatically, either generated by
+                                    the use of the service or from the service
+                                    infrastructure itself (for example, the
+                                    duration of a page visit).
+                                </p>
+                                <p>
+                                    <strong>Cookies</strong> are small pieces of
+                                    data stored on your device (computer or
+                                    mobile device).
+                                </p>
+                                <p>
+                                    <strong>Data Controller</strong> means Fun
+                                    Farming Uganda, which determines the
+                                    purposes and means of the processing of your
+                                    personal data.
                                 </p>
 
-                                <h3>2. Information We Collect</h3>
+                                <h2>Data Collection</h2>
                                 <p>
-                                    We may collect the following types of
-                                    information:
+                                    We collect several different types of
+                                    information for various purposes to provide
+                                    and improve our service to you.
+                                </p>
+                                <p>
+                                    <strong>Personal Data:</strong> While using
+                                    our service, we may ask you to provide us
+                                    with certain personally identifiable
+                                    information that can be used to contact or
+                                    identify you. This includes your name, email
+                                    address, phone number, physical address, and
+                                    booking preferences.
+                                </p>
+                                <p>
+                                    <strong>Usage Data:</strong> We may also
+                                    collect information on how the service is
+                                    accessed and used. This Usage Data may
+                                    include your computer&apos;s Internet
+                                    Protocol address (IP address), browser type,
+                                    browser version, the pages of our service
+                                    that you visit, the time and date of your
+                                    visit, the time spent on those pages, unique
+                                    device identifiers, and other diagnostic
+                                    data.
+                                </p>
+                                <p>
+                                    <strong>Cookies:</strong> We use cookies and
+                                    similar tracking technologies to track the
+                                    activity on our service and hold certain
+                                    information. Cookies are files with a small
+                                    amount of data which may include an
+                                    anonymous unique identifier. You can
+                                    instruct your browser to refuse all cookies
+                                    or to indicate when a cookie is being sent.
+                                </p>
+
+                                <h2>Use of Data</h2>
+                                <p>
+                                    Fun Farming Uganda uses the collected data
+                                    for the following purposes:
                                 </p>
                                 <ul>
                                     <li>
-                                        <strong>Personal Information:</strong>{' '}
-                                        Name, email address, phone number,
-                                        mailing address, and other information
-                                        you provide when contacting us, booking
-                                        activities, or subscribing to our
-                                        newsletter.
+                                        To provide and maintain our service,
+                                        including to monitor the usage of our
+                                        service
                                     </li>
                                     <li>
-                                        <strong>Booking Information:</strong>{' '}
-                                        Details about your activity preferences,
-                                        group size, dates, dietary requirements,
-                                        and special requests.
+                                        To manage your bookings and
+                                        reservations for farm activities and
+                                        events
                                     </li>
                                     <li>
-                                        <strong>Payment Information:</strong>{' '}
-                                        When you make payments for bookings, we
-                                        process payment details through secure
-                                        third-party payment processors.
-                                    </li>
-                                    <li>
-                                        <strong>Technical Data:</strong> IP
-                                        address, browser type, operating system,
-                                        referring URLs, pages visited, and time
-                                        spent on pages.
-                                    </li>
-                                    <li>
-                                        <strong>Cookies and Tracking:</strong>{' '}
-                                        We use cookies and similar technologies
-                                        to enhance your experience and analyze
-                                        site traffic.
-                                    </li>
-                                </ul>
-
-                                <h3>3. How We Use Your Information</h3>
-                                <p>
-                                    We use your information for the following
-                                    purposes:
-                                </p>
-                                <ul>
-                                    <li>
-                                        To process and manage your bookings and
-                                        inquiries
-                                    </li>
-                                    <li>
-                                        To send you confirmations, reminders,
-                                        and updates about your activities
+                                        To contact you with administrative
+                                        information, booking confirmations, and
+                                        updates
                                     </li>
                                     <li>
                                         To provide customer support and respond
-                                        to your questions
+                                        to your inquiries
                                     </li>
                                     <li>
-                                        To send marketing communications (with
-                                        your consent)
+                                        To gather analysis or valuable
+                                        information so that we can improve our
+                                        service
                                     </li>
                                     <li>
-                                        To improve our website, services, and
-                                        user experience
+                                        To detect, prevent, and address
+                                        technical issues
                                     </li>
                                     <li>
-                                        To comply with legal obligations and
-                                        protect our rights
+                                        To send you marketing communications
+                                        (with your consent)
                                     </li>
                                 </ul>
 
-                                <h3>4. Data Sharing and Disclosure</h3>
+                                <h2>Data Retention</h2>
                                 <p>
-                                    We do not sell your personal information. We
-                                    may share your information with:
+                                    Fun Farming Uganda will retain your Personal
+                                    Data only for as long as is necessary for the
+                                    purposes set out in this Privacy Policy. We
+                                    will retain and use your Personal Data to
+                                    the extent necessary to comply with our
+                                    legal obligations (for example, if we are
+                                    required to retain your data to comply with
+                                    applicable laws), resolve disputes, and
+                                    enforce our legal agreements and policies.
+                                </p>
+                                <p>
+                                    Usage Data is generally retained for a
+                                    shorter period, except when this data is
+                                    used to strengthen the security or to
+                                    improve the functionality of our service, or
+                                    we are legally obligated to retain this data
+                                    for longer periods.
+                                </p>
+
+                                <h2>Data Transfer</h2>
+                                <p>
+                                    Your information, including Personal Data,
+                                    may be transferred to and maintained on
+                                    computers located outside of your state,
+                                    province, country, or other governmental
+                                    jurisdiction where the data protection laws
+                                    may differ from those of your jurisdiction.
+                                </p>
+                                <p>
+                                    Your consent to this Privacy Policy followed
+                                    by your submission of such information
+                                    represents your agreement to that transfer.
+                                    Fun Farming Uganda will take all steps
+                                    reasonably necessary to ensure that your
+                                    data is treated securely and in accordance
+                                    with this Privacy Policy.
+                                </p>
+
+                                <h2>Data Deletion</h2>
+                                <p>
+                                    You have the right to delete or request that
+                                    we assist in deleting the Personal Data that
+                                    we have collected about you. You may request
+                                    deletion of your data at any time by
+                                    contacting us using the information below.
+                                </p>
+                                <p>
+                                    Please note that we may need to retain
+                                    certain information when we have a legal
+                                    obligation or lawful basis to do so.
+                                </p>
+
+                                <h2>Disclosure of Data</h2>
+                                <p>
+                                    Fun Farming Uganda may disclose your
+                                    Personal Data in the good faith belief that
+                                    such action is necessary to:
                                 </p>
                                 <ul>
+                                    <li>To comply with a legal obligation</li>
                                     <li>
-                                        <strong>Service Providers:</strong>{' '}
-                                        Payment processors, email service
-                                        providers, and analytics partners who
-                                        help us operate our business.
+                                        To protect and defend the rights or
+                                        property of Fun Farming Uganda
                                     </li>
                                     <li>
-                                        <strong>Legal Requirements:</strong>{' '}
-                                        When required by law, court order, or
-                                        government regulation.
+                                        To prevent or investigate possible
+                                        wrongdoing in connection with the
+                                        service
                                     </li>
                                     <li>
-                                        <strong>Business Transfers:</strong> In
-                                        the event of a merger, acquisition, or
-                                        sale of assets.
+                                        To protect the personal safety of users
+                                        of the service or the public
                                     </li>
+                                    <li>To protect against legal liability</li>
                                 </ul>
 
-                                <h3>5. Data Security</h3>
+                                <h2>Security of Data</h2>
                                 <p>
-                                    We implement appropriate technical and
+                                    The security of your data is important to
+                                    us. We implement appropriate technical and
                                     organizational measures to protect your
                                     personal information against unauthorized
                                     access, alteration, disclosure, or
                                     destruction. However, no method of
-                                    transmission over the Internet or electronic
-                                    storage is 100% secure.
+                                    transmission over the Internet or method of
+                                    electronic storage is 100% secure. While we
+                                    strive to use commercially acceptable means
+                                    to protect your Personal Data, we cannot
+                                    guarantee its absolute security.
                                 </p>
 
-                                <h3>6. Your Rights</h3>
+                                <h2>Children&apos;s Privacy</h2>
                                 <p>
-                                    Depending on your location, you may have the
-                                    following rights:
-                                </p>
-                                <ul>
-                                    <li>Access your personal data</li>
-                                    <li>
-                                        Request correction of inaccurate data
-                                    </li>
-                                    <li>Request deletion of your data</li>
-                                    <li>Restrict or object to processing</li>
-                                    <li>Data portability</li>
-                                    <li>Withdraw consent at any time</li>
-                                </ul>
-
-                                <h3>7. Cookies</h3>
-                                <p>
-                                    Our website uses cookies to enhance your
-                                    experience. You can control cookie
-                                    preferences through your browser settings.
-                                    Disabling cookies may affect certain
-                                    functionality of our site.
+                                    Our service is intended for use by
+                                    individuals who are at least 18 years of
+                                    age. We do not knowingly collect personally
+                                    identifiable information from anyone under
+                                    the age of 18. If you are a parent or
+                                    guardian and you are aware that your child
+                                    has provided us with Personal Data, please
+                                    contact us. If we become aware that we have
+                                    collected Personal Data from children
+                                    without verification of parental consent, we
+                                    take steps to remove that information from
+                                    our servers.
                                 </p>
 
-                                <h3>8. Third-Party Links</h3>
+                                <h2>Links to Other Sites</h2>
                                 <p>
-                                    Our website may contain links to third-party
-                                    websites. We are not responsible for the
-                                    privacy practices of those sites. Please
-                                    review their privacy policies before
-                                    providing any personal information.
+                                    Our service may contain links to other sites
+                                    that are not operated by us. If you click on
+                                    a third-party link, you will be directed to
+                                    that third party&apos;s site. We strongly
+                                    advise you to review the Privacy Policy of
+                                    every site you visit.
+                                </p>
+                                <p>
+                                    We have no control over and assume no
+                                    responsibility for the content, privacy
+                                    policies, or practices of any third-party
+                                    sites or services.
                                 </p>
 
-                                <h3>9. Children's Privacy</h3>
+                                <h2>Changes to This Privacy Policy</h2>
                                 <p>
-                                    Our services are not directed to children
-                                    under 13. We do not knowingly collect
-                                    personal information from children. If you
-                                    believe we have collected information from a
-                                    child, please contact us immediately.
-                                </p>
-
-                                <h3>10. Changes to This Policy</h3>
-                                <p>
-                                    We may update this Privacy Policy from time
+                                    We may update our Privacy Policy from time
                                     to time. We will notify you of any changes
-                                    by posting the new policy on this page with
-                                    an updated effective date.
+                                    by posting the new Privacy Policy on this
+                                    page and updating the &ldquo;effective
+                                    date&rdquo; at the top of this page.
+                                </p>
+                                <p>
+                                    You are advised to review this Privacy
+                                    Policy periodically for any changes. Changes
+                                    to this Privacy Policy are effective when
+                                    they are posted on this page.
                                 </p>
 
-                                <h3>11. Contact Us</h3>
+                                <h2>Contact Information</h2>
                                 <p>
-                                    If you have questions about this Privacy
+                                    If you have any questions about this Privacy
                                     Policy or our data practices, please contact
                                     us:
                                 </p>
                                 <ul>
-                                    <li>Email: privacy@funfarminguganda.com</li>
-                                    <li>Phone: +256 772 826 680</li>
+                                    <li>
+                                        Email: info@funfarminguganda.com
+                                    </li>
+                                    <li>
+                                        Phone: +256 772 826 680 / +256 700 462
+                                        477
+                                    </li>
                                     <li>
                                         Address: Butalangu Town Council,
                                         Nakaseke District, Uganda
@@ -238,43 +315,6 @@ export default function PrivacyPage() {
                     </div>
                 </div>
             </section>
-
-            <style jsx>{`
-                .policy-content {
-                    line-height: 1.8;
-                }
-                .policy-last-updated {
-                    color: #6b7280;
-                    font-style: italic;
-                    margin-bottom: 30px;
-                    padding-bottom: 20px;
-                    border-bottom: 1px solid #e5e7eb;
-                }
-                .policy-content h2 {
-                    font-size: 2rem;
-                    color: #1f292d;
-                    margin: 40px 0 20px;
-                }
-                .policy-content h3 {
-                    font-size: 1.3rem;
-                    color: #2d6a4f;
-                    margin: 30px 0 15px;
-                }
-                .policy-content p {
-                    margin-bottom: 15px;
-                    color: #374151;
-                }
-                .policy-content ul {
-                    margin: 15px 0 15px 20px;
-                }
-                .policy-content li {
-                    margin-bottom: 8px;
-                    color: #374151;
-                }
-                .policy-content strong {
-                    color: #1f292d;
-                }
-            `}</style>
         </>
     );
 }

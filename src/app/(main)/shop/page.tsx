@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-export default function SupportPage() {
+export default function ShopPage() {
     return (
         <>
             <section className="page-header">
@@ -14,13 +14,13 @@ export default function SupportPage() {
                     }}
                 ></div>
                 <div className="container">
-                    <h2 className="page-header__title">Support</h2>
+                    <h2 className="page-header__title">Shop</h2>
                     <ul className="garlon-breadcrumb list-unstyled">
                         <li>
                             <Link href="/">Home</Link>
                         </li>
                         <li>
-                            <span>Support</span>
+                            <span>Shop</span>
                         </li>
                     </ul>
                 </div>
@@ -37,32 +37,93 @@ export default function SupportPage() {
                                             src="/assets/images/shapes/sec-title-s-1-1.png"
                                             alt="shape"
                                         />
-                                        SUPPORT
+                                        MERCHANDISE
                                     </p>
                                     <h3 className="sec-title__title">
-                                        Contact Fun Farming Support Team
+                                        Shop Opening Soon!
                                     </h3>
                                 </div>
                                 <p className="about-one__content__text">
-                                    We are here to help you with any questions
-                                    about your booking, activities, or farm
-                                    visits. Our support team is available during
-                                    business hours and we typically respond to
-                                    all inquiries within 24 hours.
+                                    We are preparing our online shop where you
+                                    will be able to purchase Fun Farming Uganda
+                                    merchandise, farm products, and souvenirs.
+                                    Stay tuned!
                                 </p>
                             </div>
                         </div>
                     </div>
 
                     <div className="row mt-60">
-                        <div className="col-lg-4 col-md-6">
-                            <div className="testimonials-one__item">
+                        <div className="col-xl-12">
+                            <div className="product__item">
+                                <div
+                                    className="text-center"
+                                    style={{
+                                        padding: '80px 30px',
+                                        background: '#F2F2F2',
+                                        borderRadius: '20px',
+                                    }}
+                                >
+                                    <span
+                                        style={{
+                                            fontSize: '80px',
+                                            color: '#209D2F',
+                                        }}
+                                    >
+                                        <i className="fa fa-shopping-cart"></i>
+                                    </span>
+                                    <h3
+                                        style={{
+                                            margin: '30px 0 20px',
+                                            fontSize: '32px',
+                                        }}
+                                    >
+                                        Coming Soon
+                                    </h3>
+                                    <p
+                                        style={{
+                                            color: '#636363',
+                                            fontSize: '16px',
+                                            maxWidth: '500px',
+                                            margin: '0 auto',
+                                        }}
+                                    >
+                                        We are working on bringing you
+                                        exclusive Fun Farming Uganda
+                                        merchandise including t-shirts, caps,
+                                        souvenirs, fresh farm produce, and more.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="row mt-60">
+                        <div className="col-xl-12">
+                            <div className="about-one__content">
+                                <h4 className="text-center">
+                                    For Inquiries
+                                </h4>
+                                <p className="about-one__content__text text-center">
+                                    For merchandise and product inquiries,
+                                    please contact us:
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="row mt-30">
+                        <div className="col-lg-6">
+                            <div
+                                className="testimonials-one__item"
+                                style={{ marginBottom: '30px' }}
+                            >
                                 <div className="testimonials-one__item__inner">
                                     <div className="testimonials-one__icon">
                                         <i className="fa fa-phone"></i>
                                     </div>
                                     <h4 className="testimonials-one__thumb__name">
-                                        Phone
+                                        Call Us
                                     </h4>
                                     <div className="testimonials-one__thumb">
                                         <a
@@ -75,40 +136,21 @@ export default function SupportPage() {
                                         >
                                             +256 772 826 680
                                         </a>
-                                        <a
-                                            href="tel:+256700462477"
-                                            className="testimonials-one__thumb__text"
-                                            style={{
-                                                color: '#209D2F',
-                                                fontWeight: 600,
-                                                display: 'block',
-                                            }}
-                                        >
-                                            +256 700 462 477
-                                        </a>
-                                        <a
-                                            href="tel:+256770640220"
-                                            className="testimonials-one__thumb__text"
-                                            style={{
-                                                color: '#209D2F',
-                                                fontWeight: 600,
-                                                display: 'block',
-                                            }}
-                                        >
-                                            +256 770 640 220
-                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="testimonials-one__item">
+                        <div className="col-lg-6">
+                            <div
+                                className="testimonials-one__item"
+                                style={{ marginBottom: '30px' }}
+                            >
                                 <div className="testimonials-one__item__inner">
                                     <div className="testimonials-one__icon">
                                         <i className="fa fa-envelope"></i>
                                     </div>
                                     <h4 className="testimonials-one__thumb__name">
-                                        Email
+                                        Email Us
                                     </h4>
                                     <div className="testimonials-one__thumb">
                                         <a
@@ -124,34 +166,6 @@ export default function SupportPage() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="testimonials-one__item">
-                                <div className="testimonials-one__item__inner">
-                                    <div className="testimonials-one__icon">
-                                        <i className="fa fa-map-marker"></i>
-                                    </div>
-                                    <h4 className="testimonials-one__thumb__name">
-                                        Visit Us
-                                    </h4>
-                                    <div className="testimonials-one__thumb">
-                                        <span className="testimonials-one__thumb__text">
-                                            Butalangu Town Council,
-                                        </span>
-                                        <span className="testimonials-one__thumb__text">
-                                            Nakaseke District, Uganda
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="row mt-60">
-                        <div className="col-xl-12 text-center">
-                            <Link href="/contact" className="garlon-btn">
-                                Send Us a Message
-                            </Link>
                         </div>
                     </div>
                 </div>
