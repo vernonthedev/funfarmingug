@@ -12,16 +12,6 @@ export default function MainLayout({
             <Header />
             <main>{children}</main>
             <Footer />
-            <a
-                href="#"
-                data-target="html"
-                className="scroll-to-target scroll-to-top"
-            >
-                <span className="scroll-to-top__text">back top</span>
-                <span className="scroll-to-top__wrapper">
-                    <span className="scroll-to-top__inner"></span>
-                </span>
-            </a>
             <ClientLayoutScripts />
         </>
     );

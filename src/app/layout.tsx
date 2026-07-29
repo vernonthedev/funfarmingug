@@ -136,6 +136,25 @@ export default function RootLayout({
                 <div className="custom-cursor__cursor"></div>
                 <div className="custom-cursor__cursor-two"></div>
 
+                <div className="preloader">
+                    <div
+                        className="preloader__image"
+                        style={{
+                            backgroundImage:
+                                'url(/assets/images/loader.png)',
+                        }}
+                    ></div>
+                </div>
+                <a
+                    href="#html"
+                    data-target="html"
+                    className="scroll-to-target scroll-to-top"
+                >
+                    <span className="scroll-to-top__text">back top</span>
+                    <span className="scroll-to-top__wrapper">
+                        <span className="scroll-to-top__inner"></span>
+                    </span>
+                </a>
                 <div className="page-wrapper">{children}</div>
             </body>
         </html>
