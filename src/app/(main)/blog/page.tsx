@@ -2,8 +2,6 @@
 
 import Link from 'next/link';
 import PageHeader from '@/components/sections/PageHeader';
-import SectionTitle from '@/components/sections/SectionTitle';
-import CtaSection from '@/components/sections/CtaSection';
 
 const posts = [
     {
@@ -62,65 +60,88 @@ export default function BlogPage() {
             <PageHeader
                 title="Blog"
                 bgImage="/assets/images/backgrounds/page-header-bg-1-1.jpg"
-                breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Blog' }]}
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Blog' },
+                ]}
             />
 
-            <section className="blog-grid section-space">
+            <section className="blog-one section-space">
                 <div className="container">
-                    <SectionTitle
-                        tagline="LATEST NEWS"
-                        title="Our Latest Stories"
-                    />
+                    <div className="sec-title text-center">
+                        <div className="sec-title__tagline">
+                            <img
+                                src="/assets/images/shapes/sec-title-s-1-1.png"
+                                alt="shape"
+                            />
+                            OUR RECENT NEWS
+                        </div>
+                        <h3 className="sec-title__title">
+                            Latest Articles From Our Blog
+                        </h3>
+                    </div>
                     <div className="row gutter-y-30">
                         {posts.map((post, index) => (
-                            <div key={index} className="col-lg-4 col-md-6">
-                                <article className="blog-grid__item">
-                                    <div className="blog-grid__item__image">
+                            <div
+                                key={index}
+                                className="col-lg-4 col-md-6"
+                            >
+                                <div className="blog-card">
+                                    <div className="blog-card__image">
                                         <img
                                             src="/img/gallery/funfarm_n13.png"
                                             alt={post.title}
                                             loading="lazy"
                                         />
-                                    </div>
-                                    <div className="blog-grid__item__content">
-                                        <div className="blog-grid__item__meta">
-                                            <span className="blog-grid__item__category">
+                                        <Link
+                                            href={`/blog/${post.slug}`}
+                                            className="blog-card__image__link"
+                                        >
+                                            <i className="icon-leaf-1"></i>
+                                            <span className="sr-only">
                                                 {post.category}
                                             </span>
-                                            <span className="blog-grid__item__date">
+                                        </Link>
+                                    </div>
+                                    <div className="blog-card__content">
+                                        <ul className="list-unstyled blog-card__meta">
+                                            <li>
+                                                <i className="fas fa-user"></i>{' '}
+                                                By:{' '}
+                                                <Link href="/blog">Admin</Link>
+                                            </li>
+                                            <li>
+                                                <i className="fas fa-calendar-alt"></i>
                                                 {post.date}
-                                            </span>
-                                        </div>
-                                        <h3 className="blog-grid__item__title">
+                                            </li>
+                                        </ul>
+                                        <h3 className="blog-card__title">
                                             <Link href={`/blog/${post.slug}`}>
                                                 {post.title}
                                             </Link>
                                         </h3>
-                                        <p className="blog-grid__item__excerpt">
-                                            {post.excerpt}
-                                        </p>
                                         <Link
                                             href={`/blog/${post.slug}`}
-                                            className="blog-grid__item__link"
+                                            className="blog-card__btn"
                                         >
-                                            Read More{' '}
-                                            <i className="icon-angle-small-right"></i>
+                                            <div className="blog-card__btn__comment">
+                                                <i className="icon-comment"></i>
+                                                03
+                                            </div>
+                                            <div className="blog-card__btn__link">
+                                                READ MORE{' '}
+                                                <span className="blog-card__btn__link__icon">
+                                                    <i className="icon-arrow"></i>
+                                                </span>
+                                            </div>
                                         </Link>
                                     </div>
-                                </article>
+                                </div>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
-
-            <CtaSection
-                icon="icon-leaf"
-                title="Stay Updated"
-                text="Subscribe to our newsletter for the latest farm news, events, and special offers."
-                buttonLabel="Subscribe Now"
-                buttonHref="/contact"
-            />
         </>
     );
 }
