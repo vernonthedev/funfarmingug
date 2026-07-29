@@ -14,7 +14,11 @@ export default function ServiceCardTwo({
     delay?: string;
 }) {
     return (
-        <div className="service-card-two wow fadeInUp" data-wow-duration="1500ms" data-wow-delay={delay || '100ms'}>
+        <div
+            className="service-card-two wow fadeInUp"
+            data-wow-duration="1500ms"
+            data-wow-delay={delay || '100ms'}
+        >
             <div className="service-card-two__inner">
                 <div className="service-card-two__icon">
                     <i className={icon}></i>
@@ -33,14 +37,22 @@ export default function ServiceCardTwo({
                 </div>
                 {href && (
                     <div className="service-card-two__btn">
-                        <a href={href}><i className="icon-arrow-up-right2"></i></a>
+                        <a href={href}>
+                            <i className="icon-arrow-up-right2"></i>
+                        </a>
                     </div>
                 )}
                 <div className="service-card-two__shape-one">
-                    <img src="/assets/images/shapes/leaf-left-1.png" alt="icon" />
+                    <img
+                        src="/assets/images/shapes/leaf-left-1.png"
+                        alt="icon"
+                    />
                 </div>
                 <div className="service-card-two__shape-two">
-                    <img src="/assets/images/shapes/leaf-right-2.png" alt="icon" />
+                    <img
+                        src="/assets/images/shapes/leaf-right-2.png"
+                        alt="icon"
+                    />
                 </div>
             </div>
         </div>

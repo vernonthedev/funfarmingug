@@ -20,13 +20,21 @@ export default function PageHeader({
                 }}
             ></div>
             <div className="page-header__shape-one">
-                <img src="/assets/images/shapes/page-header-shape-1-1.png" alt="shape" />
+                <img
+                    src="/assets/images/shapes/page-header-shape-1-1.png"
+                    alt="shape"
+                />
             </div>
             <div className="page-header__shape-two">
-                <img src="/assets/images/shapes/page-header-shape-1-2.png" alt="shape" />
+                <img
+                    src="/assets/images/shapes/page-header-shape-1-2.png"
+                    alt="shape"
+                />
             </div>
             <div className="container">
-                <h2 className="page-header__title bw-split-in-right">{title}</h2>
+                <h2 className="page-header__title bw-split-in-right">
+                    {title}
+                </h2>
                 <ul className="garlon-breadcrumb list-unstyled">
                     {breadcrumbs.map((crumb, i) => (
                         <li key={i}>

@@ -14,8 +14,18 @@ export default function CtaSection({
     buttonHref: string;
 }) {
     return (
-        <section className="cta-one wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-            <div className="cta-one__bg" style={{ backgroundImage: 'url(/assets/images/backgrounds/cta-1-1.jpg)' }}></div>
+        <section
+            className="cta-one wow fadeInUp"
+            data-wow-duration="1500ms"
+            data-wow-delay="100ms"
+        >
+            <div
+                className="cta-one__bg"
+                style={{
+                    backgroundImage:
+                        'url(/assets/images/backgrounds/cta-1-1.jpg)',
+                }}
+            ></div>
             <div className="container">
                 <div className="cta-one__inner">
                     <div className="cta-one__call">
