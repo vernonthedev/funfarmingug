@@ -135,12 +135,11 @@ export default function RootLayout({
             <body className="custom-cursor">
                 <div className="custom-cursor__cursor"></div>
                 <div className="custom-cursor__cursor-two"></div>
-<div className="preloader">
+                <div className="preloader">
                     <div
                         className="preloader__image"
                         style={{
-                            backgroundImage:
-                                'url(/assets/images/loader.png)',
+                            backgroundImage: 'url(/assets/images/loader.png)',
                         }}
                     ></div>
                 </div>
