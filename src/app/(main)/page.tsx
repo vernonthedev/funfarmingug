@@ -85,18 +85,22 @@ export default function HomePage() {
                                                         <i className="icon-agriculture"></i>
                                                     </div>
                                                     <h5 className="main-slider-one__sub-title">
-                                                        Agro Tourism & Team Building
+                                                        Agro Tourism & Team
+                                                        Building
                                                     </h5>
                                                 </div>
                                                 <h2 className="main-slider-one__title">
-                                                    Welcome to Fun Farming Uganda
+                                                    Welcome to Fun Farming
+                                                    Uganda
                                                     <br />
-                                                    Where Agriculture Meets Adventure!
+                                                    Where Agriculture Meets
+                                                    Adventure!
                                                 </h2>
                                                 <p className="main-slider-one__text">
-                                                    Experience the joy of farm life with our
-                                                    unique team-building activities and agro
-                                                    tourism experiences.
+                                                    Experience the joy of farm
+                                                    life with our unique
+                                                    team-building activities and
+                                                    agro tourism experiences.
                                                 </p>
                                                 <div className="main-slider-one__btn">
                                                     <Link
@@ -141,10 +145,13 @@ export default function HomePage() {
                                     </div>
                                     <div className="feature-one__item__content">
                                         <h4 className="feature-one__item__title">
-                                            <Link href="/activities">Board Games</Link>
+                                            <Link href="/activities">
+                                                Board Games
+                                            </Link>
                                         </h4>
                                         <p className="feature-one__item__text">
-                                            Engage in exciting board games that blend fun with strategy.
+                                            Engage in exciting board games that
+                                            blend fun with strategy.
                                         </p>
                                     </div>
                                     <div className="feature-one__item__icon-bottom">
@@ -159,10 +166,13 @@ export default function HomePage() {
                                     </div>
                                     <div className="feature-one__item__content">
                                         <h4 className="feature-one__item__title">
-                                            <Link href="/activities">Farm Kitchen</Link>
+                                            <Link href="/activities">
+                                                Farm Kitchen
+                                            </Link>
                                         </h4>
                                         <p className="feature-one__item__text">
-                                            Experience the taste of Uganda with our farm-to-table kitchen.
+                                            Experience the taste of Uganda with
+                                            our farm-to-table kitchen.
                                         </p>
                                     </div>
                                     <div className="feature-one__item__icon-bottom">
@@ -177,10 +187,14 @@ export default function HomePage() {
                                     </div>
                                     <div className="feature-one__item__content">
                                         <h4 className="feature-one__item__title">
-                                            <Link href="/activities">Team Building</Link>
+                                            <Link href="/activities">
+                                                Team Building
+                                            </Link>
                                         </h4>
                                         <p className="feature-one__item__text">
-                                            Strengthen your herd with our farm-tastic team-building activities.
+                                            Strengthen your herd with our
+                                            farm-tastic team-building
+                                            activities.
                                         </p>
                                     </div>
                                     <div className="feature-one__item__icon-bottom">
@@ -195,10 +209,13 @@ export default function HomePage() {
                                     </div>
                                     <div className="feature-one__item__content">
                                         <h4 className="feature-one__item__title">
-                                            <Link href="/activities">Farm Lounge</Link>
+                                            <Link href="/activities">
+                                                Farm Lounge
+                                            </Link>
                                         </h4>
                                         <p className="feature-one__item__text">
-                                            Unwind in our serene Farm Lounge after a day of activities.
+                                            Unwind in our serene Farm Lounge
+                                            after a day of activities.
                                         </p>
                                     </div>
                                     <div className="feature-one__item__icon-bottom">
@@ -282,15 +299,15 @@ export default function HomePage() {
                                         <li>
                                             <i className="fa fa-check-circle"></i>
                                             <span>
-                                                Everyone&apos;s invited to a day of
-                                                laughter and connection
+                                                Everyone&apos;s invited to a day
+                                                of laughter and connection
                                             </span>
                                         </li>
                                         <li>
                                             <i className="fa fa-check-circle"></i>
                                             <span>
-                                                Unleash the fun with well-organized
-                                                activities
+                                                Unleash the fun with
+                                                well-organized activities
                                             </span>
                                         </li>
                                         <li>
@@ -303,8 +320,8 @@ export default function HomePage() {
                                         <li>
                                             <i className="fa fa-check-circle"></i>
                                             <span>
-                                                Our exciting activities are led by
-                                                passionate staff
+                                                Our exciting activities are led
+                                                by passionate staff
                                             </span>
                                         </li>
                                     </ul>
@@ -332,10 +349,7 @@ export default function HomePage() {
                     </div>
                 </div>
                 <div className="about-one__shape">
-                    <img
-                        src="/assets/images/shapes/plant-1.png"
-                        alt="shape"
-                    />
+                    <img src="/assets/images/shapes/plant-1.png" alt="shape" />
                 </div>
             </section>
 
@@ -364,10 +378,13 @@ export default function HomePage() {
                                     </div>
                                     <div className="service-card-two__content">
                                         <h4 className="service-card-two__title">
-                                            <Link href="/activities">Board Games</Link>
+                                            <Link href="/activities">
+                                                Board Games
+                                            </Link>
                                         </h4>
                                         <p className="service-card-two__text">
-                                            Engage in exciting board games that blend fun with strategy.
+                                            Engage in exciting board games that
+                                            blend fun with strategy.
                                         </p>
                                     </div>
                                     <div className="service-card-two__thumb">
@@ -392,10 +409,13 @@ export default function HomePage() {
                                     </div>
                                     <div className="service-card-two__content">
                                         <h4 className="service-card-two__title">
-                                            <Link href="/activities">Farm Kitchen</Link>
+                                            <Link href="/activities">
+                                                Farm Kitchen
+                                            </Link>
                                         </h4>
                                         <p className="service-card-two__text">
-                                            Experience the taste of Uganda with our farm-to-table kitchen.
+                                            Experience the taste of Uganda with
+                                            our farm-to-table kitchen.
                                         </p>
                                     </div>
                                     <div className="service-card-two__thumb">
@@ -420,10 +440,14 @@ export default function HomePage() {
                                     </div>
                                     <div className="service-card-two__content">
                                         <h4 className="service-card-two__title">
-                                            <Link href="/activities">Team Building</Link>
+                                            <Link href="/activities">
+                                                Team Building
+                                            </Link>
                                         </h4>
                                         <p className="service-card-two__text">
-                                            Strengthen your herd with our farm-tastic team-building activities.
+                                            Strengthen your herd with our
+                                            farm-tastic team-building
+                                            activities.
                                         </p>
                                     </div>
                                     <div className="service-card-two__thumb">
@@ -448,10 +472,13 @@ export default function HomePage() {
                                     </div>
                                     <div className="service-card-two__content">
                                         <h4 className="service-card-two__title">
-                                            <Link href="/activities">Farm Lounge</Link>
+                                            <Link href="/activities">
+                                                Farm Lounge
+                                            </Link>
                                         </h4>
                                         <p className="service-card-two__text">
-                                            Unwind in our serene Farm Lounge after a day of activities.
+                                            Unwind in our serene Farm Lounge
+                                            after a day of activities.
                                         </p>
                                     </div>
                                     <div className="service-card-two__thumb">
@@ -509,7 +536,8 @@ export default function HomePage() {
                                             Schedule a Call
                                         </h4>
                                         <p className="why-choose-one__box__text">
-                                            Book a consultation with David for your team-building event.
+                                            Book a consultation with David for
+                                            your team-building event.
                                         </p>
                                     </div>
                                 </div>
@@ -746,13 +774,14 @@ export default function HomePage() {
                                     </h3>
                                 </div>
                                 <p>
-                                    Fun Farm is located in Uganda and deeply rooted
-                                    in the Butalangu province, Nakaseke District.
-                                    Who rules the roost at each of the farms? Our
-                                    dairy cows! While they watch the hilarious
-                                    antics of you and your cow-leagues or friends,
-                                    our Chief Executive Farmers and game leaders
-                                    provide you with a farmtastic day.
+                                    Fun Farm is located in Uganda and deeply
+                                    rooted in the Butalangu province, Nakaseke
+                                    District. Who rules the roost at each of the
+                                    farms? Our dairy cows! While they watch the
+                                    hilarious antics of you and your cow-leagues
+                                    or friends, our Chief Executive Farmers and
+                                    game leaders provide you with a farmtastic
+                                    day.
                                 </p>
                                 <Link href="/contact" className="garlon-btn">
                                     Discover this location
