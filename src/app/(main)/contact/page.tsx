@@ -215,7 +215,10 @@ export default function ContactPage() {
                                     <img
                                         src="/webimgs/fun-farm-image.jpg"
                                         alt="Fun Farming Uganda"
-                                        style={{ width: '100%', borderRadius: '12px' }}
+                                        style={{
+                                            width: '100%',
+                                            borderRadius: '12px',
+                                        }}
                                     />
                                 </div>
                                 <div className="contact-one__thumb__shape">

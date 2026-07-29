@@ -8,12 +8,9 @@ const navItems = [
     { label: 'About Us', href: '/about' },
     { label: 'Activities', href: '/activities' },
     { label: 'Farm Lounge', href: '/lounge' },
-    { label: 'FarmFood', href: '/farmfood' },
-    { label: 'Blog', href: '/blog' },
     { label: 'Gallery', href: '/gallery' },
     { label: 'Contact', href: '/contact' },
     { label: 'FAQ', href: '/faq' },
-    { label: 'References', href: '/references' },
 ];
 
 export default function Header() {
