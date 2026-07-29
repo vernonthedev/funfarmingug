@@ -4,7 +4,7 @@ export default function AboutSection({
     tagline,
     title,
     children,
-    reversed,
+    reversed = false,
     videoUrl,
 }: {
     image?: string;
@@ -15,14 +15,13 @@ export default function AboutSection({
     reversed?: boolean;
     videoUrl?: string;
 }) {
-    const cols = image ? 'col-lg-6' : 'col-lg-12';
     return (
         <section className="about-one section-space">
             <div className="container">
                 <div className="row gutter-y-30 align-items-center">
                     {!reversed && image && (
-                        <div className={cols}>
-                            <div className="about-one__thumb">
+                        <div className="col-lg-6">
+                            <div className="about-one__thumb wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
                                 <div className="about-one__thumb__item">
                                     <img src={image} alt={typeof title === 'string' ? title : tagline} />
                                 </div>
@@ -45,7 +44,7 @@ export default function AboutSection({
                             </div>
                         </div>
                     )}
-                    <div className={image ? cols : cols}>
+                    <div className={image ? 'col-lg-6' : 'col-lg-12'}>
                         <div className="about-one__content">
                             <div className="sec-title text-start">
                                 <div className="sec-title__tagline bw-split-in-up-fast">
@@ -58,13 +57,16 @@ export default function AboutSection({
                         </div>
                     </div>
                     {reversed && image && (
-                        <div className={cols}>
-                            <div className="about-one__thumb__item">
+                        <div className="col-lg-6">
+                            <div className="about-one__thumb__item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
                                 <img src={image} alt={typeof title === 'string' ? title : tagline} />
                             </div>
                         </div>
                     )}
                 </div>
+            </div>
+            <div className="about-one__shape">
+                <img src="/assets/images/shapes/plant-1.png" alt="shape" />
             </div>
         </section>
     );

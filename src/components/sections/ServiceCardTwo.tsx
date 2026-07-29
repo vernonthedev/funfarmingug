@@ -22,6 +22,7 @@ export default function ServiceCardTwo({
                 {image && (
                     <div className="service-card-two__thumb">
                         <img src={image} alt={title} />
+                        <img src={image} alt={title} />
                     </div>
                 )}
                 <div className="service-card-two__content">

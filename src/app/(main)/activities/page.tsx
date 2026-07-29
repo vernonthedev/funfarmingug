@@ -64,7 +64,7 @@ export default function ActivitiesPage() {
                 <div className="container">
                     <div className="row gutter-y-30 align-items-center">
                         <div className="col-lg-6">
-                            <div className="about-one__thumb__item">
+                            <div className="about-one__thumb__item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
                                 <img src="/img/home/team-building2.jpg" alt="Team building at Fun Farming Uganda" />
                             </div>
                         </div>
@@ -133,7 +133,7 @@ export default function ActivitiesPage() {
                             </div>
                         </div>
                         <div className="col-lg-6">
-                            <div className="about-one__thumb__item">
+                            <div className="about-one__thumb__item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
                                 <img src="/webimgs/fun-farm-image.jpg" alt="Tourists from Germany at Fun Farming Uganda" />
                             </div>
                         </div>

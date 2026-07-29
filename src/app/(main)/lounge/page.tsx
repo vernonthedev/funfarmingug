@@ -21,7 +21,7 @@ export default function LoungePage() {
                 <div className="container">
                     <div className="row gutter-y-30 align-items-center">
                         <div className="col-lg-6">
-                            <div className="about-one__thumb">
+                            <div className="about-one__thumb wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
                                 <div className="about-one__thumb__item">
                                     <img src="/webimgs/fun-farm-image.jpg" alt="Farm Lounge at Fun Farming Uganda" />
                                 </div>
