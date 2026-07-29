@@ -9,10 +9,7 @@ export default function AboutPage() {
             <PageHeader
                 title="About Us"
                 bgImage="/assets/images/backgrounds/page-header-bg-1-1.jpg"
-                breadcrumbs={[
-                    { label: 'Home', href: '/' },
-                    { label: 'About' },
-                ]}
+                breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About' }]}
             />
 
             <section className="about-one section-space">
@@ -67,11 +64,12 @@ export default function AboutPage() {
                                 </div>
                                 <p className="about-one__content__text">
                                     Fun Farming Uganda is a unique agro-tourism
-                                    destination where agriculture meets adventure.
-                                    Located in the heart of Nakaseke District,
-                                    Butalangu province, we offer an unforgettable
-                                    farm experience that combines education, team
-                                    building, and the beauty of Ugandan rural life.
+                                    destination where agriculture meets
+                                    adventure. Located in the heart of Nakaseke
+                                    District, Butalangu province, we offer an
+                                    unforgettable farm experience that combines
+                                    education, team building, and the beauty of
+                                    Ugandan rural life.
                                 </p>
                                 <div className="about-one__list-box">
                                     <div className="about-one__list__icon">
@@ -131,10 +129,7 @@ export default function AboutPage() {
                     </div>
                 </div>
                 <div className="about-one__shape">
-                    <img
-                        src="/assets/images/shapes/plant-1.png"
-                        alt="shape"
-                    />
+                    <img src="/assets/images/shapes/plant-1.png" alt="shape" />
                 </div>
             </section>
 
@@ -204,10 +199,7 @@ export default function AboutPage() {
                                     are presented with a fun mix of thinking and
                                     doing to strengthen team spirit.
                                 </p>
-                                <Link
-                                    href="/farmfood"
-                                    className="garlon-btn"
-                                >
+                                <Link href="/farmfood" className="garlon-btn">
                                     See Animal Breeds
                                 </Link>
                             </div>
@@ -226,8 +218,8 @@ export default function AboutPage() {
 
             <div className="container text-center mt-30">
                 <p className="about-one__content__text">
-                    <strong>Make your bookings today</strong> and experience
-                    the farm adventure of a lifetime!
+                    <strong>Make your bookings today</strong> and experience the
+                    farm adventure of a lifetime!
                 </p>
             </div>
 
