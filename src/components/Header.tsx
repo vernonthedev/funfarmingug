@@ -110,7 +110,7 @@ export default function Header() {
                                 <div className="main-header__logo">
                                     <Link href="/">
                                         <img
-                                            src="/assets/images/logo-dark.png"
+                                            src="logo.png"
                                             alt="Fun Farming Uganda"
                                             width="223"
                                         />
