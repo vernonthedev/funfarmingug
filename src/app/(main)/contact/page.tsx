@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import PageHeader from '@/components/sections/PageHeader';
-import CtaSection from '@/components/sections/CtaSection';
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
@@ -81,10 +80,10 @@ export default function ContactPage() {
                             <div className="modal-footer">
                                 <button
                                     type="button"
-                                    className="garlon-btn"
+                                    className="btn-home6"
                                     onClick={() => setSubmitSuccess(false)}
                                 >
-                                    <span>Got it</span>
+                                    Got it
                                 </button>
                             </div>
                         </div>
@@ -94,72 +93,99 @@ export default function ContactPage() {
 
             <PageHeader
                 title="Contact Us"
-                bgImage="/assets/images/backgrounds/page-header-bg-1-1.jpg"
+                bgImage="/assets/img/hero/about-us-inr-herothumb.png"
                 breadcrumbs={[
                     { label: 'Home', href: '/' },
                     { label: 'Contact' },
                 ]}
             />
 
-            <section className="contact-one contact-one--two section-space">
+            <div className="vl-contact2-area sp1">
                 <div className="container">
-                    <div className="row gutter-y-30">
-                        <div className="col-lg-6">
-                            <div className="contact-one__top">
-                                <div className="sec-title text-left">
-                                    <div className="sec-title__tagline">
-                                        <img
-                                            src="/assets/images/shapes/sec-title-s-1-1.png"
-                                            alt="shape"
-                                        />
-                                        GET IN TOUCH
-                                    </div>
-                                    <h3 className="sec-title__title">
-                                        Have Questions? We&apos;re Here to Help
-                                    </h3>
+                    <div className="row">
+                        <div className="col-xl-5 col-lg-6">
+                            <div className="vl-contact2-info">
+                                <div className="vl-about-inner-heading">
+                                    <h3 data-aos="fade-right" data-aos-duration="900">Get In Touch</h3>
+                                    <div className="space16"></div>
+                                    <h2 data-aos="fade-left" data-aos-duration="1000">We&apos;d Love to Hear From You</h2>
+                                    <div className="space16"></div>
+                                    <p data-aos="fade-left" data-aos-duration="1000">
+                                        Have a question or want to book a visit? Reach out and our team will get back to you within 24 hours.
+                                    </p>
                                 </div>
-                                <p className="contact-one__top__text">
-                                    Would you like more information about our
-                                    activities or approach? Take the bull by the
-                                    horns — give us a call, send an email, or
-                                    check our FAQ.
-                                </p>
+                                <div className="space30"></div>
+                                <div className="vl-contact2-list">
+                                    <ul>
+                                        <li data-aos="fade-up" data-aos-duration="900">
+                                            <div className="icon">
+                                                <i className="fa-solid fa-location-dot"></i>
+                                            </div>
+                                            <div className="content">
+                                                <h4>Our Location</h4>
+                                                <p>Butalangu, Nakaseke District, Uganda</p>
+                                            </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="1000">
+                                            <div className="icon">
+                                                <i className="fa-solid fa-phone"></i>
+                                            </div>
+                                            <div className="content">
+                                                <h4>Phone Number</h4>
+                                                <p>
+                                                    <a href="tel:+256772826680">+256 772 826 680</a>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li data-aos="fade-up" data-aos-duration="1100">
+                                            <div className="icon">
+                                                <i className="fa-regular fa-envelope"></i>
+                                            </div>
+                                            <div className="content">
+                                                <h4>Email Address</h4>
+                                                <p>
+                                                    <a href="mailto:info@funfarminguganda.com">info@funfarminguganda.com</a>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div className="contact-one__content">
-                                <form
-                                    className="form-one"
-                                    onSubmit={handleSubmit}
-                                    noValidate
-                                >
-                                    <div className="form-one__group">
-                                        <div className="form-one__control form-one__control--full">
+                        </div>
+                        <div className="col-xl-7 col-lg-6">
+                            <div className="vl-contact2-form">
+                                <form onSubmit={handleSubmit}>
+                                    <div className="row gutter-y-20">
+                                        <div className="col-xl-6">
                                             <input
                                                 type="text"
                                                 name="name"
-                                                placeholder="Your Name *"
+                                                placeholder="Your Name"
                                                 value={formData.name}
                                                 onChange={handleChange}
                                             />
+                                            {errors.name && <span className="error">{errors.name}</span>}
                                         </div>
-                                        <div className="form-one__control">
+                                        <div className="col-xl-6">
                                             <input
                                                 type="email"
                                                 name="email"
-                                                placeholder="Your Email *"
+                                                placeholder="Email Address"
                                                 value={formData.email}
                                                 onChange={handleChange}
                                             />
+                                            {errors.email && <span className="error">{errors.email}</span>}
                                         </div>
-                                        <div className="form-one__control">
+                                        <div className="col-xl-6">
                                             <input
-                                                type="tel"
+                                                type="text"
                                                 name="phone"
                                                 placeholder="Phone Number"
                                                 value={formData.phone}
                                                 onChange={handleChange}
                                             />
                                         </div>
-                                        <div className="form-one__control">
+                                        <div className="col-xl-6">
                                             <input
                                                 type="text"
                                                 name="subject"
@@ -168,149 +194,28 @@ export default function ContactPage() {
                                                 onChange={handleChange}
                                             />
                                         </div>
-                                        <div className="form-one__control form-one__control--full">
+                                        <div className="col-xl-12">
                                             <textarea
                                                 name="message"
-                                                placeholder="Your Message *"
+                                                rows={5}
+                                                placeholder="Your Message"
                                                 value={formData.message}
                                                 onChange={handleChange}
                                             ></textarea>
+                                            {errors.message && <span className="error">{errors.message}</span>}
                                         </div>
-                                        {errors.name && (
-                                            <p className="form-one__error">
-                                                {errors.name}
-                                            </p>
-                                        )}
-                                        {errors.email && (
-                                            <p className="form-one__error">
-                                                {errors.email}
-                                            </p>
-                                        )}
-                                        {errors.message && (
-                                            <p className="form-one__error">
-                                                {errors.message}
-                                            </p>
-                                        )}
-                                        <div className="form-one__control form-one__control--full">
-                                            <button
-                                                type="submit"
-                                                className="garlon-btn"
-                                                disabled={isSubmitting}
-                                            >
-                                                <span>
-                                                    {isSubmitting
-                                                        ? 'Sending...'
-                                                        : 'SEND MESSAGE'}
-                                                </span>
-                                                <i className="fas fa-arrow-right"></i>
+                                        <div className="col-xl-12">
+                                            <button type="submit" className="btn-home6" disabled={isSubmitting}>
+                                                {isSubmitting ? 'Sending...' : 'Send Message'}
                                             </button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        <div className="col-lg-6">
-                            <div className="contact-one__thumb">
-                                <div className="contact-one__thumb__img">
-                                    <img
-                                        src="/webimgs/fun-farm-image.jpg"
-                                        alt="Fun Farming Uganda"
-                                        style={{
-                                            width: '100%',
-                                            borderRadius: '12px',
-                                        }}
-                                    />
-                                </div>
-                                <div className="contact-one__thumb__shape">
-                                    <div className="contact-one__thumb__shape__box"></div>
-                                    <a href="/" className="logo">
-                                        <img
-                                            src="/assets/images/logo-light.png"
-                                            alt="Fun Farming Uganda"
-                                        />
-                                    </a>
-                                    <img
-                                        src="/assets/images/shapes/border-color.png"
-                                        alt=""
-                                        className="contact-one__thumb__shape_two"
-                                    />
-                                    <a
-                                        href="tel:+256772826680"
-                                        className="contact-one__thumb__shape_call"
-                                    >
-                                        <i className="icon-phone-call"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <div className="contact-one__shape">
-                    <img
-                        src="/assets/images/shapes/contact-tree.png"
-                        alt="shape"
-                    />
-                </div>
-            </section>
-
-            <section className="contact-one section-space">
-                <div className="container">
-                    <div className="row gutter-y-30">
-                        <div className="col-lg-4 col-md-6">
-                            <div className="contact-one__info">
-                                <div className="contact-one__icon">
-                                    <i className="icon-phone-call"></i>
-                                </div>
-                                <div>
-                                    <h4>Phone</h4>
-                                    <p>
-                                        <a href="tel:+256772826680">
-                                            +256 772 826 680
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="contact-one__info">
-                                <div className="contact-one__icon">
-                                    <i className="icon-email"></i>
-                                </div>
-                                <div>
-                                    <h4>Email</h4>
-                                    <p>
-                                        <a href="mailto:info@funfarminguganda.com">
-                                            info@funfarminguganda.com
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="contact-one__info">
-                                <div className="contact-one__icon">
-                                    <i className="icon-map-pin"></i>
-                                </div>
-                                <div>
-                                    <h4>Address</h4>
-                                    <p>
-                                        Nakaseke District, Butalangu Province,
-                                        Uganda
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <CtaSection
-                icon="icon-leaf"
-                title="Ready to Get in Touch?"
-                text="Fill out the form or give us a call. We look forward to hearing from you!"
-                buttonLabel="Contact Us"
-                buttonHref="/contact"
-            />
+            </div>
         </>
     );
 }

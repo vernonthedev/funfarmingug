@@ -2,28 +2,31 @@
 
 import Link from 'next/link';
 import PageHeader from '@/components/sections/PageHeader';
-import CtaSection from '@/components/sections/CtaSection';
 
 const activities = [
     {
-        icon: 'icon-garden',
+        icon: 'fa-solid fa-chess-board',
         title: 'Board Games',
         text: 'Engage in exciting board games that blend fun with strategy. Perfect for groups looking to enjoy friendly competition in a relaxed farm setting.',
+        href: '/contact',
     },
     {
-        icon: 'icon-gear',
+        icon: 'fa-solid fa-utensils',
         title: 'Farm Kitchen',
         text: 'Experience the taste of Uganda with our farm-to-table kitchen. Learn to prepare local dishes using fresh organic produce straight from our farm.',
+        href: '/contact',
     },
     {
-        icon: 'icon-gardener-1',
+        icon: 'fa-solid fa-users',
         title: 'Team Building',
         text: 'Strengthen your herd with our farm-tastic team-building activities. Collaborative challenges designed to boost communication and team spirit.',
+        href: '/contact',
     },
     {
-        icon: 'icon-plant-1',
-        title: ' Farm Lounge',
+        icon: 'fa-solid fa-couch',
+        title: 'Farm Lounge',
         text: 'Unwind in our serene Farm Lounge after a day of activities. Comfortable seating, refreshments, and panoramic views of the countryside.',
+        href: '/lounge',
     },
 ];
 
@@ -32,135 +35,64 @@ export default function ActivitiesPage() {
         <>
             <PageHeader
                 title="Activities"
-                bgImage="/img/gallery/funfarm_n27.png"
+                bgImage="/assets/img/hero/about-us-inr-herothumb.png"
                 breadcrumbs={[
                     { label: 'Home', href: '/' },
                     { label: 'Activities' },
                 ]}
             />
 
-            <section className="service-page section-space">
-                <div className="container">
-                    <div className="sec-title text-start">
-                        <div className="sec-title__tagline">
-                            <img
-                                src="/assets/images/shapes/sec-title-s-1-1.png"
-                                alt="shape"
-                            />
-                            FUN ACTIVITIES
-                        </div>
-                        <h3 className="sec-title__title">
-                            Farm Games & Team Building For You & Your Herd
-                        </h3>
-                    </div>
-                    <div className="row gutter-y-30">
-                        {activities.map((a, i) => (
-                            <div key={i} className="col-lg-3 col-md-6">
-                                <div className="service-card-two">
-                                    <div className="service-card-two__icon">
-                                        <i className={a.icon}></i>
-                                    </div>
-                                    <h3 className="service-card-two__title">
-                                        <a href="/contact">{a.title}</a>
+            <div className="vl-service7">
+                <div className="vl-service7-area sp1">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xl-6 mx-auto text-center">
+                                <div className="service7-header">
+                                    <h3 data-aos="fade-right" data-aos-duration="900">
+                                        <img src="/assets/img/icon/hm7-sub-title2-dot.png" alt="" />
+                                        Fun Activities
                                     </h3>
-                                    <p className="service-card-two__text">
-                                        {a.text}
-                                    </p>
-                                    <Link
-                                        href="/contact"
-                                        className="service-card-two__link"
-                                    >
-                                        <span>Read More</span>
-                                    </Link>
+                                    <div className="space24"></div>
+                                    <h2 className="text-effect" data-aos="fade-left" data-aos-duration="1000">
+                                        Farm Games & Team Building For You & Your Herd
+                                    </h2>
                                 </div>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            <section className="about-one section-space">
-                <div className="container">
-                    <div className="row gutter-y-30 align-items-center">
-                        <div className="col-lg-6">
-                            <div
-                                className="about-one__thumb__item wow fadeInUp"
-                                data-wow-duration="1500ms"
-                                data-wow-delay="100ms"
-                            >
-                                <img
-                                    src="/img/home/team-building2.jpg"
-                                    alt="Team building at Fun Farming Uganda"
-                                />
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="about-one__content">
-                                <div className="sec-title text-start">
-                                    <div className="sec-title__tagline">
-                                        <img
-                                            src="/assets/images/shapes/sec-title-s-1-1.png"
-                                            alt="shape"
-                                        />
-                                        PLAN YOUR VISIT
+                            <div className="space44"></div>
+                            <div className="row">
+                                {activities.map((activity, index) => (
+                                    <div className="col-xl-3 col-lg-4 col-md-6" key={index}>
+                                        <div className="vl-services2-box" data-aos="fade-up" data-aos-duration="1000">
+                                            <div className="services2-box-icon">
+                                                <i className={activity.icon}></i>
+                                            </div>
+                                            <div className="space24"></div>
+                                            <div className="services2-box-content">
+                                                <h2>
+                                                    <Link href={activity.href}>{activity.title}</Link>
+                                                </h2>
+                                                <div className="space16"></div>
+                                                <p>{activity.text}</p>
+                                            </div>
+                                            <div className="services2-box-btn">
+                                                <Link href={activity.href} className="vl-btn4">
+                                                    Learn More
+                                                    <span className="arrow_btn4">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                            <path d="M27.002 16.002H5.00195" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                            <path d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                        </svg>
+                                                    </span>
+                                                </Link>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h3 className="sec-title__title">
-                                        Book Your Farm Adventure Today
-                                    </h3>
-                                </div>
-                                <p className="about-one__content__text">
-                                    Planning a visit to Fun Farming Uganda
-                                    is easy and exciting. Whether you are
-                                    coming with colleagues, friends, or
-                                    family, we offer a range of activities
-                                    that guarantee laughter, learning, and
-                                    lasting memories.
-                                </p>
-                                <p className="about-one__content__text">
-                                    Our farm is located in Butalangu Town
-                                    Council, Nakaseke District, and is
-                                    accessible by road. We recommend booking
-                                    in advance to secure your preferred date
-                                    and activities.
-                                </p>
-                                <p className="about-one__content__text">
-                                    <strong>
-                                        Minimum group size is 10 participants.
-                                        Not sure yet? You can provide the
-                                        exact number of participants later.
-                                    </strong>
-                                </p>
-                                <div className="about-one__user-box">
-                                    <Link
-                                        href="/contact"
-                                        className="garlon-btn"
-                                    >
-                                        <span>Plan Your Visit</span>
-                                        <i className="icon-angle-small-right"></i>
-                                    </Link>
-                                </div>
+                                ))}
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <CtaSection
-                icon="icon-leaf"
-                title="Request Information"
-                text={
-                    <>
-                        Call us at{' '}
-                        <a href="tel:+256772826680">+256 772 826 680</a> or
-                        email{' '}
-                        <a href="mailto:support@funfarminguganda.com">
-                            support@funfarminguganda.com
-                        </a>
-                    </>
-                }
-                buttonLabel="Contact Us"
-                buttonHref="/contact"
-            />
+            </div>
         </>
     );
 }
