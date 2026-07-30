@@ -59,83 +59,73 @@ export default function BlogPage() {
         <>
             <PageHeader
                 title="Blog"
-                bgImage="/assets/images/backgrounds/page-header-bg-1-1.jpg"
-                breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Blog' }]}
+                bgImage="/assets/img/hero/about-us-inr-herothumb.png"
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Blog' },
+                ]}
             />
 
-            <section className="blog-one section-space">
+            <div className="vl-blog-area sp1">
                 <div className="container">
-                    <div className="sec-title text-center">
-                        <div className="sec-title__tagline">
-                            <img
-                                src="/assets/images/shapes/sec-title-s-1-1.png"
-                                alt="shape"
-                            />
-                            OUR RECENT NEWS
-                        </div>
-                        <h3 className="sec-title__title">
-                            Latest Articles From Our Blog
-                        </h3>
-                    </div>
-                    <div className="row gutter-y-30">
-                        {posts.map((post, index) => (
-                            <div key={index} className="col-lg-4 col-md-6">
-                                <div className="blog-card">
-                                    <div className="blog-card__image">
-                                        <img
-                                            src="/img/gallery/funfarm_n13.png"
-                                            alt={post.title}
-                                            loading="lazy"
-                                        />
-                                        <Link
-                                            href={`/blog/${post.slug}`}
-                                            className="blog-card__image__link"
-                                        >
-                                            <i className="icon-leaf-1"></i>
-                                            <span className="sr-only">
-                                                {post.category}
-                                            </span>
-                                        </Link>
-                                    </div>
-                                    <div className="blog-card__content">
-                                        <ul className="list-unstyled blog-card__meta">
-                                            <li>
-                                                <i className="fas fa-user"></i>{' '}
-                                                By:{' '}
-                                                <Link href="/blog">Admin</Link>
-                                            </li>
-                                            <li>
-                                                <i className="fas fa-calendar-alt"></i>
-                                                {post.date}
-                                            </li>
-                                        </ul>
-                                        <h3 className="blog-card__title">
-                                            <Link href={`/blog/${post.slug}`}>
-                                                {post.title}
-                                            </Link>
-                                        </h3>
-                                        <Link
-                                            href={`/blog/${post.slug}`}
-                                            className="blog-card__btn"
-                                        >
-                                            <div className="blog-card__btn__comment">
-                                                <i className="icon-comment"></i>
-                                                03
-                                            </div>
-                                            <div className="blog-card__btn__link">
-                                                READ MORE{' '}
-                                                <span className="blog-card__btn__link__icon">
-                                                    <i className="icon-arrow"></i>
-                                                </span>
-                                            </div>
-                                        </Link>
-                                    </div>
+                    <div className="row">
+                        <div className="col-xl-6 mx-auto text-center">
+                            <div className="service-header">
+                                <div className="service-topleft">
+                                    <h3 data-aos="fade-right" data-aos-duration="800">
+                                        <img src="/assets/img/icon/subtitle-icon2.png" alt="" />
+                                        Our Recent News
+                                    </h3>
+                                    <div className="space18"></div>
+                                    <h2 className="text-anime-style-3" data-aos="fade-right" data-aos-duration="900">
+                                        Latest Articles From Our Blog
+                                    </h2>
                                 </div>
                             </div>
-                        ))}
+                        </div>
+                        <div className="space44"></div>
+                        <div className="row">
+                            {posts.map((post, index) => (
+                                <div className="col-xl-4 col-lg-4 col-md-6" key={index}>
+                                    <div className="vl-blog-box" data-aos="fade-up" data-aos-duration="1000">
+                                        <div className="vl-blog-thumb">
+                                            <img src="/img/gallery/funfarm_n13.png" alt={post.title} />
+                                            <Link href={`/blog/${post.slug}`} className="vl-blog-link">
+                                                <i className="fa-solid fa-arrow-up-right"></i>
+                                            </Link>
+                                        </div>
+                                        <div className="vl-blog-content">
+                                            <ul>
+                                                <li>
+                                                    <i className="fa-regular fa-calendar"></i>
+                                                    {post.date}
+                                                </li>
+                                                <li>
+                                                    <i className="fa-solid fa-tag"></i>
+                                                    {post.category}
+                                                </li>
+                                            </ul>
+                                            <h3>
+                                                <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                                            </h3>
+                                            <p>{post.excerpt}</p>
+                                            <Link href={`/blog/${post.slug}`} className="vl-blog-more">
+                                                Read More
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                        <path d="M15.002 10.002H5.00195" stroke="#132C12" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                                        <path d="M9.00098 14.002L14.001 10.002L9.00098 6.00195" stroke="#132C12" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                                    </svg>
+                                                </span>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </>
     );
 }
