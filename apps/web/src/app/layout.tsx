@@ -98,7 +98,97 @@ export default function RootLayout({
                 <link rel="stylesheet" href="/assets/css/main.css" />
             </head>
             <body>
+                <div className="preloader">
+                    <div className="loading-container">
+                        <div className="loading"></div>
+                        <div id="loading-icon">
+                            <img src="/assets/img/logo/preloader.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="paginacontainer">
+                    <div className="progress-wrap">
+                        <svg
+                            className="progress-circle svg-content"
+                            width="100%"
+                            height="100%"
+                            viewBox="-1 -1 102 102"
+                        >
+                            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                        </svg>
+                    </div>
+                </div>
+
                 {children}
+
+                <div className="vl-offcanvas">
+                    <div className="vl-offcanvas-wrapper">
+                        <div className="vl-offcanvas-header d-flex justify-content-between align-items-center mb-90">
+                            <div className="vl-offcanvas-logo">
+                                <a href="/">
+                                    <img
+                                        src="/assets/img/footer/footer1-logo.png"
+                                        alt=""
+                                    />
+                                </a>
+                            </div>
+                            <div className="vl-offcanvas-close">
+                                <button className="vl-offcanvas-close-toggle">
+                                    <i className="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="vl-offcanvas-menu d-xl-none mb-40">
+                            <nav></nav>
+                        </div>
+
+                        <div className="space20"></div>
+                        <div className="vl-offcanvas-info">
+                            <h3 className="vl-offcanvas-sm-title">
+                                Contact Us
+                            </h3>
+                            <div className="space20"></div>
+                            <span>
+                                <a href="/#">
+                                    <i className="fa-regular fa-envelope"></i>{' '}
+                                    info@funfarminguganda.com
+                                </a>
+                            </span>
+                            <span>
+                                <a href="tel:+256700000000">
+                                    <i className="fa-solid fa-phone"></i> +256
+                                    700 000 000
+                                </a>
+                            </span>
+                            <span>
+                                <a href="/#">
+                                    <i className="fa-solid fa-location-dot"></i>{' '}
+                                    Kampala, Uganda
+                                </a>
+                            </span>
+                        </div>
+                        <div className="space20"></div>
+                        <div className="vl-offcanvas-social">
+                            <h3 className="vl-offcanvas-sm-title">Follow Us</h3>
+                            <div className="space20"></div>
+                            <a href="https://facebook.com/funfarminguganda">
+                                <i className="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://instagram.com/funfarminguganda">
+                                <i className="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://linkedin.com/company/funfarmingug">
+                                <i className="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://youtube.com/@funfarmingug">
+                                <i className="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div className="vl-offcanvas-overlay"></div>
             </body>
         </html>
     );
