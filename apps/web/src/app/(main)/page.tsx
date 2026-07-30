@@ -433,7 +433,7 @@ export default function HomePage() {
                 <div className="container">
                     <div className="row">
                         <div className="vl-hero9-btm_text" data-aos="zoom-out" data-aos-duration="900">
-                            <h2>Trusted By <span className="counter">3</span>+ Partners Worldwide</h2>
+                            <h2>Trusted By <span className="counter">3</span>+ Companies Worldwide</h2>
                         </div>
                         <div className="tp-text-slider">
                             <div className="container">
