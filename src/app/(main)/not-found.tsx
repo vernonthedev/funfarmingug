@@ -2,29 +2,20 @@ import Link from 'next/link';
 
 export default function NotFound() {
     return (
-        <section className="error-404 section-space">
+        <div className="vl-error-area sp1">
             <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-xl-6 col-lg-8">
-                        <div className="error-404__image">
-                            <img
-                                src="/assets/images/shapes/404-shape-1-1.png"
-                                alt="404"
-                            />
+                <div className="row">
+                    <div className="col-xl-8 col-lg-8 mx-auto">
+                        <div className="vl-error-area-thumb text-center">
+                            <img src="/assets/img/shapes/404-image.png" alt="404" />
                         </div>
-                        <h2 className="error-404__title">Page Not Found</h2>
-                        <p className="error-404__text">
-                            The page you&apos;re looking for doesn&apos;t exist
-                            or has been moved.
-                        </p>
-                        <div className="error-404__btns">
-                            <Link href="/" className="garlon-btn">
-                                Back to Home
-                            </Link>
+                        <div className="space24"></div>
+                        <div className="vl-error-back-btn text-center">
+                            <Link href="/" className="btn-home6">Back To Home</Link>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
