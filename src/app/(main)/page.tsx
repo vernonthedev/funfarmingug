@@ -1,829 +1,569 @@
 'use client';
 
-import Link from 'next/link';
 import { useEffect } from 'react';
+import Link from 'next/link';
 
 export default function HomePage() {
     useEffect(() => {
-        function initCarousels() {
+        function initSwipers() {
             if (
                 typeof window !== 'undefined' &&
-                (window as any).jQuery &&
-                (window as any).jQuery.fn?.owlCarousel
+                (window as any).Swiper
             ) {
-                const $ = (window as any).jQuery;
                 try {
-                    $('.main-slider-one__carousel').owlCarousel({
-                        items: 1,
+                    const heroSwiper = new (window as any).Swiper('.myhm1-hero', {
                         loop: true,
-                        autoplay: true,
-                        autoplayTimeout: 7000,
-                        smartSpeed: 1000,
-                        dots: false,
-                        nav: true,
-                        navText: [
-                            '<span class="icon-angle-small-left"></span>',
-                            '<span class="icon-angle-small-right"></span>',
-                        ],
+                        autoplay: {
+                            delay: 7000,
+                            disableOnInteraction: false,
+                        },
+                        speed: 1000,
+                        effect: 'slide',
+                        navigation: {
+                            nextEl: '.hero1-arrow .next-arrow button',
+                            prevEl: '.hero1-arrow .prev-arrow button',
+                        },
                     });
-                    $('.client-carousel__one').owlCarousel({
-                        items: 5,
+
+                    const serviceSwiper = new (window as any).Swiper('.myservice7', {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
                         loop: true,
-                        autoplay: true,
-                        autoplayTimeout: 4000,
-                        smartSpeed: 700,
-                        dots: false,
-                        nav: false,
-                        margin: 30,
-                        responsive: {
-                            0: { items: 1 },
-                            360: { items: 2 },
-                            575: { items: 3 },
-                            768: { items: 3 },
-                            992: { items: 4 },
-                            1200: { items: 5 },
+                        autoplay: {
+                            delay: 4000,
+                            disableOnInteraction: false,
+                        },
+                        speed: 700,
+                        breakpoints: {
+                            0: { slidesPerView: 1 },
+                            575: { slidesPerView: 2 },
+                            992: { slidesPerView: 3 },
+                        },
+                    });
+
+                    const gallerySwiper = new (window as any).Swiper('.mygallery1', {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                        loop: true,
+                        autoplay: {
+                            delay: 4000,
+                            disableOnInteraction: false,
+                        },
+                        speed: 700,
+                        breakpoints: {
+                            0: { slidesPerView: 1 },
+                            575: { slidesPerView: 2 },
+                            992: { slidesPerView: 3 },
+                        },
+                    });
+
+                    const partnerSwiper = new (window as any).Swiper('.tpcauses-text-slider-active-2', {
+                        slidesPerView: 5,
+                        spaceBetween: 30,
+                        loop: true,
+                        autoplay: {
+                            delay: 3000,
+                            disableOnInteraction: false,
+                        },
+                        speed: 700,
+                        breakpoints: {
+                            0: { slidesPerView: 2 },
+                            575: { slidesPerView: 3 },
+                            992: { slidesPerView: 5 },
                         },
                     });
                 } catch (e) {
-                    // owl not ready yet
+                    // swipers not ready yet
                 }
-                return true;
             }
-            return false;
         }
 
-        if (!initCarousels()) {
+        if (!initSwipers()) {
             const timer = setInterval(() => {
-                if (initCarousels()) clearInterval(timer);
+                if (initSwipers()) clearInterval(timer);
             }, 200);
             setTimeout(() => clearInterval(timer), 10000);
             return () => clearInterval(timer);
         }
     }, []);
 
+    const services = [
+        {
+            title: 'Board Games',
+            text: 'Engage in exciting board games that blend fun with strategy.',
+            href: '/activities',
+            icon: 'fa-solid fa-chess-board',
+        },
+        {
+            title: 'Farm Kitchen',
+            text: 'Experience the taste of Uganda with our farm-to-table kitchen.',
+            href: '/activities',
+            icon: 'fa-solid fa-utensils',
+        },
+        {
+            title: 'Team Building',
+            text: 'Strengthen your herd with our farm-tastic team-building activities.',
+            href: '/activities',
+            icon: 'fa-solid fa-users',
+        },
+        {
+            title: 'Farm Lounge',
+            text: 'Unwind in our serene Farm Lounge after a day of activities.',
+            href: '/lounge',
+            icon: 'fa-solid fa-couch',
+        },
+    ];
+
+    const galleryImages = [
+        '/img/gallery/funfarm_n1.png',
+        '/img/gallery/funfarm_n2.png',
+        '/img/gallery/funfarm_n3.png',
+        '/img/gallery/funfarm_n4.png',
+        '/img/gallery/funfarm_n5.png',
+        '/img/gallery/funfarm_n6.png',
+    ];
+
+    const partners = [
+        '/img/partners/fao-logo.svg',
+        '/img/partners/unfe.png',
+        '/img/partners/unyfa.png',
+        '/img/partners/fao-logo.svg',
+        '/img/partners/unfe.png',
+    ];
+
+    const faqs = [
+        {
+            question: 'What should I wear to the farm?',
+            answer: 'Comfortable sporty clothes and closed shoes are ideal. You might get a little dirty from grass or straw, so regular jeans work fine. Sturdy walking shoes are sufficient — no need for boots.',
+        },
+        {
+            question: 'What games can I expect?',
+            answer: 'We offer board games, team-building activities, and fun farm games. Our Farm Games include accessible thinking and doing assignments perfect for a fun day out.',
+        },
+        {
+            question: 'Can I participate in farm activities?',
+            answer: 'Absolutely! Everyone is welcome to join in. The majority of our activities are suitable for all fitness levels. Less sporty or less mobile guests and pregnant women can also enjoy the experience.',
+        },
+        {
+            question: 'Are children allowed?',
+            answer: "Yes! We offer children's parties and activities at certain locations. By children we mean under 14 years. We do not organise mixed groups of adults and children — dedicated sessions are available for younger visitors.",
+        },
+    ];
+
     return (
         <>
-            {/* Hero Slider */}
-            <section className="main-slider-one">
-                <div className="main-slider-one__carousel owl-carousel owl-theme">
-                    <div className="item">
-                        <div className="main-slider-one__item">
+            {/* Hero */}
+            <div className="vl-hero1-area">
+                <div className="swiper myhm1-hero">
+                    <div className="swiper-wrapper">
+                        <div className="swiper-slide">
                             <div
-                                className="main-slider-one__bg"
+                                className="hero1-bg-slide"
                                 style={{
-                                    backgroundImage:
-                                        'url(/webimgs/fun-farm-image.jpg)',
+                                    backgroundImage: 'url(/webimgs/fun-farm-image.jpg)',
+                                    backgroundPosition: 'center',
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundSize: 'cover',
                                 }}
-                            ></div>
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-xl-8">
-                                        <div className="main-slider-one__content">
-                                            <div className="main-slider-one__box">
-                                                <div className="main-slider-one__box__item">
-                                                    <div className="main-slider-one__box__icon">
-                                                        <i className="icon-agriculture"></i>
+                            >
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-xl-8 mx-auto">
+                                            <div className="vl-hero-info">
+                                                <div className="hero-header-area">
+                                                    <h3 data-aos="fade-right" data-aos-duration="800">
+                                                        Agro Tourism & Team Building
+                                                    </h3>
+                                                    <div className="space24"></div>
+                                                    <h2 className="text-anime-style-3" data-aos="fade-left" data-aos-duration="900">
+                                                        Welcome to Fun Farming Uganda
+                                                        <br />
+                                                        Where Agriculture Meets Adventure!
+                                                    </h2>
+                                                </div>
+                                                <div className="hero1-arrow">
+                                                    <div className="next-arrow">
+                                                        <button>
+                                                            <i className="fa-solid fa-arrow-right-long"></i>
+                                                        </button>
                                                     </div>
-                                                    <h5 className="main-slider-one__sub-title">
-                                                        Agro Tourism & Team
-                                                        Building
-                                                    </h5>
-                                                </div>
-                                                <h2 className="main-slider-one__title">
-                                                    Welcome to Fun Farming
-                                                    Uganda
-                                                    <br />
-                                                    Where Agriculture Meets
-                                                    Adventure!
-                                                </h2>
-                                                <p className="main-slider-one__text">
-                                                    Experience the joy of farm
-                                                    life with our unique
-                                                    team-building activities and
-                                                    agro tourism experiences.
-                                                </p>
-                                                <div className="main-slider-one__btn">
-                                                    <Link
-                                                        href="/activities"
-                                                        className="garlon-btn"
-                                                    >
-                                                        View Activities
-                                                        <i className="icon-angle-small-right"></i>
-                                                    </Link>
-                                                </div>
-                                                <div className="main-slider-one__content__shape">
-                                                    <img
-                                                        src="/assets/images/shapes/arrow-variant-1.png"
-                                                        alt="shape"
-                                                    />
+                                                    <div className="prev-arrow">
+                                                        <button>
+                                                            <i className="fa-solid fa-arrow-left-long"></i>
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="main-slider-one__shape">
-                                <img
-                                    src="/assets/images/shapes/slider-shape-1-1.png"
-                                    alt="shape"
-                                />
-                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            {/* Feature One */}
-            <section className="feature-one">
-                <div className="container">
-                    <div className="feature-one__box">
-                        <div className="row gutter-y-30">
-                            <div className="col-lg-3 col-md-6 col-sm-6">
-                                <div className="feature-one__item">
-                                    <div className="feature-one__item__icon-top">
-                                        <i className="icon-gardener"></i>
-                                    </div>
-                                    <div className="feature-one__item__content">
-                                        <h4 className="feature-one__item__title">
-                                            <Link href="/activities">
-                                                Board Games
-                                            </Link>
-                                        </h4>
-                                        <p className="feature-one__item__text">
-                                            Engage in exciting board games that
-                                            blend fun with strategy.
-                                        </p>
-                                    </div>
-                                    <div className="feature-one__item__icon-bottom">
-                                        <i className="icon-gardener"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6">
-                                <div className="feature-one__item">
-                                    <div className="feature-one__item__icon-top">
-                                        <i className="icon-park"></i>
-                                    </div>
-                                    <div className="feature-one__item__content">
-                                        <h4 className="feature-one__item__title">
-                                            <Link href="/activities">
-                                                Farm Kitchen
-                                            </Link>
-                                        </h4>
-                                        <p className="feature-one__item__text">
-                                            Experience the taste of Uganda with
-                                            our farm-to-table kitchen.
-                                        </p>
-                                    </div>
-                                    <div className="feature-one__item__icon-bottom">
-                                        <i className="icon-park"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6">
-                                <div className="feature-one__item">
-                                    <div className="feature-one__item__icon-top">
-                                        <i className="icon-gardening"></i>
-                                    </div>
-                                    <div className="feature-one__item__content">
-                                        <h4 className="feature-one__item__title">
-                                            <Link href="/activities">
-                                                Team Building
-                                            </Link>
-                                        </h4>
-                                        <p className="feature-one__item__text">
-                                            Strengthen your herd with our
-                                            farm-tastic team-building
-                                            activities.
-                                        </p>
-                                    </div>
-                                    <div className="feature-one__item__icon-bottom">
-                                        <i className="icon-gardening"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-6 col-sm-6">
-                                <div className="feature-one__item">
-                                    <div className="feature-one__item__icon-top">
-                                        <i className="icon-gardener-1"></i>
-                                    </div>
-                                    <div className="feature-one__item__content">
-                                        <h4 className="feature-one__item__title">
-                                            <Link href="/activities">
-                                                Farm Lounge
-                                            </Link>
-                                        </h4>
-                                        <p className="feature-one__item__text">
-                                            Unwind in our serene Farm Lounge
-                                            after a day of activities.
-                                        </p>
-                                    </div>
-                                    <div className="feature-one__item__icon-bottom">
-                                        <i className="icon-gardener-1"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div className="hero1-bottom-wrap">
+                    <div className="hero1-bottom-circle">
+                        <a href="/#">
+                            <img className="keyframe5" src="/assets/img/elements/elements1.png" alt="" />
+                            <img src="/assets/img/icon/arrow.svg" alt="" className="arrow" />
+                        </a>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            {/* About Section */}
-            <section className="about-one section-space">
+            {/* About */}
+            <div className="vl-about1-area sp1">
+                <div className="space96"></div>
                 <div className="container">
-                    <div className="row gutter-y-30">
-                        <div className="col-lg-6">
-                            <div className="about-one__thumb">
-                                <div className="about-one__thumb__item">
-                                    <img
-                                        src="/webimgs/fun-farm-image.jpg"
-                                        alt="Fun Farming Uganda"
-                                    />
-                                </div>
-                                <div className="about-one__thumb__small-item">
-                                    <img
-                                        src="/webimgs/david-holding-goat.jpg"
-                                        alt="Farmer David"
-                                    />
-                                    <a
-                                        href="https://www.youtube.com/watch?v=G49_MdP0klg"
-                                        className="about-one__video video-popup"
-                                    >
-                                        <span className="about-one__btn__icon">
-                                            <i className="icon-play-1"></i>
-                                        </span>
-                                        <span className="about-one__btn__text">
-                                            OUR WATCH VIDEO
-                                        </span>
-                                    </a>
-                                </div>
-                                <div className="about-one__thumb__shape">
-                                    <img
-                                        src="/assets/images/shapes/about-shape-1-1.png"
-                                        alt="shape"
-                                    />
-                                </div>
+                    <div className="row align-items-center">
+                        <div className="col-xl-6 col-lg-6">
+                            <div className="about1-thumb1 vl-clip-anim image-anime" data-aos="fade-right" data-aos-duration="800">
+                                <img className="vl-anim-img w-100" data-animate="true" src="/webimgs/fun-farm-image.jpg" alt="Fun Farming Uganda" />
                             </div>
                         </div>
-                        <div className="col-lg-6">
-                            <div className="about-one__content">
-                                <div className="sec-title text-start">
-                                    <div className="sec-title__tagline">
-                                        <img
-                                            src="/assets/images/shapes/sec-title-s-1-1.png"
-                                            alt="shape"
-                                        />
-                                        WELCOME TO THE FARM
-                                    </div>
-                                    <h3 className="sec-title__title">
-                                        Discover the joy of team events at our
-                                        farm oasis!
+                        <div className="col-xl-6 col-lg-6 col-md-12">
+                            <div className="about-area-info">
+                                <div className="about1-heading-area">
+                                    <h3 className="about-subtitle" data-aos="fade-left" data-aos-duration="800">
+                                        Welcome to the Farm
                                     </h3>
-                                </div>
-                                <p className="about-one__content__text">
-                                    At Fun Farming Uganda, we bring people
-                                    together through unforgettable farm
-                                    experiences. From team building to farm
-                                    tours, every visit is crafted to inspire
-                                    connection and joy.
-                                </p>
-                                <div className="about-one__list-box">
-                                    <div className="about-one__list__icon">
-                                        <i className="icon-leaf"></i>
-                                        <span className="about-one__list__icon-text">
-                                            <span>Fun Farming</span>
-                                            <span>Buffet</span>
-                                        </span>
-                                    </div>
-                                    <ul className="about-one__list list-unstyled">
-                                        <li>
-                                            <i className="fa fa-check-circle"></i>
-                                            <span>
-                                                Everyone&apos;s invited to a day
-                                                of laughter and connection
+                                    <div className="space24"></div>
+                                    <h2 className="about-title text-anime-style-3" data-aos="fade-left" data-aos-duration="800">
+                                        Discover the joy of team events at our farm oasis!
+                                    </h2>
+                                    <div className="space16"></div>
+                                    <p className="text-effect" data-aos="fade-left" data-aos-duration="900">
+                                        At Fun Farming Uganda, we bring people together through unforgettable farm experiences.
+                                        From team building to farm tours, every visit is crafted to inspire connection and joy.
+                                    </p>
+                                    <div className="space38"></div>
+                                    <div className="btn_area3" data-aos="fade-left" data-aos-duration="900">
+                                        <Link href="/about" className="vl-btn3">
+                                            Learn More
+                                            <span className="arrow_btn3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                    <path d="M27.002 16.002H5.00195" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                    <path d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
                                             </span>
-                                        </li>
-                                        <li>
-                                            <i className="fa fa-check-circle"></i>
-                                            <span>
-                                                Unleash the fun with
-                                                well-organized activities
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <i className="fa fa-check-circle"></i>
-                                            <span>
-                                                Connect, learn, and share
-                                                unforgettable moments
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <i className="fa fa-check-circle"></i>
-                                            <span>
-                                                Our exciting activities are led
-                                                by passionate staff
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="about-one__user-box">
-                                    <div className="about-one__user">
-                                        <div className="about-one__user__thumb">
-                                            <img
-                                                src="/webimgs/david-holding-goat.jpg"
-                                                alt="David"
-                                            />
-                                        </div>
-                                        <div className="about-one__user__content">
-                                            <h4 className="about-one__user__name">
-                                                David
-                                            </h4>
-                                            <p className="about-one__user__text">
-                                                Chief Executive Farmer
-                                            </p>
-                                        </div>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="about-one__shape">
-                    <img src="/assets/images/shapes/plant-1.png" alt="shape" />
-                </div>
-            </section>
+            </div>
 
-            {/* Services Section */}
-            <section className="service-one section-space">
-                <div className="service-one__bg"></div>
-                <div className="container">
-                    <div className="sec-title text-center">
-                        <div className="sec-title__tagline">
-                            <img
-                                src="/assets/images/shapes/sec-title-s-1-1.png"
-                                alt="shape"
-                            />
-                            ADVENTURE AWAITS
-                        </div>
-                        <h3 className="sec-title__title">
-                            Thrilling Activities Await!
-                        </h3>
-                    </div>
-                    <div className="row gutter-y-30">
-                        <div className="col-xl-3 col-lg-4 col-md-6">
-                            <div className="service-card-two">
-                                <div className="service-card-two__inner">
-                                    <div className="service-card-two__icon">
-                                        <i className="icon-garden"></i>
-                                    </div>
-                                    <div className="service-card-two__content">
-                                        <h4 className="service-card-two__title">
-                                            <Link href="/activities">
-                                                Board Games
-                                            </Link>
-                                        </h4>
-                                        <p className="service-card-two__text">
-                                            Engage in exciting board games that
-                                            blend fun with strategy.
-                                        </p>
-                                    </div>
-                                    <div className="service-card-two__thumb">
-                                        <img
-                                            src="/home/team-building2.jpg"
-                                            alt="Board Games"
-                                        />
-                                    </div>
-                                    <div className="service-card-two__btn">
-                                        <Link href="/activities">
-                                            <i className="icon-arrow-up-right2"></i>
-                                        </Link>
-                                    </div>
+            {/* Services */}
+            <div className="vl-service7">
+                <div className="vl-service7-area sp1">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xl-6 mx-auto text-center">
+                                <div className="service7-header">
+                                    <h3 data-aos="fade-right" data-aos-duration="900">
+                                        <img src="/assets/img/icon/hm7-sub-title2-dot.png" alt="" />
+                                        Our Services
+                                    </h3>
+                                    <div className="space24"></div>
+                                    <h2 className="text-effect" data-aos="fade-left" data-aos-duration="1000">
+                                        Thrilling Activities Await!
+                                    </h2>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6">
-                            <div className="service-card-two">
-                                <div className="service-card-two__inner">
-                                    <div className="service-card-two__icon">
-                                        <i className="icon-gear"></i>
-                                    </div>
-                                    <div className="service-card-two__content">
-                                        <h4 className="service-card-two__title">
-                                            <Link href="/activities">
-                                                Farm Kitchen
-                                            </Link>
-                                        </h4>
-                                        <p className="service-card-two__text">
-                                            Experience the taste of Uganda with
-                                            our farm-to-table kitchen.
-                                        </p>
-                                    </div>
-                                    <div className="service-card-two__thumb">
-                                        <img
-                                            src="/home/team-building2.jpg"
-                                            alt="Farm Kitchen"
-                                        />
-                                    </div>
-                                    <div className="service-card-two__btn">
-                                        <Link href="/activities">
-                                            <i className="icon-arrow-up-right2"></i>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6">
-                            <div className="service-card-two">
-                                <div className="service-card-two__inner">
-                                    <div className="service-card-two__icon">
-                                        <i className="icon-gardener-1"></i>
-                                    </div>
-                                    <div className="service-card-two__content">
-                                        <h4 className="service-card-two__title">
-                                            <Link href="/activities">
-                                                Team Building
-                                            </Link>
-                                        </h4>
-                                        <p className="service-card-two__text">
-                                            Strengthen your herd with our
-                                            farm-tastic team-building
-                                            activities.
-                                        </p>
-                                    </div>
-                                    <div className="service-card-two__thumb">
-                                        <img
-                                            src="/home/team-building2.jpg"
-                                            alt="Team Building"
-                                        />
-                                    </div>
-                                    <div className="service-card-two__btn">
-                                        <Link href="/activities">
-                                            <i className="icon-arrow-up-right2"></i>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6">
-                            <div className="service-card-two">
-                                <div className="service-card-two__inner">
-                                    <div className="service-card-two__icon">
-                                        <i className="icon-plant-1"></i>
-                                    </div>
-                                    <div className="service-card-two__content">
-                                        <h4 className="service-card-two__title">
-                                            <Link href="/activities">
-                                                Farm Lounge
-                                            </Link>
-                                        </h4>
-                                        <p className="service-card-two__text">
-                                            Unwind in our serene Farm Lounge
-                                            after a day of activities.
-                                        </p>
-                                    </div>
-                                    <div className="service-card-two__thumb">
-                                        <img
-                                            src="/home/team-building2.jpg"
-                                            alt="Farm Lounge"
-                                        />
-                                    </div>
-                                    <div className="service-card-two__btn">
-                                        <Link href="/activities">
-                                            <i className="icon-arrow-up-right2"></i>
-                                        </Link>
-                                    </div>
+                            <div className="space44"></div>
+                            <div className="swiper myservice7" data-aos="zoom-out" data-aos-duration="1000">
+                                <div className="swiper-wrapper">
+                                    {services.map((service, index) => (
+                                        <div className="swiper-slide" key={index}>
+                                            <div className="service7-box">
+                                                <div className="service7-thumbs">
+                                                    <h3>0{index + 1}</h3>
+                                                    <div className="service7-thumbs-img">
+                                                        <img src="/assets/img/service/service7-thumb2.png" alt={service.title} />
+                                                    </div>
+                                                </div>
+                                                <div className="service7-box-content">
+                                                    <div className="service7-logos">
+                                                        <i className={service.icon}></i>
+                                                    </div>
+                                                    <div className="space24"></div>
+                                                    <div className="service7-content-text">
+                                                        <h3>
+                                                            <Link href={service.href}>{service.title}</Link>
+                                                        </h3>
+                                                        <div className="space16"></div>
+                                                        <p>{service.text}</p>
+                                                    </div>
+                                                    <div className="service7-learn-btn">
+                                                        <Link href={service.href} className="btn4-home7">
+                                                            Learn More
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                                <div className="service7-box-bg">
+                                                    <img src="/assets/img/service/service7-thumb2-bg.png" alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            {/* Why Choose One */}
-            <section className="why-choose-one section-space">
+            {/* Expert / Why Choose */}
+            <div className="vl-about9-area sp1">
                 <div className="container">
-                    <div className="row gutter-y-30">
+                    <div className="row align-items-center">
                         <div className="col-xl-5 col-lg-6">
-                            <div className="why-choose-one__content">
-                                <div className="sec-title text-start">
-                                    <div className="sec-title__tagline">
-                                        <img
-                                            src="/assets/images/shapes/sec-title-s-1-1.png"
-                                            alt="shape"
-                                        />
-                                        MEET OUR EXPERT
-                                    </div>
-                                    <h3 className="sec-title__title">
-                                        Moo towards us for customized advice
+                            <div className="about-area-info">
+                                <div className="about1-heading-area">
+                                    <h3 className="about-subtitle" data-aos="fade-right" data-aos-duration="800">
+                                        Meet Our Expert
                                     </h3>
+                                    <div className="space24"></div>
+                                    <h2 className="about-title text-anime-style-3" data-aos="fade-left" data-aos-duration="800">
+                                        Moo towards us for customized advice
+                                    </h2>
+                                    <div className="space16"></div>
+                                    <p className="text-effect" data-aos="fade-left" data-aos-duration="900">
+                                        Gathering the horns? Our cow-league David is ready to advise you so that you&apos;ll reap
+                                        applause for this team-building. With years of farm experience, David helps groups find
+                                        the perfect activity mix.
+                                    </p>
                                 </div>
-                                <p className="why-choose-one__text">
-                                    Gathering the horns? Our cow-league David is
-                                    ready to advise you so that you&apos;ll reap
-                                    applause for this team-building. With years
-                                    of farm experience, David helps groups find
-                                    the perfect activity mix.
-                                </p>
-                                <div className="why-choose-one__box">
-                                    <div className="why-choose-one__box__thumb">
-                                        <img
-                                            src="/webimgs/david-holding-goat.jpg"
-                                            alt="David"
-                                        />
-                                    </div>
-                                    <div className="why-choose-one__box__content">
-                                        <h4 className="why-choose-one__box__title">
-                                            Schedule a Call
-                                        </h4>
-                                        <p className="why-choose-one__box__text">
-                                            Book a consultation with David for
-                                            your team-building event.
-                                        </p>
-                                    </div>
-                                </div>
-                                <ul className="why-choose-one__list list-unstyled">
-                                    <li>
-                                        <i className="icon-leaf"></i>{' '}
-                                        <span>Custom Activity Planning</span>
-                                    </li>
-                                    <li>
-                                        <i className="icon-leaf"></i>{' '}
-                                        <span>Farm Tours & Guides</span>
-                                    </li>
-                                    <li>
-                                        <i className="icon-leaf"></i>{' '}
-                                        <span>Catering Services</span>
-                                    </li>
-                                    <li>
-                                        <i className="icon-leaf"></i>{' '}
-                                        <span>Expert Team Leaders</span>
-                                    </li>
-                                </ul>
-                                <div className="why-choose-one__btn">
+                                <div className="space38"></div>
+                                <div className="btn_area3" data-aos="fade-left" data-aos-duration="900">
                                     <a
                                         href="https://www.calendly.com/farmfun/kennismakingsgesprek-teambuilding-farmfun"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="garlon-btn"
+                                        className="vl-btn3"
                                     >
-                                        <span>Schedule Conversation</span>
-                                        <i className="icon-angle-small-right"></i>
+                                        Schedule Conversation
+                                        <span className="arrow_btn3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <path d="M27.002 16.002H5.00195" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </span>
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div className="col-xl-7 col-lg-6">
-                            <div className="why-choose-one__thumb">
-                                <img
-                                    src="/webimgs/david-holding-goat.jpg"
-                                    alt="Farmer David holding a goat"
-                                />
+                            <div className="about1-thumb1 vl-clip-anim image-anime" data-aos="fade-left" data-aos-duration="800">
+                                <img className="vl-anim-img w-100" data-animate="true" src="/webimgs/david-holding-goat.jpg" alt="Farmer David" />
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA One */}
-            <div className="cta-one">
-                <div className="cta-one__bg"></div>
-                <div className="container">
-                    <div className="cta-one__inner">
-                        <div className="cta-one__call">
-                            <div className="cta-one__call__icon">
-                                <i className="icon-leaf"></i>
-                            </div>
-                            <div className="cta-one__call__content">
-                                <h3 className="cta-one__call__title">
-                                    Create your ideal team-building event
-                                </h3>
-                                <div className="cta-one__call__link">
-                                    Choose your ideal activity, add catering,
-                                    check availability, and instantly generate
-                                    your quote.
-                                </div>
-                            </div>
-                        </div>
-                        <div className="cta-one__btn">
-                            <Link href="/activities" className="garlon-btn">
-                                <span>View Our Activities</span>
-                                <i className="icon-angle-small-right"></i>
-                            </Link>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Team One */}
-            <section className="team-one section-space">
+            {/* Gallery */}
+            <div className="vl-gallery-area sp1">
                 <div className="container">
-                    <div className="sec-title text-center">
-                        <div className="sec-title__tagline">
-                            <img
-                                src="/assets/images/shapes/sec-title-s-1-1.png"
-                                alt="shape"
-                            />
-                            OUR TEAM
-                        </div>
-                        <h3 className="sec-title__title">
-                            Meet Our Expert Farmers
-                        </h3>
-                    </div>
-                </div>
-            </section>
-
-            {/* Funfact Three */}
-            <section className="funfact-three">
-                <div className="funfact-three__bg"></div>
-                <div className="container">
-                    <div className="funfact-three__inner">
-                        <div className="funfact-three__item">
-                            <div className="funfact-three__item__icon">
-                                <i className="icon-pin"></i>
-                            </div>
-                            <div className="funfact-three__item__content">
-                                <h3 className="funfact-three__item__count">
-                                    <span>01</span>
+                    <div className="row">
+                        <div className="service-header">
+                            <div className="service-topleft">
+                                <h3 data-aos="fade-right" data-aos-duration="800">
+                                    <img src="/assets/img/icon/subtitle-icon2.png" alt="" />
+                                    Farm Gallery
                                 </h3>
-                                <p className="funfact-three__item__text">
-                                    Have Fun always close by
+                                <div className="space18"></div>
+                                <h2 className="text-anime-style-3" data-aos="fade-right" data-aos-duration="900">
+                                    A Look Into Our Land And Livestock
+                                </h2>
+                            </div>
+                            <div className="service-topright">
+                                <p className="text-effect">
+                                    Nestled in open green pastures, Fun Farming Uganda is more than just a farm — it&apos;s
+                                    a living example of ethical, sustainable agriculture.
                                 </p>
                             </div>
                         </div>
-                        <div className="funfact-three__item">
-                            <div className="funfact-three__item__icon">
-                                <i className="icon-event"></i>
-                            </div>
-                            <div className="funfact-three__item__content">
-                                <h3 className="funfact-three__item__count">
-                                    <span>02</span>
-                                </h3>
-                                <p className="funfact-three__item__text">
-                                    Imagine Yourself ideal event together
-                                </p>
-                            </div>
-                        </div>
-                        <div className="funfact-three__item">
-                            <div className="funfact-three__item__icon">
-                                <i className="icon-eco"></i>
-                            </div>
-                            <div className="funfact-three__item__content">
-                                <h3 className="funfact-three__item__count">
-                                    <span>03</span>
-                                </h3>
-                                <p className="funfact-three__item__text">
-                                    Minimum mid impact
-                                </p>
-                            </div>
-                        </div>
-                        <div className="funfact-three__item">
-                            <div className="funfact-three__item__icon">
-                                <i className="icon-community"></i>
-                            </div>
-                            <div className="funfact-three__item__content">
-                                <h3 className="funfact-three__item__count">
-                                    <span>04</span>
-                                </h3>
-                                <p className="funfact-three__item__text">
-                                    For thinkers and doers, young and less young
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Partner Logos */}
-            <div className="client-carousel">
-                <div className="container">
-                    <div className="sec-title text-center">
-                        <div className="sec-title__tagline">
-                            <img
-                                src="/assets/images/shapes/sec-title-s-1-1.png"
-                                alt="shape"
-                            />
-                            OUR PARTNERS
-                        </div>
-                        <h3 className="sec-title__title">
-                            Trusted by Leading Organizations
-                        </h3>
-                    </div>
-                    <div className="client-carousel__one owl-carousel owl-theme">
-                        <div className="client-carousel__one__item">
-                            <img
-                                className="client-carousel__one__item__normal"
-                                src="/img/partners/fao-logo.svg"
-                                alt="FAO"
-                            />
-                        </div>
-                        <div className="client-carousel__one__item">
-                            <img
-                                className="client-carousel__one__item__normal"
-                                src="/img/partners/unfe.png"
-                                alt="UNFE"
-                            />
-                        </div>
-                        <div className="client-carousel__one__item">
-                            <img
-                                className="client-carousel__one__item__normal"
-                                src="/img/partners/unyfa.png"
-                                alt="UNYFA"
-                            />
-                        </div>
-                        <div className="client-carousel__one__item">
-                            <img
-                                className="client-carousel__one__item__normal"
-                                src="/img/partners/fao-logo.svg"
-                                alt="FAO"
-                            />
-                        </div>
-                        <div className="client-carousel__one__item">
-                            <img
-                                className="client-carousel__one__item__normal"
-                                src="/img/partners/unfe.png"
-                                alt="UNFE"
-                            />
-                        </div>
-                        <div className="client-carousel__one__item">
-                            <img
-                                className="client-carousel__one__item__normal"
-                                src="/img/partners/unyfa.png"
-                                alt="UNYFA"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Location Section */}
-            <section className="about-one section-space">
-                <div className="container">
-                    <div className="row gutter-y-30">
-                        <div className="col-lg-6">
-                            <div className="about-one__content">
-                                <div className="sec-title text-start">
-                                    <div className="sec-title__tagline">
-                                        <img
-                                            src="/assets/images/shapes/sec-title-s-1-1.png"
-                                            alt="shape"
-                                        />
-                                        FIND US
+                        <div className="space44"></div>
+                        <div className="swiper mygallery1" data-aos="zoom-in" data-aos-duration="900">
+                            <div className="swiper-wrapper">
+                                {galleryImages.map((src, index) => (
+                                    <div className="swiper-slide" key={index}>
+                                        <div className="vl-gallery-thumb">
+                                            <img src={src} alt={`Gallery ${index + 1}`} />
+                                            <span className="inner-border"></span>
+                                            <div className="view-wrap">
+                                                <a href="/gallery">View</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h3 className="sec-title__title">
-                                        There&apos;s always a FarmFun near you
-                                    </h3>
-                                </div>
-                                <p>
-                                    Fun Farm is located in Uganda and deeply
-                                    rooted in the Butalangu province, Nakaseke
-                                    District. Who rules the roost at each of the
-                                    farms? Our dairy cows! While they watch the
-                                    hilarious antics of you and your cow-leagues
-                                    or friends, our Chief Executive Farmers and
-                                    game leaders provide you with a farmtastic
-                                    day.
-                                </p>
-                                <Link href="/contact" className="garlon-btn">
-                                    Discover this location
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="about-one__thumb__item">
-                                <img
-                                    src="/webimgs/fun-farm-image.jpg"
-                                    alt="Fun Farming Uganda location"
-                                />
+                                ))}
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            {/* Secondary CTA */}
-            <div className="cta-one">
-                <div className="cta-one__bg"></div>
+            {/* Partners */}
+            <div className="vl-hero9-btm-area">
                 <div className="container">
-                    <div className="cta-one__inner">
-                        <div className="cta-one__call">
-                            <div className="cta-one__call__icon">
-                                <i className="icon-cattle"></i>
-                            </div>
-                            <div className="cta-one__call__content">
-                                <h3 className="cta-one__call__title">
-                                    Take the bull by the horns!
-                                </h3>
-                                <div className="cta-one__call__link">
-                                    Ready for an unforgettable farm adventure?
-                                    Book your team-building experience today.
+                    <div className="row">
+                        <div className="vl-hero9-btm_text" data-aos="zoom-out" data-aos-duration="900">
+                            <h2>Trusted By <span className="counter">3</span>+ Partners Worldwide</h2>
+                        </div>
+                        <div className="tp-text-slider">
+                            <div className="container">
+                                <div className="row">
+                                    <div className="tp-text-slider-rotate">
+                                        <div className="swiper tpcauses-text-slider-active-2">
+                                            <div className="swiper-wrapper tp-slide-transtion">
+                                                {partners.map((src, index) => (
+                                                    <div className="swiper-slide" key={index}>
+                                                        <div className="hm4-brand-2">
+                                                            <span className="title">
+                                                                <img src={src} alt={`Partner ${index + 1}`} />
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="cta-one__btn">
-                            <Link href="/activities" className="garlon-btn">
-                                <span>To all activities</span>
-                                <i className="icon-angle-small-right"></i>
-                            </Link>
+                    </div>
+                </div>
+            </div>
+
+            {/* FAQ */}
+            <div className="vl-faq9-area sp1">
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-xl-6 col-lg-6 col-md-6">
+                            <div className="vl-faq-info">
+                                <div className="row">
+                                    <div className="counter_boxes_area">
+                                        <div className="row">
+                                            <div className="col-xl-6 col-lg-6 col-md-6" data-aos="zoom-out" data-aos-duration="900">
+                                                <div className="vl-faq-info-content box1">
+                                                    <div className="vl-faq-icon">
+                                                        <img src="/assets/img/icon/faq1-img1.png" alt="" />
+                                                    </div>
+                                                    <div className="space24"></div>
+                                                    <h2><span className="counter">1200</span>+</h2>
+                                                    <div className="space16"></div>
+                                                    <p>Products</p>
+                                                </div>
+                                            </div>
+                                            <div className="col-xl-6 col-lg-6 col-md-6" data-aos="zoom-out" data-aos-duration="1100">
+                                                <div className="vl-faq-info-content box1">
+                                                    <div className="vl-faq-icon">
+                                                        <img src="/assets/img/icon/faq1-img2.png" alt="" />
+                                                    </div>
+                                                    <div className="space24"></div>
+                                                    <h2><span className="counter">20</span>+</h2>
+                                                    <div className="space16"></div>
+                                                    <p>Years Of Experience</p>
+                                                </div>
+                                            </div>
+                                            <div className="col-xl-6 col-lg-6 col-md-6" data-aos="zoom-out" data-aos-duration="900">
+                                                <div className="vl-faq-info-content">
+                                                    <div className="vl-faq-icon">
+                                                        <img src="/assets/img/icon/faq1-img3.png" alt="" />
+                                                    </div>
+                                                    <div className="space24"></div>
+                                                    <h2><span className="counter">2.850</span>+</h2>
+                                                    <div className="space16"></div>
+                                                    <p>Satisfied Clients</p>
+                                                </div>
+                                            </div>
+                                            <div className="col-xl-6 col-lg-6 col-md-6" data-aos="zoom-out" data-aos-duration="1100">
+                                                <div className="vl-faq-info-content">
+                                                    <div className="vl-faq-icon">
+                                                        <img src="/assets/img/icon/faq1-img4.png" alt="" />
+                                                    </div>
+                                                    <div className="space24"></div>
+                                                    <h2><span className="counter">30</span>+</h2>
+                                                    <div className="space16"></div>
+                                                    <p>Local Team Members</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-xl-6 col-lg-6 col-md-6">
+                            <div className="faq-header z-index99">
+                                <h3 className="subtitle" data-aos="fade-left" data-aos-duration="800">
+                                    <img src="/assets/img/icon/subtitle-icon2.png" alt="" />
+                                    Why Farm
+                                </h3>
+                                <div className="space24"></div>
+                                <h2 className="title text-anime-style-3" data-aos="fade-left" data-aos-duration="900">
+                                    Where Every Animal Is Raised with Love,
+                                </h2>
+                                <div className="space16"></div>
+                                <p className="pera-text text-effect" data-aos="fade-left" data-aos-duration="1000">
+                                    At Fun Farming Uganda, we believe that great food begins with honest farming.
+                                    Nestled in open pastures and guided by nature, our farm is built on values of
+                                    sustainability, compassion, and transparency.
+                                </p>
+                                <div className="space38"></div>
+                                <div className="btn_area3" data-aos="fade-left" data-aos-duration="900">
+                                    <Link href="/contact" className="vl-btn3">
+                                        Learn More
+                                        <span className="arrow_btn3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <path d="M27.002 16.002H5.00195" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </span>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* CTA */}
+            <div className="vl-cta4-area" data-aos="zoom-out" data-aos-duration="1000">
+                <div className="container">
+                    <div className="row cta4-area-info sp1">
+                        <div className="col-xl-6 mx-auto text-center">
+                            <div className="cta4-area-content">
+                                <div className="product4-heading">
+                                    <h3 className="product4-subtitle" data-aos="fade-right" data-aos-duration="900">
+                                        Ready for Adventure
+                                    </h3>
+                                    <div className="space24"></div>
+                                    <h2 className="product4-title text-anime-style-3" data-aos="fade-left" data-aos-duration="1000">
+                                        Your Unforgettable Farm Experience Awaits
+                                    </h2>
+                                </div>
+                                <div className="space38"></div>
+                                <div className="btn_area10 z-index99" data-aos="zoom-out" data-aos-duration="1100">
+                                    <Link href="/contact" className="vl-btn10">
+                                        Book Now
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                                                <path d="M22.8079 11.1373L11.1406 22.8046" stroke="#25452C" strokeWidth="1.55556" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M22.8054 17.5005C22.8054 17.5005 23.6439 11.9751 22.8054 11.1366C21.9669 10.2981 16.4414 11.1366 16.4414 11.1366" stroke="#25452C" strokeWidth="1.55556" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </span>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="cta4-area-shape1 aniamtion-key-2">
+                            <img src="/assets/img/shape/cta-hm4(1).png" alt="" />
+                        </div>
+                        <div className="cta4-area-shape2 aniamtion-key-2">
+                            <img src="/assets/img/shape/cta-hm4(2).png" alt="" />
                         </div>
                     </div>
                 </div>
