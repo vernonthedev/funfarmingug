@@ -66,35 +66,21 @@ export default function BlogPage() {
                 ]}
             />
 
-            <div className="vl-blog-area sp1">
+            <div className="vl-vlog-inr-area sp1">
                 <div className="container">
                     <div className="row">
-                        <div className="col-xl-6 mx-auto text-center">
-                            <div className="service-header">
-                                <div className="service-topleft">
-                                    <h3 data-aos="fade-right" data-aos-duration="800">
-                                        <img src="/assets/img/icon/subtitle-icon2.png" alt="" />
-                                        Our Recent News
-                                    </h3>
-                                    <div className="space18"></div>
-                                    <h2 className="text-anime-style-3" data-aos="fade-right" data-aos-duration="900">
-                                        Latest Articles From Our Blog
-                                    </h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="space44"></div>
-                        <div className="row">
-                            {posts.map((post, index) => (
-                                <div className="col-xl-4 col-lg-4 col-md-6" key={index}>
-                                    <div className="vl-blog-box" data-aos="fade-up" data-aos-duration="1000">
-                                        <div className="vl-blog-thumb">
-                                            <img src="/img/gallery/funfarm_n13.png" alt={post.title} />
-                                            <Link href={`/blog/${post.slug}`} className="vl-blog-link">
-                                                <i className="fa-solid fa-arrow-up-right"></i>
-                                            </Link>
+                        {posts.map((post, index) => (
+                            <div className="col-xl-4 col-lg-6" key={index}>
+                                <div className="about-inr-vlog-box margin-b30">
+                                    <div className="about-inr-vlog-thumb case_img_anime">
+                                        <img src="/img/gallery/funfarm_n13.png" alt={post.title} />
+                                        <div className="box-text">
+                                            <h3>0{index + 1}</h3>
+                                            <span>Jul</span>
                                         </div>
-                                        <div className="vl-blog-content">
+                                    </div>
+                                    <div className="about-inr-vlog-content">
+                                        <div className="about-inr-vlog-meta">
                                             <ul>
                                                 <li>
                                                     <i className="fa-regular fa-calendar"></i>
@@ -105,24 +91,23 @@ export default function BlogPage() {
                                                     {post.category}
                                                 </li>
                                             </ul>
-                                            <h3>
-                                                <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                                            </h3>
-                                            <p>{post.excerpt}</p>
-                                            <Link href={`/blog/${post.slug}`} className="vl-blog-more">
-                                                Read More
-                                                <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                        <path d="M15.002 10.002H5.00195" stroke="#132C12" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                                        <path d="M9.00098 14.002L14.001 10.002L9.00098 6.00195" stroke="#132C12" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                                    </svg>
-                                                </span>
-                                            </Link>
                                         </div>
+                                        <div className="space16"></div>
+                                        <h3>
+                                            <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                                        </h3>
+                                        <div className="space24"></div>
+                                        <div className="text-pera">
+                                            <p>{post.excerpt}</p>
+                                        </div>
+                                        <div className="space28"></div>
+                                        <Link href={`/blog/${post.slug}`} className="btn3-home6">
+                                            Read More
+                                        </Link>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

@@ -155,7 +155,7 @@ export default function FAQPage() {
                                     Why Farm
                                 </h3>
                                 <div className="space24"></div>
-                                <h2 className="title text-anime-style-3" data-aos="fade-left" data-aos-duration="900">
+                                <h2 className="title" data-aos="fade-left" data-aos-duration="900">
                                     Where Every Animal Is Raised with Love,
                                 </h2>
                                 <div className="space16"></div>
