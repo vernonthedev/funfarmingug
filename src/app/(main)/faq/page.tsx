@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import PageHeader from '@/components/sections/PageHeader';
 import { useState } from 'react';
 
@@ -73,6 +74,7 @@ const faqs = [
 
 export default function FAQPage() {
     const [activeCategory, setActiveCategory] = useState(1);
+    const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     const filteredFaqs = faqs.filter(
         (faq) => activeCategory === 1 || faq.category === activeCategory
@@ -82,96 +84,142 @@ export default function FAQPage() {
         <>
             <PageHeader
                 title="FAQ"
-                bgImage="/assets/images/backgrounds/page-header-bg-1-1.jpg"
+                bgImage="/assets/img/hero/about-us-inr-herothumb.png"
                 breadcrumbs={[
                     { label: 'Home', href: '/' },
                     { label: 'FAQ' },
                 ]}
             />
 
-            <section className="faq-page section-space">
+            <div className="vl-faq9-area sp1">
                 <div className="container">
-                    <div className="row gutter-y-30">
-                        <div className="col-lg-8">
-                            <div className="faq-page__content">
-                                <div className="sec-title text-start">
-                                    <div className="sec-title__tagline">
-                                        <img
-                                            src="/assets/images/shapes/sec-title-s-1-1.png"
-                                            alt="shape"
-                                        />
-                                        FREQUENTLY ASKED QUESTIONS
-                                    </div>
-                                    <h3 className="sec-title__title">
-                                        Everything You Need to Know
-                                    </h3>
-                                </div>
-                                <div
-                                    className="faq-page__accordion garlon-accrodion"
-                                    data-grp-name="garlon-accrodion"
-                                >
-                                    {filteredFaqs.map((faq, index) => (
-                                        <div
-                                            key={index}
-                                            className="accrodion"
-                                        >
-                                            <div className="accrodion-title">
-                                                <h4>{faq.question}</h4>
-                                                <div className="accrodion-title__icon">
-                                                    <span className="icon-plus"></span>
-                                                    <span className="icon-minus"></span>
+                    <div className="row">
+                        <div className="col-xl-6 col-lg-6 col-md-6">
+                            <div className="vl-faq-info">
+                                <div className="row">
+                                    <div className="counter_boxes_area">
+                                        <div className="row">
+                                            <div className="col-xl-6 col-lg-6 col-md-6" data-aos="zoom-out" data-aos-duration="900">
+                                                <div className="vl-faq-info-content box1">
+                                                    <div className="vl-faq-icon">
+                                                        <img src="/assets/img/icon/faq1-img1.png" alt="" />
+                                                    </div>
+                                                    <div className="space24"></div>
+                                                    <h2><span className="counter">1200</span>+</h2>
+                                                    <div className="space16"></div>
+                                                    <p>Products</p>
                                                 </div>
                                             </div>
-                                            <div className="accrodion-content">
-                                                <p>{faq.answer}</p>
+                                            <div className="col-xl-6 col-lg-6 col-md-6" data-aos="zoom-out" data-aos-duration="1100">
+                                                <div className="vl-faq-info-content box1">
+                                                    <div className="vl-faq-icon">
+                                                        <img src="/assets/img/icon/faq1-img2.png" alt="" />
+                                                    </div>
+                                                    <div className="space24"></div>
+                                                    <h2><span className="counter">20</span>+</h2>
+                                                    <div className="space16"></div>
+                                                    <p>Years Of Experience</p>
+                                                </div>
+                                            </div>
+                                            <div className="col-xl-6 col-lg-6 col-md-6" data-aos="zoom-out" data-aos-duration="900">
+                                                <div className="vl-faq-info-content">
+                                                    <div className="vl-faq-icon">
+                                                        <img src="/assets/img/icon/faq1-img3.png" alt="" />
+                                                    </div>
+                                                    <div className="space24"></div>
+                                                    <h2><span className="counter">2.850</span>+</h2>
+                                                    <div className="space16"></div>
+                                                    <p>Satisfied Clients</p>
+                                                </div>
+                                            </div>
+                                            <div className="col-xl-6 col-lg-6 col-md-6" data-aos="zoom-out" data-aos-duration="1100">
+                                                <div className="vl-faq-info-content">
+                                                    <div className="vl-faq-icon">
+                                                        <img src="/assets/img/icon/faq1-img4.png" alt="" />
+                                                    </div>
+                                                    <div className="space24"></div>
+                                                    <h2><span className="counter">30</span>+</h2>
+                                                    <div className="space16"></div>
+                                                    <p>Local Team Members</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-4">
-                            <div className="faq-page__sidebar">
-                                <div className="faq-page__categories">
-                                    <h3>Categories</h3>
-                                    <ul className="faq-page__category-list list-unstyled">
-                                        {categories.map((cat) => (
-                                            <li key={cat.id}>
-                                                <button
-                                                    className={`faq-page__category-btn ${activeCategory === cat.id ? 'active' : ''}`}
-                                                    onClick={() =>
-                                                        setActiveCategory(cat.id)
-                                                    }
-                                                >
-                                                    {cat.name}
-                                                </button>
-                                            </li>
-                                        ))}
-                                    </ul>
+                        <div className="col-xl-6 col-lg-6 col-md-6">
+                            <div className="faq-header z-index99">
+                                <h3 className="subtitle" data-aos="fade-left" data-aos-duration="800">
+                                    <img src="/assets/img/icon/subtitle-icon2.png" alt="" />
+                                    Why Farm
+                                </h3>
+                                <div className="space24"></div>
+                                <h2 className="title text-anime-style-3" data-aos="fade-left" data-aos-duration="900">
+                                    Where Every Animal Is Raised with Love,
+                                </h2>
+                                <div className="space16"></div>
+                                <p className="pera-text text-effect" data-aos="fade-left" data-aos-duration="1000">
+                                    At Fun Farming Uganda, we believe that great food begins with honest farming.
+                                    Nestled in open pastures and guided by nature, our farm is built on values of
+                                    sustainability, compassion, and transparency.
+                                </p>
+                                <div className="space38"></div>
+                                <div className="btn_area3" data-aos="fade-left" data-aos-duration="900">
+                                    <Link href="/contact" className="vl-btn3">
+                                        Learn More
+                                        <span className="arrow_btn3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <path d="M27.002 16.002H5.00195" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </span>
+                                    </Link>
                                 </div>
-
-                                <div className="faq-page__cta">
-                                    <div className="faq-page__cta-inner">
-                                        <h3>Still have questions?</h3>
-                                        <p>
-                                            Feel free to contact us. We are
-                                            happy to help you plan your farm
-                                            experience.
-                                        </p>
-                                        <a
-                                            href="/contact"
-                                            className="garlon-btn"
-                                        >
-                                            <span>Contact Us</span>
-                                            <i className="icon-angle-small-right"></i>
-                                        </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="space60"></div>
+                    <div className="row">
+                        <div className="col-xl-12">
+                            <div className="vl-faq-content-wrap-2 vl-faq9">
+                                <div className="vl-faq-accordion">
+                                    <div className="accordion" id="faqAccordion">
+                                        {filteredFaqs.map((faq, index) => (
+                                            <div className="vl-accordion-item" key={index} data-aos="fade-right" data-aos-duration="800">
+                                                <h2 className="accordion-header" id={`heading${index}`}>
+                                                    <button
+                                                        className={`accordion-button ${openIndex === index ? '' : 'collapsed'}`}
+                                                        type="button"
+                                                        onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
+                                                        aria-expanded={openIndex === index}
+                                                        aria-controls={`collapse${index}`}
+                                                    >
+                                                        <span>0{index + 1}</span> {faq.question}
+                                                        <span className="vl-faqarrow vl-faqarrow-2">
+                                                            <i className="fa-solid fa-angle-down"></i>
+                                                        </span>
+                                                    </button>
+                                                </h2>
+                                                <div
+                                                    id={`collapse${index}`}
+                                                    className={`accordion-collapse collapse ${openIndex === index ? 'show' : ''}`}
+                                                    aria-labelledby={`heading${index}`}
+                                                    data-bs-parent="#faqAccordion"
+                                                >
+                                                    <div className="accordion-body">
+                                                        <p>{faq.answer}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </>
     );
 }
