@@ -14,7 +14,11 @@ export default function ClientLayoutScripts() {
                 strategy="afterInteractive"
             />
             <Script
-                src="/assets/js/plugins/fontawesome.js"
+                src="/assets/js/plugins/gsap.min.js"
+                strategy="afterInteractive"
+            />
+            <Script
+                src="/assets/js/plugins/ScrollTrigger.min.js"
                 strategy="afterInteractive"
             />
             <Script
@@ -22,11 +26,7 @@ export default function ClientLayoutScripts() {
                 strategy="afterInteractive"
             />
             <Script
-                src="/assets/js/plugins/counter.js"
-                strategy="afterInteractive"
-            />
-            <Script
-                src="/assets/js/plugins/magnific-popup.js"
+                src="/assets/js/plugins/swiper.min.js"
                 strategy="afterInteractive"
             />
             <Script
@@ -34,7 +34,19 @@ export default function ClientLayoutScripts() {
                 strategy="afterInteractive"
             />
             <Script
+                src="/assets/js/plugins/slick-slider.js"
+                strategy="afterInteractive"
+            />
+            <Script
+                src="/assets/js/plugins/magnific-popup.js"
+                strategy="afterInteractive"
+            />
+            <Script
                 src="/assets/js/plugins/nice-select.js"
+                strategy="afterInteractive"
+            />
+            <Script
+                src="/assets/js/plugins/counter.js"
                 strategy="afterInteractive"
             />
             <Script
@@ -42,19 +54,7 @@ export default function ClientLayoutScripts() {
                 strategy="afterInteractive"
             />
             <Script
-                src="/assets/js/plugins/slick-slider.js"
-                strategy="afterInteractive"
-            />
-            <Script
-                src="/assets/js/plugins/swiper.min.js"
-                strategy="afterInteractive"
-            />
-            <Script
-                src="/assets/js/plugins/gsap.min.js"
-                strategy="afterInteractive"
-            />
-            <Script
-                src="/assets/js/plugins/ScrollTrigger.min.js"
+                src="/assets/js/plugins/parallaxie.js"
                 strategy="afterInteractive"
             />
             <Script
@@ -66,9 +66,10 @@ export default function ClientLayoutScripts() {
                 strategy="afterInteractive"
             />
             <Script
-                src="/assets/js/plugins/parallaxie.js"
+                src="/assets/js/plugins/fontawesome.js"
                 strategy="afterInteractive"
             />
+            <Script src="/assets/js/main.js" strategy="afterInteractive" />
         </>
     );
 }
