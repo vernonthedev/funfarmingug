@@ -397,7 +397,7 @@ export default function HomePage() {
                                     Farm Gallery
                                 </h3>
                                 <div className="space18"></div>
-                                <h2 className="text-anime-style-3" data-aos="fade-right" data-aos-duration="900">
+                                <h2 data-aos="fade-right" data-aos-duration="900">
                                     A Look Into Our Land And Livestock
                                 </h2>
                             </div>
