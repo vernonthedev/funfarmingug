@@ -107,13 +107,13 @@ export default function Header() {
                     <div className="main-header__inner__box">
                         <div className="main-header__top">
                             <div className="main-header__inner">
-                                <div className="main-header__logo">
+                                <div className="main-header__Image">
                                     <Link href="/">
                                         <Image
                                             src="/logo.png"
                                             alt="Fun Farming Uganda"
                                             width={223}
-                                            height={100}
+                                            height={223}
                                         />
                                     </Link>
                                 </div>
@@ -177,7 +177,7 @@ export default function Header() {
                                             src="/assets/images/logo-dark.png"
                                             alt="Fun Farming Uganda"
                                             width={223}
-                                            height={100}
+                                            height={223}
                                         />
                                     </Link>
                                 </div>
@@ -225,7 +225,7 @@ export default function Header() {
                             <Image
                                 src="/assets/images/logo-light.png"
                                 width={155}
-                                height={100}
+                                height={155}
                                 alt="Fun Farming Uganda"
                             />
                         </Link>
