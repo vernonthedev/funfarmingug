@@ -216,40 +216,49 @@ export default function HomePage() {
             </div>
 
             {/* About */}
-            <div className="vl-about1-area sp1">
-                <div className="space96"></div>
+            <div id="about" className="vl-about7-area sp1">
                 <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-xl-6 col-lg-6">
-                            <div className="about1-thumb1 vl-clip-anim image-anime" data-aos="fade-right" data-aos-duration="800">
-                                <img className="vl-anim-img w-100" data-animate="true" src="/webimgs/fun-farm-image.jpg" alt="Fun Farming Uganda" />
+                    <div className="row">
+                        <div className="col-xl-4 col-lg-4">
+                            <div className="service7-header">
+                                <h3 data-aos="fade-right" data-aos-duration="800">
+                                    <img src="/assets/img/icon/hm7-sub-title2-dot.png" alt="" />
+                                    Welcome to the Farm
+                                </h3>
                             </div>
                         </div>
-                        <div className="col-xl-6 col-lg-6 col-md-12">
-                            <div className="about-area-info">
-                                <div className="about1-heading-area">
-                                    <h3 className="about-subtitle" data-aos="fade-left" data-aos-duration="800">
-                                        Welcome to the Farm
-                                    </h3>
-                                    <div className="space24"></div>
-                                    <h2 className="about-title text-anime-style-3" data-aos="fade-left" data-aos-duration="800">
-                                        Discover the joy of team events at our farm oasis!
-                                    </h2>
-                                    <div className="space16"></div>
-                                    <p className="text-effect" data-aos="fade-left" data-aos-duration="900">
+                        <div className="col-xl-8 col-lg-8">
+                            <div className="vl-about7-pera_text">
+                                <p className="text-effect">
+                                    At Fun Farming Uganda, we bring people together through unforgettable farm experiences.
+                                    From team building to farm tours, every visit is crafted to inspire connection and joy.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="space60"></div>
+                        <div className="row align-items-center">
+                            <div className="col-xl-6 col-lg-6">
+                                <div className="vl-about7-thumb vl-clip-anim image-anime">
+                                    <img className="vl-anim-img w-100" data-animate="true" src="/webimgs/fun-farm-image.jpg" alt="Fun Farming Uganda" />
+                                </div>
+                            </div>
+                            <div className="col-xl-6 col-lg-6">
+                                <div className="about7-main-content">
+                                    <div className="about7-author-area">
+                                        <img src="/assets/img/icon/hm7-sub-title2-dot.png" alt="" data-aos="zoom-out" data-aos-duration="900" />
+                                        <div className="space16"></div>
+                                        <h3 data-aos="zoom-out" data-aos-duration="1000">
+                                            <a href="/about">Discover the joy of team events at our farm oasis!</a>
+                                        </h3>
+                                    </div>
+                                    <p className="text-anime-style-1">
                                         At Fun Farming Uganda, we bring people together through unforgettable farm experiences.
                                         From team building to farm tours, every visit is crafted to inspire connection and joy.
                                     </p>
-                                    <div className="space38"></div>
-                                    <div className="btn_area3" data-aos="fade-left" data-aos-duration="900">
-                                        <Link href="/about" className="vl-btn3">
+                                    <div className="space28"></div>
+                                    <div className="blog7-btn" data-aos="fade-left" data-aos-duration="900">
+                                        <Link href="/about" className="btn-home7">
                                             Learn More
-                                            <span className="arrow_btn3">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                                    <path d="M27.002 16.002H5.00195" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                    <path d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                </svg>
-                                            </span>
                                         </Link>
                                     </div>
                                 </div>
