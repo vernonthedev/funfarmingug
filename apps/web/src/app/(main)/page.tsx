@@ -74,8 +74,11 @@ export default function HomePage() {
                     });
                 } catch (e) {
                     // swipers not ready yet
+                    return false;
                 }
+                return true;
             }
+            return false;
         }
 
         if (!initSwipers()) {

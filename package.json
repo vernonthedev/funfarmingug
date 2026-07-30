@@ -2,11 +2,12 @@
     "name": "funfarmingug",
     "version": "0.1.0",
     "private": true,
+    "packageManager": "pnpm@11.18.0",
     "scripts": {
-        "dev": "pnpm --filter=@funfarmingug/checkback dev",
-        "build": "pnpm --filter=@funfarmingug/checkback build",
-        "start": "pnpm --filter=@funfarmingug/checkback start",
-        "lint": "pnpm --filter=@funfarmingug/checkback lint",
+        "dev": "turbo run dev",
+        "build": "turbo run build",
+        "start": "turbo run start",
+        "lint": "turbo run lint",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
     },
@@ -17,6 +18,7 @@
         "lefthook": "^2.1.10",
         "portless": "^0.15.4",
         "prettier": "^3.9.6",
+        "turbo": "^2.5.6",
         "typescript": "^5.4.5"
     }
 }
