@@ -71,10 +71,6 @@ export default function RootLayout({
                     href="https://fonts.gstatic.com"
                     crossOrigin="anonymous"
                 />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Lateef:wght@400;600;700;800&display=swap"
-                    rel="stylesheet"
-                />
 
                 <link
                     rel="stylesheet"
@@ -99,6 +95,7 @@ export default function RootLayout({
                 />
                 <link rel="stylesheet" href="/assets/css/plugins/nice-select.css" />
                 <link rel="stylesheet" href="/assets/css/plugins/swiper.min.css" />
+                <link rel="stylesheet" href="/assets/css/main.css" />
             </head>
             <body>
                 {children}
