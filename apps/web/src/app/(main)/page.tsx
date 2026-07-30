@@ -173,10 +173,11 @@ export default function HomePage() {
                                     <div className="row">
                                         <div className="col-xl-8 mx-auto">
                                             <div className="vl-hero-info">
-                                                <div className="hero-header-area">
-                                                    <h3 data-aos="fade-right" data-aos-duration="800">
-                                                        Agro Tourism & Team Building
-                                                    </h3>
+                            <div className="hero-header-area">
+                                <h3 data-aos="fade-right" data-aos-duration="800">
+                                    <img src="/assets/img/icon/subtitle-icon.png" alt="" />
+                                    Agro Tourism & Team Building
+                                </h3>
                                                     <div className="space24"></div>
                                                     <h2 className="text-anime-style-3" data-aos="fade-left" data-aos-duration="900">
                                                         Welcome to Fun Farming Uganda
