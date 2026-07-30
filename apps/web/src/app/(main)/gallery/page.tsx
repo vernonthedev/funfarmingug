@@ -24,37 +24,28 @@ export default function GalleryPage() {
                 ]}
             />
 
-            <div className="vl-projects2-area sp1">
+            <div className="project_inner_section_area sp1">
                 <div className="container">
                     <div className="row">
-                        <div className="col-xl-6 mx-auto text-center">
-                            <div className="service-header">
-                                <div className="service-topleft">
-                                    <h3 data-aos="fade-right" data-aos-duration="800">
-                                        <img src="/assets/img/icon/subtitle-icon2.png" alt="" />
-                                        Farm Gallery
-                                    </h3>
-                                    <div className="space18"></div>
-                                    <h2 className="text-anime-style-3" data-aos="fade-right" data-aos-duration="900">
-                                        A Look Into Our Land And Livestock
-                                    </h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="space44"></div>
-                        <div className="row">
-                            {galleryItems.map((item, index) => (
-                                <div className="col-xl-4 col-lg-4 col-md-6" key={index}>
-                                    <div className="vl-gallery-thumb" data-aos="zoom-in" data-aos-duration="900">
-                                        <img src={item.src} alt={item.alt} />
-                                        <span className="inner-border"></span>
-                                        <div className="view-wrap">
-                                            <Link href={`/gallery`}>{item.title}</Link>
+                        {galleryItems.map((item, index) => (
+                            <div className="col-xl-4 col-lg-4 col-md-6" key={index}>
+                                <div className="project6-box margin-b30">
+                                    <div className="project6-thumb image-anime">
+                                        <img className="imgs" src={item.src} alt={item.alt} />
+                                        <div className="project6-thumb-content">
+                                            <div className="arrow_wrap">
+                                                <div className="content_arrow">
+                                                    <img src="/assets/img/icon/arrow-right-inner.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <h3 className="title">
+                                                <Link href="/gallery">{item.title}</Link>
+                                            </h3>
                                         </div>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
