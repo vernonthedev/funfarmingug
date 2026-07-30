@@ -2,144 +2,124 @@
 
 import Link from 'next/link';
 import PageHeader from '@/components/sections/PageHeader';
-import CtaSection from '@/components/sections/CtaSection';
 
 export default function LoungePage() {
     return (
         <>
             <PageHeader
                 title="Farm Lounge"
-                bgImage="/img/gallery/funfarm_n26.png"
+                bgImage="/assets/img/hero/about-us-inr-herothumb.png"
                 breadcrumbs={[
                     { label: 'Home', href: '/' },
                     { label: 'Farm Lounge' },
                 ]}
             />
 
-            <section className="about-one section-space">
-                <div className="container">
-                    <div className="row gutter-y-30 align-items-center">
-                        <div className="col-lg-6">
-                            <div
-                                className="about-one__thumb wow fadeInUp"
-                                data-wow-duration="1500ms"
-                                data-wow-delay="100ms"
-                            >
-                                <div className="about-one__thumb__item">
-                                    <img
-                                        src="/webimgs/fun-farm-image.jpg"
-                                        alt="Farm Lounge at Fun Farming Uganda"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="about-one__content">
-                                <div className="sec-title text-start">
-                                    <div className="sec-title__tagline">
-                                        <img
-                                            src="/assets/images/shapes/sec-title-s-1-1.png"
-                                            alt="shape"
-                                        />
-                                        FIVE STAR HOUSING
-                                    </div>
-                                    <h3 className="sec-title__title">
-                                        Our Lounge Facilities
+            <div className="vl-service7">
+                <div className="vl-service7-area sp1">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xl-6 mx-auto text-center">
+                                <div className="service7-header">
+                                    <h3 data-aos="fade-right" data-aos-duration="900">
+                                        <img src="/assets/img/icon/hm7-sub-title2-dot.png" alt="" />
+                                        Five Star Housing
                                     </h3>
+                                    <div className="space24"></div>
+                                    <h2 className="text-effect" data-aos="fade-left" data-aos-duration="1000">
+                                        Our Lounge Facilities
+                                    </h2>
                                 </div>
-                                <p className="about-one__content__text">
-                                    Our Farm Lounge offers a serene relaxation
-                                    sanctuary where guests can unwind after a
-                                    day of farm activities. Enjoy the peaceful
-                                    countryside atmosphere, comfortable
-                                    accommodations, and the warm hospitality of
-                                    our farm.
-                                </p>
-                                <p className="about-one__content__text">
-                                    Whether you are looking to escape the hustle
-                                    of the city or need a quiet place to
-                                    reflect, the Farm Lounge provides the
-                                    perfect setting. Our facilities include
-                                    comfortable indoor and outdoor seating,
-                                    complimentary WiFi, refreshments, and clean
-                                    restrooms.
-                                </p>
-                                <p className="about-one__content__text">
-                                    <strong>
-                                        The Farm Lounge can also be booked for
-                                        private events, meetings, workshops, and
-                                        celebrations. Contact us for
-                                        availability and pricing.
-                                    </strong>
-                                </p>
-                                <div className="about-one__user-box">
-                                    <Link
-                                        href="/contact"
-                                        className="garlon-btn"
-                                    >
-                                        <span>Book the Farm Lounge</span>
-                                        <i className="icon-angle-small-right"></i>
-                                    </Link>
+                            </div>
+                            <div className="space44"></div>
+                            <div className="row">
+                                <div className="col-xl-4 col-lg-4 col-md-6">
+                                    <div className="vl-services2-box" data-aos="fade-up" data-aos-duration="800">
+                                        <div className="services2-box-icon">
+                                            <i className="fa-solid fa-couch"></i>
+                                        </div>
+                                        <div className="space24"></div>
+                                        <div className="services2-box-content">
+                                            <h2>Comfortable Seating</h2>
+                                            <div className="space16"></div>
+                                            <p>Relax in our comfortable indoor and outdoor seating areas with panoramic views of the countryside.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-xl-4 col-lg-4 col-md-6">
+                                    <div className="vl-services2-box" data-aos="fade-up" data-aos-duration="1000">
+                                        <div className="services2-box-icon">
+                                            <i className="fa-solid fa-wifi"></i>
+                                        </div>
+                                        <div className="space24"></div>
+                                        <div className="services2-box-content">
+                                            <h2>Complimentary WiFi</h2>
+                                            <div className="space16"></div>
+                                            <p>Stay connected with complimentary WiFi while you enjoy the peaceful farm atmosphere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-xl-4 col-lg-4 col-md-6">
+                                    <div className="vl-services2-box" data-aos="fade-up" data-aos-duration="1100">
+                                        <div className="services2-box-icon">
+                                            <i className="fa-solid fa-mug-hot"></i>
+                                        </div>
+                                        <div className="space24"></div>
+                                        <div className="services2-box-content">
+                                            <h2>Refreshments</h2>
+                                            <div className="space16"></div>
+                                            <p>Enjoy a selection of refreshments and light meals prepared with fresh farm ingredients.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="about-one__shape">
-                    <img
-                        src="/assets/images/shapes/plant-1.png"
-                        alt="shape"
-                    />
-                </div>
-            </section>
+            </div>
 
-            <section className="about-one section-space">
+            <div className="vl-about1-area sp1">
+                <div className="space96"></div>
                 <div className="container">
-                    <div className="row gutter-y-30">
-                        <div className="col-lg-8 mx-auto">
-                            <div className="sec-title text-start">
-                                <div className="sec-title__tagline">
-                                    <img
-                                        src="/assets/images/shapes/sec-title-s-1-1.png"
-                                        alt="shape"
-                                    />
-                                    RELAX & RECHARGE
-                                </div>
-                                <h3 className="sec-title__title">
-                                    Relax and Recharge
-                                </h3>
+                    <div className="row align-items-center">
+                        <div className="col-xl-6 col-lg-6">
+                            <div className="about1-thumb1 vl-clip-anim image-anime" data-aos="fade-right" data-aos-duration="800">
+                                <img className="vl-anim-img w-100" data-animate="true" src="/webimgs/fun-farm-image.jpg" alt="Farm Lounge" />
                             </div>
-                            <p className="about-one__content__text">
-                                After an exciting day of farm activities,
-                                there is no better place to unwind than the
-                                Farm Lounge. Sit back with a refreshing drink,
-                                enjoy the view of our lush green fields, and
-                                let the calm of the countryside refresh your
-                                spirit.
-                            </p>
-                            <p className="about-one__content__text">
-                                Our Farm Lounge is designed with your comfort
-                                in mind. From the cozy seating areas to the
-                                scenic outdoor terrace, every detail has been
-                                curated to ensure you have a relaxing and
-                                memorable stay at Fun Farming Uganda.
-                            </p>
-                            <p className="about-one__content__text">
-                                Open daily from 8:00 AM to 6:00 PM. Extended
-                                hours available for booked events.
-                            </p>
+                        </div>
+                        <div className="col-xl-6 col-lg-6 col-md-12">
+                            <div className="about-area-info">
+                                <div className="about1-heading-area">
+                                    <h3 className="about-subtitle" data-aos="fade-left" data-aos-duration="800">
+                                        Private Events
+                                    </h3>
+                                    <div className="space24"></div>
+                                    <h2 className="about-title text-anime-style-3" data-aos="fade-left" data-aos-duration="800">
+                                        Book the Farm Lounge
+                                    </h2>
+                                    <div className="space16"></div>
+                                    <p className="text-effect" data-aos="fade-left" data-aos-duration="900">
+                                        The Farm Lounge can also be booked for private events, meetings, workshops, and celebrations.
+                                        Contact us for availability and pricing.
+                                    </p>
+                                    <div className="space38"></div>
+                                    <div className="btn_area3" data-aos="fade-left" data-aos-duration="900">
+                                        <Link href="/contact" className="vl-btn3">
+                                            Book Now
+                                            <span className="arrow_btn3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                    <path d="M27.002 16.002H5.00195" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                    <path d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <CtaSection
-                icon="icon-leaf"
-                title="Make Your Booking Today"
-                text="Contact us to check availability and discuss your event requirements. We look forward to welcoming you to the Farm Lounge!"
-                buttonLabel="Contact Us"
-                buttonHref="/contact"
-            />
+            </div>
         </>
     );
 }
