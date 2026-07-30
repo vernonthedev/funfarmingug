@@ -11,67 +11,60 @@ export default function HomePage() {
                 (window as any).Swiper
             ) {
                 try {
-                    const heroSwiper = new (window as any).Swiper('.myhm1-hero', {
-                        loop: true,
-                        autoplay: {
-                            delay: 7000,
-                            disableOnInteraction: false,
-                        },
-                        speed: 1000,
-                        effect: 'slide',
-                        navigation: {
-                            nextEl: '.hero1-arrow .next-arrow button',
-                            prevEl: '.hero1-arrow .prev-arrow button',
-                        },
-                    });
+                    const heroEl = document.querySelector('.myhm1-hero');
+                    if (heroEl) {
+                        new (window as any).Swiper('.myhm1-hero', {
+                            loop: true,
+                            autoplay: {
+                                delay: 7000,
+                                disableOnInteraction: false,
+                            },
+                            speed: 1000,
+                            effect: 'slide',
+                            navigation: {
+                                nextEl: '.hero1-arrow .next-arrow button',
+                                prevEl: '.hero1-arrow .prev-arrow button',
+                            },
+                        });
+                    }
 
-                    const serviceSwiper = new (window as any).Swiper('.myservice7', {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                        loop: true,
-                        autoplay: {
-                            delay: 4000,
-                            disableOnInteraction: false,
-                        },
-                        speed: 700,
-                        breakpoints: {
-                            0: { slidesPerView: 1 },
-                            575: { slidesPerView: 2 },
-                            992: { slidesPerView: 3 },
-                        },
-                    });
+                    const galleryEl = document.querySelector('.mygallery1');
+                    if (galleryEl) {
+                        new (window as any).Swiper('.mygallery1', {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                            loop: true,
+                            autoplay: {
+                                delay: 4000,
+                                disableOnInteraction: false,
+                            },
+                            speed: 700,
+                            breakpoints: {
+                                0: { slidesPerView: 1 },
+                                575: { slidesPerView: 2 },
+                                992: { slidesPerView: 3 },
+                            },
+                        });
+                    }
 
-                    const gallerySwiper = new (window as any).Swiper('.mygallery1', {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                        loop: true,
-                        autoplay: {
-                            delay: 4000,
-                            disableOnInteraction: false,
-                        },
-                        speed: 700,
-                        breakpoints: {
-                            0: { slidesPerView: 1 },
-                            575: { slidesPerView: 2 },
-                            992: { slidesPerView: 3 },
-                        },
-                    });
-
-                    const partnerSwiper = new (window as any).Swiper('.tpcauses-text-slider-active-2', {
-                        slidesPerView: 5,
-                        spaceBetween: 30,
-                        loop: true,
-                        autoplay: {
-                            delay: 3000,
-                            disableOnInteraction: false,
-                        },
-                        speed: 700,
-                        breakpoints: {
-                            0: { slidesPerView: 2 },
-                            575: { slidesPerView: 3 },
-                            992: { slidesPerView: 5 },
-                        },
-                    });
+                    const partnerEl = document.querySelector('.tpcauses-text-slider-active-2');
+                    if (partnerEl) {
+                        new (window as any).Swiper('.tpcauses-text-slider-active-2', {
+                            slidesPerView: 5,
+                            spaceBetween: 30,
+                            loop: true,
+                            autoplay: {
+                                delay: 3000,
+                                disableOnInteraction: false,
+                            },
+                            speed: 700,
+                            breakpoints: {
+                                0: { slidesPerView: 2 },
+                                575: { slidesPerView: 3 },
+                                992: { slidesPerView: 5 },
+                            },
+                        });
+                    }
                 } catch (e) {
                     // swipers not ready yet
                     return false;
@@ -183,6 +176,90 @@ export default function HomePage() {
                                                         Welcome to Fun Farming Uganda
                                                         <br />
                                                         Where Agriculture Meets Adventure!
+                                                    </h2>
+                                                </div>
+                                                <div className="hero1-arrow">
+                                                    <div className="next-arrow">
+                                                        <button>
+                                                            <i className="fa-solid fa-arrow-right-long"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div className="prev-arrow">
+                                                        <button>
+                                                            <i className="fa-solid fa-arrow-left-long"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="swiper-slide">
+                            <div
+                                className="hero1-bg-slide"
+                                style={{
+                                    backgroundImage: 'url(/webimgs/Nakaseke_10.jpg)',
+                                    backgroundPosition: 'center',
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundSize: 'cover',
+                                }}
+                            >
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-xl-8 mx-auto">
+                                            <div className="vl-hero-info">
+                                                <div className="hero-header-area">
+                                                    <h3>
+                                                        <img src="/assets/img/icon/subtitle-icon.png" alt="" />
+                                                        Sustainable Farming
+                                                    </h3>
+                                                    <div className="space24"></div>
+                                                    <h2 className="text-anime-style-3">
+                                                        Experience Farm Life in <br /> the Heart of Uganda
+                                                    </h2>
+                                                </div>
+                                                <div className="hero1-arrow">
+                                                    <div className="next-arrow">
+                                                        <button>
+                                                            <i className="fa-solid fa-arrow-right-long"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div className="prev-arrow">
+                                                        <button>
+                                                            <i className="fa-solid fa-arrow-left-long"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="swiper-slide">
+                            <div
+                                className="hero1-bg-slide"
+                                style={{
+                                    backgroundImage: 'url(/webimgs/Farm-staff.jpeg)',
+                                    backgroundPosition: 'center',
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundSize: 'cover',
+                                }}
+                            >
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-xl-8 mx-auto">
+                                            <div className="vl-hero-info">
+                                                <div className="hero-header-area">
+                                                    <h3>
+                                                        <img src="/assets/img/icon/subtitle-icon.png" alt="" />
+                                                        Team Building & Adventure
+                                                    </h3>
+                                                    <div className="space24"></div>
+                                                    <h2 className="text-anime-style-3">
+                                                        Bring Your Team to <br /> Our Farm Oasis
                                                     </h2>
                                                 </div>
                                                 <div className="hero1-arrow">
