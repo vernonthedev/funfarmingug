@@ -6,10 +6,7 @@ import Link from 'next/link';
 export default function HomePage() {
     useEffect(() => {
         function initSwipers() {
-            if (
-                typeof window !== 'undefined' &&
-                (window as any).Swiper
-            ) {
+            if (typeof window !== 'undefined' && (window as any).Swiper) {
                 try {
                     const heroEl = document.querySelector('.myhm1-hero');
                     if (heroEl) {
@@ -47,23 +44,28 @@ export default function HomePage() {
                         });
                     }
 
-                    const partnerEl = document.querySelector('.tpcauses-text-slider-active-2');
+                    const partnerEl = document.querySelector(
+                        '.tpcauses-text-slider-active-2'
+                    );
                     if (partnerEl) {
-                        new (window as any).Swiper('.tpcauses-text-slider-active-2', {
-                            slidesPerView: 5,
-                            spaceBetween: 30,
-                            loop: true,
-                            autoplay: {
-                                delay: 3000,
-                                disableOnInteraction: false,
-                            },
-                            speed: 700,
-                            breakpoints: {
-                                0: { slidesPerView: 2 },
-                                575: { slidesPerView: 3 },
-                                992: { slidesPerView: 5 },
-                            },
-                        });
+                        new (window as any).Swiper(
+                            '.tpcauses-text-slider-active-2',
+                            {
+                                slidesPerView: 5,
+                                spaceBetween: 30,
+                                loop: true,
+                                autoplay: {
+                                    delay: 3000,
+                                    disableOnInteraction: false,
+                                },
+                                speed: 700,
+                                breakpoints: {
+                                    0: { slidesPerView: 2 },
+                                    575: { slidesPerView: 3 },
+                                    992: { slidesPerView: 5 },
+                                },
+                            }
+                        );
                     }
                 } catch (e) {
                     return false;
@@ -136,7 +138,8 @@ export default function HomePage() {
                             <div
                                 className="hero1-bg-slide"
                                 style={{
-                                    backgroundImage: 'url(/webimgs/fun-farm-image.jpg)',
+                                    backgroundImage:
+                                        'url(/webimgs/fun-farm-image.jpg)',
                                     backgroundPosition: 'center',
                                     backgroundRepeat: 'no-repeat',
                                     backgroundSize: 'cover',
@@ -147,15 +150,28 @@ export default function HomePage() {
                                         <div className="col-xl-8 mx-auto">
                                             <div className="vl-hero-info">
                                                 <div className="hero-header-area">
-                                                    <h3 data-aos="fade-right" data-aos-duration="800">
-                                                        <img src="/assets/img/icon/subtitle-icon.png" alt="" />
-                                                        Agro Tourism & Team Building
+                                                    <h3
+                                                        data-aos="fade-right"
+                                                        data-aos-duration="800"
+                                                    >
+                                                        <img
+                                                            src="/assets/img/icon/subtitle-icon.png"
+                                                            alt=""
+                                                        />
+                                                        Agro Tourism & Team
+                                                        Building
                                                     </h3>
                                                     <div className="space24"></div>
-                                                    <h2 className="text-anime-style-3" data-aos="fade-left" data-aos-duration="900">
-                                                        Welcome to Fun Farming Uganda
+                                                    <h2
+                                                        className="text-anime-style-3"
+                                                        data-aos="fade-left"
+                                                        data-aos-duration="900"
+                                                    >
+                                                        Welcome to Fun Farming
+                                                        Uganda
                                                         <br />
-                                                        Where Agriculture Meets Adventure!
+                                                        Where Agriculture Meets
+                                                        Adventure!
                                                     </h2>
                                                 </div>
                                                 <div className="hero1-arrow">
@@ -180,7 +196,8 @@ export default function HomePage() {
                             <div
                                 className="hero1-bg-slide"
                                 style={{
-                                    backgroundImage: 'url(/webimgs/Nakaseke_10.jpg)',
+                                    backgroundImage:
+                                        'url(/webimgs/Nakaseke_10.jpg)',
                                     backgroundPosition: 'center',
                                     backgroundRepeat: 'no-repeat',
                                     backgroundSize: 'cover',
@@ -192,12 +209,17 @@ export default function HomePage() {
                                             <div className="vl-hero-info">
                                                 <div className="hero-header-area">
                                                     <h3>
-                                                        <img src="/assets/img/icon/subtitle-icon.png" alt="" />
+                                                        <img
+                                                            src="/assets/img/icon/subtitle-icon.png"
+                                                            alt=""
+                                                        />
                                                         Sustainable Farming
                                                     </h3>
                                                     <div className="space24"></div>
                                                     <h2 className="text-anime-style-3">
-                                                        Experience Farm Life in <br /> the Heart of Uganda
+                                                        Experience Farm Life in{' '}
+                                                        <br /> the Heart of
+                                                        Uganda
                                                     </h2>
                                                 </div>
                                                 <div className="hero1-arrow">
@@ -222,7 +244,8 @@ export default function HomePage() {
                             <div
                                 className="hero1-bg-slide"
                                 style={{
-                                    backgroundImage: 'url(/webimgs/Farm-staff.jpeg)',
+                                    backgroundImage:
+                                        'url(/webimgs/Farm-staff.jpeg)',
                                     backgroundPosition: 'center',
                                     backgroundRepeat: 'no-repeat',
                                     backgroundSize: 'cover',
@@ -234,12 +257,17 @@ export default function HomePage() {
                                             <div className="vl-hero-info">
                                                 <div className="hero-header-area">
                                                     <h3>
-                                                        <img src="/assets/img/icon/subtitle-icon.png" alt="" />
-                                                        Team Building & Adventure
+                                                        <img
+                                                            src="/assets/img/icon/subtitle-icon.png"
+                                                            alt=""
+                                                        />
+                                                        Team Building &
+                                                        Adventure
                                                     </h3>
                                                     <div className="space24"></div>
                                                     <h2 className="text-anime-style-3">
-                                                        Bring Your Team to <br /> Our Farm Oasis
+                                                        Bring Your Team to{' '}
+                                                        <br /> Our Farm Oasis
                                                     </h2>
                                                 </div>
                                                 <div className="hero1-arrow">
@@ -265,8 +293,16 @@ export default function HomePage() {
                 <div className="hero1-bottom-wrap">
                     <div className="hero1-bottom-circle">
                         <a href="/#">
-                            <img className="keyframe5" src="/assets/img/elements/elements1.png" alt="" />
-                            <img src="/assets/img/icon/arrow.svg" alt="" className="arrow" />
+                            <img
+                                className="keyframe5"
+                                src="/assets/img/elements/elements1.png"
+                                alt=""
+                            />
+                            <img
+                                src="/assets/img/icon/arrow.svg"
+                                alt=""
+                                className="arrow"
+                            />
                         </a>
                     </div>
                 </div>
@@ -279,8 +315,14 @@ export default function HomePage() {
                     <div className="row">
                         <div className="col-xl-4 col-lg-4">
                             <div className="service7-header">
-                                <h3 data-aos="fade-right" data-aos-duration="800">
-                                    <img src="/assets/img/icon/hm7-sub-title2-dot.png" alt="" />
+                                <h3
+                                    data-aos="fade-right"
+                                    data-aos-duration="800"
+                                >
+                                    <img
+                                        src="/assets/img/icon/hm7-sub-title2-dot.png"
+                                        alt=""
+                                    />
                                     Welcome to the Farm
                                 </h3>
                             </div>
@@ -288,8 +330,11 @@ export default function HomePage() {
                         <div className="col-xl-8 col-lg-8">
                             <div className="vl-about7-pera_text">
                                 <p className="text-effect">
-                                    At Fun Farming Uganda, we bring people together through unforgettable farm experiences.
-                                    From team building to farm tours, every visit is crafted to inspire connection and joy.
+                                    At Fun Farming Uganda, we bring people
+                                    together through unforgettable farm
+                                    experiences. From team building to farm
+                                    tours, every visit is crafted to inspire
+                                    connection and joy.
                                 </p>
                             </div>
                         </div>
@@ -297,25 +342,51 @@ export default function HomePage() {
                         <div className="row align-items-center">
                             <div className="col-xl-6 col-lg-6">
                                 <div className="vl-about7-thumb vl-clip-anim image-anime">
-                                    <img className="vl-anim-img w-100" data-animate="true" src="/webimgs/fun-farm-image.jpg" alt="Fun Farming Uganda" />
+                                    <img
+                                        className="vl-anim-img w-100"
+                                        data-animate="true"
+                                        src="/webimgs/fun-farm-image.jpg"
+                                        alt="Fun Farming Uganda"
+                                    />
                                 </div>
                             </div>
                             <div className="col-xl-6 col-lg-6">
                                 <div className="about7-main-content">
                                     <div className="about7-author-area">
-                                        <img src="/assets/img/icon/hm7-sub-title2-dot.png" alt="" data-aos="zoom-out" data-aos-duration="900" />
+                                        <img
+                                            src="/assets/img/icon/hm7-sub-title2-dot.png"
+                                            alt=""
+                                            data-aos="zoom-out"
+                                            data-aos-duration="900"
+                                        />
                                         <div className="space16"></div>
-                                        <h3 data-aos="zoom-out" data-aos-duration="1000">
-                                            <Link href="/about">Discover the joy of team events at our farm oasis!</Link>
+                                        <h3
+                                            data-aos="zoom-out"
+                                            data-aos-duration="1000"
+                                        >
+                                            <Link href="/about">
+                                                Discover the joy of team events
+                                                at our farm oasis!
+                                            </Link>
                                         </h3>
                                     </div>
                                     <p className="text-anime-style-1">
-                                        At Fun Farming Uganda, we bring people together through unforgettable farm experiences.
-                                        From team building to farm tours, every visit is crafted to inspire connection and joy.
+                                        At Fun Farming Uganda, we bring people
+                                        together through unforgettable farm
+                                        experiences. From team building to farm
+                                        tours, every visit is crafted to inspire
+                                        connection and joy.
                                     </p>
                                     <div className="space28"></div>
-                                    <div className="blog7-btn" data-aos="fade-left" data-aos-duration="900">
-                                        <Link href="/about" className="btn-home7">
+                                    <div
+                                        className="blog7-btn"
+                                        data-aos="fade-left"
+                                        data-aos-duration="900"
+                                    >
+                                        <Link
+                                            href="/about"
+                                            className="btn-home7"
+                                        >
                                             Learn More
                                         </Link>
                                     </div>
@@ -333,33 +404,62 @@ export default function HomePage() {
                     <div className="row">
                         <div className="col-xl-6 mx-auto text-center">
                             <div className="service9-heading">
-                                <h3 data-aos="fade-right" data-aos-duration="900">
-                                    <img src="/assets/img/icon/hm7-sub-title2-dot.png" alt="" />
+                                <h3
+                                    data-aos="fade-right"
+                                    data-aos-duration="900"
+                                >
+                                    <img
+                                        src="/assets/img/icon/hm7-sub-title2-dot.png"
+                                        alt=""
+                                    />
                                     Our Activities
                                 </h3>
                                 <div className="space24"></div>
-                                <h2 className="text-effect">Thrilling Activities Await!</h2>
+                                <h2 className="text-effect">
+                                    Thrilling Activities Await!
+                                </h2>
                             </div>
                         </div>
                         <div className="space40"></div>
                         <section className="process-section">
                             <div className="process-grid">
                                 {services.map((service, index) => (
-                                    <div key={index} className={`card ${index === 0 ? 'top-left' : index === 1 ? 'top-right' : index === 2 ? 'bottom-left' : 'bottom-right'}`} data-aos="zoom-out" data-aos-duration="900">
+                                    <div
+                                        key={index}
+                                        className={`card ${index === 0 ? 'top-left' : index === 1 ? 'top-right' : index === 2 ? 'bottom-left' : 'bottom-right'}`}
+                                        data-aos="zoom-out"
+                                        data-aos-duration="900"
+                                    >
                                         <div className="card-flex">
                                             <div className="icon">
-                                                <img src={service.icon} alt="" />
+                                                <img
+                                                    src={service.icon}
+                                                    alt=""
+                                                />
                                             </div>
-                                            <h3><Link href={service.href}>{service.title}</Link></h3>
+                                            <h3>
+                                                <Link href={service.href}>
+                                                    {service.title}
+                                                </Link>
+                                            </h3>
                                         </div>
                                         <div className="space16"></div>
                                         <p>{service.text}</p>
-                                        <Link className="btnhm9-2" href={service.href}>Learn More<i className="fa-solid fa-arrow-right"></i></Link>
+                                        <Link
+                                            className="btnhm9-2"
+                                            href={service.href}
+                                        >
+                                            Learn More
+                                            <i className="fa-solid fa-arrow-right"></i>
+                                        </Link>
                                     </div>
                                 ))}
                             </div>
                             <div className="line9-shape">
-                                <img src="/assets/img/shape/service9-line-shp.png" alt="" />
+                                <img
+                                    src="/assets/img/shape/service9-line-shp.png"
+                                    alt=""
+                                />
                             </div>
                         </section>
                     </div>
@@ -374,35 +474,72 @@ export default function HomePage() {
                         <div className="col-xl-4 col-lg-4">
                             <div className="about4-info">
                                 <div className="about4-header">
-                                    <h3 className="about4-subtitle" data-aos="fade-right" data-aos-duration="800">
-                                        <img src="/assets/img/icon/subtitle-icon-hm4.svg" alt="" />
+                                    <h3
+                                        className="about4-subtitle"
+                                        data-aos="fade-right"
+                                        data-aos-duration="800"
+                                    >
+                                        <img
+                                            src="/assets/img/icon/subtitle-icon-hm4.svg"
+                                            alt=""
+                                        />
                                         Meet Our Expert
                                     </h3>
                                     <div className="space24"></div>
-                                    <h2 className="about4-title text-anime-style-3" data-aos="fade-right" data-aos-duration="900">
+                                    <h2
+                                        className="about4-title text-anime-style-3"
+                                        data-aos="fade-right"
+                                        data-aos-duration="900"
+                                    >
                                         The People Behind The Produce
                                     </h2>
                                 </div>
                                 <div className="space32"></div>
-                                <div className="about4-icon-area" data-aos="fade-right" data-aos-duration="1000">
+                                <div
+                                    className="about4-icon-area"
+                                    data-aos="fade-right"
+                                    data-aos-duration="1000"
+                                >
                                     <div className="about4-icon-info">
                                         <div className="about4-icons">
-                                            <img src="/assets/img/icon/about4-icon(1).svg" alt="" />
+                                            <img
+                                                src="/assets/img/icon/about4-icon(1).svg"
+                                                alt=""
+                                            />
                                         </div>
                                         <div className="about4-icon-content">
-                                            <h3><Link href="/about">Farm Experience</Link></h3>
+                                            <h3>
+                                                <Link href="/about">
+                                                    Farm Experience
+                                                </Link>
+                                            </h3>
                                             <div className="space12"></div>
-                                            <p>Years of hands-on experience in sustainable farming and team building.</p>
+                                            <p>
+                                                Years of hands-on experience in
+                                                sustainable farming and team
+                                                building.
+                                            </p>
                                         </div>
                                     </div>
                                     <div className="about4-icon-info mt-30">
                                         <div className="about4-icons">
-                                            <img src="/assets/img/icon/about4-icon(2).svg" alt="" />
+                                            <img
+                                                src="/assets/img/icon/about4-icon(2).svg"
+                                                alt=""
+                                            />
                                         </div>
                                         <div className="about4-icon-content">
-                                            <h3><Link href="/about">Customized Advice</Link></h3>
+                                            <h3>
+                                                <Link href="/about">
+                                                    Customized Advice
+                                                </Link>
+                                            </h3>
                                             <div className="space12"></div>
-                                            <p>David helps groups find the perfect activity mix for every occasion.</p>
+                                            <p>
+                                                David helps groups find the
+                                                perfect activity mix for every
+                                                occasion.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -410,18 +547,31 @@ export default function HomePage() {
                         </div>
                         <div className="col-xl-4 col-lg-4">
                             <div className="about4-thumb image-anime reveal">
-                                <img src="/webimgs/david-holding-goat.jpg" alt="Farmer David" />
+                                <img
+                                    src="/webimgs/david-holding-goat.jpg"
+                                    alt="Farmer David"
+                                />
                             </div>
                         </div>
                         <div className="col-xl-4 col-lg-4">
                             <div className="about4-content">
-                                <p className="text-effect" data-aos="fade-left" data-aos-duration="1000">
-                                    Gathering the horns? Our cow-league David is ready to advise you so that you will reap
-                                    applause for this team-building. With years of farm experience, David helps groups find
+                                <p
+                                    className="text-effect"
+                                    data-aos="fade-left"
+                                    data-aos-duration="1000"
+                                >
+                                    Gathering the horns? Our cow-league David is
+                                    ready to advise you so that you will reap
+                                    applause for this team-building. With years
+                                    of farm experience, David helps groups find
                                     the perfect activity mix.
                                 </p>
                                 <div className="space28"></div>
-                                <div className="btn_area10" data-aos="fade-left" data-aos-duration="1100">
+                                <div
+                                    className="btn_area10"
+                                    data-aos="fade-left"
+                                    data-aos-duration="1100"
+                                >
                                     <a
                                         href="https://www.calendly.com/farmfun/kennismakingsgesprek-teambuilding-farmfun"
                                         target="_blank"
@@ -430,9 +580,27 @@ export default function HomePage() {
                                     >
                                         Schedule Conversation
                                         <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                                                <path d="M22.8079 11.1373L11.1406 22.8046" stroke="#25452C" strokeWidth="1.55556" strokeLinecap="round" strokeLinejoin="round" />
-                                                <path d="M22.8054 17.5005C22.8054 17.5005 23.6439 11.9751 22.8054 11.1366C21.9669 10.2981 16.4414 11.1366 16.4414 11.1366" stroke="#25452C" strokeWidth="1.55556" strokeLinecap="round" strokeLinejoin="round" />
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="34"
+                                                height="34"
+                                                viewBox="0 0 34 34"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M22.8079 11.1373L11.1406 22.8046"
+                                                    stroke="#25452C"
+                                                    strokeWidth="1.55556"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M22.8054 17.5005C22.8054 17.5005 23.6439 11.9751 22.8054 11.1366C21.9669 10.2981 16.4414 11.1366 16.4414 11.1366"
+                                                    stroke="#25452C"
+                                                    strokeWidth="1.55556"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
                                             </svg>
                                         </span>
                                     </a>
@@ -440,7 +608,10 @@ export default function HomePage() {
                             </div>
                         </div>
                         <div className="vl-about4-growing_text">
-                            <h2 data-aos="zoom-out" data-aos-duration="1000">Join <span className="counter">5000</span>+ happy visitors already growing</h2>
+                            <h2 data-aos="zoom-out" data-aos-duration="1000">
+                                Join <span className="counter">5000</span>+
+                                happy visitors already growing
+                            </h2>
                         </div>
                     </div>
                 </div>
@@ -453,32 +624,51 @@ export default function HomePage() {
                     <div className="row">
                         <div className="service-header">
                             <div className="service-topleft">
-                                <h3 data-aos="fade-right" data-aos-duration="800">
-                                    <img src="/assets/img/icon/subtitle-icon2.png" alt="" />
+                                <h3
+                                    data-aos="fade-right"
+                                    data-aos-duration="800"
+                                >
+                                    <img
+                                        src="/assets/img/icon/subtitle-icon2.png"
+                                        alt=""
+                                    />
                                     Farm Gallery
                                 </h3>
                                 <div className="space18"></div>
-                                <h2 data-aos="fade-right" data-aos-duration="900">
+                                <h2
+                                    data-aos="fade-right"
+                                    data-aos-duration="900"
+                                >
                                     A Look Into Our Land And Livestock
                                 </h2>
                             </div>
                             <div className="service-topright">
                                 <p className="text-effect">
-                                    Nestled in open green pastures, Fun Farming Uganda is more than just a farm its
-                                    a living example of ethical, sustainable agriculture.
+                                    Nestled in open green pastures, Fun Farming
+                                    Uganda is more than just a farm its a living
+                                    example of ethical, sustainable agriculture.
                                 </p>
                             </div>
                         </div>
                         <div className="space44"></div>
-                        <div className="swiper mygallery1" data-aos="zoom-in" data-aos-duration="900">
+                        <div
+                            className="swiper mygallery1"
+                            data-aos="zoom-in"
+                            data-aos-duration="900"
+                        >
                             <div className="swiper-wrapper">
                                 {galleryImages.map((src, index) => (
                                     <div className="swiper-slide" key={index}>
                                         <div className="vl-gallery-thumb">
-                                            <img src={src} alt={`Gallery ${index + 1}`} />
+                                            <img
+                                                src={src}
+                                                alt={`Gallery ${index + 1}`}
+                                            />
                                             <span className="inner-border"></span>
                                             <div className="view-wrap">
-                                                <Link href="/gallery">View</Link>
+                                                <Link href="/gallery">
+                                                    View
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
@@ -494,8 +684,15 @@ export default function HomePage() {
             <div className="vl-hero9-btm-area">
                 <div className="container">
                     <div className="row">
-                        <div className="vl-hero9-btm_text" data-aos="zoom-out" data-aos-duration="900">
-                            <h2>Trusted By <span className="counter">3</span>+ Companies Worldwide</h2>
+                        <div
+                            className="vl-hero9-btm_text"
+                            data-aos="zoom-out"
+                            data-aos-duration="900"
+                        >
+                            <h2>
+                                Trusted By <span className="counter">3</span>+
+                                Companies Worldwide
+                            </h2>
                         </div>
                         <div className="tp-text-slider">
                             <div className="container">
@@ -504,10 +701,16 @@ export default function HomePage() {
                                         <div className="swiper tpcauses-text-slider-active-2">
                                             <div className="swiper-wrapper tp-slide-transtion">
                                                 {partners.map((src, index) => (
-                                                    <div className="swiper-slide" key={index}>
+                                                    <div
+                                                        className="swiper-slide"
+                                                        key={index}
+                                                    >
                                                         <div className="hm4-brand-2">
                                                             <span className="title">
-                                                                <img src={src} alt={`Partner ${index + 1}`} />
+                                                                <img
+                                                                    src={src}
+                                                                    alt={`Partner ${index + 1}`}
+                                                                />
                                                             </span>
                                                         </div>
                                                     </div>
@@ -532,46 +735,94 @@ export default function HomePage() {
                                 <div className="row">
                                     <div className="counter_boxes_area">
                                         <div className="row">
-                                            <div className="col-xl-6 col-lg-6 col-md-6" data-aos="zoom-out" data-aos-duration="900">
+                                            <div
+                                                className="col-xl-6 col-lg-6 col-md-6"
+                                                data-aos="zoom-out"
+                                                data-aos-duration="900"
+                                            >
                                                 <div className="vl-faq-info-content box1">
                                                     <div className="vl-faq-icon">
-                                                        <img src="/assets/img/icon/faq1-img1.png" alt="" />
+                                                        <img
+                                                            src="/assets/img/icon/faq1-img1.png"
+                                                            alt=""
+                                                        />
                                                     </div>
                                                     <div className="space24"></div>
-                                                    <h2><span className="counter">1200</span>+</h2>
+                                                    <h2>
+                                                        <span className="counter">
+                                                            1200
+                                                        </span>
+                                                        +
+                                                    </h2>
                                                     <div className="space16"></div>
                                                     <p>Products</p>
                                                 </div>
                                             </div>
-                                            <div className="col-xl-6 col-lg-6 col-md-6" data-aos="zoom-out" data-aos-duration="1100">
+                                            <div
+                                                className="col-xl-6 col-lg-6 col-md-6"
+                                                data-aos="zoom-out"
+                                                data-aos-duration="1100"
+                                            >
                                                 <div className="vl-faq-info-content box1">
                                                     <div className="vl-faq-icon">
-                                                        <img src="/assets/img/icon/faq1-img2.png" alt="" />
+                                                        <img
+                                                            src="/assets/img/icon/faq1-img2.png"
+                                                            alt=""
+                                                        />
                                                     </div>
                                                     <div className="space24"></div>
-                                                    <h2><span className="counter">20</span>+</h2>
+                                                    <h2>
+                                                        <span className="counter">
+                                                            20
+                                                        </span>
+                                                        +
+                                                    </h2>
                                                     <div className="space16"></div>
                                                     <p>Years Of Experience</p>
                                                 </div>
                                             </div>
-                                            <div className="col-xl-6 col-lg-6 col-md-6" data-aos="zoom-out" data-aos-duration="900">
+                                            <div
+                                                className="col-xl-6 col-lg-6 col-md-6"
+                                                data-aos="zoom-out"
+                                                data-aos-duration="900"
+                                            >
                                                 <div className="vl-faq-info-content">
                                                     <div className="vl-faq-icon">
-                                                        <img src="/assets/img/icon/faq1-img3.png" alt="" />
+                                                        <img
+                                                            src="/assets/img/icon/faq1-img3.png"
+                                                            alt=""
+                                                        />
                                                     </div>
                                                     <div className="space24"></div>
-                                                    <h2><span className="counter">2.850</span>+</h2>
+                                                    <h2>
+                                                        <span className="counter">
+                                                            2.850
+                                                        </span>
+                                                        +
+                                                    </h2>
                                                     <div className="space16"></div>
                                                     <p>Satisfied Clients</p>
                                                 </div>
                                             </div>
-                                            <div className="col-xl-6 col-lg-6 col-md-6" data-aos="zoom-out" data-aos-duration="1100">
+                                            <div
+                                                className="col-xl-6 col-lg-6 col-md-6"
+                                                data-aos="zoom-out"
+                                                data-aos-duration="1100"
+                                            >
                                                 <div className="vl-faq-info-content">
                                                     <div className="vl-faq-icon">
-                                                        <img src="/assets/img/icon/faq1-img4.png" alt="" />
+                                                        <img
+                                                            src="/assets/img/icon/faq1-img4.png"
+                                                            alt=""
+                                                        />
                                                     </div>
                                                     <div className="space24"></div>
-                                                    <h2><span className="counter">30</span>+</h2>
+                                                    <h2>
+                                                        <span className="counter">
+                                                            30
+                                                        </span>
+                                                        +
+                                                    </h2>
                                                     <div className="space16"></div>
                                                     <p>Local Team Members</p>
                                                 </div>
@@ -583,28 +834,67 @@ export default function HomePage() {
                         </div>
                         <div className="col-xl-6 col-lg-6 col-md-6">
                             <div className="faq-header z-index99">
-                                <h3 className="subtitle" data-aos="fade-left" data-aos-duration="800">
-                                    <img src="/assets/img/icon/subtitle-icon2.png" alt="" />
+                                <h3
+                                    className="subtitle"
+                                    data-aos="fade-left"
+                                    data-aos-duration="800"
+                                >
+                                    <img
+                                        src="/assets/img/icon/subtitle-icon2.png"
+                                        alt=""
+                                    />
                                     Why Farm
                                 </h3>
                                 <div className="space24"></div>
-                                <h2 className="title text-anime-style-3" data-aos="fade-left" data-aos-duration="900">
+                                <h2
+                                    className="title text-anime-style-3"
+                                    data-aos="fade-left"
+                                    data-aos-duration="900"
+                                >
                                     Where Every Animal Is Raised with Love,
                                 </h2>
                                 <div className="space16"></div>
-                                <p className="pera-text text-effect" data-aos="fade-left" data-aos-duration="1000">
-                                    At Fun Farming Uganda, we believe that great food begins with honest farming.
-                                    Nestled in open pastures and guided by nature, our farm is built on values of
-                                    sustainability, compassion, and transparency.
+                                <p
+                                    className="pera-text text-effect"
+                                    data-aos="fade-left"
+                                    data-aos-duration="1000"
+                                >
+                                    At Fun Farming Uganda, we believe that great
+                                    food begins with honest farming. Nestled in
+                                    open pastures and guided by nature, our farm
+                                    is built on values of sustainability,
+                                    compassion, and transparency.
                                 </p>
                                 <div className="space38"></div>
-                                <div className="btn_area3" data-aos="fade-left" data-aos-duration="900">
+                                <div
+                                    className="btn_area3"
+                                    data-aos="fade-left"
+                                    data-aos-duration="900"
+                                >
                                     <Link href="/contact" className="vl-btn3">
                                         Learn More
                                         <span className="arrow_btn3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                                <path d="M27.002 16.002H5.00195" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
-                                                <path d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="32"
+                                                height="32"
+                                                viewBox="0 0 32 32"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M27.002 16.002H5.00195"
+                                                    stroke="#132C12"
+                                                    strokeWidth="2"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                ></path>
+                                                <path
+                                                    d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002"
+                                                    stroke="#132C12"
+                                                    strokeWidth="2"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                ></path>
                                             </svg>
                                         </span>
                                     </Link>
@@ -617,28 +907,63 @@ export default function HomePage() {
             {/* FAQ AREA ENDS */}
 
             {/* CTA AREA START - from index-2.html */}
-            <div className="vl-cta4-area" data-aos="zoom-out" data-aos-duration="1000">
+            <div
+                className="vl-cta4-area"
+                data-aos="zoom-out"
+                data-aos-duration="1000"
+            >
                 <div className="container">
                     <div className="row cta4-area-info sp1">
                         <div className="col-xl-6 mx-auto text-center">
                             <div className="cta4-area-content">
                                 <div className="product4-heading">
-                                    <h3 className="product4-subtitle" data-aos="fade-right" data-aos-duration="900">
+                                    <h3
+                                        className="product4-subtitle"
+                                        data-aos="fade-right"
+                                        data-aos-duration="900"
+                                    >
                                         Ready for Adventure
                                     </h3>
                                     <div className="space24"></div>
-                                    <h2 className="product4-title text-anime-style-3" data-aos="fade-left" data-aos-duration="1000">
-                                        Your Unforgettable Farm Experience Awaits
+                                    <h2
+                                        className="product4-title text-anime-style-3"
+                                        data-aos="fade-left"
+                                        data-aos-duration="1000"
+                                    >
+                                        Your Unforgettable Farm Experience
+                                        Awaits
                                     </h2>
                                 </div>
                                 <div className="space38"></div>
-                                <div className="btn_area10 z-index99" data-aos="zoom-out" data-aos-duration="1100">
+                                <div
+                                    className="btn_area10 z-index99"
+                                    data-aos="zoom-out"
+                                    data-aos-duration="1100"
+                                >
                                     <Link href="/contact" className="vl-btn10">
                                         Book Now
                                         <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                                                <path d="M22.8079 11.1373L11.1406 22.8046" stroke="#25452C" strokeWidth="1.55556" strokeLinecap="round" strokeLinejoin="round" />
-                                                <path d="M22.8054 17.5005C22.8054 17.5005 23.6439 11.9751 22.8054 11.1366C21.9669 10.2981 16.4414 11.1366 16.4414 11.1366" stroke="#25452C" strokeWidth="1.55556" strokeLinecap="round" strokeLinejoin="round" />
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="34"
+                                                height="34"
+                                                viewBox="0 0 34 34"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M22.8079 11.1373L11.1406 22.8046"
+                                                    stroke="#25452C"
+                                                    strokeWidth="1.55556"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M22.8054 17.5005C22.8054 17.5005 23.6439 11.9751 22.8054 11.1366C21.9669 10.2981 16.4414 11.1366 16.4414 11.1366"
+                                                    stroke="#25452C"
+                                                    strokeWidth="1.55556"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
                                             </svg>
                                         </span>
                                     </Link>
@@ -646,10 +971,16 @@ export default function HomePage() {
                             </div>
                         </div>
                         <div className="cta4-area-shape1 aniamtion-key-2">
-                            <img src="/assets/img/shape/cta-hm4(1).png" alt="" />
+                            <img
+                                src="/assets/img/shape/cta-hm4(1).png"
+                                alt=""
+                            />
                         </div>
                         <div className="cta4-area-shape2 aniamtion-key-2">
-                            <img src="/assets/img/shape/cta-hm4(2).png" alt="" />
+                            <img
+                                src="/assets/img/shape/cta-hm4(2).png"
+                                alt=""
+                            />
                         </div>
                     </div>
                 </div>

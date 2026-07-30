@@ -96,8 +96,14 @@ export default function RootLayout({
                     rel="stylesheet"
                     href="/assets/css/plugins/slick-slider.css"
                 />
-                <link rel="stylesheet" href="/assets/css/plugins/nice-select.css" />
-                <link rel="stylesheet" href="/assets/css/plugins/swiper.min.css" />
+                <link
+                    rel="stylesheet"
+                    href="/assets/css/plugins/nice-select.css"
+                />
+                <link
+                    rel="stylesheet"
+                    href="/assets/css/plugins/swiper.min.css"
+                />
                 <link rel="stylesheet" href="/assets/css/main.css" />
             </head>
             <body className="homepage1-body">
@@ -178,16 +184,32 @@ export default function RootLayout({
                         <div className="vl-offcanvas-social">
                             <h3 className="vl-offcanvas-sm-title">Follow Us</h3>
                             <div className="space20"></div>
-                            <a href="https://facebook.com/funfarminguganda" target="_blank" rel="noopener noreferrer">
+                            <a
+                                href="https://facebook.com/funfarminguganda"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <i className="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://instagram.com/funfarminguganda" target="_blank" rel="noopener noreferrer">
+                            <a
+                                href="https://instagram.com/funfarminguganda"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <i className="fab fa-instagram"></i>
                             </a>
-                            <a href="https://linkedin.com/company/funfarmingug" target="_blank" rel="noopener noreferrer">
+                            <a
+                                href="https://linkedin.com/company/funfarmingug"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <i className="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://youtube.com/@funfarmingug" target="_blank" rel="noopener noreferrer">
+                            <a
+                                href="https://youtube.com/@funfarmingug"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <i className="fab fa-youtube"></i>
                             </a>
                         </div>

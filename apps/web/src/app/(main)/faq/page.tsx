@@ -48,7 +48,16 @@ export default function FAQPage() {
     return (
         <>
             {/* HERO START */}
-            <div className="vl-hero-inner-area parallaxie" style={{ backgroundImage: 'url(/assets/img/hero/about-us-inr-herothumb.png)', backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+            <div
+                className="vl-hero-inner-area parallaxie"
+                style={{
+                    backgroundImage:
+                        'url(/assets/img/hero/about-us-inr-herothumb.png)',
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                }}
+            >
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-6">
@@ -56,9 +65,23 @@ export default function FAQPage() {
                                 <h2>Frequently Asked Questions</h2>
                                 <div className="space16"></div>
                                 <ul>
-                                    <li><Link href="/">Home</Link></li>
-                                    <li><img src="/assets/img/icon/arrow-right-inner.svg" alt="" /></li>
-                                    <li><Link className="aboutus_titlefix" href="/faq">FAQ</Link></li>
+                                    <li>
+                                        <Link href="/">Home</Link>
+                                    </li>
+                                    <li>
+                                        <img
+                                            src="/assets/img/icon/arrow-right-inner.svg"
+                                            alt=""
+                                        />
+                                    </li>
+                                    <li>
+                                        <Link
+                                            className="aboutus_titlefix"
+                                            href="/faq"
+                                        >
+                                            FAQ
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -73,30 +96,56 @@ export default function FAQPage() {
                     <div className="row">
                         <div className="col-xl-8 mx-auto">
                             <div className="faq-inr-heading text-center">
-                                <h3 data-aos="fade-right" data-aos-duration="800">
-                                    <img src="/assets/img/icon/hm7-sub-title2-dot.png" alt="" />
+                                <h3
+                                    data-aos="fade-right"
+                                    data-aos-duration="800"
+                                >
+                                    <img
+                                        src="/assets/img/icon/hm7-sub-title2-dot.png"
+                                        alt=""
+                                    />
                                     Common Questions
                                 </h3>
                                 <div className="space24"></div>
-                                <h2 className="text-effect" data-aos="fade-left" data-aos-duration="1000">
-                                    Everything You Need to Know About Fun Farming Uganda
+                                <h2
+                                    className="text-effect"
+                                    data-aos="fade-left"
+                                    data-aos-duration="1000"
+                                >
+                                    Everything You Need to Know About Fun
+                                    Farming Uganda
                                 </h2>
                             </div>
                             <div className="space44"></div>
                             <div className="accordion" id="faqAccordion">
                                 {faqs.map((faq, index) => (
-                                    <div className="accordion-item" key={index} data-aos="fade-up" data-aos-duration={900 + (index * 100)}>
+                                    <div
+                                        className="accordion-item"
+                                        key={index}
+                                        data-aos="fade-up"
+                                        data-aos-duration={900 + index * 100}
+                                    >
                                         <h2 className="accordion-header">
                                             <button
                                                 className={`accordion-button ${activeIndex === index ? '' : 'collapsed'}`}
                                                 type="button"
                                                 onClick={() => toggleFAQ(index)}
-                                                aria-expanded={activeIndex === index}
+                                                aria-expanded={
+                                                    activeIndex === index
+                                                }
                                             >
-                                                <span className="faq-number">{index + 1 < 10 ? `0${index + 1}` : index + 1}</span>
-                                                <span className="faq-question">{faq.question}</span>
+                                                <span className="faq-number">
+                                                    {index + 1 < 10
+                                                        ? `0${index + 1}`
+                                                        : index + 1}
+                                                </span>
+                                                <span className="faq-question">
+                                                    {faq.question}
+                                                </span>
                                                 <span className="accordion-icon">
-                                                    <i className={`fa-solid ${activeIndex === index ? 'fa-minus' : 'fa-plus'}`}></i>
+                                                    <i
+                                                        className={`fa-solid ${activeIndex === index ? 'fa-minus' : 'fa-plus'}`}
+                                                    ></i>
                                                 </span>
                                             </button>
                                         </h2>
@@ -106,7 +155,9 @@ export default function FAQPage() {
                                             data-bs-parent="#faqAccordion"
                                         >
                                             <div className="accordion-body">
-                                                <p className="faq-answer">{faq.answer}</p>
+                                                <p className="faq-answer">
+                                                    {faq.answer}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -119,28 +170,62 @@ export default function FAQPage() {
             {/* FAQ AREA END */}
 
             {/* CTA SECTION */}
-            <div className="vl-cta4-area" data-aos="zoom-out" data-aos-duration="1000">
+            <div
+                className="vl-cta4-area"
+                data-aos="zoom-out"
+                data-aos-duration="1000"
+            >
                 <div className="container">
                     <div className="row cta4-area-info sp1">
                         <div className="col-xl-6 mx-auto text-center">
                             <div className="cta4-area-content">
                                 <div className="product4-heading">
-                                    <h3 className="product4-subtitle" data-aos="fade-right" data-aos-duration="900">
+                                    <h3
+                                        className="product4-subtitle"
+                                        data-aos="fade-right"
+                                        data-aos-duration="900"
+                                    >
                                         Still Have Questions?
                                     </h3>
                                     <div className="space24"></div>
-                                    <h2 className="product4-title text-anime-style-3" data-aos="fade-left" data-aos-duration="1000">
+                                    <h2
+                                        className="product4-title text-anime-style-3"
+                                        data-aos="fade-left"
+                                        data-aos-duration="1000"
+                                    >
                                         Our Team is Here to Help
                                     </h2>
                                 </div>
                                 <div className="space38"></div>
-                                <div className="btn_area10 z-index99" data-aos="zoom-out" data-aos-duration="1100">
+                                <div
+                                    className="btn_area10 z-index99"
+                                    data-aos="zoom-out"
+                                    data-aos-duration="1100"
+                                >
                                     <Link href="/contact" className="vl-btn10">
                                         Contact Us
                                         <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
-                                                <path d="M22.8079 11.1373L11.1406 22.8046" stroke="#25452C" strokeWidth="1.55556" strokeLinecap="round" strokeLinejoin="round" />
-                                                <path d="M22.8054 17.5005C22.8054 17.5005 23.6439 11.9751 22.8054 11.1366C21.9669 10.2981 16.4414 11.1366 16.4414 11.1366" stroke="#25452C" strokeWidth="1.55556" strokeLinecap="round" strokeLinejoin="round" />
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="34"
+                                                height="34"
+                                                viewBox="0 0 34 34"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M22.8079 11.1373L11.1406 22.8046"
+                                                    stroke="#25452C"
+                                                    strokeWidth="1.55556"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
+                                                <path
+                                                    d="M22.8054 17.5005C22.8054 17.5005 23.6439 11.9751 22.8054 11.1366C21.9669 10.2981 16.4414 11.1366 16.4414 11.1366"
+                                                    stroke="#25452C"
+                                                    strokeWidth="1.55556"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
                                             </svg>
                                         </span>
                                     </Link>
@@ -148,10 +233,16 @@ export default function FAQPage() {
                             </div>
                         </div>
                         <div className="cta4-area-shape1 aniamtion-key-2">
-                            <img src="/assets/img/shape/cta-hm4(1).png" alt="" />
+                            <img
+                                src="/assets/img/shape/cta-hm4(1).png"
+                                alt=""
+                            />
                         </div>
                         <div className="cta4-area-shape2 aniamtion-key-2">
-                            <img src="/assets/img/shape/cta-hm4(2).png" alt="" />
+                            <img
+                                src="/assets/img/shape/cta-hm4(2).png"
+                                alt=""
+                            />
                         </div>
                     </div>
                 </div>
