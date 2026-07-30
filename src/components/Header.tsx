@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const navItems = [
     { label: 'Home', href: '/' },
@@ -16,7 +17,6 @@ const navItems = [
 export default function Header() {
     const [isSticky, setIsSticky] = useState(false);
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
-    const [searchOpen, setSearchOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -32,8 +32,7 @@ export default function Header() {
                 <div className="container">
                     <div className="topbar-three__inner">
                         <div className="topbar-three__info">
-                            <span>NOTE :</span> Organic Farm & Agro Tourism in
-                            Nakaseke, Uganda
+                            Organic Farm & Agro Tourism in Nakaseke, Uganda
                         </div>
                         <div className="topbar-three__social">
                             <a
@@ -48,7 +47,7 @@ export default function Header() {
                                 <span className="sr-only">Facebook</span>
                             </a>
                             <a
-                                href="https://twitter.com/funfarmingug"
+                                href="https://x.com/funfarminguganda"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -84,15 +83,19 @@ export default function Header() {
                     </div>
                 </div>
                 <div className="topbar-three__shape-left">
-                    <img
+                    <Image
                         src="/assets/images/shapes/header-top-3-1.png"
                         alt="images"
+                        width="100"
+                        height="100"
                     />
                 </div>
                 <div className="topbar-three__shape-right">
-                    <img
+                    <Image
                         src="/assets/images/shapes/header-top-3-2.png"
                         alt="images"
+                        width="100"
+                        height="100"
                     />
                 </div>
             </div>
@@ -106,10 +109,11 @@ export default function Header() {
                             <div className="main-header__inner">
                                 <div className="main-header__logo">
                                     <Link href="/">
-                                        <img
+                                        <Image
                                             src="logo.png"
                                             alt="Fun Farming Uganda"
                                             width="223"
+                                            height="100"
                                         />
                                     </Link>
                                 </div>
@@ -124,8 +128,8 @@ export default function Header() {
                                                     Email - Us
                                                 </h5>
                                                 <p className="main-header__list__link">
-                                                    <a href="mailto:admin@funfarming.org">
-                                                        admin@funfarming.org
+                                                    <a href="mailto:mitaladavid2025@gmail.com">
+                                                        admin@funfarminguganda.com
                                                     </a>
                                                 </p>
                                             </div>
@@ -153,17 +157,6 @@ export default function Header() {
                                             <i className="icon-angle-small-right"></i>
                                         </Link>
                                     </div>
-                                    <div className="main-header__info">
-                                        <a
-                                            href="javascript:void(0);"
-                                            className="main-header__info__item search-toggler"
-                                            onClick={() =>
-                                                setSearchOpen(!searchOpen)
-                                            }
-                                        >
-                                            <i className="icon-search"></i>
-                                        </a>
-                                    </div>
                                     <div
                                         className="mobile-nav__btn mobile-nav__toggler"
                                         onClick={() => setMobileNavOpen(true)}
@@ -180,10 +173,11 @@ export default function Header() {
                             <div className="main-header__inner">
                                 <div className="main-header__logo">
                                     <Link href="/">
-                                        <img
+                                        <Image
                                             src="/assets/images/logo-dark.png"
                                             alt="Fun Farming Uganda"
                                             width="223"
+                                            height="100"
                                         />
                                     </Link>
                                 </div>
@@ -207,53 +201,11 @@ export default function Header() {
                                         <i className="icon-angle-small-right"></i>
                                     </Link>
                                 </div>
-                                <div className="main-header__right">
-                                    <div className="main-header__info">
-                                        <a
-                                            href="javascript:void(0);"
-                                            className="main-header__info__item search-toggler"
-                                            onClick={() =>
-                                                setSearchOpen(!searchOpen)
-                                            }
-                                        >
-                                            <i className="icon-search"></i>
-                                        </a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
-
-            {searchOpen && (
-                <div className="search-popup">
-                    <div
-                        className="search-popup__overlay"
-                        onClick={() => setSearchOpen(false)}
-                    ></div>
-                    <div className="search-popup__content">
-                        <form action="/search" method="GET">
-                            <input
-                                type="search"
-                                name="search-term"
-                                placeholder="Type Here to Search..."
-                                autoFocus
-                            />
-                            <button type="submit">
-                                <i className="icon-magnifying-glass"></i>
-                            </button>
-                        </form>
-                        <button
-                            className="search-popup__close"
-                            onClick={() => setSearchOpen(false)}
-                        >
-                            <i className="fa fa-times"></i>
-                        </button>
-                    </div>
-                </div>
-            )}
-
             <div
                 className={`mobile-nav__wrapper ${mobileNavOpen ? 'expanded' : ''}`}
             >
@@ -270,9 +222,10 @@ export default function Header() {
                     </span>
                     <div className="logo-box">
                         <Link href="/" aria-label="logo image">
-                            <img
+                            <Image
                                 src="/assets/images/logo-light.png"
                                 width="155"
+                                height="100"
                                 alt="Fun Farming Uganda"
                             />
                         </Link>
