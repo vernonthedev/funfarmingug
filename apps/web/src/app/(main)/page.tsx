@@ -269,61 +269,40 @@ export default function HomePage() {
             </div>
 
             {/* Services */}
-            <div className="vl-service7">
-                <div className="vl-service7-area sp1">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-xl-6 mx-auto text-center">
-                                <div className="service7-header">
-                                    <h3 data-aos="fade-right" data-aos-duration="900">
-                                        <img src="/assets/img/icon/hm7-sub-title2-dot.png" alt="" />
-                                        Our Services
-                                    </h3>
-                                    <div className="space24"></div>
-                                    <h2 className="text-effect" data-aos="fade-left" data-aos-duration="1000">
-                                        Thrilling Activities Await!
-                                    </h2>
-                                </div>
-                            </div>
-                            <div className="space44"></div>
-                            <div className="swiper myservice7" data-aos="zoom-out" data-aos-duration="1000">
-                                <div className="swiper-wrapper">
-                                    {services.map((service, index) => (
-                                        <div className="swiper-slide" key={index}>
-                                            <div className="service7-box">
-                                                <div className="service7-thumbs">
-                                                    <h3>0{index + 1}</h3>
-                                                    <div className="service7-thumbs-img">
-                                                        <img src="/assets/img/service/service7-thumb2.png" alt={service.title} />
-                                                    </div>
-                                                </div>
-                                                <div className="service7-box-content">
-                                                    <div className="service7-logos">
-                                                        <i className={service.icon}></i>
-                                                    </div>
-                                                    <div className="space24"></div>
-                                                    <div className="service7-content-text">
-                                                        <h3>
-                                                            <Link href={service.href}>{service.title}</Link>
-                                                        </h3>
-                                                        <div className="space16"></div>
-                                                        <p>{service.text}</p>
-                                                    </div>
-                                                    <div className="service7-learn-btn">
-                                                        <Link href={service.href} className="btn4-home7">
-                                                            Learn More
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                                <div className="service7-box-bg">
-                                                    <img src="/assets/img/service/service7-thumb2-bg.png" alt="" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
+            <div className="vl-service9-area">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xl-6 mx-auto text-center">
+                            <div className="service9-heading">
+                                <h3 data-aos="fade-right" data-aos-duration="900">
+                                    <img src="/assets/img/icon/hm7-sub-title2-dot.png" alt="" />
+                                    Our Activities
+                                </h3>
+                                <div className="space24"></div>
+                                <h2 className="text-effect">Thrilling Activities Await!</h2>
                             </div>
                         </div>
+                        <div className="space40"></div>
+                        <section className="process-section">
+                            <div className="process-grid">
+                                {services.map((service, index) => (
+                                    <div key={index} className={`card ${index === 0 ? 'top-left' : index === 1 ? 'top-right' : index === 2 ? 'bottom-left' : 'bottom-right'}`} data-aos="zoom-out" data-aos-duration="900">
+                                        <div className="card-flex">
+                                            <div className="icon">
+                                                <i className={service.icon}></i>
+                                            </div>
+                                            <h3><a href={service.href}>{service.title}</a></h3>
+                                        </div>
+                                        <div className="space16"></div>
+                                        <p>{service.text}</p>
+                                        <a className="btnhm9-2" href={service.href}>Learn More<i className="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="line9-shape">
+                                <img src="/assets/img/shape/service9-line-shp.png" alt="" />
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>
