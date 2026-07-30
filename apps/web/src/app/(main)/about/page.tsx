@@ -18,7 +18,10 @@ export default function AboutPage() {
                         <div className="col-xl-8">
                             <div className="vl-about-inner-info">
                                 <div className="vl-about-inner-heading">
-                                    <h3 data-aos="fade-right" data-aos-duration="900">About Our Agriculture</h3>
+                                    <h3 data-aos="fade-right" data-aos-duration="900">
+                                        <img src="/assets/img/icon/subtitle-icon-hm4.svg" alt="" />
+                                        About Our Agriculture
+                                    </h3>
                                     <div className="space16"></div>
                                     <h2 data-aos="fade-left" data-aos-duration="1000">
                                         Where Agriculture Meets Adventure!
