@@ -26,106 +26,79 @@ export default function Header() {
     }, []);
 
     return (
-        <header className="homepage6-body">
-            <div
-                className={`vl-header-area vl-transparent-header ${isSticky ? 'sticky-header' : ''}`}
-                id="vl-header-sticky"
-            >
-                <div className="header-top-area header6-top-bg d-lg-block d-none">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-xl-12">
-                                <div className="header-top-main">
-                                    <ul className="header-location">
-                                        <li>
-                                            <a className="clr-white" href="/#">
-                                                Organic Farm & Agro Tourism in Nakaseke, Uganda{' '}
-                                                <span>Contact Us</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <div className="header-phn-area">
-                                        <a
-                                            className="header-phn-mail clr-white"
-                                            href="mailto:info@funfarminguganda.com"
-                                        >
-                                            <i className="fa-regular fa-envelope"></i>
-                                            {' '}info@funfarminguganda.com
+        <header className={`${isSticky ? 'sticky' : ''}`}>
+            <div className="header-top d-none d-lg-block">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="header-top-main d-flex justify-content-between align-items-center">
+                                <ul className="header-location list-unstyled mb-0">
+                                    <li>
+                                        <a href="/#">
+                                            Organic Farm & Agro Tourism in Nakaseke, Uganda{' '}
+                                            <span>Contact Us</span>
                                         </a>
-                                        <span className="header-top-line">|</span>
-                                        <a href="tel:+256700000000" className="header-time header6-time">
-                                            <i className="fa-solid fa-phone"></i>
-                                            {' '}+256 700 000 000
-                                        </a>
-                                    </div>
+                                    </li>
+                                </ul>
+                                <div className="header-contact d-flex align-items-center gap-3">
+                                    <a href="mailto:info@funfarminguganda.com">
+                                        <i className="fa-regular fa-envelope"></i>
+                                        {' '}info@funfarminguganda.com
+                                    </a>
+                                    <span>|</span>
+                                    <a href="tel:+256700000000">
+                                        <i className="fa-solid fa-phone"></i>
+                                        {' '}+256 700 000 000
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="vl-header-content-area white-bg">
-                    <div className="container">
-                        <div className="row align-items-center">
-                            <div className="col-xl-2 col-md-6 col-6">
-                                <div className="vl-logo">
-                                    <Link href="/">
-                                        <img
-                                            src="/img/favicons/logo.png"
-                                            alt="Fun Farming Uganda"
-                                        />
+            </div>
+            <div className="header-content">
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-xl-2 col-md-6 col-6">
+                            <div className="logo">
+                                <Link href="/">
+                                    <img
+                                        src="/img/favicons/logo.png"
+                                        alt="Fun Farming Uganda"
+                                    />
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="col-xl-7 d-none d-xl-block">
+                            <div className="main-menu text-center">
+                                <nav>
+                                    <ul className="list-unstyled mb-0">
+                                        {navItems.map((item) => (
+                                            <li key={item.href}>
+                                                <Link href={item.href}>
+                                                    {item.label}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div className="col-xl-3 col-md-6 col-6">
+                            <div className="header-actions d-flex align-items-center justify-content-end">
+                                <div className="header-cta d-none d-xl-block">
+                                    <Link href="/contact" className="btn btn-primary">
+                                        Start Growing Now
                                     </Link>
                                 </div>
-                            </div>
-                            <div className="col-xl-7 d-none d-xl-block">
-                                <div className="vl-main-menu text-center">
-                                    <nav className="vl-mobile-menu-active vl-menu-hm6-fxr">
-                                        <ul>
-                                            {navItems.map((item) => (
-                                                <li key={item.href}>
-                                                    <Link href={item.href}>
-                                                        {item.label}
-                                                    </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div className="col-xl-3 col-md-6 col-6">
-                                <div className="vl-menu-sidebar-area">
-                                    <div className="menu-line">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="1"
-                                            height="25"
-                                            viewBox="0 0 1 25"
-                                            fill="none"
-                                        >
-                                            <path
-                                                d="M0.5 0.5L0.499999 24.5"
-                                                stroke="#1A5632"
-                                                strokeOpacity="0.3"
-                                                strokeLinecap="round"
-                                            />
-                                        </svg>
-                                    </div>
-                                    <div className="vl-header-btn d-none d-xl-block text-end">
-                                        <div className="header6-btn">
-                                            <Link href="/contact" className="btn-home6">
-                                                Start Growing Now
-                                            </Link>
-                                        </div>
-                                    </div>
 
-                                    <div className="vl-header-action-item d-block d-xl-none">
-                                        <button
-                                            type="button"
-                                            className="vl-offcanvas-toggle"
-                                            onClick={() => setMobileNavOpen(true)}
-                                        >
-                                            <i className="fa-solid fa-bars-staggered"></i>
-                                        </button>
-                                    </div>
+                                <div className="mobile-toggle d-block d-xl-none">
+                                    <button
+                                        type="button"
+                                        onClick={() => setMobileNavOpen(true)}
+                                    >
+                                        <i className="fa-solid fa-bars-staggered"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
