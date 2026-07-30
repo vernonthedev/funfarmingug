@@ -37,7 +37,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="custom-cursor" data-scroll-behavior="smooth" suppressHydrationWarning>
+        <html
+            lang="en"
+            className="custom-cursor"
+            data-scroll-behavior="smooth"
+            suppressHydrationWarning
+        >
             <head>
                 <link
                     rel="apple-touch-icon"
@@ -132,7 +137,7 @@ export default function RootLayout({
                 />
                 <link rel="stylesheet" href="/assets/css/garlon.css" />
             </head>
-            <body className="custom-cursor">
+            <body className="custom-cursor" suppressHydrationWarning>
                 <div className="custom-cursor__cursor"></div>
                 <div className="custom-cursor__cursor-two"></div>
                 <div className="preloader" suppressHydrationWarning>

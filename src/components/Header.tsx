@@ -86,16 +86,16 @@ export default function Header() {
                     <Image
                         src="/assets/images/shapes/header-top-3-1.png"
                         alt="images"
-                        width="100"
-                        height="100"
+                        width={100}
+                        height={100}
                     />
                 </div>
                 <div className="topbar-three__shape-right">
                     <Image
                         src="/assets/images/shapes/header-top-3-2.png"
                         alt="images"
-                        width="100"
-                        height="100"
+                        width={100}
+                        height={100}
                     />
                 </div>
             </div>
@@ -110,10 +110,10 @@ export default function Header() {
                                 <div className="main-header__logo">
                                     <Link href="/">
                                         <Image
-                                            src="logo.png"
+                                            src="/logo.png"
                                             alt="Fun Farming Uganda"
-                                            width="223"
-                                            height="100"
+                                            width={223}
+                                            height={100}
                                         />
                                     </Link>
                                 </div>
@@ -176,8 +176,8 @@ export default function Header() {
                                         <Image
                                             src="/assets/images/logo-dark.png"
                                             alt="Fun Farming Uganda"
-                                            width="223"
-                                            height="100"
+                                            width={223}
+                                            height={100}
                                         />
                                     </Link>
                                 </div>
@@ -224,8 +224,8 @@ export default function Header() {
                         <Link href="/" aria-label="logo image">
                             <Image
                                 src="/assets/images/logo-light.png"
-                                width="155"
-                                height="100"
+                                width={155}
+                                height={100}
                                 alt="Fun Farming Uganda"
                             />
                         </Link>
