@@ -16,102 +16,42 @@ export default function AboutSection({
     videoUrl?: string;
 }) {
     return (
-        <section className="about-one section-space">
+        <section className="vl-about1-area sp1">
+            <div className="space96"></div>
             <div className="container">
-                <div className="row gutter-y-30 align-items-center">
+                <div className="row align-items-center">
                     {!reversed && image && (
-                        <div className="col-lg-6">
-                            <div
-                                className="about-one__thumb wow fadeInUp"
-                                data-wow-duration="1500ms"
-                                data-wow-delay="100ms"
-                            >
-                                <div className="about-one__thumb__item">
-                                    <img
-                                        src={image}
-                                        alt={
-                                            typeof title === 'string'
-                                                ? title
-                                                : tagline
-                                        }
-                                    />
-                                </div>
-                                {imageSmall && (
-                                    <div className="about-one__thumb__small-item">
-                                        <img
-                                            src={imageSmall}
-                                            alt={
-                                                typeof title === 'string'
-                                                    ? title
-                                                    : tagline
-                                            }
-                                        />
-                                        {videoUrl && (
-                                            <div className="about-one__video">
-                                                <a
-                                                    href={videoUrl}
-                                                    className="about-one__btn__icon popup-video"
-                                                >
-                                                    <span
-                                                        aria-hidden="true"
-                                                        className="icon-play"
-                                                    ></span>
-                                                </a>
-                                                <p className="about-one__btn__text">
-                                                    Watch Video
-                                                </p>
-                                            </div>
-                                        )}
-                                    </div>
-                                )}
-                                <div className="about-one__thumb__shape">
-                                    <img
-                                        src="/assets/images/shapes/about-shape-1-1.png"
-                                        alt="shape"
-                                    />
-                                </div>
+                        <div className="col-xl-6 col-lg-6">
+                            <div className="about1-thumb1 vl-clip-anim image-anime" data-aos="fade-right" data-aos-duration="800">
+                                <img className="vl-anim-img w-100" data-animate="true" src={image} alt={typeof title === 'string' ? title : tagline} />
                             </div>
                         </div>
                     )}
-                    <div className={image ? 'col-lg-6' : 'col-lg-12'}>
-                        <div className="about-one__content">
-                            <div className="sec-title text-start">
-                                <div className="sec-title__tagline bw-split-in-up-fast">
-                                    <img
-                                        src="/assets/images/shapes/sec-title-shape.png"
-                                        alt="shape"
-                                    />
+                    <div className={image ? 'col-xl-6 col-lg-6 col-md-12' : 'col-xl-12'}>
+                        <div className="about-area-info">
+                            <div className="about1-heading-area">
+                                <h3 className="about-subtitle" data-aos="fade-left" data-aos-duration="800">
                                     {tagline}
-                                </div>
-                                <h3 className="sec-title__title bw-split-in-up">
-                                    {title}
                                 </h3>
+                                <div className="space24"></div>
+                                <h2 className="about-title text-anime-style-3" data-aos="fade-left" data-aos-duration="800">
+                                    {title}
+                                </h2>
+                                <div className="space16"></div>
+                                <p className="text-effect" data-aos="fade-left" data-aos-duration="900">
+                                    {children}
+                                </p>
                             </div>
-                            {children}
                         </div>
                     </div>
                     {reversed && image && (
-                        <div className="col-lg-6">
-                            <div
-                                className="about-one__thumb__item wow fadeInUp"
-                                data-wow-duration="1500ms"
-                                data-wow-delay="100ms"
-                            >
-                                <img
-                                    src={image}
-                                    alt={
-                                        typeof title === 'string'
-                                            ? title
-                                            : tagline
-                                    }
-                                />
+                        <div className="col-xl-6 col-lg-6">
+                            <div className="about1-thumb1 vl-clip-anim image-anime" data-aos="fade-left" data-aos-duration="800">
+                                <img className="vl-anim-img w-100" data-animate="true" src={image} alt={typeof title === 'string' ? title : tagline} />
                             </div>
                         </div>
                     )}
                 </div>
-            </div>
-            <div className="about-one__shape">
-                <img src="/assets/images/shapes/plant-1.png" alt="shape" />
             </div>
         </section>
     );
