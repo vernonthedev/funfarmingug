@@ -37,12 +37,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html
-            lang="en"
-            className="custom-cursor"
-            data-scroll-behavior="smooth"
-            suppressHydrationWarning
-        >
+        <html lang="en">
             <head>
                 <link
                     rel="apple-touch-icon"
@@ -81,103 +76,106 @@ export default function RootLayout({
                     rel="stylesheet"
                 />
 
-                {/* Garlon Template CSS */}
-                <link
-                    rel="stylesheet"
-                    href="/assets/vendors/bootstrap/css/bootstrap.min.css"
-                />
-                <link
-                    rel="stylesheet"
-                    href="/assets/vendors/bootstrap-select/bootstrap-select.min.css"
-                />
-                <link
-                    rel="stylesheet"
-                    href="/assets/vendors/animate/animate.min.css"
-                />
-                <link
-                    rel="stylesheet"
-                    href="/assets/vendors/fontawesome/css/all.min.css"
-                />
-                <link
-                    rel="stylesheet"
-                    href="/assets/vendors/jquery-ui/jquery-ui.css"
-                />
-                <link
-                    rel="stylesheet"
-                    href="/assets/vendors/jarallax/jarallax.css"
-                />
-                <link
-                    rel="stylesheet"
-                    href="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css"
-                />
-                <link
-                    rel="stylesheet"
-                    href="/assets/vendors/nouislider/nouislider.min.css"
-                />
-                <link
-                    rel="stylesheet"
-                    href="/assets/vendors/nouislider/nouislider.pips.css"
-                />
-                <link
-                    rel="stylesheet"
-                    href="/assets/vendors/tiny-slider/tiny-slider.css"
-                />
-                <link
-                    rel="stylesheet"
-                    href="/assets/vendors/garlon-icons/style.css"
-                />
-                <link rel="stylesheet" href="/assets/vendors/slick/slick.css" />
-                <link
-                    rel="stylesheet"
-                    href="/assets/vendors/owl-carousel/css/owl.carousel.min.css"
-                />
-                <link
-                    rel="stylesheet"
-                    href="/assets/vendors/owl-carousel/css/owl.theme.default.min.css"
-                />
-                <link rel="stylesheet" href="/assets/css/garlon.css" />
+                <link rel="stylesheet" href="/assets/css/plugins/bootstrap.min.css" />
+                <link rel="stylesheet" href="/assets/css/plugins/aos.css" />
+                <link rel="stylesheet" href="/assets/css/plugins/fontawesome.css" />
+                <link rel="stylesheet" href="/assets/css/plugins/magnific-popup.css" />
+                <link rel="stylesheet" href="/assets/css/plugins/owlcarousel.min.css" />
+                <link rel="stylesheet" href="/assets/css/plugins/slick-slider.css" />
+                <link rel="stylesheet" href="/assets/css/plugins/nice-select.css" />
+                <link rel="stylesheet" href="/assets/css/plugins/swiper.min.css" />
+                <link rel="stylesheet" href="/assets/css/main.css" />
             </head>
-            <body className="custom-cursor" suppressHydrationWarning>
-                <div className="custom-cursor__cursor"></div>
-                <div className="custom-cursor__cursor-two"></div>
-                <div className="preloader" suppressHydrationWarning>
-                    <div
-                        className="preloader__image"
-                        style={{
-                            backgroundImage: 'url(/assets/images/loader.png)',
-                        }}
-                    ></div>
+            <body>
+                <div className="preloader">
+                    <div className="loading-container">
+                        <div className="loading"></div>
+                        <div id="loading-icon">
+                            <img src="/assets/img/logo/preloader.png" alt="" />
+                        </div>
+                    </div>
                 </div>
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
-    function hidePreloader() {
-        var preloader = document.querySelector('.preloader');
-        if (preloader) {
-            preloader.style.opacity = '0';
-            preloader.style.transition = 'opacity 0.5s ease';
-            setTimeout(function() { preloader.style.display = 'none'; }, 500);
-        }
-    }
-    if (document.readyState === 'complete') {
-        hidePreloader();
-    } else {
-        window.addEventListener('load', hidePreloader);
-    }
-`,
-                    }}
-                />
-                <a
-                    href="#html"
-                    data-target="html"
-                    className="scroll-to-target scroll-to-top"
-                >
-                    <span className="scroll-to-top__text">back top</span>
-                    <span className="scroll-to-top__wrapper">
-                        <span className="scroll-to-top__inner"></span>
-                    </span>
-                </a>
-                <div className="page-wrapper">{children}</div>
+
+                <div className="paginacontainer">
+                    <div className="progress-wrap">
+                        <svg
+                            className="progress-circle svg-content"
+                            width="100%"
+                            height="100%"
+                            viewBox="-1 -1 102 102"
+                        >
+                            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div className="vl-offcanvas">
+                    <div className="vl-offcanvas-wrapper">
+                        <div className="vl-offcanvas-header d-flex justify-content-between align-items-center mb-90">
+                            <div className="vl-offcanvas-logo">
+                                <a href="/">
+                                    <img
+                                        src="/assets/img/footer/footer1-logo.png"
+                                        alt=""
+                                    />
+                                </a>
+                            </div>
+                            <div className="vl-offcanvas-close">
+                                <button className="vl-offcanvas-close-toggle">
+                                    <i className="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="vl-offcanvas-menu d-xl-none mb-40">
+                            <nav></nav>
+                        </div>
+
+                        <div className="space20"></div>
+                        <div className="vl-offcanvas-info">
+                            <h3 className="vl-offcanvas-sm-title">Contact Us</h3>
+                            <div className="space20"></div>
+                            <span>
+                                <a href="/#">
+                                    <i className="fa-regular fa-envelope"></i>
+                                    {' '}info@funfarminguganda.com
+                                </a>
+                            </span>
+                            <span>
+                                <a href="tel:+256700000000">
+                                    <i className="fa-solid fa-phone"></i>
+                                    {' '}+256 700 000 000
+                                </a>
+                            </span>
+                            <span>
+                                <a href="/#">
+                                    <i className="fa-solid fa-location-dot"></i>
+                                    {' '}Kampala, Uganda
+                                </a>
+                            </span>
+                        </div>
+                        <div className="space20"></div>
+                        <div className="vl-offcanvas-social">
+                            <h3 className="vl-offcanvas-sm-title">Follow Us</h3>
+                            <div className="space20"></div>
+                            <a href="/#">
+                                <i className="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="/#">
+                                <i className="fab fa-instagram"></i>
+                            </a>
+                            <a href="/#">
+                                <i className="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="/#">
+                                <i className="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div className="vl-offcanvas-overlay"></div>
+
+                {children}
             </body>
         </html>
     );
