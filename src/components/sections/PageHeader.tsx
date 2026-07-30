@@ -12,40 +12,41 @@ export default function PageHeader({
     breadcrumbs: BreadcrumbItem[];
 }) {
     return (
-        <section className="page-header">
-            <div
-                className="page-header__bg"
-                style={{
-                    backgroundImage: `url(${bgImage || '/assets/images/backgrounds/page-header-bg-1-1.jpg'})`,
-                }}
-            ></div>
-            <div className="page-header__shape-one">
-                <img
-                    src="/assets/images/shapes/page-header-shape-1-1.png"
-                    alt="shape"
-                />
-            </div>
-            <div className="page-header__shape-two">
-                <img
-                    src="/assets/images/shapes/page-header-shape-1-2.png"
-                    alt="shape"
-                />
-            </div>
+        <section
+            className="vl-hero-inner-area parallaxie"
+            style={{
+                backgroundImage: `url(${bgImage || '/assets/img/hero/about-us-inr-herothumb.png'})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+            }}
+        >
             <div className="container">
-                <h2 className="page-header__title bw-split-in-right">
-                    {title}
-                </h2>
-                <ul className="garlon-breadcrumb list-unstyled">
-                    {breadcrumbs.map((crumb, i) => (
-                        <li key={i}>
-                            {crumb.href ? (
-                                <Link href={crumb.href}>{crumb.label}</Link>
-                            ) : (
-                                <span>{crumb.label}</span>
-                            )}
-                        </li>
-                    ))}
-                </ul>
+                <div className="row">
+                    <div className="col-xl-6">
+                        <div className="inner-hero-info">
+                            <h2>{title}</h2>
+                            <div className="space16"></div>
+                            <ul>
+                                <li>
+                                    <Link href="/">Home</Link>
+                                </li>
+                                <li>
+                                    <img src="/assets/img/icon/arrow-right-inner.svg" alt="" />
+                                </li>
+                                {breadcrumbs.map((crumb, i) => (
+                                    <li key={i}>
+                                        {crumb.href ? (
+                                            <Link href={crumb.href}>{crumb.label}</Link>
+                                        ) : (
+                                            <span>{crumb.label}</span>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );

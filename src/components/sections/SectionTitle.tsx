@@ -8,12 +8,14 @@ export default function SectionTitle({
     align?: 'center' | 'start';
 }) {
     return (
-        <div className={`sec-title text-${align}`}>
-            <div className="sec-title__tagline bw-split-in-up-fast">
-                <img src="/assets/images/shapes/sec-title-shape.png" alt="shape" />
-                {tagline}
+        <div className={`service6-top text-${align}`}>
+            <div className="service6-top-left" data-aos="fade-right" data-aos-duration="900">
+                <h3>{tagline}</h3>
+                <div className="space16"></div>
+                <h2 className="text-anime-style-3" data-aos="fade-left" data-aos-duration="1000">
+                    {title}
+                </h2>
             </div>
-            <h3 className="sec-title__title bw-split-in-up">{title}</h3>
         </div>
     );
 }
