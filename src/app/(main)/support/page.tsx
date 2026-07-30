@@ -1,161 +1,97 @@
 'use client';
 
 import Link from 'next/link';
+import PageHeader from '@/components/sections/PageHeader';
 
 export default function SupportPage() {
     return (
         <>
-            <section className="page-header">
-                <div
-                    className="page-header__bg"
-                    style={{
-                        backgroundImage:
-                            'url(/assets/images/backgrounds/page-header-bg-1-1.jpg)',
-                    }}
-                ></div>
-                <div className="container">
-                    <h2 className="page-header__title">Support</h2>
-                    <ul className="garlon-breadcrumb list-unstyled">
-                        <li>
-                            <Link href="/">Home</Link>
-                        </li>
-                        <li>
-                            <span>Support</span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            <PageHeader
+                title="Support"
+                bgImage="/assets/img/hero/about-us-inr-herothumb.png"
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'Support' },
+                ]}
+            />
 
-            <section className="about-one section-space">
+            <div className="vl-about-inner-area sp1">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-xl-12">
-                            <div className="about-one__content text-center">
-                                <div className="sec-title text-center">
-                                    <p className="sec-title__tagline">
-                                        <img
-                                            src="/assets/images/shapes/sec-title-s-1-1.png"
-                                            alt="shape"
-                                        />
-                                        SUPPORT
-                                    </p>
-                                    <h3 className="sec-title__title">
+                    <div className="row justify-content-center">
+                        <div className="col-xl-8">
+                            <div className="vl-about-inner-info text-center">
+                                <div className="vl-about-inner-heading">
+                                    <h3 data-aos="fade-right" data-aos-duration="900">Support</h3>
+                                    <div className="space16"></div>
+                                    <h2 data-aos="fade-left" data-aos-duration="1000">
                                         Contact Fun Farming Support Team
-                                    </h3>
+                                    </h2>
+                                    <div className="space16"></div>
+                                    <p data-aos="fade-left" data-aos-duration="1000">
+                                        We are here to help you with any questions about your booking, activities, or farm
+                                        visits. Our support team is available during business hours and we typically respond
+                                        to all inquiries within 24 hours.
+                                    </p>
                                 </div>
-                                <p className="about-one__content__text">
-                                    We are here to help you with any questions
-                                    about your booking, activities, or farm
-                                    visits. Our support team is available during
-                                    business hours and we typically respond to
-                                    all inquiries within 24 hours.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="row mt-60">
-                        <div className="col-lg-4 col-md-6">
-                            <div className="testimonials-one__item">
-                                <div className="testimonials-one__item__inner">
-                                    <div className="testimonials-one__icon">
-                                        <i className="fa fa-phone"></i>
+                                <div className="space44"></div>
+                                <div className="row">
+                                    <div className="col-lg-4 col-md-6">
+                                        <div className="vl-services2-box" data-aos="fade-up" data-aos-duration="800">
+                                            <div className="services2-box-icon">
+                                                <i className="fa-solid fa-phone"></i>
+                                            </div>
+                                            <div className="space24"></div>
+                                            <div className="services2-box-content">
+                                                <h2>Phone</h2>
+                                                <div className="space16"></div>
+                                                <p>
+                                                    <a href="tel:+256772826680" style={{ color: '#209D2F', fontWeight: 600 }}>+256 772 826 680</a>
+                                                </p>
+                                                <p>
+                                                    <a href="tel:+256700462477" style={{ color: '#209D2F', fontWeight: 600 }}>+256 700 462 477</a>
+                                                </p>
+                                                <p>
+                                                    <a href="tel:+256770640220" style={{ color: '#209D2F', fontWeight: 600 }}>+256 770 640 220</a>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h4 className="testimonials-one__thumb__name">
-                                        Phone
-                                    </h4>
-                                    <div className="testimonials-one__thumb">
-                                        <a
-                                            href="tel:+256772826680"
-                                            className="testimonials-one__thumb__text"
-                                            style={{
-                                                color: '#209D2F',
-                                                fontWeight: 600,
-                                            }}
-                                        >
-                                            +256 772 826 680
-                                        </a>
-                                        <a
-                                            href="tel:+256700462477"
-                                            className="testimonials-one__thumb__text"
-                                            style={{
-                                                color: '#209D2F',
-                                                fontWeight: 600,
-                                                display: 'block',
-                                            }}
-                                        >
-                                            +256 700 462 477
-                                        </a>
-                                        <a
-                                            href="tel:+256770640220"
-                                            className="testimonials-one__thumb__text"
-                                            style={{
-                                                color: '#209D2F',
-                                                fontWeight: 600,
-                                                display: 'block',
-                                            }}
-                                        >
-                                            +256 770 640 220
-                                        </a>
+                                    <div className="col-lg-4 col-md-6">
+                                        <div className="vl-services2-box" data-aos="fade-up" data-aos-duration="1000">
+                                            <div className="services2-box-icon">
+                                                <i className="fa-regular fa-envelope"></i>
+                                            </div>
+                                            <div className="space24"></div>
+                                            <div className="services2-box-content">
+                                                <h2>Email</h2>
+                                                <div className="space16"></div>
+                                                <p>
+                                                    <a href="mailto:info@funfarminguganda.com" style={{ color: '#209D2F', fontWeight: 600 }}>
+                                                        info@funfarminguganda.com
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="testimonials-one__item">
-                                <div className="testimonials-one__item__inner">
-                                    <div className="testimonials-one__icon">
-                                        <i className="fa fa-envelope"></i>
-                                    </div>
-                                    <h4 className="testimonials-one__thumb__name">
-                                        Email
-                                    </h4>
-                                    <div className="testimonials-one__thumb">
-                                        <a
-                                            href="mailto:info@funfarminguganda.com"
-                                            className="testimonials-one__thumb__text"
-                                            style={{
-                                                color: '#209D2F',
-                                                fontWeight: 600,
-                                            }}
-                                        >
-                                            info@funfarminguganda.com
-                                        </a>
+                                    <div className="col-lg-4 col-md-6">
+                                        <div className="vl-services2-box" data-aos="fade-up" data-aos-duration="1100">
+                                            <div className="services2-box-icon">
+                                                <i className="fa-solid fa-location-dot"></i>
+                                            </div>
+                                            <div className="space24"></div>
+                                            <div className="services2-box-content">
+                                                <h2>Location</h2>
+                                                <div className="space16"></div>
+                                                <p>Butalangu, Nakaseke District, Uganda</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6">
-                            <div className="testimonials-one__item">
-                                <div className="testimonials-one__item__inner">
-                                    <div className="testimonials-one__icon">
-                                        <i className="fa fa-map-marker"></i>
-                                    </div>
-                                    <h4 className="testimonials-one__thumb__name">
-                                        Visit Us
-                                    </h4>
-                                    <div className="testimonials-one__thumb">
-                                        <span className="testimonials-one__thumb__text">
-                                            Butalangu Town Council,
-                                        </span>
-                                        <span className="testimonials-one__thumb__text">
-                                            Nakaseke District, Uganda
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="row mt-60">
-                        <div className="col-xl-12 text-center">
-                            <Link href="/contact" className="garlon-btn">
-                                Send Us a Message
-                            </Link>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </>
     );
 }
