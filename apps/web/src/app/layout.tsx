@@ -97,8 +97,14 @@ export default function RootLayout({
                     rel="stylesheet"
                     href="/assets/css/plugins/slick-slider.css"
                 />
-                <link rel="stylesheet" href="/assets/css/plugins/nice-select.css" />
-                <link rel="stylesheet" href="/assets/css/plugins/swiper.min.css" />
+                <link
+                    rel="stylesheet"
+                    href="/assets/css/plugins/nice-select.css"
+                />
+                <link
+                    rel="stylesheet"
+                    href="/assets/css/plugins/swiper.min.css"
+                />
             </head>
             <body>
                 <div className="preloader">

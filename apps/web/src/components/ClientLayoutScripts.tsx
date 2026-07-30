@@ -69,7 +69,6 @@ export default function ClientLayoutScripts() {
                 src="/assets/js/plugins/parallaxie.js"
                 strategy="afterInteractive"
             />
-            <Script src="/assets/js/main.js" strategy="afterInteractive" />
         </>
     );
 }
