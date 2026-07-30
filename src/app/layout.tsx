@@ -76,14 +76,35 @@ export default function RootLayout({
                     rel="stylesheet"
                 />
 
-                <link rel="stylesheet" href="/assets/css/plugins/bootstrap.min.css" />
+                <link
+                    rel="stylesheet"
+                    href="/assets/css/plugins/bootstrap.min.css"
+                />
                 <link rel="stylesheet" href="/assets/css/plugins/aos.css" />
-                <link rel="stylesheet" href="/assets/css/plugins/fontawesome.css" />
-                <link rel="stylesheet" href="/assets/css/plugins/magnific-popup.css" />
-                <link rel="stylesheet" href="/assets/css/plugins/owlcarousel.min.css" />
-                <link rel="stylesheet" href="/assets/css/plugins/slick-slider.css" />
-                <link rel="stylesheet" href="/assets/css/plugins/nice-select.css" />
-                <link rel="stylesheet" href="/assets/css/plugins/swiper.min.css" />
+                <link
+                    rel="stylesheet"
+                    href="/assets/css/plugins/fontawesome.css"
+                />
+                <link
+                    rel="stylesheet"
+                    href="/assets/css/plugins/magnific-popup.css"
+                />
+                <link
+                    rel="stylesheet"
+                    href="/assets/css/plugins/owlcarousel.min.css"
+                />
+                <link
+                    rel="stylesheet"
+                    href="/assets/css/plugins/slick-slider.css"
+                />
+                <link
+                    rel="stylesheet"
+                    href="/assets/css/plugins/nice-select.css"
+                />
+                <link
+                    rel="stylesheet"
+                    href="/assets/css/plugins/swiper.min.css"
+                />
                 <link rel="stylesheet" href="/assets/css/main.css" />
             </head>
             <body>
@@ -133,24 +154,26 @@ export default function RootLayout({
 
                         <div className="space20"></div>
                         <div className="vl-offcanvas-info">
-                            <h3 className="vl-offcanvas-sm-title">Contact Us</h3>
+                            <h3 className="vl-offcanvas-sm-title">
+                                Contact Us
+                            </h3>
                             <div className="space20"></div>
                             <span>
                                 <a href="/#">
-                                    <i className="fa-regular fa-envelope"></i>
-                                    {' '}info@funfarminguganda.com
+                                    <i className="fa-regular fa-envelope"></i>{' '}
+                                    info@funfarminguganda.com
                                 </a>
                             </span>
                             <span>
                                 <a href="tel:+256700000000">
-                                    <i className="fa-solid fa-phone"></i>
-                                    {' '}+256 700 000 000
+                                    <i className="fa-solid fa-phone"></i> +256
+                                    700 000 000
                                 </a>
                             </span>
                             <span>
                                 <a href="/#">
-                                    <i className="fa-solid fa-location-dot"></i>
-                                    {' '}Kampala, Uganda
+                                    <i className="fa-solid fa-location-dot"></i>{' '}
+                                    Kampala, Uganda
                                 </a>
                             </span>
                         </div>
