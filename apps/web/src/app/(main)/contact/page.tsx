@@ -100,63 +100,20 @@ export default function ContactPage() {
                 ]}
             />
 
-            <div className="vl-contact2-area sp1">
+            <div className="vl-contact-inr-area sp1">
                 <div className="container">
                     <div className="row">
-                        <div className="col-xl-5 col-lg-6">
-                            <div className="vl-contact2-info">
-                                <div className="vl-about-inner-heading">
-                                    <h3 data-aos="fade-right" data-aos-duration="900">Get In Touch</h3>
-                                    <div className="space16"></div>
-                                    <h2 data-aos="fade-left" data-aos-duration="1000">We&apos;d Love to Hear From You</h2>
-                                    <div className="space16"></div>
-                                    <p data-aos="fade-left" data-aos-duration="1000">
-                                        Have a question or want to book a visit? Reach out and our team will get back to you within 24 hours.
-                                    </p>
-                                </div>
-                                <div className="space30"></div>
-                                <div className="vl-contact2-list">
-                                    <ul>
-                                        <li data-aos="fade-up" data-aos-duration="900">
-                                            <div className="icon">
-                                                <i className="fa-solid fa-location-dot"></i>
-                                            </div>
-                                            <div className="content">
-                                                <h4>Our Location</h4>
-                                                <p>Butalangu, Nakaseke District, Uganda</p>
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up" data-aos-duration="1000">
-                                            <div className="icon">
-                                                <i className="fa-solid fa-phone"></i>
-                                            </div>
-                                            <div className="content">
-                                                <h4>Phone Number</h4>
-                                                <p>
-                                                    <a href="tel:+256772826680">+256 772 826 680</a>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li data-aos="fade-up" data-aos-duration="1100">
-                                            <div className="icon">
-                                                <i className="fa-regular fa-envelope"></i>
-                                            </div>
-                                            <div className="content">
-                                                <h4>Email Address</h4>
-                                                <p>
-                                                    <a href="mailto:info@funfarminguganda.com">info@funfarminguganda.com</a>
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-7 col-lg-6">
-                            <div className="vl-contact2-form">
+                        <div className="col-xl-6 col-lg-6">
+                            <div className="contact2-form-area">
+                                <h2 className="title">Get In Touch With Us</h2>
+                                <div className="space16"></div>
+                                <p className="pera_text">
+                                    Have a question or want to book a visit? Reach out and our team will get back to you within 24 hours.
+                                </p>
+                                <div className="space32"></div>
                                 <form onSubmit={handleSubmit}>
-                                    <div className="row gutter-y-20">
-                                        <div className="col-xl-6">
+                                    <div className="row">
+                                        <div className="col-xl-6 col-lg-6">
                                             <input
                                                 type="text"
                                                 name="name"
@@ -166,7 +123,7 @@ export default function ContactPage() {
                                             />
                                             {errors.name && <span className="error">{errors.name}</span>}
                                         </div>
-                                        <div className="col-xl-6">
+                                        <div className="col-xl-6 col-lg-6">
                                             <input
                                                 type="email"
                                                 name="email"
@@ -176,7 +133,8 @@ export default function ContactPage() {
                                             />
                                             {errors.email && <span className="error">{errors.email}</span>}
                                         </div>
-                                        <div className="col-xl-6">
+                                        <div className="space24"></div>
+                                        <div className="col-xl-6 col-lg-6">
                                             <input
                                                 type="text"
                                                 name="phone"
@@ -185,7 +143,7 @@ export default function ContactPage() {
                                                 onChange={handleChange}
                                             />
                                         </div>
-                                        <div className="col-xl-6">
+                                        <div className="col-xl-6 col-lg-6">
                                             <input
                                                 type="text"
                                                 name="subject"
@@ -194,6 +152,7 @@ export default function ContactPage() {
                                                 onChange={handleChange}
                                             />
                                         </div>
+                                        <div className="space24"></div>
                                         <div className="col-xl-12">
                                             <textarea
                                                 name="message"
@@ -204,13 +163,74 @@ export default function ContactPage() {
                                             ></textarea>
                                             {errors.message && <span className="error">{errors.message}</span>}
                                         </div>
-                                        <div className="col-xl-12">
-                                            <button type="submit" className="btn-home6" disabled={isSubmitting}>
-                                                {isSubmitting ? 'Sending...' : 'Send Message'}
-                                            </button>
-                                        </div>
                                     </div>
                                 </form>
+                                <div className="space28"></div>
+                                <div className="contact2-form-bottom">
+                                    <h3>
+                                        <img src="/assets/img/icon/tick-hm2.svg" alt="" />
+                                        Fun Farming Uganda
+                                    </h3>
+                                    <div className="btn">
+                                        <button type="submit" className="btn-home6" disabled={isSubmitting}>
+                                            {isSubmitting ? 'Sending...' : 'Send Message'}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-xl-6 col-lg-6">
+                            <div className="vl-contact2-info">
+                                <div className="contact2-info-mobile contact-inr-fix">
+                                    <div className="contact2-mobile-content">
+                                        <div className="contact2-mobile-logo">
+                                            <a href="/#">
+                                                <i className="fa-solid fa-location-dot"></i>
+                                            </a>
+                                        </div>
+                                        <div className="contact2-mobile-text">
+                                            <h3><a href="/#">Location</a></h3>
+                                            <div className="space16"></div>
+                                            <ul>
+                                                <li><a href="/#">Butalangu, Nakaseke District, Uganda</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div className="contact2-mobile-content mt-30">
+                                        <div className="contact2-mobile-logo">
+                                            <a href="tel:+256700000000">
+                                                <i className="fa-solid fa-phone"></i>
+                                            </a>
+                                        </div>
+                                        <div className="contact2-mobile-text">
+                                            <h3><a href="tel:+256700000000">Phone</a></h3>
+                                            <div className="space16"></div>
+                                            <ul>
+                                                <li><a href="tel:+256700000000">+256 700 000 000</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div className="contact2-mobile-content mt-30">
+                                        <div className="contact2-mobile-logo">
+                                            <a href="mailto:info@funfarminguganda.com">
+                                                <i className="fa-regular fa-envelope"></i>
+                                            </a>
+                                        </div>
+                                        <div className="contact2-mobile-text">
+                                            <h3><a href="mailto:info@funfarminguganda.com">Email Us</a></h3>
+                                            <div className="space16"></div>
+                                            <ul>
+                                                <li><a href="mailto:info@funfarminguganda.com">info@funfarminguganda.com</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div className="contact-box-inr-shape">
+                                        <img src="/assets/img/contact/contact-box-inr-shape.png" alt="" />
+                                    </div>
+                                </div>
+                                <div className="vl-contact2-banner mt-30">
+                                    <img src="/assets/img/contact/contact2-thumb.png" alt="" />
+                                </div>
                             </div>
                         </div>
                     </div>
