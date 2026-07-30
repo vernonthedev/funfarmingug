@@ -1,5 +1,4 @@
 {
   "framework": "nextjs",
-  "rootDirectory": "checkback",
-  "buildCommand": "pnpm build"
+  "buildCommand": "pnpm --filter=@funfarmingug/checkback build"
 }
