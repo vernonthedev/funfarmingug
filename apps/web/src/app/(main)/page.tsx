@@ -308,49 +308,79 @@ export default function HomePage() {
             </div>
 
             {/* Expert / Why Choose */}
-            <div className="vl-about9-area sp1">
+            <div className="vl-about4-area sp1">
                 <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-xl-5 col-lg-6">
-                            <div className="about-area-info">
-                                <div className="about1-heading-area">
-                                    <h3 className="about-subtitle" data-aos="fade-right" data-aos-duration="800">
+                    <div className="row">
+                        <div className="col-xl-4 col-lg-4">
+                            <div className="about4-info">
+                                <div className="about4-header">
+                                    <h3 className="about4-subtitle" data-aos="fade-right" data-aos-duration="800">
+                                        <img src="/assets/img/icon/subtitle-icon-hm4.svg" alt="" />
                                         Meet Our Expert
                                     </h3>
                                     <div className="space24"></div>
-                                    <h2 className="about-title text-anime-style-3" data-aos="fade-left" data-aos-duration="800">
-                                        Moo towards us for customized advice
+                                    <h2 className="about4-title text-anime-style-3" data-aos="fade-right" data-aos-duration="900">
+                                        The People Behind The Produce
                                     </h2>
-                                    <div className="space16"></div>
-                                    <p className="text-effect" data-aos="fade-left" data-aos-duration="900">
-                                        Gathering the horns? Our cow-league David is ready to advise you so that you&apos;ll reap
-                                        applause for this team-building. With years of farm experience, David helps groups find
-                                        the perfect activity mix.
-                                    </p>
                                 </div>
-                                <div className="space38"></div>
-                                <div className="btn_area3" data-aos="fade-left" data-aos-duration="900">
+                                <div className="space32"></div>
+                                <div className="about4-icon-area" data-aos="fade-right" data-aos-duration="1000">
+                                    <div className="about4-icon-info">
+                                        <div className="about4-icons">
+                                            <img src="/assets/img/icon/about4-icon(1).svg" alt="" />
+                                        </div>
+                                        <div className="about4-icon-content">
+                                            <h3><a href="/about">Farm Experience</a></h3>
+                                            <div className="space12"></div>
+                                            <p>Years of hands-on experience in sustainable farming and team building.</p>
+                                        </div>
+                                    </div>
+                                    <div className="about4-icon-info mt-30">
+                                        <div className="about4-icons">
+                                            <img src="/assets/img/icon/about4-icon(2).svg" alt="" />
+                                        </div>
+                                        <div className="about4-icon-content">
+                                            <h3><a href="/about">Customized Advice</a></h3>
+                                            <div className="space12"></div>
+                                            <p>David helps groups find the perfect activity mix for every occasion.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-xl-4 col-lg-4">
+                            <div className="about4-thumb image-anime reveal">
+                                <img src="/webimgs/david-holding-goat.jpg" alt="Farmer David" />
+                            </div>
+                        </div>
+                        <div className="col-xl-4 col-lg-4">
+                            <div className="about4-content">
+                                <p className="text-effect" data-aos="fade-left" data-aos-duration="1000">
+                                    Gathering the horns? Our cow-league David is ready to advise you so that you&apos;ll reap
+                                    applause for this team-building. With years of farm experience, David helps groups find
+                                    the perfect activity mix.
+                                </p>
+                                <div className="space28"></div>
+                                <div className="btn_area10" data-aos="fade-left" data-aos-duration="1100">
                                     <a
                                         href="https://www.calendly.com/farmfun/kennismakingsgesprek-teambuilding-farmfun"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="vl-btn3"
+                                        className="vl-btn10"
                                     >
                                         Schedule Conversation
-                                        <span className="arrow_btn3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                                <path d="M27.002 16.002H5.00195" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                <path d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                                                <path d="M22.8079 11.1373L11.1406 22.8046" stroke="#25452C" strokeWidth="1.55556" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M22.8054 17.5005C22.8054 17.5005 23.6439 11.9751 22.8054 11.1366C21.9669 10.2981 16.4414 11.1366 16.4414 11.1366" stroke="#25452C" strokeWidth="1.55556" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
                                         </span>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-7 col-lg-6">
-                            <div className="about1-thumb1 vl-clip-anim image-anime" data-aos="fade-left" data-aos-duration="800">
-                                <img className="vl-anim-img w-100" data-animate="true" src="/webimgs/david-holding-goat.jpg" alt="Farmer David" />
-                            </div>
+                        <div className="vl-about4-growing_text">
+                            <h2 data-aos="zoom-out" data-aos-duration="1000">Join <span className="counter">5000</span>+ happy visitors already growing</h2>
                         </div>
                     </div>
                 </div>
