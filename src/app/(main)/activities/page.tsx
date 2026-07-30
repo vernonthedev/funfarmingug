@@ -2,8 +2,6 @@
 
 import Link from 'next/link';
 import PageHeader from '@/components/sections/PageHeader';
-import SectionTitle from '@/components/sections/SectionTitle';
-import ServiceCardTwo from '@/components/sections/ServiceCardTwo';
 import CtaSection from '@/components/sections/CtaSection';
 
 const activities = [
@@ -24,7 +22,7 @@ const activities = [
     },
     {
         icon: 'icon-plant-1',
-        title: 'Farm Lounge',
+        title: ' Farm Lounge',
         text: 'Unwind in our serene Farm Lounge after a day of activities. Comfortable seating, refreshments, and panoramic views of the countryside.',
     },
 ];
@@ -43,20 +41,38 @@ export default function ActivitiesPage() {
 
             <section className="service-page section-space">
                 <div className="container">
-                    <SectionTitle
-                        tagline="FUN ACTIVITIES"
-                        title="Farm Games & Team Building For You & Your Herd"
-                    />
+                    <div className="sec-title text-start">
+                        <div className="sec-title__tagline">
+                            <img
+                                src="/assets/images/shapes/sec-title-s-1-1.png"
+                                alt="shape"
+                            />
+                            FUN ACTIVITIES
+                        </div>
+                        <h3 className="sec-title__title">
+                            Farm Games & Team Building For You & Your Herd
+                        </h3>
+                    </div>
                     <div className="row gutter-y-30">
                         {activities.map((a, i) => (
                             <div key={i} className="col-lg-3 col-md-6">
-                                <ServiceCardTwo
-                                    icon={a.icon}
-                                    title={a.title}
-                                    text={a.text}
-                                    href="/contact"
-                                    delay={`${(i + 1) * 200}ms`}
-                                />
+                                <div className="service-card-two">
+                                    <div className="service-card-two__icon">
+                                        <i className={a.icon}></i>
+                                    </div>
+                                    <h3 className="service-card-two__title">
+                                        <a href="/contact">{a.title}</a>
+                                    </h3>
+                                    <p className="service-card-two__text">
+                                        {a.text}
+                                    </p>
+                                    <Link
+                                        href="/contact"
+                                        className="service-card-two__link"
+                                    >
+                                        <span>Read More</span>
+                                    </Link>
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -80,30 +96,38 @@ export default function ActivitiesPage() {
                         </div>
                         <div className="col-lg-6">
                             <div className="about-one__content">
-                                <SectionTitle
-                                    tagline="PLAN YOUR VISIT"
-                                    title="Book Your Farm Adventure Today"
-                                    align="start"
-                                />
+                                <div className="sec-title text-start">
+                                    <div className="sec-title__tagline">
+                                        <img
+                                            src="/assets/images/shapes/sec-title-s-1-1.png"
+                                            alt="shape"
+                                        />
+                                        PLAN YOUR VISIT
+                                    </div>
+                                    <h3 className="sec-title__title">
+                                        Book Your Farm Adventure Today
+                                    </h3>
+                                </div>
                                 <p className="about-one__content__text">
-                                    Planning a visit to Fun Farming Uganda is
-                                    easy and exciting. Whether you are coming
-                                    with colleagues, friends, or family, we
-                                    offer a range of activities that guarantee
-                                    laughter, learning, and lasting memories.
+                                    Planning a visit to Fun Farming Uganda
+                                    is easy and exciting. Whether you are
+                                    coming with colleagues, friends, or
+                                    family, we offer a range of activities
+                                    that guarantee laughter, learning, and
+                                    lasting memories.
                                 </p>
                                 <p className="about-one__content__text">
                                     Our farm is located in Butalangu Town
                                     Council, Nakaseke District, and is
-                                    accessible by road. We recommend booking in
-                                    advance to secure your preferred date and
-                                    activities.
+                                    accessible by road. We recommend booking
+                                    in advance to secure your preferred date
+                                    and activities.
                                 </p>
                                 <p className="about-one__content__text">
                                     <strong>
                                         Minimum group size is 10 participants.
-                                        Not sure yet? You can provide the exact
-                                        number of participants later.
+                                        Not sure yet? You can provide the
+                                        exact number of participants later.
                                     </strong>
                                 </p>
                                 <div className="about-one__user-box">
@@ -137,68 +161,6 @@ export default function ActivitiesPage() {
                 buttonLabel="Contact Us"
                 buttonHref="/contact"
             />
-
-            <section className="about-one section-space-bottom">
-                <div className="container">
-                    <div className="row gutter-y-30 align-items-center">
-                        <div className="col-lg-6">
-                            <div className="about-one__content">
-                                <SectionTitle
-                                    tagline="GLOBAL VISITORS"
-                                    title="Visitors from Around the World"
-                                    align="start"
-                                />
-                                <p className="about-one__content__text">
-                                    We have hosted tourists from Germany and
-                                    across the globe who come to experience the
-                                    unique blend of agriculture and adventure
-                                    that Fun Farming Uganda offers. Our
-                                    team-building activities are particularly
-                                    popular among international visitors looking
-                                    for an authentic Ugandan farm experience.
-                                </p>
-                                <p className="about-one__content__text">
-                                    From navigating our obstacle courses to
-                                    participating in farm games, guests leave
-                                    with unforgettable memories and a deeper
-                                    appreciation for sustainable farming.
-                                </p>
-                                <div className="about-one__user-box">
-                                    <Link
-                                        href="/contact"
-                                        className="garlon-btn"
-                                    >
-                                        <span>Book Your Experience</span>
-                                        <i className="icon-angle-small-right"></i>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div
-                                className="about-one__thumb__item wow fadeInUp"
-                                data-wow-duration="1500ms"
-                                data-wow-delay="100ms"
-                            >
-                                <img
-                                    src="/webimgs/fun-farm-image.jpg"
-                                    alt="Tourists from Germany at Fun Farming Uganda"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div className="container">
-                <div className="row">
-                    <div className="col-xl-12 text-center">
-                        <p className="about-one__content__text">
-                            <strong>Make your bookings today!</strong>
-                        </p>
-                    </div>
-                </div>
-            </div>
         </>
     );
 }

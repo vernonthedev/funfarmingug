@@ -155,18 +155,18 @@ export default function AboutPage() {
                                         FARM PHILOSOPHY
                                     </div>
                                     <h3 className="sec-title__title">
-                                        Good meat in the tub
+                                        Our Farm Philosophy
                                     </h3>
                                 </div>
                                 <p className="about-one__content__text">
-                                    The cart at our Fun Farming location is
-                                    pulled by a farmtastic and farmbitious
-                                    farmer and farmer&apos;s wife. In other
-                                    words: our Chief Executive Farmers (CEF).
-                                    With them we all have good meat in the tank.
-                                    They are farm ambassadors who are
-                                    particularly keen to provide people with a
-                                    positive experience of their milk.
+                                    At Fun Farming Uganda, we believe in
+                                    the simple pleasures of country life.
+                                    Our farm is a place where guests can
+                                    connect with nature, learn about
+                                    sustainable agriculture, and enjoy the
+                                    warmth of Ugandan hospitality. Every
+                                    experience is designed to leave you
+                                    refreshed and inspired.
                                 </p>
                             </div>
                         </div>
@@ -199,8 +199,11 @@ export default function AboutPage() {
                                     are presented with a fun mix of thinking and
                                     doing to strengthen team spirit.
                                 </p>
-                                <Link href="/farmfood" className="garlon-btn">
-                                    See Animal Breeds
+                                <Link
+                                    href="/contact"
+                                    className="garlon-btn"
+                                >
+                                    Get in Touch
                                 </Link>
                             </div>
                         </div>

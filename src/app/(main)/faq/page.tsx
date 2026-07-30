@@ -73,29 +73,27 @@ const faqs = [
 
 export default function FAQPage() {
     const [activeCategory, setActiveCategory] = useState(1);
-    const [openFaq, setOpenFaq] = useState<number | null>(null);
 
     const filteredFaqs = faqs.filter(
         (faq) => activeCategory === 1 || faq.category === activeCategory
     );
-
-    const toggleFaq = (index: number) => {
-        setOpenFaq(openFaq === index ? null : index);
-    };
 
     return (
         <>
             <PageHeader
                 title="FAQ"
                 bgImage="/assets/images/backgrounds/page-header-bg-1-1.jpg"
-                breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]}
+                breadcrumbs={[
+                    { label: 'Home', href: '/' },
+                    { label: 'FAQ' },
+                ]}
             />
 
-            <section className="faq-one section-space">
+            <section className="faq-page section-space">
                 <div className="container">
                     <div className="row gutter-y-30">
                         <div className="col-lg-8">
-                            <div className="faq-one__content">
+                            <div className="faq-page__content">
                                 <div className="sec-title text-start">
                                     <div className="sec-title__tagline">
                                         <img
@@ -108,51 +106,41 @@ export default function FAQPage() {
                                         Everything You Need to Know
                                     </h3>
                                 </div>
-                                <ul className="garlon-accrodion list-unstyled">
+                                <div
+                                    className="faq-page__accordion garlon-accrodion"
+                                    data-grp-name="garlon-accrodion"
+                                >
                                     {filteredFaqs.map((faq, index) => (
-                                        <li
+                                        <div
                                             key={index}
-                                            className={`garlon-accrodion__item ${openFaq === index ? 'active' : ''}`}
+                                            className="accrodion"
                                         >
-                                            <div
-                                                className="garlon-accrodion__title"
-                                                onClick={() => toggleFaq(index)}
-                                            >
-                                                <h3>{faq.question}</h3>
-                                                <div className="garlon-accrodion__icon">
+                                            <div className="accrodion-title">
+                                                <h4>{faq.question}</h4>
+                                                <div className="accrodion-title__icon">
                                                     <span className="icon-plus"></span>
                                                     <span className="icon-minus"></span>
                                                 </div>
                                             </div>
-                                            <div
-                                                className="garlon-accrodion__content"
-                                                style={{
-                                                    display:
-                                                        openFaq === index
-                                                            ? 'block'
-                                                            : 'none',
-                                                }}
-                                            >
+                                            <div className="accrodion-content">
                                                 <p>{faq.answer}</p>
                                             </div>
-                                        </li>
+                                        </div>
                                     ))}
-                                </ul>
+                                </div>
                             </div>
                         </div>
                         <div className="col-lg-4">
-                            <div className="faq-one__sidebar">
-                                <div className="faq-one__categories">
+                            <div className="faq-page__sidebar">
+                                <div className="faq-page__categories">
                                     <h3>Categories</h3>
-                                    <ul className="faq-one__category-list list-unstyled">
+                                    <ul className="faq-page__category-list list-unstyled">
                                         {categories.map((cat) => (
                                             <li key={cat.id}>
                                                 <button
-                                                    className={`faq-one__category-btn ${activeCategory === cat.id ? 'active' : ''}`}
+                                                    className={`faq-page__category-btn ${activeCategory === cat.id ? 'active' : ''}`}
                                                     onClick={() =>
-                                                        setActiveCategory(
-                                                            cat.id
-                                                        )
+                                                        setActiveCategory(cat.id)
                                                     }
                                                 >
                                                     {cat.name}
@@ -162,8 +150,8 @@ export default function FAQPage() {
                                     </ul>
                                 </div>
 
-                                <div className="faq-one__cta">
-                                    <div className="faq-one__cta-inner">
+                                <div className="faq-page__cta">
+                                    <div className="faq-page__cta-inner">
                                         <h3>Still have questions?</h3>
                                         <p>
                                             Feel free to contact us. We are

@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import PageHeader from '@/components/sections/PageHeader';
-import SectionTitle from '@/components/sections/SectionTitle';
 import CtaSection from '@/components/sections/CtaSection';
 
 export default function LoungePage() {
@@ -36,11 +35,18 @@ export default function LoungePage() {
                         </div>
                         <div className="col-lg-6">
                             <div className="about-one__content">
-                                <SectionTitle
-                                    tagline="FIVE STAR HOUSING"
-                                    title="Our Lounge Facilities"
-                                    align="start"
-                                />
+                                <div className="sec-title text-start">
+                                    <div className="sec-title__tagline">
+                                        <img
+                                            src="/assets/images/shapes/sec-title-s-1-1.png"
+                                            alt="shape"
+                                        />
+                                        FIVE STAR HOUSING
+                                    </div>
+                                    <h3 className="sec-title__title">
+                                        Our Lounge Facilities
+                                    </h3>
+                                </div>
                                 <p className="about-one__content__text">
                                     Our Farm Lounge offers a serene relaxation
                                     sanctuary where guests can unwind after a
@@ -79,31 +85,46 @@ export default function LoungePage() {
                         </div>
                     </div>
                 </div>
+                <div className="about-one__shape">
+                    <img
+                        src="/assets/images/shapes/plant-1.png"
+                        alt="shape"
+                    />
+                </div>
             </section>
 
-            <section className="section-space-bottom">
+            <section className="about-one section-space">
                 <div className="container">
-                    <div className="row">
+                    <div className="row gutter-y-30">
                         <div className="col-lg-8 mx-auto">
-                            <SectionTitle
-                                tagline="RELAX & RECHARGE"
-                                title="Relax and Recharge"
-                            />
-                            <p className="about-one__content__text text-center">
-                                After an exciting day of farm activities, there
-                                is no better place to unwind than the Farm
-                                Lounge. Sit back with a refreshing drink, enjoy
-                                the view of our lush green fields, and let the
-                                calm of the countryside refresh your spirit.
+                            <div className="sec-title text-start">
+                                <div className="sec-title__tagline">
+                                    <img
+                                        src="/assets/images/shapes/sec-title-s-1-1.png"
+                                        alt="shape"
+                                    />
+                                    RELAX & RECHARGE
+                                </div>
+                                <h3 className="sec-title__title">
+                                    Relax and Recharge
+                                </h3>
+                            </div>
+                            <p className="about-one__content__text">
+                                After an exciting day of farm activities,
+                                there is no better place to unwind than the
+                                Farm Lounge. Sit back with a refreshing drink,
+                                enjoy the view of our lush green fields, and
+                                let the calm of the countryside refresh your
+                                spirit.
                             </p>
-                            <p className="about-one__content__text text-center">
-                                Our Farm Lounge is designed with your comfort in
-                                mind. From the cozy seating areas to the scenic
-                                outdoor terrace, every detail has been curated
-                                to ensure you have a relaxing and memorable stay
-                                at Fun Farming Uganda.
+                            <p className="about-one__content__text">
+                                Our Farm Lounge is designed with your comfort
+                                in mind. From the cozy seating areas to the
+                                scenic outdoor terrace, every detail has been
+                                curated to ensure you have a relaxing and
+                                memorable stay at Fun Farming Uganda.
                             </p>
-                            <p className="about-one__content__text text-center">
+                            <p className="about-one__content__text">
                                 Open daily from 8:00 AM to 6:00 PM. Extended
                                 hours available for booked events.
                             </p>
@@ -119,16 +140,6 @@ export default function LoungePage() {
                 buttonLabel="Contact Us"
                 buttonHref="/contact"
             />
-
-            <div className="container">
-                <div className="row">
-                    <div className="col-xl-12 text-center">
-                        <p className="about-one__content__text">
-                            <strong>Make your bookings today!</strong>
-                        </p>
-                    </div>
-                </div>
-            </div>
         </>
     );
 }

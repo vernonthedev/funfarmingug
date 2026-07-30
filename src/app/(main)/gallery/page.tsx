@@ -116,13 +116,6 @@ const galleryItems = [
         category: 'Farm Life',
         filter: 'wellness',
     },
-    {
-        src: '/img/gallery/bbq.jpg',
-        alt: 'BBQ at Fun Farming Uganda',
-        title: 'Farm BBQ Feast',
-        category: 'FarmFood',
-        filter: 'medical',
-    },
 ];
 
 const filters = [
@@ -130,7 +123,6 @@ const filters = [
     { label: 'Animals', filter: 'healthy', active: false },
     { label: 'Farm Life', filter: 'wellness', active: false },
     { label: 'Sustainability', filter: 'nursing', active: false },
-    { label: 'FarmFood', filter: 'medical', active: false },
 ];
 
 export default function GalleryPage() {
