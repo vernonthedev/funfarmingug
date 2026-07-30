@@ -1,4 +1,7 @@
 import type { Metadata, Viewport } from 'next';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import ClientLayoutScripts from '@/components/ClientLayoutScripts';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -97,7 +100,7 @@ export default function RootLayout({
                 <link rel="stylesheet" href="/assets/css/plugins/swiper.min.css" />
                 <link rel="stylesheet" href="/assets/css/main.css" />
             </head>
-            <body>
+            <body className="homepage1-body">
                 <div className="preloader">
                     <div className="loading-container">
                         <div className="loading"></div>
@@ -120,7 +123,9 @@ export default function RootLayout({
                     </div>
                 </div>
 
-                {children}
+                <Header />
+                <main>{children}</main>
+                <Footer />
 
                 <div className="vl-offcanvas">
                     <div className="vl-offcanvas-wrapper">
@@ -129,7 +134,7 @@ export default function RootLayout({
                                 <a href="/">
                                     <img
                                         src="/assets/img/footer/footer1-logo.png"
-                                        alt=""
+                                        alt="Fun Farming Uganda"
                                     />
                                 </a>
                             </div>
@@ -151,7 +156,7 @@ export default function RootLayout({
                             </h3>
                             <div className="space20"></div>
                             <span>
-                                <a href="/#">
+                                <a href="mailto:info@funfarminguganda.com">
                                     <i className="fa-regular fa-envelope"></i>{' '}
                                     info@funfarminguganda.com
                                 </a>
@@ -163,9 +168,9 @@ export default function RootLayout({
                                 </a>
                             </span>
                             <span>
-                                <a href="/#">
+                                <a href="/contact">
                                     <i className="fa-solid fa-location-dot"></i>{' '}
-                                    Kampala, Uganda
+                                    Nakaseke, Uganda
                                 </a>
                             </span>
                         </div>
@@ -173,22 +178,23 @@ export default function RootLayout({
                         <div className="vl-offcanvas-social">
                             <h3 className="vl-offcanvas-sm-title">Follow Us</h3>
                             <div className="space20"></div>
-                            <a href="https://facebook.com/funfarminguganda">
+                            <a href="https://facebook.com/funfarminguganda" target="_blank" rel="noopener noreferrer">
                                 <i className="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://instagram.com/funfarminguganda">
+                            <a href="https://instagram.com/funfarminguganda" target="_blank" rel="noopener noreferrer">
                                 <i className="fab fa-instagram"></i>
                             </a>
-                            <a href="https://linkedin.com/company/funfarmingug">
+                            <a href="https://linkedin.com/company/funfarmingug" target="_blank" rel="noopener noreferrer">
                                 <i className="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://youtube.com/@funfarmingug">
+                            <a href="https://youtube.com/@funfarmingug" target="_blank" rel="noopener noreferrer">
                                 <i className="fab fa-youtube"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div className="vl-offcanvas-overlay"></div>
+                <ClientLayoutScripts />
             </body>
         </html>
     );

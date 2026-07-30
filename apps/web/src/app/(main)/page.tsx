@@ -66,7 +66,6 @@ export default function HomePage() {
                         });
                     }
                 } catch (e) {
-                    // swipers not ready yet
                     return false;
                 }
                 return true;
@@ -88,25 +87,25 @@ export default function HomePage() {
             title: 'Board Games',
             text: 'Engage in exciting board games that blend fun with strategy.',
             href: '/activities',
-            icon: 'fa-solid fa-chess-board',
+            icon: '/assets/img/icon/service9-icon1.png',
         },
         {
             title: 'Farm Kitchen',
             text: 'Experience the taste of Uganda with our farm-to-table kitchen.',
             href: '/activities',
-            icon: 'fa-solid fa-utensils',
+            icon: '/assets/img/icon/service9-icon2.png',
         },
         {
             title: 'Team Building',
             text: 'Strengthen your herd with our farm-tastic team-building activities.',
             href: '/activities',
-            icon: 'fa-solid fa-users',
+            icon: '/assets/img/icon/service9-icon3.png',
         },
         {
             title: 'Farm Lounge',
             text: 'Unwind in our serene Farm Lounge after a day of activities.',
             href: '/lounge',
-            icon: 'fa-solid fa-couch',
+            icon: '/assets/img/icon/service9-icon4.png',
         },
     ];
 
@@ -127,28 +126,9 @@ export default function HomePage() {
         '/img/partners/unfe.png',
     ];
 
-    const faqs = [
-        {
-            question: 'What should I wear to the farm?',
-            answer: 'Comfortable sporty clothes and closed shoes are ideal. You might get a little dirty from grass or straw, so regular jeans work fine. Sturdy walking shoes are sufficient — no need for boots.',
-        },
-        {
-            question: 'What games can I expect?',
-            answer: 'We offer board games, team-building activities, and fun farm games. Our Farm Games include accessible thinking and doing assignments perfect for a fun day out.',
-        },
-        {
-            question: 'Can I participate in farm activities?',
-            answer: 'Absolutely! Everyone is welcome to join in. The majority of our activities are suitable for all fitness levels. Less sporty or less mobile guests and pregnant women can also enjoy the experience.',
-        },
-        {
-            question: 'Are children allowed?',
-            answer: "Yes! We offer children's parties and activities at certain locations. By children we mean under 14 years. We do not organise mixed groups of adults and children — dedicated sessions are available for younger visitors.",
-        },
-    ];
-
     return (
         <>
-            {/* Hero */}
+            {/* HERO AREA STARTS - from index-6.html */}
             <div className="vl-hero1-area">
                 <div className="swiper myhm1-hero">
                     <div className="swiper-wrapper">
@@ -166,11 +146,11 @@ export default function HomePage() {
                                     <div className="row">
                                         <div className="col-xl-8 mx-auto">
                                             <div className="vl-hero-info">
-                            <div className="hero-header-area">
-                                <h3 data-aos="fade-right" data-aos-duration="800">
-                                    <img src="/assets/img/icon/subtitle-icon.png" alt="" />
-                                    Agro Tourism & Team Building
-                                </h3>
+                                                <div className="hero-header-area">
+                                                    <h3 data-aos="fade-right" data-aos-duration="800">
+                                                        <img src="/assets/img/icon/subtitle-icon.png" alt="" />
+                                                        Agro Tourism & Team Building
+                                                    </h3>
                                                     <div className="space24"></div>
                                                     <h2 className="text-anime-style-3" data-aos="fade-left" data-aos-duration="900">
                                                         Welcome to Fun Farming Uganda
@@ -291,9 +271,10 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
+            {/* HERO AREA ENDS */}
 
-            {/* About */}
-            <div id="about" className="vl-about7-area sp1">
+            {/* ABOUT AREA STARTS - from index-7.html */}
+            <div className="vl-about7-area sp1">
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-4 col-lg-4">
@@ -325,7 +306,7 @@ export default function HomePage() {
                                         <img src="/assets/img/icon/hm7-sub-title2-dot.png" alt="" data-aos="zoom-out" data-aos-duration="900" />
                                         <div className="space16"></div>
                                         <h3 data-aos="zoom-out" data-aos-duration="1000">
-                                            <a href="/about">Discover the joy of team events at our farm oasis!</a>
+                                            <Link href="/about">Discover the joy of team events at our farm oasis!</Link>
                                         </h3>
                                     </div>
                                     <p className="text-anime-style-1">
@@ -344,8 +325,9 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
+            {/* ABOUT AREA ENDS */}
 
-            {/* Services */}
+            {/* SERVICES AREA STARTS - from index-9.html (process grid) */}
             <div className="vl-service9-area">
                 <div className="container">
                     <div className="row">
@@ -366,13 +348,13 @@ export default function HomePage() {
                                     <div key={index} className={`card ${index === 0 ? 'top-left' : index === 1 ? 'top-right' : index === 2 ? 'bottom-left' : 'bottom-right'}`} data-aos="zoom-out" data-aos-duration="900">
                                         <div className="card-flex">
                                             <div className="icon">
-                                                <i className={service.icon}></i>
+                                                <img src={service.icon} alt="" />
                                             </div>
-                                            <h3><a href={service.href}>{service.title}</a></h3>
+                                            <h3><Link href={service.href}>{service.title}</Link></h3>
                                         </div>
                                         <div className="space16"></div>
                                         <p>{service.text}</p>
-                                        <a className="btnhm9-2" href={service.href}>Learn More<i className="fa-solid fa-arrow-right"></i></a>
+                                        <Link className="btnhm9-2" href={service.href}>Learn More<i className="fa-solid fa-arrow-right"></i></Link>
                                     </div>
                                 ))}
                             </div>
@@ -383,8 +365,9 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
+            {/* SERVICES AREA ENDS */}
 
-            {/* Expert / Why Choose */}
+            {/* EXPERT AREA STARTS - from index-4.html */}
             <div className="vl-about4-area sp1">
                 <div className="container">
                     <div className="row">
@@ -407,7 +390,7 @@ export default function HomePage() {
                                             <img src="/assets/img/icon/about4-icon(1).svg" alt="" />
                                         </div>
                                         <div className="about4-icon-content">
-                                            <h3><a href="/about">Farm Experience</a></h3>
+                                            <h3><Link href="/about">Farm Experience</Link></h3>
                                             <div className="space12"></div>
                                             <p>Years of hands-on experience in sustainable farming and team building.</p>
                                         </div>
@@ -417,7 +400,7 @@ export default function HomePage() {
                                             <img src="/assets/img/icon/about4-icon(2).svg" alt="" />
                                         </div>
                                         <div className="about4-icon-content">
-                                            <h3><a href="/about">Customized Advice</a></h3>
+                                            <h3><Link href="/about">Customized Advice</Link></h3>
                                             <div className="space12"></div>
                                             <p>David helps groups find the perfect activity mix for every occasion.</p>
                                         </div>
@@ -433,7 +416,7 @@ export default function HomePage() {
                         <div className="col-xl-4 col-lg-4">
                             <div className="about4-content">
                                 <p className="text-effect" data-aos="fade-left" data-aos-duration="1000">
-                                    Gathering the horns? Our cow-league David is ready to advise you so that you&apos;ll reap
+                                    Gathering the horns? Our cow-league David is ready to advise you so that you will reap
                                     applause for this team-building. With years of farm experience, David helps groups find
                                     the perfect activity mix.
                                 </p>
@@ -462,8 +445,9 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
+            {/* EXPERT AREA ENDS */}
 
-            {/* Gallery */}
+            {/* GALLERY AREA START - from index-6.html */}
             <div className="vl-gallery-area sp1">
                 <div className="container">
                     <div className="row">
@@ -480,7 +464,7 @@ export default function HomePage() {
                             </div>
                             <div className="service-topright">
                                 <p className="text-effect">
-                                    Nestled in open green pastures, Fun Farming Uganda is more than just a farm — it&apos;s
+                                    Nestled in open green pastures, Fun Farming Uganda is more than just a farm its
                                     a living example of ethical, sustainable agriculture.
                                 </p>
                             </div>
@@ -494,7 +478,7 @@ export default function HomePage() {
                                             <img src={src} alt={`Gallery ${index + 1}`} />
                                             <span className="inner-border"></span>
                                             <div className="view-wrap">
-                                                <a href="/gallery">View</a>
+                                                <Link href="/gallery">View</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -504,8 +488,9 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
+            {/* GALLERY AREA ENDS */}
 
-            {/* Partners */}
+            {/* PARTNERS AREA START - from index-9.html */}
             <div className="vl-hero9-btm-area">
                 <div className="container">
                     <div className="row">
@@ -536,8 +521,9 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
+            {/* PARTNERS AREA ENDS */}
 
-            {/* FAQ */}
+            {/* FAQ AREA START - from index-6.html */}
             <div className="vl-faq9-area sp1">
                 <div className="container">
                     <div className="row align-items-center">
@@ -617,8 +603,8 @@ export default function HomePage() {
                                         Learn More
                                         <span className="arrow_btn3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                                <path d="M27.002 16.002H5.00195" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                <path d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M27.002 16.002H5.00195" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+                                                <path d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                                             </svg>
                                         </span>
                                     </Link>
@@ -628,8 +614,9 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
+            {/* FAQ AREA ENDS */}
 
-            {/* CTA */}
+            {/* CTA AREA START - from index-2.html */}
             <div className="vl-cta4-area" data-aos="zoom-out" data-aos-duration="1000">
                 <div className="container">
                     <div className="row cta4-area-info sp1">
@@ -667,6 +654,7 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
+            {/* CTA AREA ENDS */}
         </>
     );
 }

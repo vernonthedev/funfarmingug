@@ -15,13 +15,11 @@ export default function Footer() {
                             </div>
                         </div>
                         <div className="row align-items-center">
-                            <div className="col-xl-6 col-lg-6">
-                                <h3 className="footer2-top-header">
-                                    Your Organic <br /> Journey Begins Now
-                                </h3>
+                            <div className="col-xl-6 col-lg-6" data-aos="zoom-out" data-aos-duration="900">
+                                <h3 className="footer2-top-header">Your Organic <br /> Journey Begins Now</h3>
                             </div>
                             <div className="col-xl-2 d-none d-xl-block"></div>
-                            <div className="col-xl-4 col-lg-6">
+                            <div className="col-xl-4 col-lg-6" data-aos="zoom-out" data-aos-duration="1000">
                                 <div className="footer2-top-mail">
                                     <form action="/#">
                                         <input type="email" placeholder="Email Address" />
@@ -29,8 +27,8 @@ export default function Footer() {
                                             Subscribe
                                             <span className="arrow_btnsub">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                                    <path d="M27.002 16.002H5.00195" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                    <path d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                    <path d="M27.002 16.002H5.00195" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+                                                    <path d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                                                 </svg>
                                             </span>
                                         </button>
@@ -39,7 +37,6 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div className="footer2-area-main">
@@ -52,25 +49,16 @@ export default function Footer() {
                                         <h4>Working Hours</h4>
                                         <div className="space28"></div>
                                         <ul>
-                                            <li>
-                                                <span><a className="f-date" href="/contact">Mon–Fri:</a></span>{' '}
-                                                <span><a href="/contact">8:00 AM - 6:00 PM</a></span>
-                                            </li>
-                                            <li>
-                                                <span><a className="f-date" href="/contact">Sunday :</a></span>{' '}
-                                                <span><a href="/contact">2:00 AM - 9:00 PM</a></span>
-                                            </li>
-                                            <li>
-                                                <span><a className="f-date" href="/contact">Saturday :</a></span>{' '}
-                                                <span><a href="/contact">Closed</a></span>
-                                            </li>
+                                            <li><span><a className="f-date" href="/contact">Mon–Fri:</a></span> <span><a href="/contact">8:00 AM - 6:00 PM</a></span></li>
+                                            <li><span><a className="f-date" href="/contact">Sunday :</a></span> <span><a href="/contact">2:00 AM - 9:00 PM</a></span></li>
+                                            <li><span><a className="f-date" href="/contact">Saturday :</a></span> <span><a href="/contact">Closed</a></span></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-xl-4 col-lg-6 col-md-6">
                                 <div className="footer2-logo-area">
-                                    <img src="/assets/img/footer/footer1-logo.png" alt="" />
+                                    <img src="/assets/img/footer/footer1-logo.png" alt="Fun Farming Uganda" />
                                     <div className="space28"></div>
                                     <p className="pera_text">
                                         Fun Farming Uganda is an organic farm engaging in diverse agricultural
@@ -82,24 +70,16 @@ export default function Footer() {
                                     <div className="footer2-widget-social">
                                         <ul className="social_link social1-footer social1-footer2">
                                             <li>
-                                                <a href="https://facebook.com/funfarminguganda" target="_blank" rel="noopener noreferrer">
-                                                    <i className="fa-brands fa-facebook-f"></i>
-                                                </a>
+                                                <a href="https://facebook.com/funfarminguganda" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-facebook-f"></i></a>
                                             </li>
                                             <li>
-                                                <a href="https://linkedin.com/company/funfarmingug" target="_blank" rel="noopener noreferrer">
-                                                    <i className="fa-brands fa-linkedin-in"></i>
-                                                </a>
+                                                <a href="https://linkedin.com/company/funfarmingug" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin-in"></i></a>
                                             </li>
                                             <li>
-                                                <a href="https://youtube.com/@funfarmingug" target="_blank" rel="noopener noreferrer">
-                                                    <i className="fa-brands fa-youtube"></i>
-                                                </a>
+                                                <a href="https://youtube.com/@funfarmingug" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-youtube"></i></a>
                                             </li>
                                             <li>
-                                                <a href="https://twitter.com/funfarmingug" target="_blank" rel="noopener noreferrer">
-                                                    <i className="fa-brands fa-twitter"></i>
-                                                </a>
+                                                <a href="https://twitter.com/funfarmingug" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -107,27 +87,29 @@ export default function Footer() {
                             </div>
                             <div className="col-xl-4 col-lg-12">
                                 <div className="row footer2-widget-info">
-                                    <div className="col-xl-4 col-lg-2 col-md-3">
+                                    <div className="col-xl-6 col-lg-4 col-md-6">
                                         <div className="footer-widget-area">
                                             <h3>Quick Links</h3>
                                             <div className="space28"></div>
                                             <ul>
+                                                <li><Link href="/">Home</Link></li>
                                                 <li><Link href="/about">About Us</Link></li>
                                                 <li><Link href="/activities">Activities</Link></li>
                                                 <li><Link href="/gallery">Gallery</Link></li>
-                                                <li><Link href="/blog">Blog</Link></li>
-                                                <li><Link href="/contact">Contact</Link></li>
+                                                <li><Link href="/contact">Contact Us</Link></li>
+                                                <li><Link href="/faq">FAQ</Link></li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="col-xl-8 col-lg-4 col-md-5">
-                                        <div className="footer-widget-area footer2-widget-fix">
-                                            <h3>Support</h3>
+                                    <div className="col-xl-6 col-lg-4 col-md-6">
+                                        <div className="footer-widget-area">
+                                            <h3>Our Farm</h3>
                                             <div className="space28"></div>
                                             <ul>
+                                                <li><Link href="/lounge">Farm Lounge</Link></li>
+                                                <li><Link href="/shop">Farm Shop</Link></li>
                                                 <li><Link href="/privacy">Privacy Policy</Link></li>
                                                 <li><Link href="/support">Support</Link></li>
-                                                <li><Link href="/references">References</Link></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -138,12 +120,8 @@ export default function Footer() {
                     <div className="space24"></div>
                     <div className="footer1-copyright-area footer2-copyright-area">
                         <ul className="footer1-copyright-wrap">
-                            <li>
-                                <a href="/#">
-                                    &copy;{' '}
-                                    <span>{new Date().getFullYear()}</span> Fun Farming Uganda. All rights reserved.
-                                </a>
-                            </li>
+                            <li><Link href="/">© Fun Farming Uganda 2026. All Rights Reserved.</Link></li>
+                            <li><Link className="fw-500" href="/">Built with care <span>|</span> Powered by nature</Link></li>
                         </ul>
                     </div>
                 </div>

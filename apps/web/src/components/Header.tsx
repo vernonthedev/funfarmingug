@@ -15,7 +15,6 @@ const navItems = [
 
 export default function Header() {
     const [isSticky, setIsSticky] = useState(false);
-    const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -38,7 +37,7 @@ export default function Header() {
                                 <div className="header-top-main">
                                     <ul className="header-location">
                                         <li>
-                                            <a href="/#">
+                                            <a href="/">
                                                 Organic Farm & Agro Tourism in Nakaseke, Uganda{' '}
                                                 <span>Contact Us</span>
                                             </a>
@@ -63,7 +62,7 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
-                <div className="vl-header-content-area white-bg">
+                <div className="vl-header-content-area cream-bg">
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-xl-2 col-md-8 col-6">
@@ -77,7 +76,7 @@ export default function Header() {
                                 </div>
                             </div>
                             <div className="col-xl-7 d-none d-xl-block">
-                                <div className="vl-main-menu text-center">
+                                <div className="vl-main-menu text-center home1_padding">
                                     <nav className="vl-mobile-menu-active">
                                         <ul>
                                             {navItems.map((item) => (
@@ -93,48 +92,25 @@ export default function Header() {
                             </div>
                             <div className="col-xl-3 col-md-4 col-6">
                                 <div className="vl-menu-sidebar-area">
+                                    <div className="sidebar-cart">
+                                        <img src="/assets/img/icon/cart-icon.svg" alt="" />
+                                        <span><a href="/contact">0</a></span>
+                                    </div>
                                     <div className="menu-line">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="1"
-                                            height="25"
-                                            viewBox="0 0 1 25"
-                                            fill="none"
-                                        >
-                                            <path
-                                                d="M0.5 0.5L0.499999 24.5"
-                                                stroke="#1A5632"
-                                                strokeOpacity="0.3"
-                                                strokeLinecap="round"
-                                            />
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1" height="25" viewBox="0 0 1 25"
+                                            fill="none">
+                                            <path d="M0.5 0.5L0.499999 24.5" stroke="#4CAE47" strokeOpacity="0.4" strokeLinecap="round" />
                                         </svg>
                                     </div>
                                     <div className="vl-header-btn d-none d-xl-block text-end">
                                         <div className="btn_area3">
                                             <Link href="/contact" className="vl-btn3">
-                                                Start Growing Now
+                                                Book Your Visit
                                                 <span className="arrow_btn3">
                                                     <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width="32"
-                                                        height="32"
-                                                        viewBox="0 0 32 32"
-                                                        fill="none"
-                                                    >
-                                                        <path
-                                                            d="M27.002 16.002H5.00195"
-                                                            stroke="#132C12"
-                                                            strokeWidth="2"
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                        <path
-                                                            d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002"
-                                                            stroke="#132C12"
-                                                            strokeWidth="2"
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
+                                                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                        <path d="M27.002 16.002H5.00195" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+                                                        <path d="M21.0021 22.002C21.0021 22.002 27.002 17.5831 27.002 16.002C27.002 14.4208 21.002 10.002 21.002 10.002" stroke="#132C12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                                                     </svg>
                                                 </span>
                                             </Link>
@@ -145,7 +121,6 @@ export default function Header() {
                                         <button
                                             type="button"
                                             className="vl-offcanvas-toggle"
-                                            onClick={() => setMobileNavOpen(true)}
                                         >
                                             <i className="fa-solid fa-bars-staggered"></i>
                                         </button>
