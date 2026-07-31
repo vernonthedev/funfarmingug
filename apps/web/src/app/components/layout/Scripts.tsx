@@ -1,7 +1,16 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
+// Plugin load order matches template/orgaanic/<page>.html:
+//   1. jQuery first (most legacy Orgaanic plugins depend on $)
+//   2. Bootstrap, FontAwesome, AOS, Counter
+//   3. jQuery plugins (magnific, owlcarousel, nice-select, waypoints, slick, swiper)
+//   4. GSAP family (gsap, ScrollTrigger, SmoothScroll, Splitetext)
+//   5. Parallaxie
+//   6. main.js (the template's full init bundle; runs $(document).ready)
+//   7. route-init.js (handles re-init on Next.js client-side route changes)
 const scripts = [
   '/assets/js/plugins/jquery-3-7-1.min.js',
   '/assets/js/plugins/bootstrap.min.js',
@@ -20,55 +29,61 @@ const scripts = [
   '/assets/js/plugins/Splitetext.js',
   '/assets/js/plugins/parallaxie.js',
   '/assets/js/main.js',
+  '/assets/js/route-init.js',
 ];
 
 export default function Scripts() {
+  const pathname = usePathname();
+
   useEffect(() => {
-    let loadedCount = 0;
-    
-    const loadScript = (src: string, index: number): Promise<void> => {
+    const loadScript = (src: string): Promise<void> => {
       return new Promise((resolve) => {
+        const existing = document.querySelector(
+          `script[data-orgaanic-src="${src}"]`,
+        );
+        if (existing) {
+          resolve();
+          return;
+        }
         const script = document.createElement('script');
         script.src = src;
         script.async = false;
-        script.onload = () => {
-          loadedCount++;
-          resolve();
-        };
-        script.onerror = () => {
-          loadedCount++;
-          resolve();
-        };
+        script.dataset.orgaanicSrc = src;
+        script.onload = () => resolve();
+        script.onerror = () => resolve(); // don't block the chain on a single failure
         document.body.appendChild(script);
       });
     };
 
     const loadAllScripts = async () => {
-      for (let i = 0; i < scripts.length; i++) {
-        await loadScript(scripts[i], i);
-      }
-      
-      // Initialize AOS after scripts load
-      if (typeof window !== 'undefined' && (window as any).AOS) {
-        (window as any).AOS.init({
-          duration: 800,
-          once: true,
-        });
+      for (const src of scripts) {
+        await loadScript(src);
       }
     };
 
     loadAllScripts();
 
     return () => {
-      // Cleanup scripts on unmount
-      scripts.forEach((src) => {
-        const script = document.querySelector(`script[src="${src}"]`);
-        if (script) {
-          script.remove();
-        }
-      });
+      // Scripts.tsx lives in the root layout and stays mounted across
+      // navigations, so we don't remove scripts on unmount. Removing them
+      // would force a re-download every route change.
     };
   }, []);
+
+  // Dispatch a route-change event after every pathname change. route-init.js
+  // listens for this and re-initializes AOS, counters, nice-select, and
+  // section swipers against the newly mounted DOM.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    // Two RAFs ensures React has flushed the new page's components before
+    // we ask jQuery plugins to scan for them.
+    const id = requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        window.dispatchEvent(new CustomEvent('orgaanic:routechange'));
+      });
+    });
+    return () => cancelAnimationFrame(id);
+  }, [pathname]);
 
   return null;
 }

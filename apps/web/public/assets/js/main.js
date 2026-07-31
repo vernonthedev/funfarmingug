@@ -93,7 +93,12 @@ function initOffcanvasMenu() {
   });
 }
 
-initOffcanvasMenu();
+// Skip jQuery offcanvas binding when React (Header.tsx) owns it. React
+// renders a `homepage1-body` wrapper and handles open/close via state.
+// Binding here would double-fire click handlers.
+if (!document.querySelector('.homepage1-body')) {
+  initOffcanvasMenu();
+}
 //========== MOBILE MENU ENDS ============= //
 
 });

@@ -10,46 +10,34 @@ import TeamSection from '@/app/components/sections/TeamSection';
 import FAQSection from '@/app/components/sections/FAQSection';
 
 export default function Index3Page() {
-  return (
-    <>
-      <HeroSection
-        backgroundImage="/assets/img/hero/hero-bg3.jpg"
-        subtitle="Organic Living"
-        title="Grow Fresh, Live Fresh"
-        description="Your journey to sustainable living starts here. Discover the joy of homegrown food."
-        primaryButtonText="Get Started"
-        primaryButtonHref="/contact"
-        secondaryButtonText="Learn More"
-        secondaryButtonHref="/about-us"
-      />
-      <ServicesSection
-        subtitle="Our Services"
-        title="Tailored for Every Space"
-      />
-      <AboutSection
-        subtitle="Our Story"
-        title="From Seed to Harvest"
-      />
-      <ProjectsSection
-        subtitle="Featured Projects"
-        title="Success Stories"
-      />
-      <TeamSection
-        subtitle="Our Team"
-        title="Passionate Growers"
-      />
-      <TestimonialsSection
-        subtitle="Testimonials"
-        title="Client Success"
-      />
-      <ProductsSection
-        subtitle="Products"
-        title="Quality Supplies"
-      />
-      <FAQSection
-        subtitle="FAQ"
-        title="Common Questions"
-      />
-    </>
-  );
+    return (
+        <>
+            <HeroSection
+                backgroundImage="/assets/img/hero/hero9-bg.png"
+                subtitle="Organic Living"
+                title="Grow Fresh, Live Fresh"
+                description="Your journey to sustainable living starts here. Discover the joy of homegrown food."
+                primaryButtonText="Get Started"
+                primaryButtonHref="/contact"
+                secondaryButtonText="Learn More"
+                secondaryButtonHref="/about-us"
+            />
+            <ServicesSection
+                subtitle="Our Services"
+                title="Tailored for Every Space"
+            />
+            <AboutSection subtitle="Our Story" title="From Seed to Harvest" />
+            <ProjectsSection
+                subtitle="Featured Projects"
+                title="Success Stories"
+            />
+            <TeamSection subtitle="Our Team" title="Passionate Growers" />
+            <TestimonialsSection
+                subtitle="Testimonials"
+                title="Client Success"
+            />
+            <ProductsSection subtitle="Products" title="Quality Supplies" />
+            <FAQSection subtitle="FAQ" title="Common Questions" />
+        </>
+    );
 }

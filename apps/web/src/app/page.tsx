@@ -10,16 +10,16 @@ import TeamSection from '@/app/components/sections/TeamSection';
 import FAQSection from '@/app/components/sections/FAQSection';
 
 export default function HomePage() {
-  return (
-    <>
-      <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <ProjectsSection />
-      <ProductsSection />
-      <TestimonialsSection />
-      <TeamSection />
-      <FAQSection />
-    </>
-  );
+    return (
+        <>
+            <HeroSection />
+            <AboutSection />
+            <ServicesSection />
+            <ProjectsSection />
+            <ProductsSection />
+            <TestimonialsSection />
+            <TeamSection />
+            <FAQSection />
+        </>
+    );
 }
