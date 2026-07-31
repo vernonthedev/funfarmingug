@@ -1,5 +1,5 @@
 {
-  "name": "@serva/web",
+  "name": "@funfarming/admin",
   "private": true,
   "type": "module",
   "license": "Private",
@@ -8,7 +8,7 @@
     "#/*": "./src/*"
   },
   "scripts": {
-    "dev": "vite dev --port 3000",
+    "dev": "vite dev --port 3004",
     "generate-routes": "tsr generate",
     "build": "vite build",
     "preview": "vite preview",
@@ -21,9 +21,6 @@
   "dependencies": {
     "@base-ui/react": "^1.6.0",
     "@fontsource-variable/inter": "^5.3.0",
-    "@serva/convex": "workspace:*",
-    "@serva/shared": "workspace:*",
-    "@serva/ui": "workspace:*",
     "@tanstack/react-devtools": "latest",
     "@tanstack/react-router": "latest",
     "@tanstack/react-router-devtools": "latest",
@@ -32,7 +29,6 @@
     "@tanstack/router-plugin": "^1.132.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "convex": "^1.14.0",
     "lucide-react": "^1.25.0",
     "react": "^19.2.0",
     "react-day-picker": "^10.0.1",

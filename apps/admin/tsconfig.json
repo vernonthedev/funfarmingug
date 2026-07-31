@@ -7,15 +7,6 @@
     "paths": {
       "#/*": ["./src/*"],
       "@/*": ["./src/*"],
-      "@serva/features/auth": ["../../packages/features/auth/src"],
-      "@serva/features/menu": ["../../packages/features/menu/src"],
-      "@serva/features/tables": ["../../packages/features/tables/src"],
-      "@serva/features/pos": ["../../packages/features/pos/src"],
-      "@serva/features/kitchen": ["../../packages/features/kitchen/src"],
-      "@serva/features/inventory": ["../../packages/features/inventory/src"],
-      "@serva/features/payments": ["../../packages/features/payments/src"],
-      "@serva/features/reports": ["../../packages/features/reports/src"],
-      "@serva/features/customers": ["../../packages/features/customers/src"]
     },
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "types": ["vite/client"],
