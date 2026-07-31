@@ -11,17 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CustomersRouteImport } from './routes/customers'
-import { Route as KitchenRouteImport } from './routes/kitchen'
 import { Route as MenuRouteImport } from './routes/menu'
-import { Route as PosRouteImport } from './routes/pos'
 import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as SettingsRouteImport } from './routes/settings'
-import { Route as TablesRouteImport } from './routes/tables'
 import { Route as CustomersIdRouteImport } from './routes/customers.$id'
 import { Route as CustomersNewRouteImport } from './routes/customers.new'
 import { Route as MenuIdRouteImport } from './routes/menu.$id'
 import { Route as MenuNewRouteImport } from './routes/menu.new'
-import { Route as TablesNewRouteImport } from './routes/tables.new'
 import { Route as CustomersIdEditRouteImport } from './routes/customers.$id.edit'
 import { Route as MenuIdEditRouteImport } from './routes/menu.$id.edit'
 
@@ -35,19 +31,9 @@ const CustomersRoute = CustomersRouteImport.update({
   path: '/customers',
   getParentRoute: () => rootRouteImport,
 } as any)
-const KitchenRoute = KitchenRouteImport.update({
-  id: '/kitchen',
-  path: '/kitchen',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const MenuRoute = MenuRouteImport.update({
   id: '/menu',
   path: '/menu',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PosRoute = PosRouteImport.update({
-  id: '/pos',
-  path: '/pos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReportsRoute = ReportsRouteImport.update({
@@ -58,11 +44,6 @@ const ReportsRoute = ReportsRouteImport.update({
 const SettingsRoute = SettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TablesRoute = TablesRouteImport.update({
-  id: '/tables',
-  path: '/tables',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CustomersIdRoute = CustomersIdRouteImport.update({
@@ -85,11 +66,6 @@ const MenuNewRoute = MenuNewRouteImport.update({
   path: '/new',
   getParentRoute: () => MenuRoute,
 } as any)
-const TablesNewRoute = TablesNewRouteImport.update({
-  id: '/new',
-  path: '/new',
-  getParentRoute: () => TablesRoute,
-} as any)
 const CustomersIdEditRoute = CustomersIdEditRouteImport.update({
   id: '/edit',
   path: '/edit',
@@ -104,34 +80,26 @@ const MenuIdEditRoute = MenuIdEditRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/customers': typeof CustomersRouteWithChildren
-  '/kitchen': typeof KitchenRoute
   '/menu': typeof MenuRouteWithChildren
-  '/pos': typeof PosRoute
   '/reports': typeof ReportsRoute
   '/settings': typeof SettingsRoute
-  '/tables': typeof TablesRouteWithChildren
   '/customers/$id': typeof CustomersIdRouteWithChildren
   '/customers/new': typeof CustomersNewRoute
   '/menu/$id': typeof MenuIdRouteWithChildren
   '/menu/new': typeof MenuNewRoute
-  '/tables/new': typeof TablesNewRoute
   '/customers/$id/edit': typeof CustomersIdEditRoute
   '/menu/$id/edit': typeof MenuIdEditRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/customers': typeof CustomersRouteWithChildren
-  '/kitchen': typeof KitchenRoute
   '/menu': typeof MenuRouteWithChildren
-  '/pos': typeof PosRoute
   '/reports': typeof ReportsRoute
   '/settings': typeof SettingsRoute
-  '/tables': typeof TablesRouteWithChildren
   '/customers/$id': typeof CustomersIdRouteWithChildren
   '/customers/new': typeof CustomersNewRoute
   '/menu/$id': typeof MenuIdRouteWithChildren
   '/menu/new': typeof MenuNewRoute
-  '/tables/new': typeof TablesNewRoute
   '/customers/$id/edit': typeof CustomersIdEditRoute
   '/menu/$id/edit': typeof MenuIdEditRoute
 }
@@ -139,17 +107,13 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/customers': typeof CustomersRouteWithChildren
-  '/kitchen': typeof KitchenRoute
   '/menu': typeof MenuRouteWithChildren
-  '/pos': typeof PosRoute
   '/reports': typeof ReportsRoute
   '/settings': typeof SettingsRoute
-  '/tables': typeof TablesRouteWithChildren
   '/customers/$id': typeof CustomersIdRouteWithChildren
   '/customers/new': typeof CustomersNewRoute
   '/menu/$id': typeof MenuIdRouteWithChildren
   '/menu/new': typeof MenuNewRoute
-  '/tables/new': typeof TablesNewRoute
   '/customers/$id/edit': typeof CustomersIdEditRoute
   '/menu/$id/edit': typeof MenuIdEditRoute
 }
@@ -158,51 +122,39 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/customers'
-    | '/kitchen'
     | '/menu'
-    | '/pos'
     | '/reports'
     | '/settings'
-    | '/tables'
     | '/customers/$id'
     | '/customers/new'
     | '/menu/$id'
     | '/menu/new'
-    | '/tables/new'
     | '/customers/$id/edit'
     | '/menu/$id/edit'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/customers'
-    | '/kitchen'
     | '/menu'
-    | '/pos'
     | '/reports'
     | '/settings'
-    | '/tables'
     | '/customers/$id'
     | '/customers/new'
     | '/menu/$id'
     | '/menu/new'
-    | '/tables/new'
     | '/customers/$id/edit'
     | '/menu/$id/edit'
   id:
     | '__root__'
     | '/'
     | '/customers'
-    | '/kitchen'
     | '/menu'
-    | '/pos'
     | '/reports'
     | '/settings'
-    | '/tables'
     | '/customers/$id'
     | '/customers/new'
     | '/menu/$id'
     | '/menu/new'
-    | '/tables/new'
     | '/customers/$id/edit'
     | '/menu/$id/edit'
   fileRoutesById: FileRoutesById
@@ -210,12 +162,9 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CustomersRoute: typeof CustomersRouteWithChildren
-  KitchenRoute: typeof KitchenRoute
   MenuRoute: typeof MenuRouteWithChildren
-  PosRoute: typeof PosRoute
   ReportsRoute: typeof ReportsRoute
   SettingsRoute: typeof SettingsRoute
-  TablesRoute: typeof TablesRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -234,25 +183,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CustomersRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/kitchen': {
-      id: '/kitchen'
-      path: '/kitchen'
-      fullPath: '/kitchen'
-      preLoaderRoute: typeof KitchenRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/menu': {
       id: '/menu'
       path: '/menu'
       fullPath: '/menu'
       preLoaderRoute: typeof MenuRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pos': {
-      id: '/pos'
-      path: '/pos'
-      fullPath: '/pos'
-      preLoaderRoute: typeof PosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reports': {
@@ -267,13 +202,6 @@ declare module '@tanstack/react-router' {
       path: '/settings'
       fullPath: '/settings'
       preLoaderRoute: typeof SettingsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/tables': {
-      id: '/tables'
-      path: '/tables'
-      fullPath: '/tables'
-      preLoaderRoute: typeof TablesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/customers/$id': {
@@ -303,13 +231,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/menu/new'
       preLoaderRoute: typeof MenuNewRouteImport
       parentRoute: typeof MenuRoute
-    }
-    '/tables/new': {
-      id: '/tables/new'
-      path: '/new'
-      fullPath: '/tables/new'
-      preLoaderRoute: typeof TablesNewRouteImport
-      parentRoute: typeof TablesRoute
     }
     '/customers/$id/edit': {
       id: '/customers/$id/edit'
@@ -377,26 +298,12 @@ const MenuRouteChildren: MenuRouteChildren = {
 
 const MenuRouteWithChildren = MenuRoute._addFileChildren(MenuRouteChildren)
 
-interface TablesRouteChildren {
-  TablesNewRoute: typeof TablesNewRoute
-}
-
-const TablesRouteChildren: TablesRouteChildren = {
-  TablesNewRoute: TablesNewRoute,
-}
-
-const TablesRouteWithChildren =
-  TablesRoute._addFileChildren(TablesRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CustomersRoute: CustomersRouteWithChildren,
-  KitchenRoute: KitchenRoute,
   MenuRoute: MenuRouteWithChildren,
-  PosRoute: PosRoute,
   ReportsRoute: ReportsRoute,
   SettingsRoute: SettingsRoute,
-  TablesRoute: TablesRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
