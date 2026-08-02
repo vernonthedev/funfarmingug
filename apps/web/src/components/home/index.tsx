@@ -1440,10 +1440,7 @@ export function ContactUs() {
                                                 className="lt-sp-07"
                                                 id="Support"
                                             >
-                                                <option
-                                                    value="You need support?"
-                                                    defaultValue
-                                                >
+                                                <option value="" disabled>
                                                     What can we help with?
                                                 </option>
                                                 <option value="Team Building">

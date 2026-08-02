@@ -1,5 +1,23 @@
-export const metadata = { title: 'Contact Us' };
+import { ContactUsPage as ContactContent } from '@/components/contact';
+import { PageTitle } from '@/components/site/PageTitle';
 
-export default function ContactPage() {
-    return <div>Contact Us</div>;
+export const metadata = {
+    title: 'Contact Us',
+    description:
+        'Contact Fun Farming Uganda for more information about our activities, tours and organic products. We are happy to answer your questions.',
+};
+
+export default function ContactUs() {
+    return (
+        <>
+            <PageTitle
+                image="/images/page-title/contact-us.jpg"
+                subTitle="Take The Bull By The Horns"
+                title="Contact Us"
+                pageClass="page-contact-us"
+                crumbs={[{ label: 'Contact Us' }]}
+            />
+            <ContactContent />
+        </>
+    );
 }
