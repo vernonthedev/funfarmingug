@@ -71,10 +71,7 @@ export function Footer() {
                             <div className="footer-inner-wrap">
                                 <div className="logo">
                                     <Link href="/">
-                                        <img
-                                            src="/images/logo/logo-2.png"
-                                            alt="Fun Farming Uganda"
-                                        />
+                                        <img src="/logo.png" alt="Fun Farming Uganda" />
                                     </Link>
                                 </div>
                                 <p className="text font-nunito">

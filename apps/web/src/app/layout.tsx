@@ -69,11 +69,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     type="text/css"
                     href="/icons/fontawesome/css/all.min.css"
                 />
-                <link rel="shortcut icon" href="/images/logo/logo3x.png" />
-                <link
-                    rel="apple-touch-icon-precomposed"
-                    href="/images/logo/logo3x.png"
-                />
+                <link rel="shortcut icon" href="favicon.ico" />
+                <link rel="apple-touch-icon-precomposed" href="/logo.png" />
                 <link rel="stylesheet" href="/site.css" />
             </head>
             <body className="counter-scroll-2">

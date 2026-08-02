@@ -16,27 +16,23 @@ export interface NavLink {
 
 export const NAV: NavLink[] = [
     { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about-us' },
+    { label: 'Activities', href: '/activities' },
+    { label: 'Farm Lounge', href: '/farm-lounge' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Gallery', href: '/gallery' },
+    { label: 'Farm Food', href: '/farmfood' },
+    { label: 'Contact', href: '/contact-us' },
     {
-        label: 'Pages',
+        label: 'More',
         href: '#',
         children: [
-            { label: 'About Us', href: '/about-us' },
-            { label: 'Gallery', href: '/gallery' },
-            { label: 'Activities', href: '/activities' },
-            { label: 'Farm Food', href: '/farmfood' },
-            { label: 'Farm Lounge', href: '/farm-lounge' },
             { label: 'References', href: '/references' },
             { label: 'FAQ', href: '/frequently-asked-questions' },
             { label: 'Get Support', href: '/get-support' },
             { label: 'Privacy Policy', href: '/privacy-policy' },
         ],
     },
-    {
-        label: 'Blog',
-        href: '/blog',
-        children: [{ label: 'Blog', href: '/blog' }],
-    },
-    { label: 'Contact', href: '/contact-us' },
 ];
 
 export interface Service {

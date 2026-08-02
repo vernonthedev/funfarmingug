@@ -92,7 +92,7 @@ function Preloader() {
                     <div className="wrap-loader">
                         <div className="loader"></div>
                         <div className="icon">
-                            <img src="/images/logo/logo3x.png" alt="" />
+                            <img src="/logo.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -108,49 +108,38 @@ const isActive = (href: string, pathname: string) =>
 function DesktopNav({ pathname }: { pathname: string }) {
     return (
         <ul className="nav-list">
-            <li className={`item ${pathname === '/' ? 'current-menu' : ''}`}>
-                <Link href="/">Home</Link>
-            </li>
-            <li
-                className={`item has-child ${pathname !== '/' ? 'current-menu' : ''}`}
-            >
-                <a href="javascript:void(0)">Pages</a>
-                <ul className="sub-nav">
-                    {NAV.filter((n) => n.children)
-                        .flatMap((n) => n.children!)
-                        .map((c) => (
-                            <li
-                                key={c.href}
-                                className={
-                                    pathname === c.href ? 'current-item' : ''
-                                }
-                            >
-                                <Link href={c.href}>
-                                    <span>{c.label}</span>
-                                </Link>
-                            </li>
-                        ))}
-                </ul>
-            </li>
-            <li
-                className={`item has-child ${pathname?.startsWith('/blog') ? 'current-menu' : ''}`}
-            >
-                <a href="javascript:void(0)">Blog</a>
-                <ul className="sub-nav">
-                    <li
-                        className={pathname === '/blog' ? 'current-item' : ''}
-                    >
-                        <Link href="/blog">
-                            <span>Blog</span>
-                        </Link>
-                    </li>
-                </ul>
-            </li>
-            <li
-                className={`item ${isActive('/contact-us', pathname) ? 'current-menu' : ''}`}
-            >
-                <Link href="/contact-us">Contact</Link>
-            </li>
+            {NAV.map((item) => (
+                <li
+                    key={item.label}
+                    className={`item ${item.children ? 'has-child' : ''} ${
+                        isActive(item.href, pathname) ? 'current-menu' : ''
+                    }`}
+                >
+                    {item.children ? (
+                        <>
+                            <a href="javascript:void(0)">{item.label}</a>
+                            <ul className="sub-nav">
+                                {item.children.map((c) => (
+                                    <li
+                                        key={c.href}
+                                        className={
+                                            pathname === c.href
+                                                ? 'current-item'
+                                                : ''
+                                        }
+                                    >
+                                        <Link href={c.href}>
+                                            <span>{c.label}</span>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </>
+                    ) : (
+                        <Link href={item.href}>{item.label}</Link>
+                    )}
+                </li>
+            ))}
         </ul>
     );
 }
@@ -158,42 +147,32 @@ function DesktopNav({ pathname }: { pathname: string }) {
 function MobileMenu() {
     return (
         <ul id="menu-mobile-menu" className="menu">
-            <li className="menu-item">
-                <Link className="item-menu-mobile" href="/">
-                    Home
-                </Link>
-            </li>
-            <li className="menu-item menu-item-has-children-mobile">
-                <a className="item-menu-mobile" href="javascript:void(0)">
-                    Pages
-                    <i className="icon-arrow_down"></i>
-                </a>
-                <ul className="sub-menu-mobile">
-                    {NAV.filter((n) => n.children)
-                        .flatMap((n) => n.children!)
-                        .map((c) => (
-                            <li key={c.href} className="menu-item">
-                                <Link href={c.href}>{c.label}</Link>
-                            </li>
-                        ))}
-                </ul>
-            </li>
-            <li className="menu-item menu-item-has-children-mobile">
-                <a className="item-menu-mobile" href="javascript:void(0)">
-                    Blog
-                    <i className="icon-arrow_down"></i>
-                </a>
-                <ul className="sub-menu-mobile">
-                    <li className="menu-item">
-                        <Link href="/blog">Blog</Link>
+            {NAV.map((item) =>
+                item.children ? (
+                    <li
+                        key={item.label}
+                        className="menu-item menu-item-has-children-mobile"
+                    >
+                        <a className="item-menu-mobile" href="javascript:void(0)">
+                            {item.label}
+                            <i className="icon-arrow_down"></i>
+                        </a>
+                        <ul className="sub-menu-mobile">
+                            {item.children.map((c) => (
+                                <li key={c.href} className="menu-item">
+                                    <Link href={c.href}>{c.label}</Link>
+                                </li>
+                            ))}
+                        </ul>
                     </li>
-                </ul>
-            </li>
-            <li className="menu-item">
-                <Link className="item-menu-mobile" href="/contact-us">
-                    Contact
-                </Link>
-            </li>
+                ) : (
+                    <li className="menu-item" key={item.label}>
+                        <Link className="item-menu-mobile" href={item.href}>
+                            {item.label}
+                        </Link>
+                    </li>
+                )
+            )}
         </ul>
     );
 }
@@ -209,7 +188,7 @@ function MobileNavWrap() {
                             <img
                                 id="mobile-logo_header"
                                 alt="Fun Farming Uganda"
-                                src="/images/logo/logo-2.png"
+                                src="/logo.png"
                             />
                         </Link>
                         <div className="mobile-nav-close">
@@ -255,8 +234,7 @@ function HomeLogo() {
         <div className="logo">
             <Link href="/">
                 <img
-                    src="/images/logo/logo.png"
-                    data-src="/images/logo/logo-2.png"
+                    src="/logo.png"
                     alt="Fun Farming Uganda"
                     className="lazyload"
                 />
@@ -293,8 +271,7 @@ function HomeHeader({ pathname }: { pathname: string }) {
                                         <div className="logo">
                                             <Link href="/">
                                                 <img
-                                                    src="/images/logo/logo.png"
-                                                    data-src="/images/logo/logo-2.png"
+                                                    src="/logo.png"
                                                     alt="Fun Farming Uganda"
                                                     className="lazyload"
                                                 />
@@ -462,10 +439,7 @@ function InnerHeader({ pathname }: { pathname: string }) {
                                 <div className="header-left">
                                     <div className="logo-site">
                                         <Link href="/">
-                                            <img
-                                                src="/images/logo/logo.png"
-                                                alt=""
-                                            />
+                                            <img src="/logo.png" alt="" />
                                         </Link>
                                     </div>
                                     <div className="main-nav">
