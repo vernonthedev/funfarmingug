@@ -1,9 +1,19 @@
 "use client";
 
 import { useNavigate } from "@tanstack/react-router";
-import { CornerDownLeftIcon, LayoutDashboard, SearchIcon, Settings, ShoppingBag, ChefHat, Table2, TrendingUp, Users, UtensilsCrossed } from "lucide-react";
+import {
+  FileText,
+  FolderTree,
+  Image,
+  LayoutDashboard,
+  Mail,
+  Newspaper,
+  Rss,
+  SearchIcon,
+  Settings,
+  Type,
+} from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandCollection,
@@ -19,7 +29,6 @@ import {
   CommandList,
   CommandPanel,
   CommandSeparator,
-  CommandShortcut,
 } from "@/components/ui/command";
 import { Kbd, KbdGroup } from "@/components/ui/kbd";
 
@@ -31,12 +40,13 @@ interface PageItem {
 
 const pageItems: PageItem[] = [
   { label: "Dashboard", value: "/", icon: LayoutDashboard },
-  { label: "Menu", value: "/menu", icon: UtensilsCrossed },
-  { label: "Tables", value: "/tables", icon: Table2 },
-  { label: "Kitchen", value: "/kitchen", icon: ChefHat },
-  { label: "POS", value: "/pos", icon: ShoppingBag },
-  { label: "Reports", value: "/reports", icon: TrendingUp },
-  { label: "Customers", value: "/customers", icon: Users },
+  { label: "Blog Posts", value: "/posts", icon: FileText },
+  { label: "Categories", value: "/categories", icon: FolderTree },
+  { label: "Gallery", value: "/gallery", icon: Image },
+  { label: "Page Content", value: "/text-widgets", icon: Type },
+  { label: "Contacts", value: "/contacts", icon: Mail },
+  { label: "Quote Requests", value: "/quotes", icon: Rss },
+  { label: "Subscribers", value: "/subscribers", icon: Newspaper },
   { label: "Settings", value: "/settings", icon: Settings },
 ];
 
@@ -85,7 +95,7 @@ export function SearchPalette() {
           <CommandPanel>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandList>
-              {(group: typeof searchGroups[number]) => (
+              {(group: (typeof searchGroups)[number]) => (
                 <CommandGroup key={group.value} items={group.items}>
                   <CommandGroupLabel>{group.value}</CommandGroupLabel>
                   <CommandCollection>
@@ -123,7 +133,7 @@ export function SearchPalette() {
               </div>
               <div className="flex items-center gap-2">
                 <Kbd>
-                  <CornerDownLeftIcon />
+                  <span>↵</span>
                 </Kbd>
                 <span>Open</span>
               </div>

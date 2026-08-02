@@ -8,6 +8,7 @@ import {
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 import type { ReactNode } from 'react';
 import { AppShell } from '../components/app-shell';
+import { SearchPalette } from '../components/search-palette';
 import { Button } from '../components/ui/button';
 // import { ConvexProvider } from "../providers/convex-provider";
 import { ThemeProvider } from '../providers/theme-provider';
@@ -74,9 +75,10 @@ function RootDocument({ children }: { readonly children?: ReactNode }) {
             </head>
             <body className="relative bg-sidebar font-sans text-foreground antialiased">
                 {/* <ConvexProvider> */}
-                <ThemeProvider>
-                    <AppShell>{children}</AppShell>
-                </ThemeProvider>
+<ThemeProvider>
+            <AppShell>{children}</AppShell>
+            <SearchPalette />
+          </ThemeProvider>
                 {/* </ConvexProvider>*/}
                 <TanStackDevtools
                     config={{

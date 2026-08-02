@@ -9,7 +9,6 @@ import {
     LifeBuoy,
     LogOut,
     Mail,
-    Menu,
     Moon,
     Newspaper,
     Rss,
@@ -19,7 +18,6 @@ import {
     Type,
 } from 'lucide-react';
 import type { ReactNode } from 'react';
-import { Button } from '@/components/ui/button';
 import {
     CommandDialogTrigger,
     CommandDialogPopup,
@@ -50,7 +48,6 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
     SidebarProvider,
-    useSidebarMenuOpen,
 } from '@/components/ui/sidebar';
 import {
     Menu as MenuPrimitive,
@@ -288,21 +285,9 @@ function AppSidebar() {
 }
 
 function MobileHeader() {
-    const { toggleSidebar } = useSidebarMenuOpen();
-
     return (
         <header className="fixed top-0 z-50 flex h-14 w-full items-center justify-between border-border border-b bg-sidebar px-4 transition-transform md:hidden">
-            <div className="flex items-center gap-2">
-                <Button
-                    variant="ghost"
-                    size="icon"
-                    className="md:hidden"
-                    onClick={toggleSidebar}
-                >
-                    <Menu />
-                </Button>
-                <Logo />
-            </div>
+            <Logo />
             <HeaderActions />
         </header>
     );
