@@ -1,10 +1,6 @@
 'use client';
 
-import {
-    useRef,
-    useSyncExternalStore,
-    useCallback,
-} from 'react';
+import { useRef, useSyncExternalStore, useCallback } from 'react';
 import {
     motion,
     useReducedMotion,
@@ -61,11 +57,7 @@ const subscribe = (callback: () => void) => {
 };
 
 export function FontSwitcher({ children }: { children: React.ReactNode }) {
-    const fontIndex = useSyncExternalStore(
-        subscribe,
-        getSavedIndex,
-        () => 0
-    );
+    const fontIndex = useSyncExternalStore(subscribe, getSavedIndex, () => 0);
     const shouldReduceMotion = useReducedMotion();
     const [contentScope, animateContent] = useAnimate();
     const transitioning = useRef(false);
