@@ -1,6 +1,10 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import {
+    useRef,
+    useSyncExternalStore,
+    useCallback,
+} from 'react';
 import {
     motion,
     useReducedMotion,
@@ -47,14 +51,27 @@ function getSavedIndex(): number {
     return idx >= 0 && idx < FONTS.length ? idx : 0;
 }
 
+const subscribe = (callback: () => void) => {
+    window.addEventListener('storage', callback);
+    window.addEventListener('font-preference', callback);
+    return () => {
+        window.removeEventListener('storage', callback);
+        window.removeEventListener('font-preference', callback);
+    };
+};
+
 export function FontSwitcher({ children }: { children: React.ReactNode }) {
-    const [fontIndex, setFontIndex] = useState(0);
+    const fontIndex = useSyncExternalStore(
+        subscribe,
+        getSavedIndex,
+        () => 0
+    );
     const shouldReduceMotion = useReducedMotion();
     const [contentScope, animateContent] = useAnimate();
     const transitioning = useRef(false);
-
-    useEffect(() => {
-        setFontIndex(getSavedIndex());
+    const setFontIndex = useCallback((next: number) => {
+        localStorage.setItem(STORAGE_KEY, String(next));
+        window.dispatchEvent(new Event('font-preference'));
     }, []);
 
     const skip = !!shouldReduceMotion;
@@ -63,7 +80,6 @@ export function FontSwitcher({ children }: { children: React.ReactNode }) {
         if (transitioning.current) return;
 
         const next = (fontIndex + 1) % FONTS.length;
-        localStorage.setItem(STORAGE_KEY, String(next));
 
         if (skip) {
             setFontIndex(next);

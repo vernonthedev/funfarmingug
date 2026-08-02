@@ -19,7 +19,6 @@ export function Typewriter({
 
     useEffect(() => {
         if (shouldReduceMotion) {
-            setCount(text.length);
             return;
         }
 
@@ -45,7 +44,7 @@ export function Typewriter({
 
     return (
         <p className={className}>
-            {text.slice(0, count)}
+            {shouldReduceMotion ? text : text.slice(0, count)}
             <span className="inline-block w-1 h-4 bg-black dark:bg-white align-middle -translate-y-[0.1em] animate-blink" />
         </p>
     );
