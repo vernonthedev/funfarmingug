@@ -736,31 +736,6 @@
 
 
 
-
-<script>
-// <script type="application/ld+json">
-// {
-// "@context": "https://schema.org",
-// "@type": "BreadcrumbList",
-// "itemListElement": [
-//   {
-//   "@type": "ListItem",
-//   "position": 1,
-//   "name": "Home",
-//   "item": "https://funfarminguganda.com"
-// }    ]
-// }
-//     </script>
-//     <script type="text/javascript">
-// (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,'../diffuser-cdn.app-us1.com/diffuser/diffuser.js',"vgo");
-// vgo('setAccount', '68831642');
-// vgo('setTrackByDefault', true);
-
-// vgo('process');
-//     </script>
-
-
-    
     <script defer type="text/javascript" src="{{ asset('js/manifest8fec.js?id=59cad3ae328f232cc6381495a8d66768')}}"></script>
     <script defer type="text/javascript" src="{{ asset('js/vendore724.js?id=4c2ae8725a39b063a58520c8ff7e244a')}}"></script>
     <script defer type="text/javascript" src="{{ asset('js/site/app4233.js?id=49bdb89e1c686c465fb7327dd0a6b90b')}}"></script>
@@ -834,7 +809,7 @@ if (2000 > 0) {
 
     // Set attributes for the link element
     link.rel = 'stylesheet';
-    link.href = '{{ asset('css/stylee46a.css?id=b4a9499b271a1c9ec5bcc59c3123663b') }}';
+    link.href = "{{ asset('css/stylee46a.css?id=b4a9499b271a1c9ec5bcc59c3123663b') }}";
     link.type = 'text/css';
 
     // Append the link element to the head of the document
