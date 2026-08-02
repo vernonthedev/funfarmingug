@@ -5,8 +5,8 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
-// If you ever serve via public/index.php on a serverless runtime, you still need
-// a writable storage path for compiled views, cache, etc.
+// Vercel serverless filesystem is effectively read-only except the temp dir.
+// Point Laravel's storage path at a writable location for compiled views, cache, etc.
 if (getenv('VERCEL')) {
     $storagePath = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR.'laravel-storage';
     $_ENV['LARAVEL_STORAGE_PATH'] = $storagePath;

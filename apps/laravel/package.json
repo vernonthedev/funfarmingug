@@ -2,12 +2,25 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "build": "vite build",
         "dev": "vite",
-        "build": "vite build"
+        "format": "prettier --write resources/",
+        "format:check": "prettier --check resources/",
+        "lint": "eslint . --fix",
+        "lint:check": "eslint .",
+        "types:check": "tsc --noEmit"
     },
     "devDependencies": {
-        "axios": "^1.7.4",
-        "laravel-vite-plugin": "^1.0",
-        "vite": "^5.0"
+        "@eslint/js": "^9.19.0",
+        "@stylistic/eslint-plugin": "^5.10.0",
+        "@types/node": "^22.13.5",
+        "eslint": "^9.17.0",
+        "eslint-config-prettier": "^10.0.1",
+        "globals": "^15.14.0",
+        "laravel-vite-plugin": "^3.0.0",
+        "prettier": "^3.4.2",
+        "typescript": "^5.7.2",
+        "typescript-eslint": "^8.23.0",
+        "vite": "^8.0.0"
     }
 }
