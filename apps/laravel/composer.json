@@ -75,12 +75,6 @@
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
-        ],
-        "vercel": [
-            "npm run build",
-            "mkdir -p /vercel/output/static",
-            "cp -r public/build /vercel/output/static/",
-            "@php artisan migrate --force"
         ]
     },
     "extra": {
