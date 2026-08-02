@@ -8,312 +8,848 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as CustomersRouteImport } from './routes/customers'
-import { Route as MenuRouteImport } from './routes/menu'
-import { Route as ReportsRouteImport } from './routes/reports'
-import { Route as SettingsRouteImport } from './routes/settings'
-import { Route as CustomersIdRouteImport } from './routes/customers.$id'
-import { Route as CustomersNewRouteImport } from './routes/customers.new'
-import { Route as MenuIdRouteImport } from './routes/menu.$id'
-import { Route as MenuNewRouteImport } from './routes/menu.new'
-import { Route as CustomersIdEditRouteImport } from './routes/customers.$id.edit'
-import { Route as MenuIdEditRouteImport } from './routes/menu.$id.edit'
+import { Route as rootRouteImport } from './routes/__root';
+import { Route as IndexRouteImport } from './routes/index';
+import { Route as CategoriesRouteImport } from './routes/categories';
+import { Route as ContactsRouteImport } from './routes/contacts';
+import { Route as CustomersRouteImport } from './routes/customers';
+import { Route as GalleryRouteImport } from './routes/gallery';
+import { Route as MenuRouteImport } from './routes/menu';
+import { Route as PostsRouteImport } from './routes/posts';
+import { Route as QuotesRouteImport } from './routes/quotes';
+import { Route as ReportsRouteImport } from './routes/reports';
+import { Route as SettingsRouteImport } from './routes/settings';
+import { Route as SubscribersRouteImport } from './routes/subscribers';
+import { Route as TextWidgetsRouteImport } from './routes/text-widgets';
+import { Route as CategoriesNewRouteImport } from './routes/categories.new';
+import { Route as ContactsIdRouteImport } from './routes/contacts.$id';
+import { Route as CustomersIdRouteImport } from './routes/customers.$id';
+import { Route as CustomersNewRouteImport } from './routes/customers.new';
+import { Route as GalleryIdRouteImport } from './routes/gallery.$id';
+import { Route as GalleryNewRouteImport } from './routes/gallery.new';
+import { Route as MenuIdRouteImport } from './routes/menu.$id';
+import { Route as MenuNewRouteImport } from './routes/menu.new';
+import { Route as PostsIdRouteImport } from './routes/posts.$id';
+import { Route as PostsNewRouteImport } from './routes/posts.new';
+import { Route as QuotesIdRouteImport } from './routes/quotes.$id';
+import { Route as SubscribersIdRouteImport } from './routes/subscribers.$id';
+import { Route as TextWidgetsIdRouteImport } from './routes/text-widgets.$id';
+import { Route as TextWidgetsNewRouteImport } from './routes/text-widgets.new';
+import { Route as CategoriesIdEditRouteImport } from './routes/categories.$id.edit';
+import { Route as CustomersIdEditRouteImport } from './routes/customers.$id.edit';
+import { Route as GalleryIdEditRouteImport } from './routes/gallery.$id.edit';
+import { Route as MenuIdEditRouteImport } from './routes/menu.$id.edit';
+import { Route as PostsIdEditRouteImport } from './routes/posts.$id.edit';
+import { Route as TextWidgetsIdEditRouteImport } from './routes/text-widgets.$id.edit';
 
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
+    id: '/',
+    path: '/',
+    getParentRoute: () => rootRouteImport,
+} as any);
+const CategoriesRoute = CategoriesRouteImport.update({
+    id: '/categories',
+    path: '/categories',
+    getParentRoute: () => rootRouteImport,
+} as any);
+const ContactsRoute = ContactsRouteImport.update({
+    id: '/contacts',
+    path: '/contacts',
+    getParentRoute: () => rootRouteImport,
+} as any);
 const CustomersRoute = CustomersRouteImport.update({
-  id: '/customers',
-  path: '/customers',
-  getParentRoute: () => rootRouteImport,
-} as any)
+    id: '/customers',
+    path: '/customers',
+    getParentRoute: () => rootRouteImport,
+} as any);
+const GalleryRoute = GalleryRouteImport.update({
+    id: '/gallery',
+    path: '/gallery',
+    getParentRoute: () => rootRouteImport,
+} as any);
 const MenuRoute = MenuRouteImport.update({
-  id: '/menu',
-  path: '/menu',
-  getParentRoute: () => rootRouteImport,
-} as any)
+    id: '/menu',
+    path: '/menu',
+    getParentRoute: () => rootRouteImport,
+} as any);
+const PostsRoute = PostsRouteImport.update({
+    id: '/posts',
+    path: '/posts',
+    getParentRoute: () => rootRouteImport,
+} as any);
+const QuotesRoute = QuotesRouteImport.update({
+    id: '/quotes',
+    path: '/quotes',
+    getParentRoute: () => rootRouteImport,
+} as any);
 const ReportsRoute = ReportsRouteImport.update({
-  id: '/reports',
-  path: '/reports',
-  getParentRoute: () => rootRouteImport,
-} as any)
+    id: '/reports',
+    path: '/reports',
+    getParentRoute: () => rootRouteImport,
+} as any);
 const SettingsRoute = SettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
-  getParentRoute: () => rootRouteImport,
-} as any)
+    id: '/settings',
+    path: '/settings',
+    getParentRoute: () => rootRouteImport,
+} as any);
+const SubscribersRoute = SubscribersRouteImport.update({
+    id: '/subscribers',
+    path: '/subscribers',
+    getParentRoute: () => rootRouteImport,
+} as any);
+const TextWidgetsRoute = TextWidgetsRouteImport.update({
+    id: '/text-widgets',
+    path: '/text-widgets',
+    getParentRoute: () => rootRouteImport,
+} as any);
+const CategoriesNewRoute = CategoriesNewRouteImport.update({
+    id: '/new',
+    path: '/new',
+    getParentRoute: () => CategoriesRoute,
+} as any);
+const ContactsIdRoute = ContactsIdRouteImport.update({
+    id: '/$id',
+    path: '/$id',
+    getParentRoute: () => ContactsRoute,
+} as any);
 const CustomersIdRoute = CustomersIdRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => CustomersRoute,
-} as any)
+    id: '/$id',
+    path: '/$id',
+    getParentRoute: () => CustomersRoute,
+} as any);
 const CustomersNewRoute = CustomersNewRouteImport.update({
-  id: '/new',
-  path: '/new',
-  getParentRoute: () => CustomersRoute,
-} as any)
+    id: '/new',
+    path: '/new',
+    getParentRoute: () => CustomersRoute,
+} as any);
+const GalleryIdRoute = GalleryIdRouteImport.update({
+    id: '/$id',
+    path: '/$id',
+    getParentRoute: () => GalleryRoute,
+} as any);
+const GalleryNewRoute = GalleryNewRouteImport.update({
+    id: '/new',
+    path: '/new',
+    getParentRoute: () => GalleryRoute,
+} as any);
 const MenuIdRoute = MenuIdRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => MenuRoute,
-} as any)
+    id: '/$id',
+    path: '/$id',
+    getParentRoute: () => MenuRoute,
+} as any);
 const MenuNewRoute = MenuNewRouteImport.update({
-  id: '/new',
-  path: '/new',
-  getParentRoute: () => MenuRoute,
-} as any)
+    id: '/new',
+    path: '/new',
+    getParentRoute: () => MenuRoute,
+} as any);
+const PostsIdRoute = PostsIdRouteImport.update({
+    id: '/$id',
+    path: '/$id',
+    getParentRoute: () => PostsRoute,
+} as any);
+const PostsNewRoute = PostsNewRouteImport.update({
+    id: '/new',
+    path: '/new',
+    getParentRoute: () => PostsRoute,
+} as any);
+const QuotesIdRoute = QuotesIdRouteImport.update({
+    id: '/$id',
+    path: '/$id',
+    getParentRoute: () => QuotesRoute,
+} as any);
+const SubscribersIdRoute = SubscribersIdRouteImport.update({
+    id: '/$id',
+    path: '/$id',
+    getParentRoute: () => SubscribersRoute,
+} as any);
+const TextWidgetsIdRoute = TextWidgetsIdRouteImport.update({
+    id: '/$id',
+    path: '/$id',
+    getParentRoute: () => TextWidgetsRoute,
+} as any);
+const TextWidgetsNewRoute = TextWidgetsNewRouteImport.update({
+    id: '/new',
+    path: '/new',
+    getParentRoute: () => TextWidgetsRoute,
+} as any);
+const CategoriesIdEditRoute = CategoriesIdEditRouteImport.update({
+    id: '/$id/edit',
+    path: '/$id/edit',
+    getParentRoute: () => CategoriesRoute,
+} as any);
 const CustomersIdEditRoute = CustomersIdEditRouteImport.update({
-  id: '/edit',
-  path: '/edit',
-  getParentRoute: () => CustomersIdRoute,
-} as any)
+    id: '/edit',
+    path: '/edit',
+    getParentRoute: () => CustomersIdRoute,
+} as any);
+const GalleryIdEditRoute = GalleryIdEditRouteImport.update({
+    id: '/edit',
+    path: '/edit',
+    getParentRoute: () => GalleryIdRoute,
+} as any);
 const MenuIdEditRoute = MenuIdEditRouteImport.update({
-  id: '/edit',
-  path: '/edit',
-  getParentRoute: () => MenuIdRoute,
-} as any)
+    id: '/edit',
+    path: '/edit',
+    getParentRoute: () => MenuIdRoute,
+} as any);
+const PostsIdEditRoute = PostsIdEditRouteImport.update({
+    id: '/edit',
+    path: '/edit',
+    getParentRoute: () => PostsIdRoute,
+} as any);
+const TextWidgetsIdEditRoute = TextWidgetsIdEditRouteImport.update({
+    id: '/edit',
+    path: '/edit',
+    getParentRoute: () => TextWidgetsIdRoute,
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/customers': typeof CustomersRouteWithChildren
-  '/menu': typeof MenuRouteWithChildren
-  '/reports': typeof ReportsRoute
-  '/settings': typeof SettingsRoute
-  '/customers/$id': typeof CustomersIdRouteWithChildren
-  '/customers/new': typeof CustomersNewRoute
-  '/menu/$id': typeof MenuIdRouteWithChildren
-  '/menu/new': typeof MenuNewRoute
-  '/customers/$id/edit': typeof CustomersIdEditRoute
-  '/menu/$id/edit': typeof MenuIdEditRoute
+    '/': typeof IndexRoute;
+    '/categories': typeof CategoriesRouteWithChildren;
+    '/contacts': typeof ContactsRouteWithChildren;
+    '/customers': typeof CustomersRouteWithChildren;
+    '/gallery': typeof GalleryRouteWithChildren;
+    '/menu': typeof MenuRouteWithChildren;
+    '/posts': typeof PostsRouteWithChildren;
+    '/quotes': typeof QuotesRouteWithChildren;
+    '/reports': typeof ReportsRoute;
+    '/settings': typeof SettingsRoute;
+    '/subscribers': typeof SubscribersRouteWithChildren;
+    '/text-widgets': typeof TextWidgetsRouteWithChildren;
+    '/categories/new': typeof CategoriesNewRoute;
+    '/contacts/$id': typeof ContactsIdRoute;
+    '/customers/$id': typeof CustomersIdRouteWithChildren;
+    '/customers/new': typeof CustomersNewRoute;
+    '/gallery/$id': typeof GalleryIdRouteWithChildren;
+    '/gallery/new': typeof GalleryNewRoute;
+    '/menu/$id': typeof MenuIdRouteWithChildren;
+    '/menu/new': typeof MenuNewRoute;
+    '/posts/$id': typeof PostsIdRouteWithChildren;
+    '/posts/new': typeof PostsNewRoute;
+    '/quotes/$id': typeof QuotesIdRoute;
+    '/subscribers/$id': typeof SubscribersIdRoute;
+    '/text-widgets/$id': typeof TextWidgetsIdRouteWithChildren;
+    '/text-widgets/new': typeof TextWidgetsNewRoute;
+    '/categories/$id/edit': typeof CategoriesIdEditRoute;
+    '/customers/$id/edit': typeof CustomersIdEditRoute;
+    '/gallery/$id/edit': typeof GalleryIdEditRoute;
+    '/menu/$id/edit': typeof MenuIdEditRoute;
+    '/posts/$id/edit': typeof PostsIdEditRoute;
+    '/text-widgets/$id/edit': typeof TextWidgetsIdEditRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/customers': typeof CustomersRouteWithChildren
-  '/menu': typeof MenuRouteWithChildren
-  '/reports': typeof ReportsRoute
-  '/settings': typeof SettingsRoute
-  '/customers/$id': typeof CustomersIdRouteWithChildren
-  '/customers/new': typeof CustomersNewRoute
-  '/menu/$id': typeof MenuIdRouteWithChildren
-  '/menu/new': typeof MenuNewRoute
-  '/customers/$id/edit': typeof CustomersIdEditRoute
-  '/menu/$id/edit': typeof MenuIdEditRoute
+    '/': typeof IndexRoute;
+    '/categories': typeof CategoriesRouteWithChildren;
+    '/contacts': typeof ContactsRouteWithChildren;
+    '/customers': typeof CustomersRouteWithChildren;
+    '/gallery': typeof GalleryRouteWithChildren;
+    '/menu': typeof MenuRouteWithChildren;
+    '/posts': typeof PostsRouteWithChildren;
+    '/quotes': typeof QuotesRouteWithChildren;
+    '/reports': typeof ReportsRoute;
+    '/settings': typeof SettingsRoute;
+    '/subscribers': typeof SubscribersRouteWithChildren;
+    '/text-widgets': typeof TextWidgetsRouteWithChildren;
+    '/categories/new': typeof CategoriesNewRoute;
+    '/contacts/$id': typeof ContactsIdRoute;
+    '/customers/$id': typeof CustomersIdRouteWithChildren;
+    '/customers/new': typeof CustomersNewRoute;
+    '/gallery/$id': typeof GalleryIdRouteWithChildren;
+    '/gallery/new': typeof GalleryNewRoute;
+    '/menu/$id': typeof MenuIdRouteWithChildren;
+    '/menu/new': typeof MenuNewRoute;
+    '/posts/$id': typeof PostsIdRouteWithChildren;
+    '/posts/new': typeof PostsNewRoute;
+    '/quotes/$id': typeof QuotesIdRoute;
+    '/subscribers/$id': typeof SubscribersIdRoute;
+    '/text-widgets/$id': typeof TextWidgetsIdRouteWithChildren;
+    '/text-widgets/new': typeof TextWidgetsNewRoute;
+    '/categories/$id/edit': typeof CategoriesIdEditRoute;
+    '/customers/$id/edit': typeof CustomersIdEditRoute;
+    '/gallery/$id/edit': typeof GalleryIdEditRoute;
+    '/menu/$id/edit': typeof MenuIdEditRoute;
+    '/posts/$id/edit': typeof PostsIdEditRoute;
+    '/text-widgets/$id/edit': typeof TextWidgetsIdEditRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/customers': typeof CustomersRouteWithChildren
-  '/menu': typeof MenuRouteWithChildren
-  '/reports': typeof ReportsRoute
-  '/settings': typeof SettingsRoute
-  '/customers/$id': typeof CustomersIdRouteWithChildren
-  '/customers/new': typeof CustomersNewRoute
-  '/menu/$id': typeof MenuIdRouteWithChildren
-  '/menu/new': typeof MenuNewRoute
-  '/customers/$id/edit': typeof CustomersIdEditRoute
-  '/menu/$id/edit': typeof MenuIdEditRoute
+    __root__: typeof rootRouteImport;
+    '/': typeof IndexRoute;
+    '/categories': typeof CategoriesRouteWithChildren;
+    '/contacts': typeof ContactsRouteWithChildren;
+    '/customers': typeof CustomersRouteWithChildren;
+    '/gallery': typeof GalleryRouteWithChildren;
+    '/menu': typeof MenuRouteWithChildren;
+    '/posts': typeof PostsRouteWithChildren;
+    '/quotes': typeof QuotesRouteWithChildren;
+    '/reports': typeof ReportsRoute;
+    '/settings': typeof SettingsRoute;
+    '/subscribers': typeof SubscribersRouteWithChildren;
+    '/text-widgets': typeof TextWidgetsRouteWithChildren;
+    '/categories/new': typeof CategoriesNewRoute;
+    '/contacts/$id': typeof ContactsIdRoute;
+    '/customers/$id': typeof CustomersIdRouteWithChildren;
+    '/customers/new': typeof CustomersNewRoute;
+    '/gallery/$id': typeof GalleryIdRouteWithChildren;
+    '/gallery/new': typeof GalleryNewRoute;
+    '/menu/$id': typeof MenuIdRouteWithChildren;
+    '/menu/new': typeof MenuNewRoute;
+    '/posts/$id': typeof PostsIdRouteWithChildren;
+    '/posts/new': typeof PostsNewRoute;
+    '/quotes/$id': typeof QuotesIdRoute;
+    '/subscribers/$id': typeof SubscribersIdRoute;
+    '/text-widgets/$id': typeof TextWidgetsIdRouteWithChildren;
+    '/text-widgets/new': typeof TextWidgetsNewRoute;
+    '/categories/$id/edit': typeof CategoriesIdEditRoute;
+    '/customers/$id/edit': typeof CustomersIdEditRoute;
+    '/gallery/$id/edit': typeof GalleryIdEditRoute;
+    '/menu/$id/edit': typeof MenuIdEditRoute;
+    '/posts/$id/edit': typeof PostsIdEditRoute;
+    '/text-widgets/$id/edit': typeof TextWidgetsIdEditRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/customers'
-    | '/menu'
-    | '/reports'
-    | '/settings'
-    | '/customers/$id'
-    | '/customers/new'
-    | '/menu/$id'
-    | '/menu/new'
-    | '/customers/$id/edit'
-    | '/menu/$id/edit'
-  fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/customers'
-    | '/menu'
-    | '/reports'
-    | '/settings'
-    | '/customers/$id'
-    | '/customers/new'
-    | '/menu/$id'
-    | '/menu/new'
-    | '/customers/$id/edit'
-    | '/menu/$id/edit'
-  id:
-    | '__root__'
-    | '/'
-    | '/customers'
-    | '/menu'
-    | '/reports'
-    | '/settings'
-    | '/customers/$id'
-    | '/customers/new'
-    | '/menu/$id'
-    | '/menu/new'
-    | '/customers/$id/edit'
-    | '/menu/$id/edit'
-  fileRoutesById: FileRoutesById
+    fileRoutesByFullPath: FileRoutesByFullPath;
+    fullPaths:
+        | '/'
+        | '/categories'
+        | '/contacts'
+        | '/customers'
+        | '/gallery'
+        | '/menu'
+        | '/posts'
+        | '/quotes'
+        | '/reports'
+        | '/settings'
+        | '/subscribers'
+        | '/text-widgets'
+        | '/categories/new'
+        | '/contacts/$id'
+        | '/customers/$id'
+        | '/customers/new'
+        | '/gallery/$id'
+        | '/gallery/new'
+        | '/menu/$id'
+        | '/menu/new'
+        | '/posts/$id'
+        | '/posts/new'
+        | '/quotes/$id'
+        | '/subscribers/$id'
+        | '/text-widgets/$id'
+        | '/text-widgets/new'
+        | '/categories/$id/edit'
+        | '/customers/$id/edit'
+        | '/gallery/$id/edit'
+        | '/menu/$id/edit'
+        | '/posts/$id/edit'
+        | '/text-widgets/$id/edit';
+    fileRoutesByTo: FileRoutesByTo;
+    to:
+        | '/'
+        | '/categories'
+        | '/contacts'
+        | '/customers'
+        | '/gallery'
+        | '/menu'
+        | '/posts'
+        | '/quotes'
+        | '/reports'
+        | '/settings'
+        | '/subscribers'
+        | '/text-widgets'
+        | '/categories/new'
+        | '/contacts/$id'
+        | '/customers/$id'
+        | '/customers/new'
+        | '/gallery/$id'
+        | '/gallery/new'
+        | '/menu/$id'
+        | '/menu/new'
+        | '/posts/$id'
+        | '/posts/new'
+        | '/quotes/$id'
+        | '/subscribers/$id'
+        | '/text-widgets/$id'
+        | '/text-widgets/new'
+        | '/categories/$id/edit'
+        | '/customers/$id/edit'
+        | '/gallery/$id/edit'
+        | '/menu/$id/edit'
+        | '/posts/$id/edit'
+        | '/text-widgets/$id/edit';
+    id:
+        | '__root__'
+        | '/'
+        | '/categories'
+        | '/contacts'
+        | '/customers'
+        | '/gallery'
+        | '/menu'
+        | '/posts'
+        | '/quotes'
+        | '/reports'
+        | '/settings'
+        | '/subscribers'
+        | '/text-widgets'
+        | '/categories/new'
+        | '/contacts/$id'
+        | '/customers/$id'
+        | '/customers/new'
+        | '/gallery/$id'
+        | '/gallery/new'
+        | '/menu/$id'
+        | '/menu/new'
+        | '/posts/$id'
+        | '/posts/new'
+        | '/quotes/$id'
+        | '/subscribers/$id'
+        | '/text-widgets/$id'
+        | '/text-widgets/new'
+        | '/categories/$id/edit'
+        | '/customers/$id/edit'
+        | '/gallery/$id/edit'
+        | '/menu/$id/edit'
+        | '/posts/$id/edit'
+        | '/text-widgets/$id/edit';
+    fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  CustomersRoute: typeof CustomersRouteWithChildren
-  MenuRoute: typeof MenuRouteWithChildren
-  ReportsRoute: typeof ReportsRoute
-  SettingsRoute: typeof SettingsRoute
+    IndexRoute: typeof IndexRoute;
+    CategoriesRoute: typeof CategoriesRouteWithChildren;
+    ContactsRoute: typeof ContactsRouteWithChildren;
+    CustomersRoute: typeof CustomersRouteWithChildren;
+    GalleryRoute: typeof GalleryRouteWithChildren;
+    MenuRoute: typeof MenuRouteWithChildren;
+    PostsRoute: typeof PostsRouteWithChildren;
+    QuotesRoute: typeof QuotesRouteWithChildren;
+    ReportsRoute: typeof ReportsRoute;
+    SettingsRoute: typeof SettingsRoute;
+    SubscribersRoute: typeof SubscribersRouteWithChildren;
+    TextWidgetsRoute: typeof TextWidgetsRouteWithChildren;
 }
 
 declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+    interface FileRoutesByPath {
+        '/': {
+            id: '/';
+            path: '/';
+            fullPath: '/';
+            preLoaderRoute: typeof IndexRouteImport;
+            parentRoute: typeof rootRouteImport;
+        };
+        '/categories': {
+            id: '/categories';
+            path: '/categories';
+            fullPath: '/categories';
+            preLoaderRoute: typeof CategoriesRouteImport;
+            parentRoute: typeof rootRouteImport;
+        };
+        '/contacts': {
+            id: '/contacts';
+            path: '/contacts';
+            fullPath: '/contacts';
+            preLoaderRoute: typeof ContactsRouteImport;
+            parentRoute: typeof rootRouteImport;
+        };
+        '/customers': {
+            id: '/customers';
+            path: '/customers';
+            fullPath: '/customers';
+            preLoaderRoute: typeof CustomersRouteImport;
+            parentRoute: typeof rootRouteImport;
+        };
+        '/gallery': {
+            id: '/gallery';
+            path: '/gallery';
+            fullPath: '/gallery';
+            preLoaderRoute: typeof GalleryRouteImport;
+            parentRoute: typeof rootRouteImport;
+        };
+        '/menu': {
+            id: '/menu';
+            path: '/menu';
+            fullPath: '/menu';
+            preLoaderRoute: typeof MenuRouteImport;
+            parentRoute: typeof rootRouteImport;
+        };
+        '/posts': {
+            id: '/posts';
+            path: '/posts';
+            fullPath: '/posts';
+            preLoaderRoute: typeof PostsRouteImport;
+            parentRoute: typeof rootRouteImport;
+        };
+        '/quotes': {
+            id: '/quotes';
+            path: '/quotes';
+            fullPath: '/quotes';
+            preLoaderRoute: typeof QuotesRouteImport;
+            parentRoute: typeof rootRouteImport;
+        };
+        '/reports': {
+            id: '/reports';
+            path: '/reports';
+            fullPath: '/reports';
+            preLoaderRoute: typeof ReportsRouteImport;
+            parentRoute: typeof rootRouteImport;
+        };
+        '/settings': {
+            id: '/settings';
+            path: '/settings';
+            fullPath: '/settings';
+            preLoaderRoute: typeof SettingsRouteImport;
+            parentRoute: typeof rootRouteImport;
+        };
+        '/subscribers': {
+            id: '/subscribers';
+            path: '/subscribers';
+            fullPath: '/subscribers';
+            preLoaderRoute: typeof SubscribersRouteImport;
+            parentRoute: typeof rootRouteImport;
+        };
+        '/text-widgets': {
+            id: '/text-widgets';
+            path: '/text-widgets';
+            fullPath: '/text-widgets';
+            preLoaderRoute: typeof TextWidgetsRouteImport;
+            parentRoute: typeof rootRouteImport;
+        };
+        '/categories/new': {
+            id: '/categories/new';
+            path: '/new';
+            fullPath: '/categories/new';
+            preLoaderRoute: typeof CategoriesNewRouteImport;
+            parentRoute: typeof CategoriesRoute;
+        };
+        '/contacts/$id': {
+            id: '/contacts/$id';
+            path: '/$id';
+            fullPath: '/contacts/$id';
+            preLoaderRoute: typeof ContactsIdRouteImport;
+            parentRoute: typeof ContactsRoute;
+        };
+        '/customers/$id': {
+            id: '/customers/$id';
+            path: '/$id';
+            fullPath: '/customers/$id';
+            preLoaderRoute: typeof CustomersIdRouteImport;
+            parentRoute: typeof CustomersRoute;
+        };
+        '/customers/new': {
+            id: '/customers/new';
+            path: '/new';
+            fullPath: '/customers/new';
+            preLoaderRoute: typeof CustomersNewRouteImport;
+            parentRoute: typeof CustomersRoute;
+        };
+        '/gallery/$id': {
+            id: '/gallery/$id';
+            path: '/$id';
+            fullPath: '/gallery/$id';
+            preLoaderRoute: typeof GalleryIdRouteImport;
+            parentRoute: typeof GalleryRoute;
+        };
+        '/gallery/new': {
+            id: '/gallery/new';
+            path: '/new';
+            fullPath: '/gallery/new';
+            preLoaderRoute: typeof GalleryNewRouteImport;
+            parentRoute: typeof GalleryRoute;
+        };
+        '/menu/$id': {
+            id: '/menu/$id';
+            path: '/$id';
+            fullPath: '/menu/$id';
+            preLoaderRoute: typeof MenuIdRouteImport;
+            parentRoute: typeof MenuRoute;
+        };
+        '/menu/new': {
+            id: '/menu/new';
+            path: '/new';
+            fullPath: '/menu/new';
+            preLoaderRoute: typeof MenuNewRouteImport;
+            parentRoute: typeof MenuRoute;
+        };
+        '/posts/$id': {
+            id: '/posts/$id';
+            path: '/$id';
+            fullPath: '/posts/$id';
+            preLoaderRoute: typeof PostsIdRouteImport;
+            parentRoute: typeof PostsRoute;
+        };
+        '/posts/new': {
+            id: '/posts/new';
+            path: '/new';
+            fullPath: '/posts/new';
+            preLoaderRoute: typeof PostsNewRouteImport;
+            parentRoute: typeof PostsRoute;
+        };
+        '/quotes/$id': {
+            id: '/quotes/$id';
+            path: '/$id';
+            fullPath: '/quotes/$id';
+            preLoaderRoute: typeof QuotesIdRouteImport;
+            parentRoute: typeof QuotesRoute;
+        };
+        '/subscribers/$id': {
+            id: '/subscribers/$id';
+            path: '/$id';
+            fullPath: '/subscribers/$id';
+            preLoaderRoute: typeof SubscribersIdRouteImport;
+            parentRoute: typeof SubscribersRoute;
+        };
+        '/text-widgets/$id': {
+            id: '/text-widgets/$id';
+            path: '/$id';
+            fullPath: '/text-widgets/$id';
+            preLoaderRoute: typeof TextWidgetsIdRouteImport;
+            parentRoute: typeof TextWidgetsRoute;
+        };
+        '/text-widgets/new': {
+            id: '/text-widgets/new';
+            path: '/new';
+            fullPath: '/text-widgets/new';
+            preLoaderRoute: typeof TextWidgetsNewRouteImport;
+            parentRoute: typeof TextWidgetsRoute;
+        };
+        '/categories/$id/edit': {
+            id: '/categories/$id/edit';
+            path: '/$id/edit';
+            fullPath: '/categories/$id/edit';
+            preLoaderRoute: typeof CategoriesIdEditRouteImport;
+            parentRoute: typeof CategoriesRoute;
+        };
+        '/customers/$id/edit': {
+            id: '/customers/$id/edit';
+            path: '/edit';
+            fullPath: '/customers/$id/edit';
+            preLoaderRoute: typeof CustomersIdEditRouteImport;
+            parentRoute: typeof CustomersIdRoute;
+        };
+        '/gallery/$id/edit': {
+            id: '/gallery/$id/edit';
+            path: '/edit';
+            fullPath: '/gallery/$id/edit';
+            preLoaderRoute: typeof GalleryIdEditRouteImport;
+            parentRoute: typeof GalleryIdRoute;
+        };
+        '/menu/$id/edit': {
+            id: '/menu/$id/edit';
+            path: '/edit';
+            fullPath: '/menu/$id/edit';
+            preLoaderRoute: typeof MenuIdEditRouteImport;
+            parentRoute: typeof MenuIdRoute;
+        };
+        '/posts/$id/edit': {
+            id: '/posts/$id/edit';
+            path: '/edit';
+            fullPath: '/posts/$id/edit';
+            preLoaderRoute: typeof PostsIdEditRouteImport;
+            parentRoute: typeof PostsIdRoute;
+        };
+        '/text-widgets/$id/edit': {
+            id: '/text-widgets/$id/edit';
+            path: '/edit';
+            fullPath: '/text-widgets/$id/edit';
+            preLoaderRoute: typeof TextWidgetsIdEditRouteImport;
+            parentRoute: typeof TextWidgetsIdRoute;
+        };
     }
-    '/customers': {
-      id: '/customers'
-      path: '/customers'
-      fullPath: '/customers'
-      preLoaderRoute: typeof CustomersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/menu': {
-      id: '/menu'
-      path: '/menu'
-      fullPath: '/menu'
-      preLoaderRoute: typeof MenuRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reports': {
-      id: '/reports'
-      path: '/reports'
-      fullPath: '/reports'
-      preLoaderRoute: typeof ReportsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/settings': {
-      id: '/settings'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof SettingsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/customers/$id': {
-      id: '/customers/$id'
-      path: '/$id'
-      fullPath: '/customers/$id'
-      preLoaderRoute: typeof CustomersIdRouteImport
-      parentRoute: typeof CustomersRoute
-    }
-    '/customers/new': {
-      id: '/customers/new'
-      path: '/new'
-      fullPath: '/customers/new'
-      preLoaderRoute: typeof CustomersNewRouteImport
-      parentRoute: typeof CustomersRoute
-    }
-    '/menu/$id': {
-      id: '/menu/$id'
-      path: '/$id'
-      fullPath: '/menu/$id'
-      preLoaderRoute: typeof MenuIdRouteImport
-      parentRoute: typeof MenuRoute
-    }
-    '/menu/new': {
-      id: '/menu/new'
-      path: '/new'
-      fullPath: '/menu/new'
-      preLoaderRoute: typeof MenuNewRouteImport
-      parentRoute: typeof MenuRoute
-    }
-    '/customers/$id/edit': {
-      id: '/customers/$id/edit'
-      path: '/edit'
-      fullPath: '/customers/$id/edit'
-      preLoaderRoute: typeof CustomersIdEditRouteImport
-      parentRoute: typeof CustomersIdRoute
-    }
-    '/menu/$id/edit': {
-      id: '/menu/$id/edit'
-      path: '/edit'
-      fullPath: '/menu/$id/edit'
-      preLoaderRoute: typeof MenuIdEditRouteImport
-      parentRoute: typeof MenuIdRoute
-    }
-  }
 }
 
+interface CategoriesRouteChildren {
+    CategoriesNewRoute: typeof CategoriesNewRoute;
+    CategoriesIdEditRoute: typeof CategoriesIdEditRoute;
+}
+
+const CategoriesRouteChildren: CategoriesRouteChildren = {
+    CategoriesNewRoute: CategoriesNewRoute,
+    CategoriesIdEditRoute: CategoriesIdEditRoute,
+};
+
+const CategoriesRouteWithChildren = CategoriesRoute._addFileChildren(
+    CategoriesRouteChildren
+);
+
+interface ContactsRouteChildren {
+    ContactsIdRoute: typeof ContactsIdRoute;
+}
+
+const ContactsRouteChildren: ContactsRouteChildren = {
+    ContactsIdRoute: ContactsIdRoute,
+};
+
+const ContactsRouteWithChildren = ContactsRoute._addFileChildren(
+    ContactsRouteChildren
+);
+
 interface CustomersIdRouteChildren {
-  CustomersIdEditRoute: typeof CustomersIdEditRoute
+    CustomersIdEditRoute: typeof CustomersIdEditRoute;
 }
 
 const CustomersIdRouteChildren: CustomersIdRouteChildren = {
-  CustomersIdEditRoute: CustomersIdEditRoute,
-}
+    CustomersIdEditRoute: CustomersIdEditRoute,
+};
 
 const CustomersIdRouteWithChildren = CustomersIdRoute._addFileChildren(
-  CustomersIdRouteChildren,
-)
+    CustomersIdRouteChildren
+);
 
 interface CustomersRouteChildren {
-  CustomersIdRoute: typeof CustomersIdRouteWithChildren
-  CustomersNewRoute: typeof CustomersNewRoute
+    CustomersIdRoute: typeof CustomersIdRouteWithChildren;
+    CustomersNewRoute: typeof CustomersNewRoute;
 }
 
 const CustomersRouteChildren: CustomersRouteChildren = {
-  CustomersIdRoute: CustomersIdRouteWithChildren,
-  CustomersNewRoute: CustomersNewRoute,
-}
+    CustomersIdRoute: CustomersIdRouteWithChildren,
+    CustomersNewRoute: CustomersNewRoute,
+};
 
 const CustomersRouteWithChildren = CustomersRoute._addFileChildren(
-  CustomersRouteChildren,
-)
+    CustomersRouteChildren
+);
+
+interface GalleryIdRouteChildren {
+    GalleryIdEditRoute: typeof GalleryIdEditRoute;
+}
+
+const GalleryIdRouteChildren: GalleryIdRouteChildren = {
+    GalleryIdEditRoute: GalleryIdEditRoute,
+};
+
+const GalleryIdRouteWithChildren = GalleryIdRoute._addFileChildren(
+    GalleryIdRouteChildren
+);
+
+interface GalleryRouteChildren {
+    GalleryIdRoute: typeof GalleryIdRouteWithChildren;
+    GalleryNewRoute: typeof GalleryNewRoute;
+}
+
+const GalleryRouteChildren: GalleryRouteChildren = {
+    GalleryIdRoute: GalleryIdRouteWithChildren,
+    GalleryNewRoute: GalleryNewRoute,
+};
+
+const GalleryRouteWithChildren =
+    GalleryRoute._addFileChildren(GalleryRouteChildren);
 
 interface MenuIdRouteChildren {
-  MenuIdEditRoute: typeof MenuIdEditRoute
+    MenuIdEditRoute: typeof MenuIdEditRoute;
 }
 
 const MenuIdRouteChildren: MenuIdRouteChildren = {
-  MenuIdEditRoute: MenuIdEditRoute,
-}
+    MenuIdEditRoute: MenuIdEditRoute,
+};
 
 const MenuIdRouteWithChildren =
-  MenuIdRoute._addFileChildren(MenuIdRouteChildren)
+    MenuIdRoute._addFileChildren(MenuIdRouteChildren);
 
 interface MenuRouteChildren {
-  MenuIdRoute: typeof MenuIdRouteWithChildren
-  MenuNewRoute: typeof MenuNewRoute
+    MenuIdRoute: typeof MenuIdRouteWithChildren;
+    MenuNewRoute: typeof MenuNewRoute;
 }
 
 const MenuRouteChildren: MenuRouteChildren = {
-  MenuIdRoute: MenuIdRouteWithChildren,
-  MenuNewRoute: MenuNewRoute,
+    MenuIdRoute: MenuIdRouteWithChildren,
+    MenuNewRoute: MenuNewRoute,
+};
+
+const MenuRouteWithChildren = MenuRoute._addFileChildren(MenuRouteChildren);
+
+interface PostsIdRouteChildren {
+    PostsIdEditRoute: typeof PostsIdEditRoute;
 }
 
-const MenuRouteWithChildren = MenuRoute._addFileChildren(MenuRouteChildren)
+const PostsIdRouteChildren: PostsIdRouteChildren = {
+    PostsIdEditRoute: PostsIdEditRoute,
+};
+
+const PostsIdRouteWithChildren =
+    PostsIdRoute._addFileChildren(PostsIdRouteChildren);
+
+interface PostsRouteChildren {
+    PostsIdRoute: typeof PostsIdRouteWithChildren;
+    PostsNewRoute: typeof PostsNewRoute;
+}
+
+const PostsRouteChildren: PostsRouteChildren = {
+    PostsIdRoute: PostsIdRouteWithChildren,
+    PostsNewRoute: PostsNewRoute,
+};
+
+const PostsRouteWithChildren = PostsRoute._addFileChildren(PostsRouteChildren);
+
+interface QuotesRouteChildren {
+    QuotesIdRoute: typeof QuotesIdRoute;
+}
+
+const QuotesRouteChildren: QuotesRouteChildren = {
+    QuotesIdRoute: QuotesIdRoute,
+};
+
+const QuotesRouteWithChildren =
+    QuotesRoute._addFileChildren(QuotesRouteChildren);
+
+interface SubscribersRouteChildren {
+    SubscribersIdRoute: typeof SubscribersIdRoute;
+}
+
+const SubscribersRouteChildren: SubscribersRouteChildren = {
+    SubscribersIdRoute: SubscribersIdRoute,
+};
+
+const SubscribersRouteWithChildren = SubscribersRoute._addFileChildren(
+    SubscribersRouteChildren
+);
+
+interface TextWidgetsIdRouteChildren {
+    TextWidgetsIdEditRoute: typeof TextWidgetsIdEditRoute;
+}
+
+const TextWidgetsIdRouteChildren: TextWidgetsIdRouteChildren = {
+    TextWidgetsIdEditRoute: TextWidgetsIdEditRoute,
+};
+
+const TextWidgetsIdRouteWithChildren = TextWidgetsIdRoute._addFileChildren(
+    TextWidgetsIdRouteChildren
+);
+
+interface TextWidgetsRouteChildren {
+    TextWidgetsIdRoute: typeof TextWidgetsIdRouteWithChildren;
+    TextWidgetsNewRoute: typeof TextWidgetsNewRoute;
+}
+
+const TextWidgetsRouteChildren: TextWidgetsRouteChildren = {
+    TextWidgetsIdRoute: TextWidgetsIdRouteWithChildren,
+    TextWidgetsNewRoute: TextWidgetsNewRoute,
+};
+
+const TextWidgetsRouteWithChildren = TextWidgetsRoute._addFileChildren(
+    TextWidgetsRouteChildren
+);
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  CustomersRoute: CustomersRouteWithChildren,
-  MenuRoute: MenuRouteWithChildren,
-  ReportsRoute: ReportsRoute,
-  SettingsRoute: SettingsRoute,
-}
+    IndexRoute: IndexRoute,
+    CategoriesRoute: CategoriesRouteWithChildren,
+    ContactsRoute: ContactsRouteWithChildren,
+    CustomersRoute: CustomersRouteWithChildren,
+    GalleryRoute: GalleryRouteWithChildren,
+    MenuRoute: MenuRouteWithChildren,
+    PostsRoute: PostsRouteWithChildren,
+    QuotesRoute: QuotesRouteWithChildren,
+    ReportsRoute: ReportsRoute,
+    SettingsRoute: SettingsRoute,
+    SubscribersRoute: SubscribersRouteWithChildren,
+    TextWidgetsRoute: TextWidgetsRouteWithChildren,
+};
 export const routeTree = rootRouteImport
-  ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+    ._addFileChildren(rootRouteChildren)
+    ._addFileTypes<FileRouteTypes>();
 
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
+import type { getRouter } from './router.tsx';
+import type { createStart } from '@tanstack/react-start';
 declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
+    interface Register {
+        ssr: true;
+        router: Awaited<ReturnType<typeof getRouter>>;
+    }
 }

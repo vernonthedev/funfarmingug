@@ -10,7 +10,7 @@ const types = [
     'ci',
 ];
 
-const scopes = ['app', 'docs', 'infra'];
+const scopes = ['app', 'docs', 'infra', 'web', 'admin', 'laravel', 'checkback'];
 
 module.exports = {
     extends: ['@commitlint/config-conventional'],

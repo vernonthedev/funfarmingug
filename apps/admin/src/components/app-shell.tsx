@@ -2,17 +2,21 @@
 
 import { Link, useLocation } from '@tanstack/react-router';
 import {
+    FileText,
+    FolderTree,
+    Image,
     LayoutDashboard,
     LifeBuoy,
     LogOut,
+    Mail,
     Menu,
     Moon,
+    Newspaper,
+    Rss,
     Search,
     Settings,
     Sun,
-    TrendingUp,
-    Users,
-    UtensilsCrossed,
+    Type,
 } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
@@ -65,16 +69,20 @@ export interface NavItem {
 
 const mainNav: ReadonlyArray<NavItem> = [
     { label: 'Dashboard', icon: LayoutDashboard, to: '/' },
-    { label: 'Menu', icon: UtensilsCrossed, to: '/menu' },
-    { label: 'Reports', icon: TrendingUp, to: '/reports' },
-    { label: 'Customers', icon: Users, to: '/customers' },
+    { label: 'Blog Posts', icon: FileText, to: '/posts' },
+    { label: 'Categories', icon: FolderTree, to: '/categories' },
+    { label: 'Gallery', icon: Image, to: '/gallery' },
+    { label: 'Page Content', icon: Type, to: '/text-widgets' },
+    { label: 'Contacts', icon: Mail, to: '/contacts' },
+    { label: 'Quote Requests', icon: Rss, to: '/quotes' },
+    { label: 'Subscribers', icon: Newspaper, to: '/subscribers' },
     { label: 'Settings', icon: Settings, to: '/settings' },
 ];
 
 function Logo() {
     return (
         <h1 className="font-bold font-heading text-foreground text-xl leading-none md:text-base lg:text-lg">
-            Serva
+            Fun Farming
         </h1>
     );
 }
