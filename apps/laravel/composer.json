@@ -58,6 +58,7 @@
             "@php artisan test"
         ],
         "vercel": [
+            "@php artisan package:discover --ansi",
             "@php artisan view:cache --ansi"
         ],
         "post-autoload-dump": [
