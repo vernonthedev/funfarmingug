@@ -298,7 +298,9 @@ export function AppShell({ children }: { readonly children: ReactNode }) {
         <SidebarProvider>
             <MobileHeader />
             <AppSidebar />
-            <SidebarInset className="max-md:pt-14">{children}</SidebarInset>
+            <SidebarInset className="max-md:pt-14">
+                <div className="mx-auto w-full max-w-6xl">{children}</div>
+            </SidebarInset>
         </SidebarProvider>
     );
 }
