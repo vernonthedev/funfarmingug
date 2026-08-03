@@ -123,7 +123,7 @@ export function AboutUs() {
                             <div className="tf-animate__rotate-right">
                                 <div className="image image-left">
                                     <img
-                                        src="/images/section/s-about-2.jpg"
+                                        src="/images/funfarm/funfarm_n26.png"
                                         className="lazyload"
                                         alt=""
                                     />
@@ -174,8 +174,8 @@ export function AboutUs() {
                             <div className="tf-animate__rotate-left">
                                 <div className="image image-right">
                                     <img
-                                        src="/images/section/s-about-3.jpg"
-                                        data-src="/images/section/s-about-3.jpg"
+                                        src="/images/funfarm/funfarm_n27.png"
+                                        data-src="/images/funfarm/funfarm_n27.png"
                                         alt=""
                                         className="lazyload"
                                     />
@@ -250,22 +250,22 @@ export function AboutUs() {
 
 const SERVICES = [
     {
-        img: '/images/widget/provide-item-1-1.jpg',
+        img: '/images/funfarm/funfarm_n19.png',
         icon: 'icon-salad',
-        title: 'Clean Vegetables',
-        text: 'Fresh, organically grown vegetables straight from our rich Ugandan soils.',
+        title: 'Board Games',
+        text: 'Board games for all ages and interests.',
     },
     {
-        img: '/images/widget/provide-item-2-2.jpg',
+        img: '/images/funfarm/funfarm_n19.png',
         icon: 'icon-cow',
-        title: "Pure Cow's Milk",
-        text: 'Creamy milk from happy cows who enjoy the best grass on the farm.',
+        title: 'Farm Kitchen',
+        text: 'Farm kitchen for cooking and eating.',
     },
     {
-        img: '/images/widget/provide-item-3-3.jpg',
+        img: '/images/funfarm/funfarm_n19.png',
         icon: 'icon-chicken-2',
-        title: 'Clean Chicken & Eggs',
-        text: 'Free-range chicken and eggs produced kindly and naturally.',
+        title: 'Team Building Activities',
+        text: 'Team building activities for all ages.',
     },
 ];
 
@@ -342,9 +342,6 @@ export function Services() {
                                             alt=""
                                             className="lazyload"
                                         />
-                                        <div className="icon style-circle">
-                                            <i className={s.icon}></i>
-                                        </div>
                                     </div>
                                     <div className="content">
                                         <a

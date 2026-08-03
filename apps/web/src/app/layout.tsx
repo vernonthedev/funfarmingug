@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { ThemeBootstrap } from '@/components/site/ThemeBootstrap';
 import { Header } from '@/components/site/Header';
-import { Preloader } from '@/components/site/Preloader';
 import { Footer } from '@/components/site/Footer';
 
 export const metadata: Metadata = {
@@ -75,7 +74,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <link rel="stylesheet" href="/site.css" />
             </head>
             <body className="counter-scroll-2">
-                <Preloader />
                 <div id="wrapper" className="wrapper-home-2">
                     <Header />
                     {children}
