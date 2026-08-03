@@ -5,19 +5,42 @@ const EVENTS = [
         image: '/images/funfarm/funfarm_n5.png',
         title: 'Board Games',
         text: 'A favourite for kids and grown-ups alike. Gather around for farmhouse fun while you compete in friendly board games under the trees.',
-        priceBadge: <span className="free">Most Popular</span>,
+        price: <span className="free">Free!</span>,
     },
     {
         image: '/images/funfarm/funfarm_n6.png',
         title: 'Farm Kitchen',
         text: 'Roll up your sleeves in our open farm kitchen. Cook, bake and taste fresh produce picked right from the fields around you.',
-        priceBadge: <span className="free">Free!</span>,
+        price: (
+            <>
+                <span className="price">20</span>
+                <span className="dollar">$</span>
+            </>
+        ),
     },
     {
         image: '/images/funfarm/funfarm_n16.png',
-        title: 'Team Building',
+        title: 'Team Building Day',
         text: 'Bring your colleagues and strengthen your bond with challenges, obstacle courses and shared adventures across the farm.',
-        priceBadge: <span className="free">Fun</span>,
+        price: <span className="free">Fun!</span>,
+    },
+];
+
+const FEATURED_ACTIVITIES = [
+    {
+        image: '/images/funfarm/funfarm_n3.png',
+        title: 'Discover Farm Tour',
+        text: 'A guided walk through our fields, hatchery and plantations where you meet the animals up close.',
+    },
+    {
+        image: '/images/funfarm/funfarm_n7.png',
+        title: 'Farm In Summer',
+        text: 'See the farm at its liveliest — lush crops, playful kids and the freshest harvest of the season.',
+    },
+    {
+        image: '/images/funfarm/funfarm_n9.png',
+        title: 'Children\'s Farm Camp',
+        text: 'A hands-on day of games, feeding sessions and planting for our youngest visitors.',
     },
 ];
 
@@ -25,22 +48,18 @@ const ACTIVITIES = [
     {
         icon: <i className="fa-solid fa-chess" />,
         label: 'Board Games',
-        text: 'Friendly challenges and games for every age group, played in the shade of the farm.',
     },
     {
         icon: <i className="fa-solid fa-utensils" />,
         label: 'Farm Kitchen',
-        text: 'Cook and share meals prepared from the fresh, organic produce grown on our own land.',
     },
     {
         icon: <i className="fa-solid fa-people-group" />,
         label: 'Team Building',
-        text: 'Structured activities that get your group working, laughing and winning together.',
     },
     {
         icon: <i className="fa-solid fa-couch" />,
         label: 'Farm Lounge Facilities',
-        text: 'Relax, rest and rewind in our lounge after a full day of farm adventures.',
     },
 ];
 
@@ -53,8 +72,8 @@ export function ActivitiesPage() {
                         <div className="col-lg-6">
                             <div className="video-wrap">
                                 <img
-                                    className="mw-unset"
-                                    src="/images/funfarm/funfarm_n18.png"
+                                    className="mw-unset lazyload"
+                                    src="/images/funfarm/funfarm_n21.png"
                                     alt=""
                                 />
                                 <a
@@ -76,7 +95,6 @@ export function ActivitiesPage() {
                                             alt=""
                                         />
                                     </div>
-                                    <p className="sub-title">Plan your visit</p>
                                     <p className="title text-anime-style-1">
                                         A Fun Farm, Team Building
                                         <br />
@@ -84,11 +102,12 @@ export function ActivitiesPage() {
                                     </p>
                                 </div>
                                 <p className="text">
-                                    Do you want to come to Fun Farming with more
-                                    than forty people? Then we will be happy to
-                                    help you put together your program. You can
-                                    provide the exact number of participants
-                                    later.
+                                    The FarmFun activities will make you roar
+                                    with joy. As specialists in fun and
+                                    entertainment, we organize a farmtastic team
+                                    building event for you on one of our farms.
+                                    You get the healthy aroma of the farm country
+                                    for free!
                                 </p>
                                 <Link href="/contact-us" className="tf-btn">
                                     <span className="text-style">
@@ -102,27 +121,82 @@ export function ActivitiesPage() {
                         </div>
                     </div>
                 </div>
+                <div className="s-img-item wow zoomIn" data-wow-offset="10">
+                    <div className="tf-rotate-back-and-forth">
+                        <img src="/images/item/corn-5.png" alt="" />
+                    </div>
+                </div>
             </section>
 
-            <section className="s-about-us style-1">
-                <div className="tf-container w-1290">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="wg-tabs">
-                                <ul className="list-btn">
-                                    {ACTIVITIES.map((a, i) => (
-                                        <li key={i}>
-                                            <div className="box-icon ic-hover">
-                                                <div className="icon style-circle hover-icon">
-                                                    {a.icon}
+            <section className="s-banner style-2">
+                <div className="heading-side has-img-item">
+                    <div className="image">
+                        <div className="scroll-element-4">
+                            <img
+                                className="scale-1-1"
+                                src="/images/funfarm/funfarm_n18.png"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                    <div className="s-img-item item-bottom">
+                        <img
+                            src="/images/item/page-title-top.png"
+                            alt=""
+                        />
+                    </div>
+                </div>
+                <div className="slider-side">
+                    <div className="tf-container w-1620">
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <div className="swiper-container slider-box-event">
+                                    <div className="swiper-wrapper">
+                                        {FEATURED_ACTIVITIES.map((f, i) => (
+                                            <div
+                                                className="swiper-slide"
+                                                key={i}
+                                            >
+                                                <div
+                                                    className="box-event img-hover wow fadeInUp"
+                                                    data-wow-delay={`${i * 0.1}s`}
+                                                    data-wow-offset="10"
+                                                >
+                                                    <div className="image hover-item">
+                                                        <img
+                                                            src={f.image}
+                                                            alt=""
+                                                            className="lazyload"
+                                                        />
+                                                    </div>
+                                                    <div className="content">
+                                                        <div className="img-item">
+                                                            <img
+                                                                src="/images/item/rice-plant-2.png"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                        <Link
+                                                            href="/activities"
+                                                            className="title fw-7 font-worksans"
+                                                        >
+                                                            {f.title}
+                                                        </Link>
+                                                        <p className="text">
+                                                            {f.text}
+                                                        </p>
+                                                        <Link
+                                                            href="/activities"
+                                                            className="tf-btn-read hover-text-4"
+                                                        >
+                                                            Read More
+                                                        </Link>
+                                                    </div>
                                                 </div>
-                                                <p className="caption fw-6 font-worksans hover-text-4">
-                                                    {a.label}
-                                                </p>
                                             </div>
-                                        </li>
-                                    ))}
-                                </ul>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -142,7 +216,7 @@ export function ActivitiesPage() {
                                     />
                                 </div>
                                 <p className="title mb-18 text-anime-style-2">
-                                    Farm Activities At The Farm
+                                    Other Active Events At The Farm
                                 </p>
                                 <p className="text">
                                     The perfect location for your team building,
@@ -155,7 +229,7 @@ export function ActivitiesPage() {
                         </div>
                         {EVENTS.map((e, i) => (
                             <div className="col-lg-12" key={i}>
-                                <div className="our-event-item img-hover tf-img-hover mb-50">
+                                <div className="our-event-item img-hover tf-img-hover mb-50 wow fadeInUp">
                                     <div className="image relative hover-item hover14">
                                         <img
                                             src={e.image}
@@ -163,7 +237,7 @@ export function ActivitiesPage() {
                                             className="lazyload"
                                         />
                                         <div className="price-wrap absolute">
-                                            {e.priceBadge}
+                                            {e.price}
                                         </div>
                                     </div>
                                     <div className="content">
@@ -175,8 +249,8 @@ export function ActivitiesPage() {
                                         </Link>
                                         <ul className="infor-event">
                                             <li>
-                                                <p className="ticket">
-                                                    Farm Tour Activity
+                                                <p className="time-start">
+                                                    Time : 10 / 05 / 2024
                                                 </p>
                                             </li>
                                             <li>
@@ -184,10 +258,23 @@ export function ActivitiesPage() {
                                                     Location: Fun Farming Uganda
                                                 </p>
                                             </li>
+                                            <li>
+                                                <p className="ticket">
+                                                    Tickets Available: 40
+                                                </p>
+                                            </li>
                                         </ul>
                                         <p className="sub font-nunito">
                                             {e.text}
                                         </p>
+                                        <Link href="/activities" className="tf-btn">
+                                            <span className="text-style">
+                                                Read More
+                                            </span>
+                                            <div className="icon">
+                                                <i className="icon-arrow_right"></i>
+                                            </div>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -201,12 +288,12 @@ export function ActivitiesPage() {
                     <div className="content">
                         <div className="heading-section style-4 has-text">
                             <p className="title tf-animate-1">
-                                Make Your Bookings Today!
+                                If You Have Questions About The
+                                Events Please Contact Us!
                             </p>
                             <p className="text">
-                                We will help you put together the perfect
-                                program for your group. Contact us for more
-                                activities or arrange a farm tour today.
+                                We will reply you within 24 hours or you can
+                                refer to the questions at the FAQs Page.
                             </p>
                         </div>
                         <div className="bot">
@@ -219,10 +306,12 @@ export function ActivitiesPage() {
                                 </div>
                             </Link>
                             <Link
-                                href="/gallery"
+                                href="/frequently-asked-questions"
                                 className="tf-btn style-3 pd-defalt"
                             >
-                                <span className="text-style">View Gallery</span>
+                                <span className="text-style">
+                                    View FAQs Page
+                                </span>
                                 <div className="icon">
                                     <i className="icon-arrow_right"></i>
                                 </div>
@@ -237,7 +326,17 @@ export function ActivitiesPage() {
                                 className="lazyload tf-animate-2"
                             />
                         </div>
+                        <div className="img-item item-1">
+                            <img
+                                className="tf-animate__rotate-right"
+                                src="/images/item/leaf-5.png"
+                                alt=""
+                            />
+                        </div>
                     </div>
+                </div>
+                <div className="s-img-item item-1">
+                    <img src="/images/item/page-title-top.png" alt="" />
                 </div>
             </section>
         </div>

@@ -43,6 +43,11 @@ export function ContactUsPage() {
                                             alt="Main Yard Of Fun Farming Uganda"
                                             className="img lazyload"
                                         />
+                                        <img
+                                            src="/images/item/leaf.png"
+                                            alt=""
+                                            className="img-item tf-animate__rotate-left"
+                                        />
                                     </div>
                                     <ul className="contact-list">
                                         <li
@@ -181,36 +186,63 @@ export function ContactUsPage() {
                                                     required
                                                 />
                                             </fieldset>
-                                            <fieldset>
-                                                <input
-                                                    type="text"
-                                                    className="form-control"
-                                                    id="subject"
-                                                    name="subject"
-                                                    placeholder="Subject"
-                                                />
+                                            <fieldset className="dropdown">
+                                                <select
+                                                    name="text"
+                                                    className="lt-sp-07"
+                                                    id="Support"
+                                                >
+                                                    <option value="" disabled>
+                                                        What can we help with?
+                                                    </option>
+                                                    <option value="Team Building">
+                                                        Team Building
+                                                    </option>
+                                                    <option value="Farm Activities">
+                                                        Farm Activities
+                                                    </option>
+                                                    <option value="Booking">
+                                                        Booking
+                                                    </option>
+                                                    <option value="FarmFood">
+                                                        FarmFood
+                                                    </option>
+                                                </select>
                                             </fieldset>
                                         </div>
-                                        <div className="cols out-mb-24 mb-15">
+                                        <div className="cols mb-30">
                                             <fieldset>
                                                 <textarea
-                                                    className="form-control"
-                                                    id="message"
                                                     name="message"
-                                                    rows={5}
-                                                    placeholder="Message"
+                                                    id="message"
+                                                    placeholder="Message..."
                                                 ></textarea>
                                             </fieldset>
                                         </div>
-                                        <div className="group-btn style-3">
-                                            <a className="tf-btn full scale-40" href="#">
+                                        <div className="checkbox-item send-wrap">
+                                            <label className="mb-0">
+                                                <span className="text font-nunito">
+                                                    Agree to our terms and
+                                                    conditions
+                                                </span>
+                                                <input
+                                                    type="checkbox"
+                                                    className="checkbox-item"
+                                                    defaultChecked
+                                                />
+                                                <span className="btn-checkbox"></span>
+                                            </label>
+                                            <button
+                                                type="submit"
+                                                className="tf-btn"
+                                            >
                                                 <span className="text-style">
                                                     Send Message
                                                 </span>
-                                                <div className="icon">
+                                                <span className="icon">
                                                     <i className="icon-arrow_right"></i>
-                                                </div>
-                                            </a>
+                                                </span>
+                                            </button>
                                         </div>
                                     </form>
                                 </div>

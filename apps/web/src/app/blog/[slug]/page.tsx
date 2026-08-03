@@ -40,7 +40,10 @@ export default async function BlogDetailPageWrapper({
                     { label: post.title },
                 ]}
             />
-            <BlogDetailPage post={post} />
+            <BlogDetailPage
+                post={post}
+                related={POSTS.filter((p) => p.slug !== slug).slice(0, 3)}
+            />
         </>
     );
 }

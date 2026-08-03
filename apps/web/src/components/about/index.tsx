@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SITE } from '@/lib/site';
 
 const VALUES = [
     {
@@ -48,6 +49,13 @@ const BENEFITS = [
         text: 'Fresh, organic produce and farm experiences at fair, transparent prices.',
         href: '/farmfood',
     },
+];
+
+const GALLERY_SLIDES = [
+    'funfarm_n4.png',
+    'funfarm_n7.png',
+    'funfarm_n10.png',
+    'funfarm_n12.png',
 ];
 
 export function AboutUsPage() {
@@ -161,41 +169,103 @@ export function AboutUsPage() {
                                         and involving young individuals in
                                         sustainable farming practices.
                                     </p>
-                                    <div className="group-btn style-3 mt-30">
-                                        <Link
-                                            href="/blog"
-                                            className="tf-btn-read text-white hover-text-secondary"
-                                        >
-                                            View Our Content
-                                        </Link>
+                                    <p
+                                        className="text-2 wow fadeInUp"
+                                        data-wow-delay="0s"
+                                    >
+                                        Through these efforts we contribute
+                                        directly to Uganda's agricultural sector,
+                                        strengthening the herd and the organic
+                                        spirit while embracing the agro-tourism
+                                        concept in the country.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="s-img-item item-1 scroll-element-3">
+                        <img
+                            className="scale-1-1"
+                            src="/images/section/yellow-f.png"
+                            alt=""
+                        />
+                    </div>
+                </div>
+                <div className="s-content-wrap-2">
+                    <div className="tf-container w-1620">
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <div className="swiper-container slider-gallery">
+                                    <div className="swiper-wrapper">
+                                        {GALLERY_SLIDES.map((s, i) => (
+                                            <div className="swiper-slide" key={i}>
+                                                <div
+                                                    className="gallery-item img-hover wow fadeInUp"
+                                                    data-wow-delay={`${i * 0.1}s`}
+                                                >
+                                                    <div className="image hover-item">
+                                                        <img
+                                                            className="lazyload"
+                                                            src={`/images/funfarm/${s}`}
+                                                            alt=""
+                                                        />
+                                                    </div>
+                                                    <Link
+                                                        href="/gallery"
+                                                        className="add-gallery"
+                                                    >
+                                                        +
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section className="s-benefit mt--217">
-                <div className="benefit-list">
-                    {BENEFITS.map((b, i) => (
-                        <div
-                            className="box-icon ic-hover wow fadeInUp"
-                            data-wow-delay={`${i * 0.1}s`}
-                            key={i}
-                        >
-                            <div className="icon mb-29 hover-icon style-circle">
-                                {b.icon}
+                    <div className="tf-container">
+                        <div className="row">
+                            <div className="col-md-6">
+                                <div
+                                    className="box-text wow fadeInUp"
+                                    data-wow-delay="0s"
+                                >
+                                    <p className="title font-worksans fw-7">
+                                        Our Mission
+                                    </p>
+                                    <p className="text font-snowfall">
+                                        Our mission is to contribute to the
+                                        promotion of agricultural products in
+                                        Uganda, with a commitment to produce
+                                        sustainable value that meets
+                                        international standards and creates a
+                                        fair, competitive market.
+                                    </p>
+                                </div>
                             </div>
-                            <Link
-                                href={b.href}
-                                className="caption fw-6 mb-17 font-worksans hover-text-secondary"
-                            >
-                                {b.title}
-                            </Link>
-                            <p className="text font-nunito">{b.text}</p>
+                            <div className="col-md-6">
+                                <div
+                                    className="box-text wow fadeInUp"
+                                    data-wow-delay="0.1s"
+                                >
+                                    <p className="title font-worksans fw-7">
+                                        Our Vision
+                                    </p>
+                                    <p className="text font-light">
+                                        To see agriculture celebrated as a
+                                        joyful, shared way of life, where youth
+                                        are empowered, communities are nurtured
+                                        and the organic spirit of Uganda thrives
+                                        for generations.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                    ))}
+                    </div>
+                    <div className="s-img-item item-1">
+                        <img src="/images/item/wave-yellow-has-item.png" alt="" />
+                    </div>
                 </div>
             </section>
 
@@ -211,6 +281,12 @@ export function AboutUsPage() {
                                             alt=""
                                             className="lazyload"
                                         />
+                                        <a
+                                            href="https://www.youtube.com/watch?v=MLpWrANjFbI"
+                                            className="style-icon-play popup-youtube"
+                                        >
+                                            <i className="fa-solid fa-play"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -238,9 +314,8 @@ export function AboutUsPage() {
                                         around sustainable, organic practices.
                                         From goat breeding to banana plantations,
                                         we nurture the land and the community
-                                        together, strengthening the herd and
-                                        organic spirit as well as embracing the
-                                        agro-tourism concept in Uganda.
+                                        together, strengthening the herd and the
+                                        organic spirit.
                                     </p>
                                     <div className="wg-progress mb-29">
                                         <div className="top">
@@ -296,6 +371,29 @@ export function AboutUsPage() {
                 </div>
             </section>
 
+            <section className="s-benefit mt--217">
+                <div className="benefit-list">
+                    {BENEFITS.map((b, i) => (
+                        <div
+                            className="box-icon ic-hover wow fadeInUp"
+                            data-wow-delay={`${i * 0.1}s`}
+                            key={i}
+                        >
+                            <div className="icon mb-29 hover-icon style-circle">
+                                {b.icon}
+                            </div>
+                            <Link
+                                href={b.href}
+                                className="caption fw-6 mb-17 font-worksans hover-text-secondary"
+                            >
+                                {b.title}
+                            </Link>
+                            <p className="text font-nunito">{b.text}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
             <section className="s-quality-of-life style-2">
                 <div className="tf-container w-1290">
                     <div className="row">
@@ -331,7 +429,7 @@ export function AboutUsPage() {
                                                                 {v.icon}
                                                             </div>
                                                             <a
-                                                                href="/references"
+                                                                href="/farmfood"
                                                                 className="caption fw-6 font-worksans hover-text-4"
                                                             >
                                                                 {v.title}
@@ -343,9 +441,90 @@ export function AboutUsPage() {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="bot flex justify-center">
+                                    <Link
+                                        href="/farmfood"
+                                        className="tf-btn scale-50"
+                                    >
+                                        <span className="text-style">
+                                            See More Our Commitment
+                                        </span>
+                                        <div className="icon">
+                                            <i className="icon-arrow_right"></i>
+                                        </div>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className="s-our-history has-img-item tf-pt-0">
+                <div className="tf-container w-1620">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="content-section img-hover">
+                                <div className="image hover-item">
+                                    <img
+                                        src="/images/funfarm/funfarm_n22.png"
+                                        data-src="/images/funfarm/funfarm_n22.png"
+                                        alt=""
+                                        className="lazyload"
+                                    />
+                                </div>
+                                <div className="heading-section style-4 has-text style-3">
+                                    <div className="img-item">
+                                        <div className="item">
+                                            <img
+                                                className="tf-animate-1"
+                                                src="/images/item/rice-plant-2.png"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <p className="sub-title">Our History</p>
+                                    </div>
+                                    <p className="title text-anime-style-1">
+                                        Important Historical
+                                        <br />
+                                        Milestones Of Our Farm
+                                    </p>
+                                    <p className="text">
+                                        From a modest beginning in the Nakaseke
+                                        District, Fun Farming Uganda has grown
+                                        into a diverse organic farm — a place
+                                        where goat breeding, poultry farming and
+                                        banana plantations meet a thriving youth
+                                        agro project.
+                                    </p>
+                                    <Link
+                                        href="/blog"
+                                        className="tf-btn bg-white wow fadeInUp"
+                                        data-wow-delay="0s"
+                                    >
+                                        <span className="text-style cl-primary">
+                                            Read More
+                                        </span>
+                                        <div className="icon">
+                                            <i className="icon-arrow_right"></i>
+                                        </div>
+                                    </Link>
+                                    <div className="wg-exprerience text-center z-5 tf-rotate-back-and-forth">
+                                        <p className="year">6</p>
+                                        <p className="text">
+                                            Years Of <br /> Farming
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="s-img-item item-1">
+                    <img src="/images/item/brown-top.png" alt="" />
+                </div>
+                <div className="s-img-item item-bottom">
+                    <img src="/images/item/brown-bottom.png" alt="" />
                 </div>
             </section>
 
@@ -409,7 +588,7 @@ export function AboutUsPage() {
                                         Goat Communicating, Cow Connecting
                                     </Link>
                                     <p className="text">
-                                        Three key words at Fun Farming Uganda.
+                                        Three key words at Fun Farms Uganda.
                                         With the Farm Games and Farm Expert
                                         Games, herds of colleagues enjoy a fun
                                         mix of thinking and doing to strengthen
@@ -429,6 +608,243 @@ export function AboutUsPage() {
                     </div>
                 </div>
             </section>
+
+            <section className="s-contact-us style-2 bg-white pt-124 pb-82">
+                <div className="section-wrap">
+                    <div className="tf-container w-1290">
+                        <div className="row">
+                            <div className="col-lg-5">
+                                <div className="content-left">
+                                    <div className="box-map style-2">
+                                        <div id="map" className="map"></div>
+                                    </div>
+                                    <ul className="contact-list overflow-hidden">
+                                        <li
+                                            className="wow fadeInUp"
+                                            data-wow-duration="1.4s"
+                                        >
+                                            <div className="icon style-circle">
+                                                <i className="fa-solid fa-location-dot"></i>
+                                            </div>
+                                            <div className="infor">
+                                                <p className="title">
+                                                    Farm Address
+                                                </p>
+                                                <p className="text">
+                                                    Butalangu Town Council,
+                                                    <br />
+                                                    Nakaseke District, Uganda
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li
+                                            className="wow fadeInUp"
+                                            data-wow-duration="1.4s"
+                                        >
+                                            <div className="icon style-circle">
+                                                <i className="fa-solid fa-address-book"></i>
+                                            </div>
+                                            <div className="infor">
+                                                <p className="title">
+                                                    Contact Us
+                                                </p>
+                                                <p className="text">
+                                                    {SITE.email} <br />
+                                                    Call Us 24/7: {SITE.phone}
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li
+                                            className="wow fadeInUp"
+                                            data-wow-duration="1.4s"
+                                        >
+                                            <div className="icon style-circle">
+                                                <i className="fa-solid fa-clock"></i>
+                                            </div>
+                                            <div className="infor">
+                                                <p className="title">
+                                                    Working Hours
+                                                </p>
+                                                <p
+                                                    className="text"
+                                                    dangerouslySetInnerHTML={{
+                                                        __html: SITE.workingHours,
+                                                    }}
+                                                />
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="col-lg-7">
+                                <div className="content-section">
+                                    <div className="heading-section has-text mb-50">
+                                        <p className="sub-title">
+                                            Let's Cooperate Together
+                                        </p>
+                                        <p className="title text-anime-style-1">
+                                            Contact Us Today!
+                                        </p>
+                                        <p className="text">
+                                            We reply within 24 hours via email.
+                                            Thank you for getting in touch.
+                                        </p>
+                                        <div className="img-item">
+                                            <img
+                                                className="tf-animate-1"
+                                                src="/images/item/rice-plant-2.png"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <form
+                                        id="contactform"
+                                        method="post"
+                                        action="#"
+                                        className="form-send-message style-2"
+                                    >
+                                        <div className="cols style-2 mb-15">
+                                            <fieldset>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="name"
+                                                    name="name"
+                                                    placeholder="Name*"
+                                                    required
+                                                />
+                                            </fieldset>
+                                            <fieldset>
+                                                <input
+                                                    type="email"
+                                                    className="form-control email"
+                                                    id="mail"
+                                                    name="mail"
+                                                    placeholder="Email*"
+                                                    required
+                                                />
+                                            </fieldset>
+                                        </div>
+                                        <div className="cols style-2 mb-15">
+                                            <fieldset>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="phone"
+                                                    name="phone"
+                                                    placeholder="Phone*"
+                                                    required
+                                                />
+                                            </fieldset>
+                                            <fieldset className="dropdown">
+                                                <select
+                                                    name="text"
+                                                    className="lt-sp-07"
+                                                    id="Support"
+                                                >
+                                                    <option value="" disabled>
+                                                        What can we help with?
+                                                    </option>
+                                                    <option value="Team Building">
+                                                        Team Building
+                                                    </option>
+                                                    <option value="Farm Activities">
+                                                        Farm Activities
+                                                    </option>
+                                                    <option value="Booking">
+                                                        Booking
+                                                    </option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+                                        <div className="cols mb-30">
+                                            <fieldset>
+                                                <textarea
+                                                    name="message"
+                                                    id="message"
+                                                    placeholder="Message..."
+                                                ></textarea>
+                                            </fieldset>
+                                        </div>
+                                        <div className="checkbox-item send-wrap">
+                                            <label className="mb-0">
+                                                <span className="text font-nunito">
+                                                    Agree to our terms and
+                                                    conditions
+                                                </span>
+                                                <input
+                                                    type="checkbox"
+                                                    className="checkbox-item"
+                                                    defaultChecked
+                                                />
+                                                <span className="btn-checkbox"></span>
+                                            </label>
+                                            <button
+                                                type="submit"
+                                                className="tf-btn"
+                                            >
+                                                <span className="text-style">
+                                                    Send Message
+                                                </span>
+                                                <span className="icon">
+                                                    <i className="icon-arrow_right"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="s-partner style-2 has-img-item pb-71">
+                <Partners />
+            </section>
+        </div>
+    );
+}
+
+const PARTNERS = [
+    'wide-open.png',
+    'sollio.png',
+    'syngenta.png',
+    'strachan-valley.png',
+    'new-holland.png',
+    'stony-field.png',
+];
+
+const PARTNER_SLIDES = [...PARTNERS, ...PARTNERS];
+
+function Partners() {
+    return (
+        <div className="tf-container w-1780">
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="slider-wrap">
+                        <div className="swiper-container slider-partner">
+                            <div className="swiper-wrapper">
+                                {PARTNER_SLIDES.map((p, i) => (
+                                    <div className="swiper-slide" key={i}>
+                                        <div className="slide-partner">
+                                            <div className="image">
+                                                <a href="#">
+                                                    <img
+                                                        src={`/images/partner/${p}`}
+                                                        alt=""
+                                                        className="lazyload"
+                                                    />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

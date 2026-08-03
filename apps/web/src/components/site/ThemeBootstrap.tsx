@@ -237,6 +237,29 @@ function initSwipers() {
                 1300: { slidesPerView: 4 },
             },
         },
+        '.slider-box-event': {
+            slidesPerView: 3,
+            loop: true,
+            spaceBetween: 30,
+            breakpoints: {
+                0: { slidesPerView: 1 },
+                578: { slidesPerView: 2 },
+                950: { slidesPerView: 2.5 },
+                1200: { slidesPerView: 3 },
+            },
+        },
+        '.slider-box-bower': {
+            slidesPerView: 5,
+            loop: true,
+            spaceBetween: 30,
+            breakpoints: {
+                0: { slidesPerView: 1 },
+                578: { slidesPerView: 2 },
+                767: { slidesPerView: 2.5 },
+                1010: { slidesPerView: 3.5 },
+                1300: { slidesPerView: 5 },
+            },
+        },
     };
 
     const initialized = new Set<Element>();

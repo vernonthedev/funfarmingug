@@ -46,6 +46,10 @@ export function GetSupportPage() {
                                                 </p>
                                                 <p className="text">
                                                     Call Us 24/7: {SITE.phone}
+                                                    <br />
+                                                    +256 700 462 477
+                                                    <br />
+                                                    +256 770 640 220
                                                 </p>
                                             </div>
                                         </li>
@@ -62,6 +66,8 @@ export function GetSupportPage() {
                                                 </p>
                                                 <p className="text">
                                                     {SITE.email}
+                                                    <br />
+                                                    admin@funfarming.org
                                                 </p>
                                             </div>
                                         </li>
