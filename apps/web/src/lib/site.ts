@@ -89,5 +89,5 @@ export const FOOTER_LINKS: { title: string; links: NavLink[] }[] = [
 ];
 
 export const HERO_VIDEO_BG =
-    '/videos/cows.mp4';
-export const HERO_VIDEO_POSTER = '/images/item/yellow-field.jpg';
+    '/videos/poultry.mp4';
+export const HERO_VIDEO_POSTER = '/images/funfarm/funfarm_n27.png';
