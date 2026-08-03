@@ -237,7 +237,7 @@ export function ReferencesPage() {
                                 <p className="text">
                                     Our farm ambassadors share their experiences
                                     of team building, farm games and the delicious
-                                    FarmFood served at our location in Nakasero.
+                                    food served at our location in Nakasero.
                                 </p>
                                 <div className="img-item">
                                     <img

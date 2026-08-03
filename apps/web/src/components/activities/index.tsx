@@ -13,8 +13,8 @@ const EVENTS = [
         text: 'Roll up your sleeves in our open farm kitchen. Cook, bake and taste fresh produce picked right from the fields around you.',
         price: (
             <>
-                <span className="price">20</span>
                 <span className="dollar">$</span>
+                <span className="price">20</span>
             </>
         ),
     },
@@ -28,17 +28,17 @@ const EVENTS = [
 
 const FEATURED_ACTIVITIES = [
     {
-        image: '/images/funfarm/funfarm_n3.png',
+        image: '/images/funfarm/funfarm_n10.png',
         title: 'Discover Farm Tour',
         text: 'A guided walk through our fields, hatchery and plantations where you meet the animals up close.',
     },
     {
-        image: '/images/funfarm/funfarm_n7.png',
+        image: '/images/funfarm/funfarm_n11.png',
         title: 'Farm In Summer',
-        text: 'See the farm at its liveliest — lush crops, playful kids and the freshest harvest of the season.',
+        text: 'See the farm at its liveliest — lush crops, playful chickens and the freshest harvest of the season.',
     },
     {
-        image: '/images/funfarm/funfarm_n9.png',
+        image: '/images/funfarm/funfarm_n13.png',
         title: 'Children\'s Farm Camp',
         text: 'A hands-on day of games, feeding sessions and planting for our youngest visitors.',
     },
@@ -73,7 +73,7 @@ export function ActivitiesPage() {
                             <div className="video-wrap">
                                 <img
                                     className="mw-unset lazyload"
-                                    src="/images/funfarm/funfarm_n21.png"
+                                    src="/images/funfarm/funfarm_n8.png"
                                     alt=""
                                 />
                                 <a
@@ -229,7 +229,11 @@ export function ActivitiesPage() {
                         </div>
                         {EVENTS.map((e, i) => (
                             <div className="col-lg-12" key={i}>
-                                <div className="our-event-item img-hover tf-img-hover mb-50 wow fadeInUp">
+                                <div
+                                className={`our-event-item img-hover tf-img-hover ${
+                                    i < EVENTS.length - 1 ? 'mb-50' : ''
+                                } wow fadeInUp`}
+                            >
                                     <div className="image relative hover-item hover14">
                                         <img
                                             src={e.image}
@@ -337,6 +341,11 @@ export function ActivitiesPage() {
                 </div>
                 <div className="s-img-item item-1">
                     <img src="/images/item/page-title-top.png" alt="" />
+                </div>
+                <div className="s-img-item item-2 wow zoomIn">
+                    <div className="scroll-element-3">
+                        <img src="/images/item/windmill-3.png" alt="" />
+                    </div>
                 </div>
             </section>
         </div>

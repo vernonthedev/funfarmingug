@@ -338,7 +338,7 @@ export function Services() {
                                     </div>
                                     <div className="content">
                                         <a
-                                            href="/farmfood"
+                                            href="/activities"
                                             className="title fs-23 fw-6 font-worksans hover-text-secondary"
                                         >
                                             {s.title}
@@ -347,7 +347,7 @@ export function Services() {
                                             {s.text}
                                         </p>
                                         <a
-                                            href="/farmfood"
+                                            href="/activities"
                                             className="tf-btn-read text-white hover-text-secondary"
                                         >
                                             Read More
@@ -634,7 +634,7 @@ export function OurAgriculture() {
                                         <i className="icon-farmer-2"></i>
                                     </div>
                                     <a
-                                        href="/farmfood"
+                                        href="/about-us"
                                         className="title fw-6 font-worksans hover-text-4"
                                     >
                                         Farmers
@@ -648,7 +648,7 @@ export function OurAgriculture() {
                                         for your team-building.
                                     </p>
                                     <a
-                                        href="/farmfood"
+                                        href="/about-us"
                                         className="tf-btn-read hover-text-4"
                                     >
                                         Read More
@@ -668,7 +668,7 @@ export function OurAgriculture() {
                                         <i className="icon-customer"></i>
                                     </div>
                                     <a
-                                        href="/farmfood"
+                                        href="/about-us"
                                         className="title fw-6 font-worksans hover-text-4"
                                     >
                                         Consumers
@@ -682,7 +682,7 @@ export function OurAgriculture() {
                                         family.
                                     </p>
                                     <a
-                                        href="/farmfood"
+                                        href="/about-us"
                                         className="tf-btn-read hover-text-4"
                                     >
                                         Read More
@@ -702,7 +702,7 @@ export function OurAgriculture() {
                                         <i className="icon-farm"></i>
                                     </div>
                                     <a
-                                        href="/farmfood"
+                                        href="/about-us"
                                         className="title fw-6 font-worksans hover-text-4"
                                     >
                                         Environment
@@ -715,7 +715,7 @@ export function OurAgriculture() {
                                         sustainable practices at every step.
                                     </p>
                                     <a
-                                        href="/farmfood"
+                                        href="/about-us"
                                         className="tf-btn-read hover-text-4"
                                     >
                                         Read More

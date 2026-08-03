@@ -204,9 +204,6 @@ export function ContactUsPage() {
                                                     <option value="Booking">
                                                         Booking
                                                     </option>
-                                                    <option value="FarmFood">
-                                                        FarmFood
-                                                    </option>
                                                 </select>
                                             </fieldset>
                                         </div>

@@ -29,13 +29,13 @@ const BENEFITS = [
         icon: <img src="/icons/tomato.png" alt="" />,
         title: '100% Organic Products',
         text: 'Sustainable, chemical-free crops grown with care for the freshest harvest.',
-        href: '/farmfood',
+        href: '/gallery',
     },
     {
         icon: <i className="fa-solid fa-tractor"></i>,
         title: 'Absolute Quality',
         text: 'From goat breeding to banana plantations, quality is at the heart of everything we do.',
-        href: '/farmfood',
+        href: '/gallery',
     },
     {
         icon: <i className="fa-solid fa-leaf"></i>,
@@ -47,7 +47,7 @@ const BENEFITS = [
         icon: <img src="/icons/dollar-circle.png" alt="" />,
         title: 'Reasonable Price',
         text: 'Fresh, organic produce and farm experiences at fair, transparent prices.',
-        href: '/farmfood',
+        href: '/contact-us',
     },
 ];
 
@@ -429,7 +429,7 @@ export function AboutUsPage() {
                                                                 {v.icon}
                                                             </div>
                                                             <a
-                                                                href="/farmfood"
+                                                                href="/farm-lounge"
                                                                 className="caption fw-6 font-worksans hover-text-4"
                                                             >
                                                                 {v.title}
@@ -443,7 +443,7 @@ export function AboutUsPage() {
                                 </div>
                                 <div className="bot flex justify-center">
                                     <Link
-                                        href="/farmfood"
+                                        href="/farm-lounge"
                                         className="tf-btn scale-50"
                                     >
                                         <span className="text-style">
@@ -582,7 +582,7 @@ export function AboutUsPage() {
                                 </div>
                                 <div className="content">
                                     <Link
-                                        href="/farmfood"
+                                        href="/activities"
                                         className="title fw-700 fs-30 font-worksans hover-text-secondary"
                                     >
                                         Goat Communicating, Cow Connecting
@@ -596,7 +596,7 @@ export function AboutUsPage() {
                                     </p>
                                     <div className="flex justify-center">
                                         <Link
-                                            href="/farmfood"
+                                            href="/gallery"
                                             className="tf-btn-read text-white hover-text-secondary"
                                         >
                                             See Animal Breeds

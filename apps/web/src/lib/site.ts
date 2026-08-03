@@ -21,7 +21,6 @@ export const NAV: NavLink[] = [
     { label: 'Farm Lounge', href: '/farm-lounge' },
     { label: 'Blog', href: '/blog' },
     { label: 'Gallery', href: '/gallery' },
-    { label: 'Farm Food', href: '/farmfood' },
     { label: 'Contact', href: '/contact-us' },
     {
         label: 'More',
@@ -81,7 +80,6 @@ export const FOOTER_LINKS: { title: string; links: NavLink[] }[] = [
     {
         title: 'Explore',
         links: [
-            { label: 'Farm Food', href: '/farmfood' },
             { label: 'Farm Lounge', href: '/farm-lounge' },
             { label: 'Blog', href: '/blog' },
             { label: 'Get Support', href: '/get-support' },
