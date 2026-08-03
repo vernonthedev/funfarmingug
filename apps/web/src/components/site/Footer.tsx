@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { SITE, FOOTER_LINKS } from '@/lib/site';
 
@@ -71,7 +72,13 @@ export function Footer() {
                             <div className="footer-inner-wrap">
                                 <div className="logo">
                                     <Link href="/">
-                                        <img src="/logo.png" alt="Fun Farming Uganda" />
+                                        <Image
+                                            src="/logo.png"
+                                            alt="Fun Farming Uganda"
+                                            width={220}
+                                            height={50}
+                                            unoptimized
+                                        />
                                     </Link>
                                 </div>
                                 <p className="text font-nunito">

@@ -3,59 +3,120 @@ import Link from 'next/link';
 const HERO_VIDEO =
     'https://cdn.coverr.co/videos/coverr-a-tractor-fruit-the-field-4513/1080p.mp4';
 
+const HERO_SLIDES = [
+    {
+        key: 'video',
+        media: (
+            <div className="image overflow-hidden video-bg">
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    poster="/images/page-title/home-2-1.jpg"
+                >
+                    <source src={HERO_VIDEO} type="video/mp4" />
+                </video>
+                <img
+                    src="/images/page-title/home-2-1.jpg"
+                    data-src="/images/page-title/home-2-1.jpg"
+                    alt=""
+                    className="lazyload video-fallback"
+                />
+            </div>
+        ),
+    },
+    {
+        key: 'image',
+        media: (
+            <div className="image overflow-hidden">
+                <img
+                    src="/images/page-title/home-2-2.jpg"
+                    data-src="/images/page-title/home-2-2.jpg"
+                    alt=""
+                    className="lazyload"
+                />
+            </div>
+        ),
+    },
+];
+
+function HeroContent() {
+    return (
+        <>
+            <h1 className="title font-farmhouse tf-fade-top fade-item-2">
+                Welcome to Fun Farming Uganda
+                <br />
+                Where Agriculture Meets Adventure!
+            </h1>
+            <div className="img-item">
+                <img
+                    className="tf-trainsition-draw-left access-trainsition"
+                    src="/images/item/line-throw-title.png"
+                    alt=""
+                />
+            </div>
+            <p className="text font-nunito tf-fade-left fade-item-4">
+                Discover the joy of team events at our farm oasis in Nakaseke
+                District, Uganda.
+                <br />
+                Connect, learn, and share unforgettable moments with a
+                community of enthusiasts.
+            </p>
+            <Link
+                href="/activities"
+                className="tf-btn btn-view bg-white tf-fade-bottom fade-item-5"
+            >
+                <span className="text-style cl-primary">View Activities</span>
+                <div className="icon">
+                    <i className="icon-arrow_right"></i>
+                </div>
+            </Link>
+        </>
+    );
+}
+
+function HeroNav({ direction }: { direction: 'next' | 'prev' }) {
+    return (
+        <div className={`btn-slide-home-2 btn-${direction}`}>
+            <svg
+                version="1.0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="80px"
+                height="20px"
+                viewBox="0 0 80 20"
+                preserveAspectRatio="xMidYMid meet"
+            >
+                <g fill="#ffffff">
+                    {direction === 'next' ? (
+                        <path d="M63 19 c0 -0.5 2.6 -2.4 5.8 -4.2 l5.7 -3.3 -19.5 -0.8 c-11 -0.5 -27.1 -0.5 -37 0.1 -9.6 0.5 -17.7 0.7 -17.9 0.5 -2.4 -1.9 22 -3.5 48.7 -3.1 l25.2 0.3 -4.6 -3.9 c-2.5 -2.1 -4.3 -4 -4 -4.3 0.7 -0.7 14.6 8.9 14.6 10.2 0 1.1 -14.3 9.5 -16.2 9.5 -0.4 0 -0.8 -0.4 -0.8 -1z" />
+                    ) : (
+                        <path d="M7 15.4 c-3.6 -2.4 -6.6 -5 -6.8 -5.7 -0.2 -1.2 13.8 -9.7 16 -9.7 2.4 0 0.2 2.4 -4.9 5.2 l-5.8 3.3 19.5 0.8 c11 0.5 27.1 0.5 37 -0.1 9.6 -0.5 17.7 -0.7 17.9 -0.5 2.4 1.9 -22 3.5 -48.6 3.1 l-25.2 -0.3 4.7 4.2 c6.1 5.5 4.4 5.3 -3.8 -0.3z" />
+                    )}
+                </g>
+            </svg>
+        </div>
+    );
+}
+
 export function Hero() {
     return (
         <div className="page-title-home-2">
-            <div className="slide-home-2">
-                <div className="image overflow-hidden video-bg">
-                    <video
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        poster="/images/page-title/home-2-1.jpg"
-                    >
-                        <source src={HERO_VIDEO} type="video/mp4" />
-                    </video>
-                    <img
-                        src="/images/page-title/home-2-1.jpg"
-                        data-src="/images/page-title/home-2-1.jpg"
-                        alt=""
-                        className="lazyload video-fallback"
-                    />
-                </div>
-                <div className="content">
-                    <h1 className="title font-farmhouse tf-fade-top fade-item-2">
-                        Welcome to Fun Farming Uganda
-                        <br />
-                        Where Agriculture Meets Adventure!
-                    </h1>
-                    <div className="img-item">
-                        <img
-                            className="tf-trainsition-draw-left access-trainsition"
-                            src="/images/item/line-throw-title.png"
-                            alt=""
-                        />
-                    </div>
-                    <p className="text font-nunito tf-fade-left fade-item-4">
-                        Discover the joy of team events at our farm oasis in
-                        Nakaseke District, Uganda.
-                        <br />
-                        Connect, learn, and share unforgettable moments with a
-                        community of enthusiasts.
-                    </p>
-                    <Link
-                        href="/activities"
-                        className="tf-btn btn-view bg-white tf-fade-bottom fade-item-5"
-                    >
-                        <span className="text-style cl-primary">
-                            View Activities
-                        </span>
-                        <div className="icon">
-                            <i className="icon-arrow_right"></i>
+            <div className="swiper-container slider-home-2">
+                <div className="swiper-wrapper">
+                    {HERO_SLIDES.map((s) => (
+                        <div className="swiper-slide" key={s.key}>
+                            <div className="slide-home-2">
+                                {s.media}
+                                <div className="content">
+                                    <HeroContent />
+                                </div>
+                            </div>
                         </div>
-                    </Link>
+                    ))}
                 </div>
+                <HeroNav direction="next" />
+                <HeroNav direction="prev" />
             </div>
         </div>
     );
@@ -869,6 +930,13 @@ const TESTIMONIALS = [
         duty: 'Agricultural Consultant',
         avatar: '/images/section/customer-say-3.jpg',
     },
+    {
+        caption: 'Time Well Spent On The Farm',
+        text: 'A wonderful escape from the city. The team made sure every moment was full of laughter, learning and connection. We cannot wait to come back with more friends.',
+        name: 'ANNA TUMWESIGYE',
+        duty: 'Organic Farm Visitor',
+        avatar: '/images/section/customer-say-4.jpg',
+    },
 ];
 
 export function Testimonials() {
@@ -1118,6 +1186,13 @@ const BLOG_POSTS = [
         month: 'Jun 24',
         title: 'Growing Clean Vegetables At Home',
         text: 'Our team share tips on growing the most delicious vegetables in your own garden.',
+    },
+    {
+        img: '/images/blog/blog-4.jpg',
+        day: '15',
+        month: 'Jun 24',
+        title: 'Meet The Friends Behind The Farm',
+        text: 'Get to know the cattle chiefs and game leaders who make every visit a farmtastic adventure.',
     },
 ];
 
@@ -1508,6 +1583,8 @@ const PARTNERS = [
     'stony-field.png',
 ];
 
+const PARTNER_SLIDES = [...PARTNERS, ...PARTNERS];
+
 export function Partners() {
     return (
         <section className="s-partner style-2 has-img-item">
@@ -1517,7 +1594,7 @@ export function Partners() {
                         <div className="slider-wrap">
                             <div className="swiper-container slider-partner">
                                 <div className="swiper-wrapper">
-                                    {PARTNERS.map((p, i) => (
+                                    {PARTNER_SLIDES.map((p, i) => (
                                         <div className="swiper-slide" key={i}>
                                             <div className="slide-partner">
                                                 <div className="image">

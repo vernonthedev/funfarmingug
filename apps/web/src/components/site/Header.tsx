@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NAV, SITE } from '@/lib/site';
@@ -84,26 +85,8 @@ export function Header() {
     );
 }
 
-function Preloader() {
-    return (
-        <div id="loading">
-            <div id="loading-center">
-                <div className="loader-container">
-                    <div className="wrap-loader">
-                        <div className="loader"></div>
-                        <div className="icon">
-                            <img src="/logo.png" alt="" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-}
-
 const isActive = (href: string, pathname: string) =>
-    href !== '/' &&
-    (pathname === href || pathname.startsWith(href + '/'));
+    href !== '/' && (pathname === href || pathname.startsWith(href + '/'));
 
 function DesktopNav({ pathname }: { pathname: string }) {
     return (
@@ -153,7 +136,10 @@ function MobileMenu() {
                         key={item.label}
                         className="menu-item menu-item-has-children-mobile"
                     >
-                        <a className="item-menu-mobile" href="javascript:void(0)">
+                        <a
+                            className="item-menu-mobile"
+                            href="javascript:void(0)"
+                        >
                             {item.label}
                             <i className="icon-arrow_down"></i>
                         </a>
@@ -185,10 +171,13 @@ function MobileNavWrap() {
                 <div className="top">
                     <div className="logo">
                         <Link href="/" rel="home" className="main-logo">
-                            <img
+                            <Image
                                 id="mobile-logo_header"
-                                alt="Fun Farming Uganda"
                                 src="/logo.png"
+                                alt="Fun Farming Uganda"
+                                width={180}
+                                height={40}
+                                unoptimized
                             />
                         </Link>
                         <div className="mobile-nav-close">
@@ -233,10 +222,12 @@ function HomeLogo() {
     return (
         <div className="logo">
             <Link href="/">
-                <img
+                <Image
                     src="/logo.png"
                     alt="Fun Farming Uganda"
-                    className="lazyload"
+                    width={220}
+                    height={50}
+                    unoptimized
                 />
             </Link>
         </div>
@@ -257,8 +248,6 @@ function HomeHeader({ pathname }: { pathname: string }) {
                 </div>
             </div>
 
-            <Preloader />
-
             {/* Header wrap */}
             <div className="header-wrap absolute">
                 {/* Top-bar */}
@@ -270,10 +259,12 @@ function HomeHeader({ pathname }: { pathname: string }) {
                                     <div className="topbar-left">
                                         <div className="logo">
                                             <Link href="/">
-                                                <img
+                                                <Image
                                                     src="/logo.png"
                                                     alt="Fun Farming Uganda"
-                                                    className="lazyload"
+                                                    width={220}
+                                                    height={50}
+                                                    unoptimized
                                                 />
                                             </Link>
                                         </div>
@@ -374,9 +365,6 @@ function HomeHeader({ pathname }: { pathname: string }) {
                         </div>
                     </div>
                     <MobileNavWrap />
-                    <div className="header-item children absolute">
-                        <img src="/images/item/page-title-top.png" alt="" />
-                    </div>
                 </header>
             </div>
         </>
@@ -386,8 +374,6 @@ function HomeHeader({ pathname }: { pathname: string }) {
 function InnerHeader({ pathname }: { pathname: string }) {
     return (
         <>
-            <Preloader />
-
             {/* Top-bar */}
             <div className="tf-topbar">
                 <div className="tf-container w-1780">
@@ -439,7 +425,13 @@ function InnerHeader({ pathname }: { pathname: string }) {
                                 <div className="header-left">
                                     <div className="logo-site">
                                         <Link href="/">
-                                            <img src="/logo.png" alt="" />
+                                            <Image
+                                                src="/logo.png"
+                                                alt="Fun Farming Uganda"
+                                                width={220}
+                                                height={50}
+                                                unoptimized
+                                            />
                                         </Link>
                                     </div>
                                     <div className="main-nav">

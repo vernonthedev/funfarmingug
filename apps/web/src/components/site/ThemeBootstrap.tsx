@@ -19,10 +19,12 @@ const LIBRARIES: string[] = [
     '/js/rellax.min.js',
     '/js/isotope.min.js',
     '/js/imagesloaded.min.js',
+    '/js/gsap-animation.js',
+    '/js/main.js',
 ];
 
 function loadScript(src: string): Promise<void> {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         if (document.querySelector(`script[src="${src}"]`)) {
             resolve();
             return;
@@ -31,7 +33,10 @@ function loadScript(src: string): Promise<void> {
         el.src = src;
         el.async = false;
         el.onload = () => resolve();
-        el.onerror = () => reject(new Error(`Failed to load ${src}`));
+        el.onerror = () => {
+            console.warn(`[ThemeBootstrap] Failed to load ${src}`);
+            resolve();
+        };
         document.body.appendChild(el);
     });
 }
@@ -40,18 +45,10 @@ function initThemeTheme() {
     const $ = (window as any).jQuery;
     if (!$) return;
 
-    if (document.getElementById('loading')) {
-        $('#loading').fadeOut('slow', function (this: HTMLElement) {
-            $(this).remove();
-        });
-    }
-
-    // WOW
     if ((window as any).WOW) {
         new (window as any).WOW({ live: true }).init();
     }
 
-    // Mobile nav
     $('.mobile-button, .overlay-mobile-nav, .mobile-nav-close')
         .off('click')
         .on('click', () => {
@@ -76,7 +73,6 @@ function initThemeTheme() {
             }
         );
 
-    // Header hide/show
     if ($('.fixed-header').length > 0) {
         const $header = $('.fixed-header');
         let lastScroll = 0;
@@ -93,7 +89,6 @@ function initThemeTheme() {
             });
     }
 
-    // Go top
     const $progress = $('.progress-wrap');
     if ($progress.length > 0) {
         const path = $progress.find('path');
@@ -113,7 +108,6 @@ function initThemeTheme() {
         });
     }
 
-    // Wow elements
     if ((window as any).WOW) {
         new (window as any).WOW({ live: true }).init();
     }
@@ -153,7 +147,6 @@ function initSwipers() {
         },
         '.slider-box-icon': {
             slidesPerView: 1,
-            loop: true,
             breakpoints: {
                 0: { slidesPerView: 0.4 },
                 400: { slidesPerView: 0.6 },
@@ -260,20 +253,41 @@ export function ThemeBootstrap() {
     const pathname = usePathname();
     const loaded = useRef(false);
 
+    console.log('[ThemeBootstrap] component rendering');
+
+    return (
+        <>
+            <div data-tb-rendered="true" style={{ display: 'none' }} />
+            <ScriptLoader pathname={pathname} loaded={loaded} />
+        </>
+    );
+}
+
+function ScriptLoader({ pathname, loaded }: { pathname: string; loaded: React.MutableRefObject<boolean> }) {
+    console.log('[ScriptLoader] mounted, pathname:', pathname);
+    
     useEffect(() => {
-        let hydrated = loaded.current;
+        console.log('[ScriptLoader] effect mounted');
+        let mounted = true;
         (async () => {
-            for (const src of LIBRARIES) {
-                await loadScript(src);
+            try {
+                for (const src of LIBRARIES) {
+                    if (!mounted) return;
+                    await loadScript(src);
+                }
+                if (!mounted) return;
+                loaded.current = true;
+                initSwipers();
+                initThemeTheme();
+            } catch (e) {
+                console.error('[ThemeBootstrap] init failed:', e);
             }
-            loaded.current = true;
-            initSwipers();
-            initThemeTheme();
-            hydrated = false;
         })();
+        return () => { mounted = false; };
     }, []);
 
     useEffect(() => {
+        console.log('[ScriptLoader] pathname changed', pathname);
         if (!loaded.current) return;
         const t = setTimeout(() => {
             initSwipers();
