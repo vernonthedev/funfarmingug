@@ -242,7 +242,7 @@ function HomeHeader({ pathname }: { pathname: string }) {
                 <div className="image">
                     <img
                         className="lazyload"
-                        src="/images/item/yellow-field.jpg"
+                        src="/images/funfarm/funfarm_n27.png"
                         alt=""
                     />
                 </div>
