@@ -72,6 +72,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <link rel="shortcut icon" href="favicon.ico" />
                 <link rel="apple-touch-icon-precomposed" href="/logo.png" />
                 <link rel="stylesheet" href="/site.css" />
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `window.__MAPBOX_ACCESS_TOKEN__ = ${JSON.stringify(
+                            process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN || ''
+                        )};`,
+                    }}
+                />
             </head>
             <body className="counter-scroll-2">
                 <div id="wrapper" className="wrapper-home-2">
