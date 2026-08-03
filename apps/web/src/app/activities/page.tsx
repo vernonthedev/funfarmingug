@@ -11,7 +11,7 @@ export default function Activities() {
     return (
         <>
             <PageTitle
-                image="/images/page-title/our-event.jpg"
+                image="/images/funfarm/funfarm_n21.png"
                 subTitle="Farm Games, Tours & Team Events"
                 title="Farm Activities"
                 pageClass="page-our-events"

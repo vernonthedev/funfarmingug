@@ -33,7 +33,7 @@ export function FarmLoungePage() {
                             <div className="image-wrap">
                                 <div className="image relative">
                                     <img
-                                        src="/images/section/s-orther.jpg"
+                                        src="/images/funfarm/funfarm_n26.png"
                                         alt="Fun Farming Uganda Lounge"
                                         className="lazyload"
                                     />
@@ -69,21 +69,26 @@ export function FarmLoungePage() {
                                         In The Natural World
                                     </p>
                                     <p className="text">
-                                        Located on the top floor of the house,
-                                        with west-facing views of the Sicili
-                                        Valley, the farm lounge is a modern
-                                        haven for weary travellers. Sip on a
-                                        coffee while you watch the sun set over
-                                        the berry and plum trees - or keep it
-                                        simple and just take the world in.
+                                        Nestled amidst picturesque hills, our farm
+                                        lounge offers weary travellers a sanctuary
+                                        of relaxation and rejuvenation. Imagine
+                                        sipping on a freshly brewed cup of coffee
+                                        or indulging in a refreshing glass of
+                                        lemonade, all while soaking in panoramic
+                                        views of the rolling countryside from our
+                                        cozy veranda.
                                     </p>
                                     <p className="text">
-                                        A great all-rounder for those looking to
-                                        celebrate, relax or simply recharge
-                                        before the journey home. Whether that is
-                                        by the warm fire on a chilly evening or
-                                        out on the deck in the warm late
-                                        afternoon sun.
+                                        With comfortable seating areas, ambient
+                                        lighting and a welcoming atmosphere, our
+                                        lounge is a haven where visitors can
+                                        unwind, recharge and connect with nature.
+                                        Whether you are admiring the sunset over
+                                        the horizon or simply basking in the
+                                        tranquility of rural life, the farm
+                                        lounge promises an experience that soothes
+                                        the soul and leaves you feeling refreshed
+                                        and invigorated.
                                     </p>
                                 </div>
                             </div>
@@ -197,7 +202,7 @@ export function FarmLoungePage() {
                             <div className="image-wrap">
                                 <div className="image">
                                     <img
-                                        src="/images/section/s-farm-2.jpg"
+                                        src="/images/funfarm/funfarm_n27.png"
                                         alt="Farm Lounge Facilities Fun Farming Uganda"
                                         className="lazyload"
                                     />

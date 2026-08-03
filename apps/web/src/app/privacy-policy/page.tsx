@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
     return (
         <>
             <PageTitle
-                image="/images/page-title/about-us.jpg"
+                image="/images/funfarm/funfarm_n17.png"
                 subTitle="How We Handle Your Data"
                 title="Privacy Policy"
                 pageClass="page-privacy"

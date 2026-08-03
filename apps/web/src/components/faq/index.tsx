@@ -1,3 +1,5 @@
+import { SITE } from '@/lib/site';
+
 const FAQS = [
     {
         q: 'What clothes should I wear?',
@@ -47,59 +49,132 @@ const FAQS = [
 
 export function FaqPage() {
     return (
-        <div className="main-content pb-0 pt-93">
-            <section className="s-faq-page">
-                <div className="tf-container w-1290">
+        <div className="main-content page-faq">
+            <div className="wg-tabs style-4">
+                <div className="tf-container">
                     <div className="row">
-                        <div className="col-lg-12">
-                            <div className="heading-section text-center style-4 mb-50">
-                                <div className="img-item">
-                                    <img
-                                        src="/images/item/rice-plant-2.png"
-                                        alt=""
-                                    />
-                                </div>
-                                <p className="sub-title">
-                                    Frequently Asked Questions
-                                </p>
-                                <p className="title text-anime-style-1">
-                                    Everything You Need To Know
-                                </p>
-                            </div>
-                            <div
-                                className="tf-accordion accordion"
-                                id="accordionFaq"
-                            >
-                                {FAQS.map((f, i) => (
-                                    <div className="accordion-item" key={i}>
-                                        <h2 className="accordion-header">
-                                            <button
-                                                className={`accordion-button ${i === 0 ? '' : 'collapsed'}`}
-                                                type="button"
-                                                data-bs-toggle="collapse"
-                                                data-bs-target={`#faqCollapse${i}`}
-                                                aria-expanded={i === 0}
-                                                aria-controls={`faqCollapse${i}`}
+                        <div className="col-lg-4">
+                            <div className="tf-sidebar-2">
+                                <div className="sidebar-item-2 list-tab has-bg-3 mb-40">
+                                    <ul className="menu-tab">
+                                        <li className="item active">
+                                            <a
+                                                href="javascript:void(0)"
+                                                className="btn-tab"
                                             >
-                                                {f.q}
-                                            </button>
-                                        </h2>
+                                                General Questions
+                                            </a>
+                                        </li>
+                                        <li className="item">
+                                            <a
+                                                href="javascript:void(0)"
+                                                className="btn-tab"
+                                            >
+                                                Activities &amp; Tours
+                                            </a>
+                                        </li>
+                                        <li className="item">
+                                            <a
+                                                href="javascript:void(0)"
+                                                className="btn-tab"
+                                            >
+                                                Bookings &amp; Payments
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className="sidebar-item-2 has-bg-1 infor-contact">
+                                    <p className="sub font-snowfall fs-30">
+                                        Fun Farming Uganda <br />
+                                        Where Agriculture Meets Adventure!
+                                    </p>
+                                    <p className="text">
+                                        Have more questions? Give us a call, drop
+                                        us an email or take the bull by the horns
+                                        and visit the farm.
+                                    </p>
+                                    <ul className="contact-list">
+                                        <li>
+                                            <i className="fa-solid fa-location-dot fs-17"></i>
+                                            <p className="address">
+                                                {SITE.address}
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <i className="fa-solid fa-phone"></i>
+                                            <p className="phone-number fs-15">
+                                                Call us: {SITE.phone}
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <i className="icon-package-box"></i>
+                                            <p className="email fs-15">
+                                                Mail: {SITE.email}
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <i className="fa-solid fa-clock"></i>
+                                            <p className="time-open fs-15">
+                                                Mon - Sat: 8.00am - 18.00pm
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-8">
+                            <div className="content" id="content">
+                                <h2 className="title font-worksans fw-7">
+                                    Do you have a few questions? <br />
+                                    Check out our popular questions.
+                                </h2>
+                                <p className="text">
+                                    Everything you need to know about visiting
+                                    Fun Farming Uganda, our activities and how
+                                    bookings work.
+                                </p>
+                                <div className="widget-content-tab">
+                                    <div className="widget-content-inner active">
                                         <div
-                                            id={`faqCollapse${i}`}
-                                            className={`accordion-collapse collapse ${i === 0 ? 'show' : ''}`}
-                                            data-bs-parent="#accordionFaq"
+                                            className="tf-accordion accordion"
+                                            id="accordionExample"
                                         >
-                                            <div className="accordion-body">
-                                                {f.a}
-                                            </div>
+                                            {FAQS.map((f, i) => (
+                                                <div
+                                                    className="accordion-item"
+                                                    key={i}
+                                                >
+                                                    <h2 className="accordion-header">
+                                                        <button
+                                                            className={`accordion-button ${i === 0 ? '' : 'collapsed'}`}
+                                                            type="button"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target={`#faqCollapse${i}`}
+                                                            aria-expanded={i === 0}
+                                                            aria-controls={`faqCollapse${i}`}
+                                                        >
+                                                            {f.q}
+                                                        </button>
+                                                    </h2>
+                                                    <div
+                                                        id={`faqCollapse${i}`}
+                                                        className={`accordion-collapse collapse ${i === 0 ? 'show' : ''}`}
+                                                        data-bs-parent="#accordionExample"
+                                                    >
+                                                        <div className="accordion-body">
+                                                            {f.a}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
                                         </div>
                                     </div>
-                                ))}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     );
 }

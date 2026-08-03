@@ -11,7 +11,7 @@ export default function FarmLounge() {
     return (
         <>
             <PageTitle
-                image="/images/page-title/our-service.jpg"
+                image="/images/funfarm/funfarm_n16.png"
                 subTitle="Five Star Housing & Facilities"
                 title="Our Lounge Facilities"
                 pageClass="page-our-service"

@@ -2,19 +2,19 @@ import Link from 'next/link';
 
 const EVENTS = [
     {
-        image: '/images/widget/our-event-1.jpg',
+        image: '/images/funfarm/funfarm_n5.png',
         title: 'Board Games',
         text: 'A favourite for kids and grown-ups alike. Gather around for farmhouse fun while you compete in friendly board games under the trees.',
         priceBadge: <span className="free">Most Popular</span>,
     },
     {
-        image: '/images/widget/our-event-2.jpg',
+        image: '/images/funfarm/funfarm_n6.png',
         title: 'Farm Kitchen',
         text: 'Roll up your sleeves in our open farm kitchen. Cook, bake and taste fresh produce picked right from the fields around you.',
         priceBadge: <span className="free">Free!</span>,
     },
     {
-        image: '/images/widget/our-event-3.jpg',
+        image: '/images/funfarm/funfarm_n16.png',
         title: 'Team Building',
         text: 'Bring your colleagues and strengthen your bond with challenges, obstacle courses and shared adventures across the farm.',
         priceBadge: <span className="free">Fun</span>,
@@ -54,7 +54,7 @@ export function ActivitiesPage() {
                             <div className="video-wrap">
                                 <img
                                     className="mw-unset"
-                                    src="/images/section/s-farm.jpg"
+                                    src="/images/funfarm/funfarm_n18.png"
                                     alt=""
                                 />
                                 <a
@@ -232,7 +232,7 @@ export function ActivitiesPage() {
                     <div className="image-wrap">
                         <div className="image">
                             <img
-                                src="/images/section/s-farm-2.jpg"
+                                src="/images/funfarm/funfarm_n20.png"
                                 alt=""
                                 className="lazyload tf-animate-2"
                             />

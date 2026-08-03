@@ -11,7 +11,7 @@ export default function BlogIndexPage() {
     return (
         <>
             <PageTitle
-                image="/images/page-title/blog-full-w.jpg"
+                image="/images/funfarm/funfarm_n13.png"
                 subTitle="News & Stories"
                 title="Blog"
                 pageClass="page-blog"

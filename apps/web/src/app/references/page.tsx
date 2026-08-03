@@ -11,8 +11,8 @@ export default function References() {
     return (
         <>
             <PageTitle
-                image="/images/page-title/our-commitments.jpg"
-                subTitle="What Our Visitors Say"
+                image="/images/funfarm/funfarm_n18.png"
+                subTitle="Our Farm Ambassadors Say"
                 title="Our References"
                 pageClass="page-our-references"
                 crumbs={[{ label: 'References' }]}

@@ -11,7 +11,7 @@ export default function GetSupport() {
     return (
         <>
             <PageTitle
-                image="/images/page-title/contact-us.jpg"
+                image="/images/funfarm/funfarm_n24.png"
                 subTitle="Contact The Support Team"
                 title="Get Support"
                 pageClass="page-support"

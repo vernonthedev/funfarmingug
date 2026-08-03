@@ -11,7 +11,7 @@ export default function Faq() {
     return (
         <>
             <PageTitle
-                image="/images/page-title/faq.jpg"
+                image="/images/funfarm/funfarm_n26.png"
                 subTitle="Answers To Common Questions"
                 title="Frequently Asked Questions"
                 pageClass="page-faq"

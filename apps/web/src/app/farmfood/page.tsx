@@ -11,7 +11,7 @@ export default function FarmFood() {
     return (
         <>
             <PageTitle
-                image="/images/page-title/our-commitments.jpg"
+                image="/images/funfarm/funfarm_n13.png"
                 subTitle="Fresh From The Farm To Your Plate"
                 title="Our FarmFood"
                 pageClass="page-our-commitments"

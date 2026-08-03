@@ -31,7 +31,7 @@ export default async function BlogDetailPageWrapper({
     return (
         <>
             <PageTitle
-                image="/images/page-title/blog-full-w.jpg"
+                image="/images/funfarm/funfarm_n13.png"
                 subTitle="Blog"
                 title={post.title}
                 pageClass="page-blog-single"

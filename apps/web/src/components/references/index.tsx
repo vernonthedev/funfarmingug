@@ -1,149 +1,167 @@
 const REVIEWS = [
     {
-        location: 'Nakasero',
+        name: 'Lieve',
+        location: 'at FunFarm Nakasero',
         points: 10,
-        headline: 'A Farmtastic time!!',
-        text: 'We were a group of 30 from ... which all of us enjoyed so much. The farm is well kept, the food were delicious, the staff is incredibly helpful, activities are great and exciting. We spent the entire day laughing and having a great time. We would definitely recommend this to everyone, it’s a must visit!',
+        headline: 'Top team building thanks to David and Joseph',
+        text: 'Pouring downpour. And there the cozy warm barn waited with coffee and a warm welcome. We were very happy that there was a partial switch to a winter program. It really was a great day, a bit of competition but not too much. The atmosphere was good. The games were challenging but not TOO. Everyone could participate. The meal was also tasty and more than sufficient.',
     },
     {
-        location: 'FunFarm Nakasero',
-        points: 10,
-        date: '2022-08-14',
-        headline: 'Team building event',
-        text: 'We had a team building event at the FunFarm. The activity was well organized and the staff were friendly and professional. We highly recommend! We went with 30 people and everyone enjoyed it.',
-    },
-    {
-        location: 'Nakasero',
-        points: 10,
-        headline: 'A farmtastic day!!',
-        text: 'We were a group of 40 and enjoyed a great day of activities, food and fun. The staff is friendly and helpful, and the place is clean and well maintained. Highly recommended for a group day trip.',
-    },
-    {
-        location: 'FunFarm Nakasero',
-        points: 10,
-        date: '2022-08-06',
-        headline: 'Wonderful team outing',
-        text: 'Funfarming is the perfect way to bring a team together. We laughed, played games and enjoyed the fresh air. Everything was well organized from start to finish. Thank you for a wonderful day!',
-    },
-    {
-        location: 'Nakasero',
-        points: 10,
-        date: '2022-08-02',
-        headline: 'Best day on the farm',
-        text: 'What a hidden gem! Beautiful surroundings, delicious food and endless fun. Our family had the best time and we can not wait to come back.',
-    },
-    {
-        location: 'FunFarming Nakasero',
-        points: 9,
-        date: '2022-07-25',
-        headline: 'Great experience overall',
-        text: 'A well run farm with many things to see and do. The team was welcoming and the activities kept everyone busy. Truly a memorable day out.',
-    },
-    {
-        location: 'Nakasero',
-        points: 8,
-        date: '2022-07-18',
-        headline: 'Nice day out',
-        text: 'Pleasant farm visit with friendly staff. The animals and the green scenery were the highlight. A good escape from the city.',
-    },
-    {
-        location: 'FunFarming Nakaseke',
-        points: 10,
-        headline: 'Excellent farm visit',
-        text: 'From the organic farm produce to the warm welcome, everything about Fun Farming Uganda was excellent. Our team loved every minute.',
-    },
-    {
-        location: 'FunFarm Nakasero',
-        points: 10,
-        headline: 'Perfect team building',
-        text: 'The activities were well thought out and the staff kept everyone laughing. Highly recommend for company team building events.',
-    },
-    {
-        location: 'Nakasero',
-        points: 9,
-        headline: 'Great farm experience',
-        text: 'We everyone from the team had a great time. Good food, open space and wonderful organization. Highly recommended.',
-    },
-    {
-        location: 'FunFarming Nakasero',
-        points: 10,
-        headline: 'Fun for all ages',
-        text: 'Whether with family, friends or colleagues, there is something for everyone. The kids loved the animals and we loved the peace.',
-    },
-    {
+        name: 'Matovu Divo',
         location: 'Nakasero Fun Farming Site',
         points: 10,
-        headline: 'Everything was perfect',
-        text: 'A beautiful farm with passionate people. From the moment we arrived we were made to feel at home. A truly enjoyable experience.',
+        headline: 'Despite the changeable weather, an absolutely sunny team building experience.',
+        text: 'Delicious breakfast served with love (including bacon and eggs). Original assignments, enthusiastically supervised. Delicious lunch (BBQ) and very quick service, always with a smile. If you are looking for something different in the Savannah, in other words an original team activity, this is the place to be!',
     },
     {
-        location: 'FunFarming Nakasero',
+        name: 'Nantume Mariam',
+        location: 'at FunFarming Nakasero',
         points: 8,
-        headline: 'Pleasant break',
-        text: 'A relaxing day out where we could unwind and connect with nature. The farm is well cared for and the food is tasty.',
+        headline: 'Fun day full of collaboration and activities',
+        text: 'I enjoyed the day. The activities were very different, so you had to think and be active. The cooperation within our group was good, which meant that the roles could be divided properly. Every game was easy to complete within the set times.',
     },
     {
-        location: 'Nakasero',
-        points: 9,
-        headline: 'Thanks for the memories',
-        text: 'We had so much fun that we did not want to leave. The organisation, the people and the food made it a perfect outing.',
+        name: 'Lawrence Kivumbi',
+        location: 'Nakasero FunFarming Site',
+        points: 8,
+        headline: 'super good teambuilding',
+        text: 'Very fun games where both trust and cooperation were discussed. Location was also very nice.',
     },
     {
-        location: 'FunFarm',
+        name: 'Jessy Evans',
+        location: 'Nakasero Fun Farming Site',
+        points: 8,
+        headline: 'It was a super fun and well organized day',
+        text: 'It was a super fun day. Activities were varied and everything ran smoothly from start to finish.',
+    },
+    {
+        name: 'Leila Katushabe',
+        location: 'at FunFarming Nakasero',
         points: 10,
-        headline: 'Amazing farm day!',
-        text: 'Highly recommended. The team was amazing, the place clean and the experiences unforgettable. We will definitely be back.',
+        headline: 'Pheno-meuh-naal!',
+        text: 'We came to FarmFun for a mini team building with our partners, and it was great! Everything was arranged with care and dedication, and it was clear that all employees do this with heart and soul. The cozy area for reception and lunch provided the necessary rest between the active farm games. Breakfast and lunch were also excellent. Afterwards I received very enthusiastic feedback from our partners, so... mission accomplished! By the way, the puns throughout the day and in all communication are the icing on the cake for me - love it :)',
     },
     {
+        name: 'Lubwama Enock',
         location: 'Fun Farming Uganda',
-        points: 9,
-        headline: 'Great choice',
-        text: 'We chose the best farm for our trip and it did not disappoint. The between vegetables and cows made the visit authentic.',
-    },
-    {
-        location: 'Nakasero',
         points: 10,
-        headline: 'Calming experience',
-        text: 'The perfect place to disconnect and enjoy the sky, the green and the fresh air. The staff went above and beyond for us.',
+        headline: 'A staff day you will never forget',
+        text: 'We had a farmtastic staff day. The games are fun and vary from making puzzles to beating your colleague to a pulp with a bag of hay. In addition to the games and enthusiastic guidance, the farm is also located in the beautiful countryside and there are more than enough opportunities to take a break, have a nice drink or enjoy one of the local products. We enjoyed it for a while :) Highly recommended! P.S.: The day was made just a little bit better by the cute kittens on the farm.',
     },
     {
-        location: 'FunFarming Nakaseke',
+        name: 'Wendy Martha',
+        location: 'at FunFarming Uganda',
+        points: 10,
+        headline: 'Certainly among the top team building events of my career!',
+        text: 'The farm itself: very well maintained, beautiful location with tasteful design of the meeting place where lunch is also served, with a beautiful view of the green. Very varied assignments, sometimes thinking, sometimes more physical effort, some of which in the stables themselves next to the cows or calves so that we were still reminded of the farm. The whole thing is kept accessible so that everyone can feel at ease, team spirit is central. Guidance top! The team building is perfectly adapted to the group.',
+    },
+    {
+        name: 'Joshua Mulonge',
+        location: 'at FunFarming Uganda',
+        points: 9,
+        headline: 'Super fun afternoon with a very smooth and pleasant reception',
+        text: 'Been twice already. Pleasant people, fun games, super cool concept. Definitely recommended for other groups.',
+    },
+    {
+        name: 'Lillian Mbabazi',
+        location: 'at FunFarming Uganda',
+        points: 9,
+        headline: 'fun team building, something for everyone',
+        text: 'A fun and engaging day that gave our team plenty to talk about. Great games, great people and a beautiful setting.',
+    },
+    {
+        name: 'Nalule Esther',
+        location: 'at FunFarming Uganda',
+        points: 10,
+        headline: 'COW-tastic',
+        text: 'It was well organised, clear, fun and created a great team spirit and, above all, lots of funny moments! The whole team had fun!',
+    },
+    {
+        name: 'Cindy Sanyu',
+        location: 'at Funfarming Uganda',
+        points: 10,
+        headline: 'COW fantastic afternoon and evening!',
+        text: 'Team building was very successful: super fun games, the nicest and most fantastic supervisors, very nice farm: very well kept, clean, very tasty BBQ and a fun "after party" with a very nice message for our specific group! A TOP team building is an understatement!',
+    },
+    {
+        name: 'Marion Nalwoga',
+        location: 'at FunFarming Uganda',
+        points: 10,
+        headline: 'Very nice team building day!',
+        text: 'Immaculate farm where hundreds of cows and 2 wonderful farmers gave us an unforgettable afternoon with our team. Challenging assignments, crazy games that really gave us a strong feeling together. This was followed by a nice BBQ.',
+    },
+    {
+        name: 'Yolanda Vicky',
+        location: 'at FunFarming Uganda',
+        points: 10,
+        headline: 'super cool day, really what team building should be!',
+        text: 'Top atmosphere that you convey, games that ensure that you help each other, need each other, had a good laugh and a lot of fun. That is only possible if the atmosphere is great with you!! Big thanks.',
+    },
+    {
+        name: 'William Matuni',
+        location: 'at Funfarming Uganda',
+        points: 10,
+        headline: 'Fantastic!!! Best team building ever!!!',
+        text: 'Worth repeating. Great guidance and fun, funny activities!!!',
+    },
+    {
+        name: 'Stefanie',
+        location: 'at FunFarming Uganda',
+        points: 10,
+        headline: 'Unforgettable day',
+        text: 'Best team building in years!',
+    },
+    {
+        name: 'Christine',
+        location: 'at FunFarming Uganda',
+        points: 10,
+        headline: 'Fun, challenging, well-cared for, competitive',
+        text: 'Fun, and good collaboration with the whole group.',
+    },
+    {
+        name: 'Hilde',
+        location: 'at FunFarming Uganda',
+        points: 9,
+        headline: 'super experience!',
+        text: 'It was a great experience, well organised, fun activities.',
+    },
+    {
+        name: 'Joe Mutambuza',
+        location: 'at FunFarming Uganda',
+        points: 9,
+        headline: 'Wow! What great team building!',
+        text: 'We went for the FunFarming Plus package. The games were explained very well, the setting was very nice and the room where the refreshments and drinks were also available was very neat with modern equipment and furnishings. The team building was a wonderful mix of thinking and doing. To be repeated. Different location or different games.',
+    },
+    {
+        name: 'Anjo lamers',
+        location: 'at FunFarming Uganda',
         points: 8,
-        headline: 'Green and peaceful',
-        text: 'A beautiful green space with friendly people and delicious organic food. A wonderful place to spend the day.',
+        headline: 'Awesome',
+        text: 'Fun games, good organization, the food is also delicious.',
     },
     {
-        location: 'Nakasero',
+        name: 'Riena Williams',
+        location: 'at FunFarming',
         points: 10,
-        headline: 'Magical experience!',
-        text: 'We truly enjoyed every moment of our stay. Beautiful. The farm is kept with great care and the activities were fun.',
+        headline: 'Awesome!!!!',
+        text: 'A very nice day full of variety and fantastic guidance. We were pampered by the two ladies who guided us through the assignments.',
     },
     {
-        location: 'FunFarm Nakasero',
-        points: 9,
-        headline: 'Worth every cent',
-        text: 'Everything was well worth it. Organised, clean and friendly with delightful racing up for the whole family.',
-    },
-    {
-        location: 'Nakasero',
+        name: 'David Mitala',
+        location: 'at FunFarming Uganda',
         points: 10,
-        headline: 'Perfect escape',
-        text: 'We celebrated with team and everyone was thrilled. The green hills, fresh air and warm welcome made our day magical.',
-    },
-    {
-        location: 'FunFarming Uganda',
-        points: 10,
-        headline: 'A must farm visit',
-        text: 'This is easily one of the best places to unwind. Nature, animals, food and friendliness all in one beautiful space.',
+        headline: 'Wonderful, relaxed, hilarious team building day among the cows :-)',
+        text: 'Super nice creative assignments, laughed a lot, gave everything with colleagues and had a very tasty meal. Nice relaxing environment, which ensures that you have a fulfilled day!',
     },
 ];
 
 const AVATARS = [
-    '/images/widget/author-comment.jpg',
-    '/images/section/customer-say-2.jpg',
-    '/images/section/customer-say-3.jpg',
-    '/images/section/customer-say-4.jpg',
-    '/images/widget/author.jpg',
+    '/images/funfarm/david1.jpg',
+    '/images/funfarm/david2.jpg',
+    '/images/funfarm/Farm-staff.jpeg',
+    '/images/funfarm/david3.jpg',
+    '/images/funfarm/david4.jpg',
+    '/images/funfarm/david5.jpg',
 ];
 
 function Stars({ points }: { points: number }) {
@@ -183,12 +201,11 @@ export function ReferencesPage() {
                                         />
                                     </div>
                                     <p className="sub-title">
-                                        Testimonials From People Who Have
-                                        Experienced It
+                                        Listen And Read All The Great Reviews
                                     </p>
                                 </div>
                                 <p className="title text-anime-style-1">
-                                    What Our Visitors Say
+                                    Our Farm Ambassadors Say
                                 </p>
                             </div>
                         </div>
@@ -226,6 +243,9 @@ export function ReferencesPage() {
                                             </div>
                                             <div className="infor">
                                                 <div className="name fw-7 text-upper">
+                                                    {r.name}
+                                                </div>
+                                                <div className="location fs-13">
                                                     {r.location}
                                                 </div>
                                             </div>

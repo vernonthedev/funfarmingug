@@ -1,18 +1,18 @@
 import Link from 'next/link';
 
 const BREEDS = [
-    { image: '/images/widget/gallery-item-1.jpg', label: 'Goat Breed' },
-    { image: '/images/widget/gallery-item-2.jpg', label: 'Goat Breed' },
-    { image: '/images/widget/gallery-item-3.jpg', label: 'Goat Breed' },
-    { image: '/images/widget/gallery-item-4.jpg', label: 'Birds' },
-    { image: '/images/widget/gallery-item-5.jpg', label: 'Goat Breed' },
-    { image: '/images/widget/gallery-item-6.jpg', label: 'Goat Breeds' },
-    { image: '/images/widget/gallery-item-7.jpg', label: 'Goat Breeds' },
-    { image: '/images/widget/gallery-item-8.jpg', label: 'Goat Breed' },
-    { image: '/images/widget/gallery-item-9.jpg', label: 'Ducks' },
-    { image: '/images/widget/box-portfolio-1.jpg', label: 'Goat Breed' },
-    { image: '/images/widget/box-portfolio-2.jpg', label: 'Birds' },
-    { image: '/images/widget/box-portfolio-3.jpg', label: 'Birds' },
+    { image: '/images/funfarm/funfarm_n1.png', label: 'Goat Breed' },
+    { image: '/images/funfarm/funfarm_n2.png', label: 'Goat Breed' },
+    { image: '/images/funfarm/funfarm_n3.png', label: 'Goat Breed' },
+    { image: '/images/funfarm/funfarm_n4.png', label: 'Birds' },
+    { image: '/images/funfarm/funfarm_n5.png', label: 'Goat Breed' },
+    { image: '/images/funfarm/funfarm_n6.png', label: 'Goat Breeds' },
+    { image: '/images/funfarm/funfarm_n7.png', label: 'Goat Breeds' },
+    { image: '/images/funfarm/funfarm_n9.png', label: 'Goat Breed' },
+    { image: '/images/funfarm/funfarm_n8.png', label: 'Ducks' },
+    { image: '/images/funfarm/funfarm_n10.png', label: 'Goat Breed' },
+    { image: '/images/funfarm/funfarm_n11.png', label: 'Birds' },
+    { image: '/images/funfarm/funfarm_n12.png', label: 'Birds' },
 ];
 
 const BBQ_POINTS = [
@@ -56,7 +56,7 @@ export function FarmFoodPage() {
                 </div>
                 <div className="s-img-item item-1">
                     <img
-                        src="/images/section/Our-commitment.jpg"
+                        src="/images/funfarm/tray-potatoes.jpg"
                         alt=""
                         className="lazyload"
                     />
@@ -73,7 +73,7 @@ export function FarmFoodPage() {
                             <div className="image-wrap">
                                 <div className="image">
                                     <img
-                                        src="/images/section/s-farm.jpg"
+                                        src="/images/funfarm/tray-potatoes.jpg"
                                         alt="Food Served at Fun Farming Uganda"
                                         className="lazyload"
                                     />
@@ -224,7 +224,7 @@ export function FarmFoodPage() {
                             <div className="image-wrap">
                                 <div className="image">
                                     <img
-                                        src="/images/section/s-happy.jpg"
+                                        src="/images/funfarm/bbq.jpg"
                                         alt="BBQ bakken at Fun Farming Uganda"
                                         className="lazyload"
                                     />

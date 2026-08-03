@@ -13,7 +13,7 @@ export const POSTS: BlogPost[] = [
         slug: 'organic-farming-in-uganda',
         title: 'Why Organic Farming is Taking Root in Uganda',
         date: '2024-02-10',
-        image: '/images/blog/blog-1.jpg',
+        image: '/images/funfarm/funfarm_n2.png',
         author: 'Sarah Nalwoga',
         excerpt:
             'Organic farming is transforming smallholder livelihoods across Uganda, delivering healthier produce and healthier soils.',
@@ -29,7 +29,7 @@ export const POSTS: BlogPost[] = [
         slug: 'goat-breeding-best-practices',
         title: 'Raising Healthy Goats: Breeding Practices that Work',
         date: '2024-01-26',
-        image: '/images/blog/blog-2.jpg',
+        image: '/images/funfarm/Male-goat.jpeg',
         author: 'Daniel Okello',
         excerpt:
             'From feeding to herd management, these goat breeding practices keep our flocks healthy, productive and resilient.',
@@ -45,7 +45,7 @@ export const POSTS: BlogPost[] = [
         slug: 'backyard-poultry-profit',
         title: 'Backyard Poultry: A Simple Path to Steady Income',
         date: '2024-01-05',
-        image: '/images/blog/blog-3.jpg',
+        image: '/images/funfarm/funfarm_n5.png',
         author: 'Sarah Atim',
         excerpt:
             'A few dozen hens can transform family finances. Here is how backyard poultry is changing lives on our farm.',
@@ -61,7 +61,7 @@ export const POSTS: BlogPost[] = [
         slug: 'banana-plantation-care',
         title: 'Caring for a Banana Plantation Through the Seasons',
         date: '2024-03-02',
-        image: '/images/blog/blog-4.jpg',
+        image: '/images/funfarm/matooke.webp',
         author: 'Sarah Mugisha',
         excerpt:
             'The banana is the backbone of our economy. Learn how careful plantation management keeps our bunches sweet and bountiful.',
@@ -77,7 +77,7 @@ export const POSTS: BlogPost[] = [
         slug: 'youth-agro-project',
         title: 'Empowering Youth Through Our Agro Entrepreneurship Project',
         date: '2024-03-18',
-        image: '/images/widget/our-event-1.jpg',
+        image: '/images/funfarm/funfarm_n16.png',
         author: 'Peter Senkubuge',
         excerpt:
             'Our youth agro project turns the farm into a classroom, giving young members practical skills and confident futures.',
@@ -93,7 +93,7 @@ export const POSTS: BlogPost[] = [
         slug: 'farm-tours-at-fun-farming-uganda',
         title: 'A Day on the Farm: Educational Tours at Fun Farming Uganda',
         date: '2024-02-24',
-        image: '/images/widget/our-event-2.jpg',
+        image: '/images/funfarm/funfarm_n6.png',
         author: 'Grace Nakato',
         excerpt:
             'Step onto our farm to see organic crops, goats and poultry up close. Farm tours are the easiest way to learn what we do.',
