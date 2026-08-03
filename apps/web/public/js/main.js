@@ -37,21 +37,21 @@
 
     var openNavMobile = () => {
         if ($(".header").hasClass("header")) {
-            $(".mobile-button").on("click", () => {
+            $(".mobile-button").off("click").on("click", () => {
                 $(".mobile-nav-wrap").toggleClass("active");
                 $("body").toggleClass("no-scroll");
             });
 
-            $(".overlay-mobile-nav").on("click", () => {
+            $(".overlay-mobile-nav").off("click").on("click", () => {
                 $(".mobile-nav-wrap").toggleClass("active");
                 $("body").toggleClass("no-scroll");
             });
-            $(".mobile-nav-close").on("click", () => {
+            $(".mobile-nav-close").off("click").on("click", () => {
                 $(".mobile-nav-wrap").toggleClass("active");
                 $("body").toggleClass("no-scroll");
             });
 
-            $(document).on("click", ".menu-item-has-children-mobile", function () {
+            $(document).off("click", ".menu-item-has-children-mobile").on("click", ".menu-item-has-children-mobile", function () {
                 var args = { duration: 200 };
                 if ($(this).hasClass("active")) {
                     $(this).children(".sub-menu-mobile").slideUp(args);
