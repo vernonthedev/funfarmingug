@@ -119,18 +119,6 @@ function initSwipers() {
     if (!$ || !Swiper) return;
 
     const defs: Record<string, any> = {
-        '.slider-home-2': {
-            slidesPerView: 1,
-            centeredSlides: true,
-            loop: true,
-            effect: 'fade',
-            speed: 900,
-            navigation: {
-                nextEl: '.btn-slide-home-2.btn-next',
-                prevEl: '.btn-slide-home-2.btn-prev',
-            },
-            autoplay: { delay: 4000, disableOnInteraction: false },
-        },
         '.slider-s-service-2': {
             slidesPerView: 2.7,
             spaceBetween: 30,
@@ -239,13 +227,18 @@ function initSwipers() {
         },
     };
 
+    const initialized = new Set<Element>();
+
     Object.keys(defs).forEach((sel) => {
         const el = document.querySelector(sel);
         if (!el) return;
-        if ((el as any).swiper) {
-            (el as any).swiper.destroy(true, true);
-        }
-        new Swiper(el, defs[sel]);
+        if (initialized.has(el)) return;
+        initialized.add(el);
+        new Swiper(el, {
+            ...defs[sel],
+            observer: true,
+            observeParents: true,
+        });
     });
 }
 

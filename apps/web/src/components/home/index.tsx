@@ -1,45 +1,5 @@
 import Link from 'next/link';
-
-const HERO_VIDEO =
-    'https://cdn.coverr.co/videos/coverr-a-tractor-fruit-the-field-4513/1080p.mp4';
-
-const HERO_SLIDES = [
-    {
-        key: 'video',
-        media: (
-            <div className="image overflow-hidden video-bg">
-                <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    poster="/images/page-title/home-2-1.jpg"
-                >
-                    <source src={HERO_VIDEO} type="video/mp4" />
-                </video>
-                <img
-                    src="/images/page-title/home-2-1.jpg"
-                    data-src="/images/page-title/home-2-1.jpg"
-                    alt=""
-                    className="lazyload video-fallback"
-                />
-            </div>
-        ),
-    },
-    {
-        key: 'image',
-        media: (
-            <div className="image overflow-hidden">
-                <img
-                    src="/images/page-title/home-2-2.jpg"
-                    data-src="/images/page-title/home-2-2.jpg"
-                    alt=""
-                    className="lazyload"
-                />
-            </div>
-        ),
-    },
-];
+import { HERO_VIDEO_BG, HERO_VIDEO_POSTER } from '@/lib/site';
 
 function HeroContent() {
     return (
@@ -60,8 +20,8 @@ function HeroContent() {
                 Discover the joy of team events at our farm oasis in Nakaseke
                 District, Uganda.
                 <br />
-                Connect, learn, and share unforgettable moments with a
-                community of enthusiasts.
+                Connect, learn, and share unforgettable moments with a community
+                of enthusiasts.
             </p>
             <Link
                 href="/activities"
@@ -76,47 +36,32 @@ function HeroContent() {
     );
 }
 
-function HeroNav({ direction }: { direction: 'next' | 'prev' }) {
-    return (
-        <div className={`btn-slide-home-2 btn-${direction}`}>
-            <svg
-                version="1.0"
-                xmlns="http://www.w3.org/2000/svg"
-                width="80px"
-                height="20px"
-                viewBox="0 0 80 20"
-                preserveAspectRatio="xMidYMid meet"
-            >
-                <g fill="#ffffff">
-                    {direction === 'next' ? (
-                        <path d="M63 19 c0 -0.5 2.6 -2.4 5.8 -4.2 l5.7 -3.3 -19.5 -0.8 c-11 -0.5 -27.1 -0.5 -37 0.1 -9.6 0.5 -17.7 0.7 -17.9 0.5 -2.4 -1.9 22 -3.5 48.7 -3.1 l25.2 0.3 -4.6 -3.9 c-2.5 -2.1 -4.3 -4 -4 -4.3 0.7 -0.7 14.6 8.9 14.6 10.2 0 1.1 -14.3 9.5 -16.2 9.5 -0.4 0 -0.8 -0.4 -0.8 -1z" />
-                    ) : (
-                        <path d="M7 15.4 c-3.6 -2.4 -6.6 -5 -6.8 -5.7 -0.2 -1.2 13.8 -9.7 16 -9.7 2.4 0 0.2 2.4 -4.9 5.2 l-5.8 3.3 19.5 0.8 c11 0.5 27.1 0.5 37 -0.1 9.6 -0.5 17.7 -0.7 17.9 -0.5 2.4 1.9 -22 3.5 -48.6 3.1 l-25.2 -0.3 4.7 4.2 c6.1 5.5 4.4 5.3 -3.8 -0.3z" />
-                    )}
-                </g>
-            </svg>
-        </div>
-    );
-}
-
 export function Hero() {
     return (
         <div className="page-title-home-2">
             <div className="swiper-container slider-home-2">
-                <div className="swiper-wrapper">
-                    {HERO_SLIDES.map((s) => (
-                        <div className="swiper-slide" key={s.key}>
-                            <div className="slide-home-2">
-                                {s.media}
-                                <div className="content">
-                                    <HeroContent />
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                <div className="slide-home-2">
+                    <div className="image overflow-hidden video-bg">
+                        <video
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            poster={HERO_VIDEO_POSTER}
+                        >
+                            <source src={HERO_VIDEO_BG} type="video/mp4" />
+                        </video>
+                        <img
+                            src={HERO_VIDEO_POSTER}
+                            data-src={HERO_VIDEO_POSTER}
+                            alt=""
+                            className="lazyload video-fallback"
+                        />
+                    </div>
+                    <div className="content">
+                        <HeroContent />
+                    </div>
                 </div>
-                <HeroNav direction="next" />
-                <HeroNav direction="prev" />
             </div>
         </div>
     );
@@ -195,12 +140,10 @@ export function AboutUs() {
                                             />
                                         </div>
                                         <p className="sub-title">
-                                            Welcome to Fun Farming Uganda
+                                            About the Farm
                                         </p>
                                         <p className="title text-anime-style-2">
-                                            What You Plant Now,
-                                            <br />
-                                            You Will Harvest Later
+                                            Welcome to Fun Farming Uganda
                                         </p>
                                     </div>
                                     <p className="text-1 font-snowfall mb-20">

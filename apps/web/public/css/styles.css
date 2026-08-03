@@ -15373,10 +15373,10 @@ i.fs-12 {
 }
 #loading #loading-center .loader-container .wrap-loader .icon {
   position: absolute;
-  bottom: 16px;
+  bottom: 0px;
 }
 #loading #loading-center .loader-container .wrap-loader .icon img {
-  max-width: 50px;
+  max-width: 100%;
 }
 #loading #loading-center .loader-container .loader {
   width: 100px;

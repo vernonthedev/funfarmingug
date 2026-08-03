@@ -1,10 +1,10 @@
 export const SITE = {
     name: 'Fun Farming Uganda',
     tagline: 'Where Agriculture Meets Adventure!',
-    address: 'Prinsengracht 250, 2501016 PM Amsterdam Netherlands',
-    email: 'hello@funfarminguganda.com',
-    phone: '+256 700 123 456',
-    supportEmail: 'support@funfarminguganda.com',
+    address: 'Nakaseke District, Uganda',
+    email: 'hello@funfarmingug.com',
+    phone: '+256 782 345 678',
+    supportEmail: 'info@funfarmingug.com',
     workingHours: 'Mon - Fri: 8.00am - 18.00pm<br/>Sat: 9.00am - 17.00pm',
 };
 
@@ -91,5 +91,5 @@ export const FOOTER_LINKS: { title: string; links: NavLink[] }[] = [
 ];
 
 export const HERO_VIDEO_BG =
-    'https://cdn.coverr.co/videos/coverr-growing-green-plants-1584/1080p.mp4';
+    '/videos/cows.mp4';
 export const HERO_VIDEO_POSTER = '/images/item/yellow-field.jpg';
