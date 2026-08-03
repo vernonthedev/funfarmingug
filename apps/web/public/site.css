@@ -45,6 +45,57 @@
     visibility: visible !important;
 }
 
+/* ---- Mobile nav ---- */
+/* Wide header logos are fed a square badge asset (logo.png) and our global
+   `img { height: auto }` blows them up; force sane, contained sizing. */
+.tf-topbar .logo img,
+.header .logo-site img,
+.header .logo img {
+    height: 50px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+}
+
+/* Mobile drawer logo: keep it small and contained. */
+.mobile-nav-wrap .inner-mobile-nav .logo img {
+    height: 42px;
+    width: auto;
+    max-width: 173px;
+    object-fit: contain;
+}
+
+/* Plain top-level mobile links had no white styling (dark-on-dark). */
+.mobile-nav-wrap .inner-mobile-nav .mobile-main-nav #menu-mobile-menu > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--White);
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.mobile-nav-wrap .inner-mobile-nav .mobile-main-nav #menu-mobile-menu > li > a:hover,
+.mobile-nav-wrap .inner-mobile-nav .mobile-main-nav #menu-mobile-menu > li > a.current {
+    color: var(--Secondary);
+}
+
+/* Sub-links readable on the green drawer. */
+.mobile-nav-wrap .inner-mobile-nav .mobile-main-nav #menu-mobile-menu .sub-menu-mobile .menu-item a {
+    font-size: 16px;
+    color: var(--White);
+}
+
+/* Kill default disc bullets + indents in the drawer. */
+.mobile-nav-wrap .inner-mobile-nav .mobile-main-nav #menu-mobile-menu,
+.mobile-nav-wrap .inner-mobile-nav .mobile-main-nav #menu-mobile-menu .sub-menu-mobile {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
 /* Privacy / policy page */
 .s-terms {
     padding: 40px 0 80px;
