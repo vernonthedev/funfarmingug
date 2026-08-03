@@ -26,13 +26,8 @@ export default function HomePage() {
             <QualityOfLife />
             <WhatWeDo />
             <OurAgriculture />
-            <Projects />
-            <Testimonials />
             <HappyFarm />
-            <BlogPosts />
-            <MeetFarmer />
             <ContactUs />
-            <Partners />
         </>
     );
 }

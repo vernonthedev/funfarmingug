@@ -197,7 +197,7 @@ section {
 html {
   margin-right: 0 !important;
   font-size: 62.5%;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -5680,7 +5680,7 @@ table th {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
   overflow: hidden;
 }
 .page-title .rellax {
@@ -12125,7 +12125,7 @@ i.fs-12 {
   background: url("../images/section/break-page.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 .s-break-page.style-2::before {
   background-color: var(--Bg-14);
@@ -13784,7 +13784,7 @@ i.fs-12 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   padding-top: 185px;
   padding-bottom: 6px;
   z-index: 1;

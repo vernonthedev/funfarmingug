@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { HERO_VIDEO_BG, HERO_VIDEO_POSTER } from '@/lib/site';
+import { HERO_VIDEO_POSTER } from '@/lib/site';
+import { HeroVideo } from '@/components/home/HeroVideo';
 
 function HeroContent() {
     return (
@@ -42,15 +43,7 @@ export function Hero() {
             <div className="swiper-container slider-home-2">
                 <div className="slide-home-2">
                     <div className="image overflow-hidden video-bg">
-                        <video
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            poster={HERO_VIDEO_POSTER}
-                        >
-                            <source src={HERO_VIDEO_BG} type="video/mp4" />
-                        </video>
+                        <HeroVideo />
                         <img
                             src={HERO_VIDEO_POSTER}
                             data-src={HERO_VIDEO_POSTER}
@@ -398,14 +391,14 @@ export function QualityOfLife() {
                             </div>
                             <div className="clip-color-text font-snowfall text-center">
                                 <p className="clip-text-bg-vertical">
-                                    Healthy Life With
+                                    We Offer Customized
                                     <br />
-                                    Fresh Products!
+                                    Advice
                                 </p>
                             </div>
                             <p className="sub font-snowfall fs-30 text-anime-style-1">
-                                We believe that to have good health, clean and
-                                healthy food sources are the key
+                                We Offer Customized Advice for your farm related
+                                concerns, and we are always here to help you.
                             </p>
                             <div className="swiper-container slider-box-icon">
                                 <div className="swiper-wrapper">
@@ -1084,10 +1077,15 @@ export function HappyFarm() {
                                 </div>
                                 <div className="image-wrap">
                                     <img
-                                        src="/images/section/s-hp-farm.png"
-                                        data-src="/images/section/s-hp-farm.png"
+                                        src="/images/funfarm/funfarm_n20.png"
+                                        data-src="/images/funfarm/funfarm_n20.png"
                                         alt=""
+                                        width={600}
+                                        height={700}
                                         className="lazyload"
+                                        style={{
+                                            borderRadius: '20px',
+                                        }}
                                     />
                                 </div>
                                 <div className="img-item item-1">

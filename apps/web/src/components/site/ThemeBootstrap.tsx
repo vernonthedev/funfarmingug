@@ -93,15 +93,27 @@ function initThemeTheme() {
     if ($progress.length > 0) {
         const path = $progress.find('path');
         const length = path[0]?.getTotalLength?.() || 0;
+        let docH = $(document).height();
+        let winH = $(window).height();
+        $(window).on('resize', function () {
+            docH = $(document).height();
+            winH = $(window).height();
+        });
+        let ticking = false;
+        const update = () => {
+            ticking = false;
+            const winScroll = $(window).scrollTop();
+            const height = docH - winH || 1;
+            path.css('stroke-dashoffset', length - (winScroll / height) * length);
+            $progress.toggleClass('active-progress', winScroll > 200);
+        };
         $(window)
             .off('scroll.initgoto')
-            .on('scroll.initgoto', function (this: Window) {
-                const winScroll = $(this).scrollTop();
-                const height = $(document).height() - $(this).height();
-                const scrolled = length - (winScroll / height) * length;
-                path.css('stroke-dashoffset', scrolled);
-                if (winScroll > 200) $progress.addClass('active-progress');
-                else $progress.removeClass('active-progress');
+            .on('scroll.initgoto', () => {
+                if (!ticking) {
+                    ticking = true;
+                    requestAnimationFrame(update);
+                }
             });
         $progress.off('click').on('click', function () {
             $('html, body').animate({ scrollTop: 0 }, 300);
