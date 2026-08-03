@@ -9,10 +9,16 @@ export function HeroVideo() {
     useEffect(() => {
         const el = ref.current;
         if (!el || typeof IntersectionObserver === 'undefined') return;
+
         const io = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    el.play().catch(() => {});
+                    // Try to play with sound first; if the browser blocks
+                    // autoplay with sound, fall back to muted playback.
+                    el.play().catch(() => {
+                        el.muted = true;
+                        el.play().catch(() => {});
+                    });
                 } else {
                     el.pause();
                 }
@@ -20,14 +26,32 @@ export function HeroVideo() {
             { rootMargin: '200px' }
         );
         io.observe(el);
-        return () => io.disconnect();
+
+        // If autoplay ended up muted (browser autoplay policy), unmute on the
+        // first user interaction so the background video has sound.
+        const unmute = () => {
+            el.muted = false;
+            el.play().catch(() => {});
+            window.removeEventListener('click', unmute);
+            window.removeEventListener('keydown', unmute);
+            window.removeEventListener('touchstart', unmute);
+        };
+        window.addEventListener('click', unmute);
+        window.addEventListener('keydown', unmute);
+        window.addEventListener('touchstart', unmute);
+
+        return () => {
+            io.disconnect();
+            window.removeEventListener('click', unmute);
+            window.removeEventListener('keydown', unmute);
+            window.removeEventListener('touchstart', unmute);
+        };
     }, []);
 
     return (
         <video
             ref={ref}
             autoPlay
-            muted
             loop
             playsInline
             preload="metadata"

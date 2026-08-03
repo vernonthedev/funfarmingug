@@ -33,3 +33,89 @@
         min-height: 480px;
     }
 }
+
+/* Keep tf-animate wrappers visible even when their scroll-triggered
+   animate__animated class hasn't been applied yet (e.g. on first paint,
+   reduced motion, or when the scroll animation doesn't fire). Without this,
+   content inside them stays `visibility: hidden` and appears missing. */
+.tf-animate__box,
+.tf-animate__box-2,
+.tf-animate__rotate-left,
+.tf-animate__rotate-right {
+    visibility: visible !important;
+}
+
+/* Privacy / policy page */
+.s-terms {
+    padding: 40px 0 80px;
+}
+
+.s-terms .content-box {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 48px 56px 56px;
+    background: var(--White);
+    border: 1px solid var(--Border);
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(13, 64, 28, 0.06);
+}
+
+.s-terms .content-box .heading-section {
+    margin-bottom: 30px;
+}
+
+.s-terms .content-box p {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--Text-2);
+    margin-bottom: 18px;
+}
+
+.s-terms .content-box h2 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--Text-2);
+    margin: 38px 0 16px;
+}
+
+.s-terms .content-box h3 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--Text-2);
+    margin: 26px 0 12px;
+}
+
+.s-terms .content-box h4 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--Text-2);
+    margin: 22px 0 10px;
+}
+
+.s-terms .content-box ul {
+    padding-left: 20px;
+    margin: 0 0 22px;
+}
+
+.s-terms .content-box ul li {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--Text-2);
+    margin-bottom: 8px;
+    list-style: disc;
+}
+
+.s-terms .content-box a {
+    color: var(--Secondary);
+}
+
+@media (max-width: 767.98px) {
+    .s-terms .content-box {
+        padding: 32px 24px 40px;
+    }
+}

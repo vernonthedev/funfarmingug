@@ -17,7 +17,8 @@ function Definitions() {
                     <strong>Company</strong> (referred to as either &quot;the
                     Company&quot;, &quot;We&quot;, &quot;Us&quot; or
                     &quot;Our&quot; in this Agreement) refers to Fun Farming
-                    Uganda, Butalangu Nakaseke District.
+                    Uganda, Butalangu Town Council, Nakaseke District,
+                    Uganda.
                 </li>
                 <li>
                     <strong>Cookies</strong> are small files that are placed on
@@ -51,11 +52,11 @@ function Definitions() {
                     <strong>Website</strong> refers to Fun Farming Uganda,
                     accessible from{' '}
                     <a
-                        href="https://funfarming@uganda.com"
+                        href="https://funfarminguganda.com"
                         rel="external nofollow noopener"
                         target="_blank"
                     >
-                        https://funfarming@uganda.com
+                        https://funfarminguganda.com
                     </a>
                 </li>
                 <li>
@@ -212,7 +213,7 @@ export function PrivacyPage() {
                                         </p>
                                     </div>
                                 </div>
-                                <p>Last updated: February 09, 2024</p>
+                                <p>Last updated: August 03, 2026</p>
                                 <p>
                                     This Privacy Policy describes our policies
                                     and procedures on the collection, use and
