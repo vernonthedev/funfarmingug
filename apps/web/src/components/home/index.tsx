@@ -540,20 +540,15 @@ export function OurAgriculture() {
                     <div className="row">
                         <div className="col-lg-5">
                             <div className="image-wrap img-hover">
-                                <div className="image hover-item">
+                                <div className="hover-item">
                                     <img
-                                        src="/images/section/s-farm.jpg"
+                                        src="/images/funfarm/funfarm_n21.png"
                                         alt=""
                                         className="lazyload"
+                                        style={{
+                                            borderRadius: '20px',
+                                        }}
                                     />
-                                </div>
-                                <div className="wg-exprerience text-center tf-rotate-back-and-forth">
-                                    <p className="year">5</p>
-                                    <p className="text">
-                                        Years of
-                                        <br />
-                                        Farming Fun
-                                    </p>
                                 </div>
                             </div>
                         </div>

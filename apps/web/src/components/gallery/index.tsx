@@ -1,34 +1,34 @@
 const ITEMS = [
     {
-        image: '/images/widget/gallery-item-1.jpg',
+        image: '/images/funfarm/funfarm_n1.png',
         title: 'Organic Farm',
     },
     {
-        image: '/images/widget/gallery-item-2.jpg',
+        image: '/images/funfarm/funfarm_n2.png',
         title: 'Goat Breeding',
     },
     {
-        image: '/images/widget/gallery-item-3.jpg',
+        image: '/images/funfarm/funfarm_n3.png',
         title: 'Poultry Farming',
     },
     {
-        image: '/images/widget/gallery-item-4.jpg',
+        image: '/images/funfarm/funfarm_n4.png',
         title: 'Banana Plantation',
     },
     {
-        image: '/images/widget/gallery-item-5.jpg',
+        image: '/images/funfarm/funfarm_n5.png',
         title: 'Farm Activities',
     },
     {
-        image: '/images/widget/gallery-item-6.jpg',
+        image: '/images/funfarm/funfarm_n6.png',
         title: 'Team Events',
     },
     {
-        image: '/images/widget/gallery-item-7.jpg',
+        image: '/images/funfarm/funfarm_n7.png',
         title: 'Farm Tours',
     },
     {
-        image: '/images/widget/gallery-item-8.jpg',
+        image: '/images/funfarm/funfarm_n8.png',
         title: 'Youth Project',
     },
 ];
@@ -82,7 +82,7 @@ export function GalleryPage() {
                                                     />
                                                 </div>
                                                 <a
-                                                    href={`/images/widget/${item.image.split('/').pop()}`}
+                                                    href={`/images/funfarm/${item.image.split('/').pop()}`}
                                                     className="add-gallery"
                                                 >
                                                     +

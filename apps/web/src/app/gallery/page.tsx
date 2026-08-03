@@ -11,9 +11,9 @@ export default function Gallery() {
     return (
         <>
             <PageTitle
-                image="/images/page-title/gallery.jpg"
-                subTitle="Moments From The Farm"
-                title="Our Gallery"
+                image="/images/funfarm/funfarm_n13.png"
+                subTitle="See Our Daily Photos"
+                title="Farm Gallery"
                 pageClass="page-gallery"
                 crumbs={[{ label: 'Gallery' }]}
             />

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { PageTitle } from '@/components/site/PageTitle';
 
 const VALUES = [
     {
@@ -21,6 +20,33 @@ const VALUES = [
     {
         icon: <i className="icon-water-drops" />,
         title: 'Borehole Sourced Water',
+    },
+];
+
+const BENEFITS = [
+    {
+        icon: <img src="/icons/tomato.png" alt="" />,
+        title: '100% Organic Products',
+        text: 'Sustainable, chemical-free crops grown with care for the freshest harvest.',
+        href: '/farmfood',
+    },
+    {
+        icon: <i className="fa-solid fa-tractor"></i>,
+        title: 'Absolute Quality',
+        text: 'From goat breeding to banana plantations, quality is at the heart of everything we do.',
+        href: '/farmfood',
+    },
+    {
+        icon: <i className="fa-solid fa-leaf"></i>,
+        title: 'Environmentally Friendly',
+        text: 'Natural soil care and reusable organic waste support a healthy, green ecosystem.',
+        href: '/references',
+    },
+    {
+        icon: <img src="/icons/dollar-circle.png" alt="" />,
+        title: 'Reasonable Price',
+        text: 'Fresh, organic produce and farm experiences at fair, transparent prices.',
+        href: '/farmfood',
     },
 ];
 
@@ -58,10 +84,7 @@ export function AboutUsPage() {
                                             Happy Volunteers
                                         </p>
                                         <div className="counter">
-                                            <div
-                                                id="odometer"
-                                                className="odometer style-5"
-                                            >
+                                            <div className="odometer style-5">
                                                 1000
                                             </div>
                                             <span className="sub-odo color-secondary">
@@ -133,22 +156,46 @@ export function AboutUsPage() {
                                         Fun Farming Uganda is an organic farm
                                         engaging in diverse agricultural
                                         activities like goat breeding, poultry
-                                        farming and banana plantations.
+                                        farming and banana plantation. It also
+                                        serves as a youth agro project, educating
+                                        and involving young individuals in
+                                        sustainable farming practices.
                                     </p>
-                                    <p
-                                        className="text-2 wow fadeInUp"
-                                        data-wow-delay="0s"
-                                    >
-                                        We also serve as a youth agro project,
-                                        educating and involving young
-                                        individuals in sustainable farming
-                                        practices, contributing to Uganda's
-                                        agricultural sector.
-                                    </p>
+                                    <div className="group-btn style-3 mt-30">
+                                        <Link
+                                            href="/blog"
+                                            className="tf-btn-read text-white hover-text-secondary"
+                                        >
+                                            View Our Content
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className="s-benefit mt--217">
+                <div className="benefit-list">
+                    {BENEFITS.map((b, i) => (
+                        <div
+                            className="box-icon ic-hover wow fadeInUp"
+                            data-wow-delay={`${i * 0.1}s`}
+                            key={i}
+                        >
+                            <div className="icon mb-29 hover-icon style-circle">
+                                {b.icon}
+                            </div>
+                            <Link
+                                href={b.href}
+                                className="caption fw-6 mb-17 font-worksans hover-text-secondary"
+                            >
+                                {b.title}
+                            </Link>
+                            <p className="text font-nunito">{b.text}</p>
+                        </div>
+                    ))}
                 </div>
             </section>
 
@@ -160,16 +207,10 @@ export function AboutUsPage() {
                                 <div className="image-wrap">
                                     <div className="image video-wrap style-2">
                                         <img
-                                            src="/images/section/s-farm.jpg"
+                                            src="/images/funfarm/fun-farm-image.jpg"
                                             alt=""
                                             className="lazyload"
                                         />
-                                        <a
-                                            href="/video/farm.mp4"
-                                            className="style-icon-play popup-video"
-                                        >
-                                            <i className="fa-solid fa-play"></i>
-                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -195,9 +236,11 @@ export function AboutUsPage() {
                                     <p className="text mb-20">
                                         Every activity on our farm is designed
                                         around sustainable, organic practices.
-                                        From goat breeding to banana
-                                        plantations, we nurture the land and the
-                                        community together.
+                                        From goat breeding to banana plantations,
+                                        we nurture the land and the community
+                                        together, strengthening the herd and
+                                        organic spirit as well as embracing the
+                                        agro-tourism concept in Uganda.
                                     </p>
                                     <div className="wg-progress mb-29">
                                         <div className="top">
@@ -316,30 +359,31 @@ export function AboutUsPage() {
                             >
                                 <div className="image hover-item">
                                     <img
-                                        src="/images/section/s-about-2.jpg"
+                                        src="/images/funfarm/funfarm_n28.png"
                                         alt=""
                                         className="lazyload"
                                     />
                                 </div>
                                 <div className="content">
                                     <Link
-                                        href="/farmfood"
+                                        href="/blog"
                                         className="title fw-7 fs-30 font-worksans hover-text-secondary"
                                     >
-                                        Farmtastic Activities &amp; Animal
-                                        Breeds
+                                        Good Meat In The Tub
                                     </Link>
                                     <p className="text">
-                                        Explore the goats, poultry and banana
-                                        plantations at the heart of our organic
-                                        farm.
+                                        Our Chief Executive Farmer and farmer's
+                                        wife pull the cart, embracing the
+                                        agro-tourism concept and the organic
+                                        spirit in Uganda. View our content to see
+                                        their farmtastic story.
                                     </p>
                                     <div className="flex justify-center">
                                         <Link
-                                            href="/farmfood"
+                                            href="/blog"
                                             className="tf-btn-read text-white hover-text-secondary"
                                         >
-                                            View Animal Breeds
+                                            View Our Content
                                         </Link>
                                     </div>
                                 </div>
@@ -352,28 +396,31 @@ export function AboutUsPage() {
                             >
                                 <div className="image hover-item">
                                     <img
-                                        src="/images/widget/about-us-2.jpg"
+                                        src="/images/funfarm/funfarm_n20.png"
                                         alt=""
                                         className="lazyload"
                                     />
                                 </div>
                                 <div className="content">
                                     <Link
-                                        href="/activities"
+                                        href="/farmfood"
                                         className="title fw-700 fs-30 font-worksans hover-text-secondary"
                                     >
-                                        Explore Our Farm Tours
+                                        Goat Communicating, Cow Connecting
                                     </Link>
                                     <p className="text">
-                                        Join our team events and experience farm
-                                        life in Nakaseke District, Uganda.
+                                        Three key words at Fun Farming Uganda.
+                                        With the Farm Games and Farm Expert
+                                        Games, herds of colleagues enjoy a fun
+                                        mix of thinking and doing to strengthen
+                                        the team spirit.
                                     </p>
                                     <div className="flex justify-center">
                                         <Link
-                                            href="/activities"
+                                            href="/farmfood"
                                             className="tf-btn-read text-white hover-text-secondary"
                                         >
-                                            View All Activities
+                                            See Animal Breeds
                                         </Link>
                                     </div>
                                 </div>

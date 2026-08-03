@@ -11,7 +11,7 @@ export default function ContactUs() {
     return (
         <>
             <PageTitle
-                image="/images/page-title/contact-us.jpg"
+                image="/images/funfarm/funfarm_n27.png"
                 subTitle="Take The Bull By The Horns"
                 title="Contact Us"
                 pageClass="page-contact-us"

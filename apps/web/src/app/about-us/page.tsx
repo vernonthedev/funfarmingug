@@ -11,7 +11,7 @@ export default function AboutPage() {
     return (
         <>
             <PageTitle
-                image="/images/page-title/about-us.jpg"
+                image="/images/funfarm/funfarm_n28.png"
                 subTitle="Nurturing the Earth, Feeding the World"
                 title="About the Farm"
                 pageClass="page-about-us"

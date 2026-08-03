@@ -1,10 +1,10 @@
 export const SITE = {
     name: 'Fun Farming Uganda',
     tagline: 'Where Agriculture Meets Adventure!',
-    address: 'Nakaseke District, Uganda',
-    email: 'hello@funfarmingug.com',
-    phone: '+256 782 345 678',
-    supportEmail: 'info@funfarmingug.com',
+    address: 'Butalangu Town Council, Nakaseke District, Uganda',
+    email: 'support@funfarminguganda.com',
+    phone: '+256 772 826 680',
+    supportEmail: 'support@funfarminguganda.com',
     workingHours: 'Mon - Fri: 8.00am - 18.00pm<br/>Sat: 9.00am - 17.00pm',
 };
 
