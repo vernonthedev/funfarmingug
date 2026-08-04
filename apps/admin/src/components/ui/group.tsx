@@ -35,6 +35,7 @@ export function Group({
   children: React.ReactNode;
 } & React.ComponentProps<"div">): React.ReactElement {
   return (
+    // biome-ignore lint/a11y/useSemanticElements: composite button group container; role="group" is intentional
     <div
       className={cn(groupVariants({ orientation }), className)}
       data-orientation={orientation}

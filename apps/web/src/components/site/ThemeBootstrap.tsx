@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 const LIBRARIES: string[] = [
@@ -104,7 +104,10 @@ function initThemeTheme() {
             ticking = false;
             const winScroll = $(window).scrollTop();
             const height = docH - winH || 1;
-            path.css('stroke-dashoffset', length - (winScroll / height) * length);
+            path.css(
+                'stroke-dashoffset',
+                length - (winScroll / height) * length
+            );
             $progress.toggleClass('active-progress', winScroll > 200);
         };
         $(window)
@@ -279,23 +282,19 @@ function initSwipers() {
 
 export function ThemeBootstrap() {
     const pathname = usePathname();
-    const loaded = useRef(false);
-
-    console.log('[ThemeBootstrap] component rendering');
 
     return (
         <>
             <div data-tb-rendered="true" style={{ display: 'none' }} />
-            <ScriptLoader pathname={pathname} loaded={loaded} />
+            <ScriptLoader pathname={pathname} />
         </>
     );
 }
 
-function ScriptLoader({ pathname, loaded }: { pathname: string; loaded: React.MutableRefObject<boolean> }) {
-    console.log('[ScriptLoader] mounted, pathname:', pathname);
-    
+function ScriptLoader({ pathname }: { pathname: string }) {
+    const [loaded, setLoaded] = useState(false);
+
     useEffect(() => {
-        console.log('[ScriptLoader] effect mounted');
         let mounted = true;
         (async () => {
             try {
@@ -304,25 +303,24 @@ function ScriptLoader({ pathname, loaded }: { pathname: string; loaded: React.Mu
                     await loadScript(src);
                 }
                 if (!mounted) return;
-                loaded.current = true;
-                initSwipers();
-                initThemeTheme();
+                setLoaded(true);
             } catch (e) {
                 console.error('[ThemeBootstrap] init failed:', e);
             }
         })();
-        return () => { mounted = false; };
+        return () => {
+            mounted = false;
+        };
     }, []);
 
     useEffect(() => {
-        console.log('[ScriptLoader] pathname changed', pathname);
-        if (!loaded.current) return;
+        if (!loaded) return;
         const t = setTimeout(() => {
             initSwipers();
             initThemeTheme();
         }, 250);
         return () => clearTimeout(t);
-    }, [pathname]);
+    }, [loaded, pathname]);
 
     return null;
 }

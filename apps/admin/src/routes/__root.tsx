@@ -67,6 +67,7 @@ function RootDocument({ children }: { readonly children?: ReactNode }) {
             <head>
                 {/* Flash-prevention: set dark class before React hydrates */}
                 <script
+                    // biome-ignore lint/security/noDangerouslySetInnerHtml: static theme script, no user input
                     dangerouslySetInnerHTML={{
                         __html: `(function(){try{var s=localStorage.getItem("serva-theme")||"";if(s==="dark"){document.documentElement.classList.add("dark")}else if(s!=="light"&&window.matchMedia("(prefers-color-scheme:dark)").matches){document.documentElement.classList.add("dark")}else{document.documentElement.classList.remove("dark")}}catch(e){}})()`,
                     }}
