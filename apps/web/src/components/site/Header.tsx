@@ -381,10 +381,10 @@ function InnerHeader({ pathname }: { pathname: string }) {
                         <div className="col-lg-12">
                             <div className="topbar-inner">
                                 <div className="topbar-left">
-                                    <span className="fs-14 font-nunito">
+                                    <span className="fs-14 font-inter">
                                         Welcome to Fun Farming Uganda
                                     </span>
-                                    <span className="fs-14 font-nunito">
+                                    <span className="fs-14 font-inter">
                                         Agriculture & Organic Farms
                                     </span>
                                 </div>

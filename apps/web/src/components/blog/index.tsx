@@ -436,8 +436,8 @@ function BlogSidebarAuthor() {
             >
                 Fun Farming Uganda
             </a>
-            <p className="duty font-nunito">Editor Post Blog</p>
-            <p className="text font-nunito">
+            <p className="duty font-inter">Editor Post Blog</p>
+            <p className="text font-inter">
                 Sharing the stories, practices and everyday joy of organic
                 farming from the heart of Uganda.
             </p>

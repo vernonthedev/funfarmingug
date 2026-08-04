@@ -17,7 +17,7 @@ function HeroContent() {
                     alt=""
                 />
             </div>
-            <p className="text font-nunito tf-fade-left fade-item-4">
+            <p className="text font-inter tf-fade-left fade-item-4">
                 Discover the joy of team events at our farm oasis in Nakaseke
                 District, Uganda.
                 <br />
@@ -98,7 +98,7 @@ export function Benefits() {
                         >
                             {b.title}
                         </a>
-                        <p className="text font-nunito">{b.text}</p>
+                        <p className="text font-inter">{b.text}</p>
                     </div>
                 ))}
             </div>
@@ -343,7 +343,7 @@ export function Services() {
                                         >
                                             {s.title}
                                         </a>
-                                        <p className="text font-nunito">
+                                        <p className="text font-inter">
                                             {s.text}
                                         </p>
                                         <a
@@ -1474,7 +1474,7 @@ export function ContactUs() {
                                     </div>
                                     <div className="checkbox-item send-wrap">
                                         <label className="mb-0">
-                                            <span className="text font-nunito">
+                                            <span className="text font-inter">
                                                 Agree to our terms and
                                                 conditions
                                             </span>

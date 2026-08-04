@@ -388,7 +388,7 @@ export function AboutUsPage() {
                             >
                                 {b.title}
                             </Link>
-                            <p className="text font-nunito">{b.text}</p>
+                            <p className="text font-inter">{b.text}</p>
                         </div>
                     ))}
                 </div>
@@ -768,7 +768,7 @@ export function AboutUsPage() {
                                         </div>
                                         <div className="checkbox-item send-wrap">
                                             <label className="mb-0">
-                                                <span className="text font-nunito">
+                                                <span className="text font-inter">
                                                     Agree to our terms and
                                                     conditions
                                                 </span>

@@ -326,20 +326,20 @@ export function BlogDetailPage({
                                                 >
                                                     Fun Farming Uganda
                                                 </a>
-                                                <p className="font-nunito">
+                                                <p className="font-inter">
                                                     July 29, 2024 at 7:35 am
                                                 </p>
                                             </div>
                                         </div>
                                         <a
                                             href="#post-comment-wrap"
-                                            className="tf-btn btn-reply style-2 type-2 font-nunito"
+                                            className="tf-btn btn-reply style-2 type-2 font-inter"
                                         >
                                             <i className="fa-solid fa-reply"></i>
                                             Reply
                                         </a>
                                     </div>
-                                    <p className="comment font-nunito">
+                                    <p className="comment font-inter">
                                         Thank you for visiting our farm blog! If
                                         you have visited us or joined one of our
                                         activities, we would love to hear about
@@ -356,7 +356,7 @@ export function BlogDetailPage({
                                     >
                                         Leave a Comment
                                     </h2>
-                                    <p className="sub-title font-nunito">
+                                    <p className="sub-title font-inter">
                                         Your email address will not be published.
                                         Required fields are marked *
                                     </p>
@@ -420,10 +420,10 @@ export function BlogDetailPage({
                                     >
                                         Fun Farming Uganda
                                     </a>
-                                    <p className="duty font-nunito">
+                                    <p className="duty font-inter">
                                         Editor Post Blog
                                     </p>
-                                    <p className="text font-nunito">
+                                    <p className="text font-inter">
                                         Sharing the stories, practices and
                                         everyday joy of organic farming from the
                                         heart of Uganda.

@@ -28,7 +28,7 @@ export function Footer() {
                                     <h2 className="title font-snowfall fs-45">
                                         Sign Up To Our Newsletter
                                     </h2>
-                                    <p className="sub font-nunito">
+                                    <p className="sub font-inter">
                                         Stay updated with our latest news,
                                         events and farm activities.
                                     </p>
@@ -81,7 +81,7 @@ export function Footer() {
                                         />
                                     </Link>
                                 </div>
-                                <p className="text font-nunito">
+                                <p className="text font-inter">
                                     Fun Farming Uganda offers organic farming,
                                     adventurous farm activities and fresh farm
                                     produce — where agriculture meets adventure.
@@ -199,7 +199,7 @@ export function Footer() {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="footer-bottom">
-                            <p className="no-copy font-nunito">
+                            <p className="no-copy font-inter">
                                 Copyright © {new Date().getFullYear()} Fun
                                 Farming Uganda.
                                 <span> All Rights Reserved.</span>

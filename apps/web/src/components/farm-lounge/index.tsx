@@ -258,7 +258,7 @@ export function FarmLoungePage() {
                                                     >
                                                         {b.title}
                                                     </a>
-                                                    <p className="text font-nunito">
+                                                    <p className="text font-inter">
                                                         {b.text}
                                                     </p>
                                                 </div>
@@ -596,7 +596,7 @@ export function FarmLoungePage() {
                                         </div>
                                         <div className="checkbox-item send-wrap">
                                             <label className="mb-0">
-                                                <span className="text font-nunito">
+                                                <span className="text font-inter">
                                                     Agree to our terms and
                                                     conditions
                                                 </span>

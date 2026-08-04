@@ -268,7 +268,7 @@ export function ActivitiesPage() {
                                                 </p>
                                             </li>
                                         </ul>
-                                        <p className="sub font-nunito">
+                                        <p className="sub font-inter">
                                             {e.text}
                                         </p>
                                         <Link href="/activities" className="tf-btn">

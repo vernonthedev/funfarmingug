@@ -18,7 +18,7 @@
     * Responsive
  ------------------------------------------------------------------------------ */
 /*--------- Abstracts variable ---------- */
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
@@ -291,7 +291,7 @@ button,
 input,
 select,
 textarea {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 15px;
   font-weight: 400;
   color: var(--body-text);
@@ -714,8 +714,8 @@ h6,
   font-family: "Sarabun", sans-serif;
 }
 
-.font-nunito {
-  font-family: "Nunito Sans", sans-serif;
+.font-inter {
+  font-family: "Inter", sans-serif;
 }
 
 .font-worksans {
@@ -1338,7 +1338,7 @@ a.text-white {
 }
 .tf-topbar .topbar-inner .topbar-right .contact-list .item a {
   color: var(--White);
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   letter-spacing: 0.1px;
 }
@@ -1402,7 +1402,7 @@ a.text-white {
 }
 .tf-topbar.style-2 .topbar-inner .topbar-right .contact-list .infor .text {
   color: var(--Text-3);
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .tf-topbar.style-2 .contact-list.mobile {
   display: none;
@@ -2332,7 +2332,7 @@ a.text-white {
   color: var(--Secondary);
 }
 .welcome-wrap .content .infor-list .item p {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--White);
 }
 .welcome-wrap .content .wg-social .list {
@@ -2752,7 +2752,7 @@ a.text-white {
 }
 .footer .footer-inner .footer-inner-wrap .contact-list li p {
   color: var(--White);
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   letter-spacing: 0.1px;
 }
 .footer .footer-inner .footer-inner-wrap .contact-list li p.address {
@@ -2799,7 +2799,7 @@ a.text-white {
   line-height: 26px;
 }
 .footer .footer-inner .footer-inner-wrap .new-post-list li .content p {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--Secondary);
   font-size: 14px;
 }
@@ -2819,7 +2819,7 @@ a.text-white {
 .footer .footer-inner .footer-inner-wrap .link-list li a {
   display: inline-flex;
   color: var(--White);
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   -khtml-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   -moz-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -2931,7 +2931,7 @@ a.text-white {
 }
 .footer .footer-bottom .policy-list li a {
   color: var(--White);
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -3718,7 +3718,7 @@ form input[type=color]::placeholder {
   font-weight: 400;
   line-height: 28px;
   color: var(--Soft-Text);
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 form textarea.style-1,
 form input[type=text].style-1,
@@ -3941,7 +3941,7 @@ fieldset {
   background-color: var(--White);
   padding: 12px 19px;
   color: var(--Primary);
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
 }
 .form-email.style-4 input:focus {
@@ -3949,7 +3949,7 @@ fieldset {
 }
 .form-email.style-4 input::placeholder {
   color: var(--Primary);
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
 }
 .form-email.style-4 .btn-send {
@@ -5867,7 +5867,7 @@ table th {
 }
 .subscribe-wrap .has-border .notice .text {
   color: var(--Text-3);
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .article-blog-item {
@@ -5966,7 +5966,7 @@ table th {
   position: relative;
 }
 .article-blog-item .content .entry-meta .entry a {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
 }
 .article-blog-item .content .entry-meta .entry a:hover {
@@ -5979,7 +5979,7 @@ table th {
   content: "/";
   position: absolute;
   right: -23px;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--Text);
 }
 .article-blog-item .content .title {
@@ -5994,7 +5994,7 @@ table th {
 .article-blog-item .content .text {
   margin-bottom: 43px;
   letter-spacing: 0.1px;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .article-blog-item .content .bot {
   display: -webkit-box;
@@ -6247,11 +6247,11 @@ table th {
 }
 .block-quote .bot .meta-left a {
   color: var(--Text-3);
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .block-quote .bot .meta-left p {
   color: var(--Text-3);
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   letter-spacing: 0.1px;
   font-size: 14px;
 }
@@ -6273,7 +6273,7 @@ table th {
   content: "/";
   position: absolute;
   right: -20px;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--White);
 }
 .block-quote .bot .entry-author {
@@ -6516,7 +6516,7 @@ table th {
 .tf-sidebar .sidebar-item .sb-content .latest-list li .content .date {
   color: var(--Text);
   font-size: 14px;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   margin-bottom: 7px;
 }
 .tf-sidebar .sidebar-item .sb-content .latest-list li .content .name-post {
@@ -6764,7 +6764,7 @@ table th {
 }
 .tf-sidebar-2 .sidebar-item-2.infor-contact .contact-list li p {
   color: var(--White);
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   letter-spacing: 0.1px;
 }
 .tf-sidebar-2 .sidebar-item-2.infor-contact .contact-list li p.address {
@@ -6902,7 +6902,7 @@ table th {
   margin-bottom: 46px;
 }
 .blog-single .content .text {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .blog-single .content .text.text-1 {
   margin-bottom: 16px;
@@ -6957,7 +6957,7 @@ table th {
 .blog-single .content .entry-video .benefit-list li p {
   padding-left: 20px;
   font-weight: 400;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   position: relative;
   color: var(--Text-2);
 }
@@ -6980,7 +6980,7 @@ table th {
 .blog-single .content .opinion-list li p {
   padding-left: 20px;
   font-weight: 400;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   position: relative;
   color: var(--Text-2);
 }
@@ -7276,7 +7276,7 @@ table th {
 }
 .tf-accordion .accordion-item .accordion-collapse .accordion-body {
   background-color: var(--Bg-8);
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   letter-spacing: 0.1px;
   line-height: 26px;
   font-size: 16px;
@@ -10526,7 +10526,7 @@ i.fs-12 {
 .wg-pricing .benifit-list li p {
   color: var(--White);
   font-size: 16px;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .wg-pricing.style-2 {
   background-color: var(--Bg-6);
@@ -10980,7 +10980,7 @@ i.fs-12 {
   letter-spacing: 0.6px;
   color: var(--White);
   font-weight: 500;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .our-event-item .content .infor-event li:not(:last-child) {
   position: relative;
@@ -15147,7 +15147,7 @@ i.fs-12 {
   font-weight: normal;
   color: var(--Text);
   line-height: 30px;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .wg-award-winner .caption {
   font-weight: 500;

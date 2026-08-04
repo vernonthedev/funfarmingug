@@ -218,7 +218,7 @@ export function ContactUsPage() {
                                         </div>
                                         <div className="checkbox-item send-wrap">
                                             <label className="mb-0">
-                                                <span className="text font-nunito">
+                                                <span className="text font-inter">
                                                     Agree to our terms and
                                                     conditions
                                                 </span>
