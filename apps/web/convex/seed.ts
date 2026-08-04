@@ -12,9 +12,7 @@ const postStatus = v.union(v.literal('active'), v.literal('draft'));
 
 export const seedContent = mutation({
     args: {
-        categories: v.array(
-            v.object({ title: v.string(), slug: v.string() })
-        ),
+        categories: v.array(v.object({ title: v.string(), slug: v.string() })),
         posts: v.array(
             v.object({
                 title: v.string(),
